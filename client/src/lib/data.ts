@@ -108,17 +108,30 @@ export const blogPosts = [
     title: "Wie oft sollte man einen Hund wirklich baden?",
     excerpt: "Zu oft oder zu selten? Wir klären auf, was für Haut und Fell Ihres Hundes am besten ist.",
     content: `
-      <h2>Die Wahrheit über das Baden von Hunden</h2>
-      <p>Es ist eine der häufigsten Fragen, die wir im Salon hören: "Wie oft darf ich meinen Hund eigentlich baden?" Die Antwort ist nicht immer einfach, denn sie hängt stark von der Rasse, dem Felltyp und dem Lebensstil Ihres Vierbeiners ab.</p>
-      
-      <h3>Der Mythos vom "Selbstreinigenden Hund"</h3>
-      <p>Früher hieß es oft, man solle Hunde so selten wie möglich baden, um den Säureschutzmantel der Haut nicht zu zerstören. Dank moderner, pH-neutraler Hundeshampoos ist diese Regel jedoch veraltet. Heute gilt: Baden Sie Ihren Hund so oft wie nötig, aber so selten wie möglich.</p>
+      <h2>Kurze Antwort</h2>
+      <p>Die meisten Hunde sollten alle 4–8 Wochen gebadet werden – abhängig von Felltyp, Hautgesundheit und Aktivität. Für professionelle Pflege können Sie jederzeit bequem online Ihren Termin buchen: <a href="/booking">👉 Termin buchen</a></p>
 
-      <h3>Felltyp entscheidet</h3>
-      <p>Hunde mit langem, seidigem Fell (wie Malteser oder Yorkshire Terrier) benötigen häufigere Bäder (alle 2-4 Wochen), um Verfilzungen zu vermeiden. Kurzhaarige Rassen kommen oft mit selteneren Bädern aus, es sei denn, sie haben sich im Schlamm gewälzt.</p>
+      <h3>Warum die richtige Badfrequenz wichtig ist</h3>
+      <p>Viele Hundebesitzer baden ihren Hund zu oft oder zu selten. Regelmäßige professionelle Behandlungen wie der <a href="/service/wunderschnitt-kurzhaar">Wunderschnitt für Kurzhaar</a> oder <a href="/service/frisch-flauschig-langhaar">Frisch & Flauschig Langhaar</a> schützen Haut & Fell langfristig.</p>
 
-      <h3>Die richtigen Produkte</h3>
-      <p>Verwenden Sie niemals Menschenshampoo! Der pH-Wert der Hundehaut unterscheidet sich von unserem. Ein hochwertiges, rückfettendes Hundeshampoo ist essentiell für gesundes Fell.</p>
+      <h3>Die ideale Badfrequenz nach Felltyp</h3>
+      <h4>Kurzhaar (z. B. Mops, Beagle)</h4>
+      <p>Alle 6–8 Wochen<br>Empfohlene Behandlung: <a href="/service/frisch-flauschig-kurzhaar">👉 Frisch & Flauschig Kurzhaar</a></p>
+
+      <h4>Langhaar (Golden Retriever, Spaniel)</h4>
+      <p>Alle 4–6 Wochen<br>Empfohlene Behandlung: <a href="/service/wunderschnitt-langhaar">👉 Der Wunderschnitt Langhaar</a></p>
+
+      <h4>Lockenfell</h4>
+      <p>3–4 Wochen</p>
+
+      <h3>So erkennen Sie, dass Ihr Hund ein Bad braucht</h3>
+      <p>Wenn Ihr Hund:</p>
+      <ul>
+      <li>riecht</li>
+      <li>verfilzt</li>
+      <li>viel haar verliert</li>
+      </ul>
+      <p>→ Dann direkt hier Termin sichern: <a href="/booking">👉 Online buchen</a></p>
     `,
     image: detailImage
   },
@@ -127,12 +140,20 @@ export const blogPosts = [
     title: "Kurzhaar vs. Langhaar: Welche Pflege braucht Ihr Hund?",
     excerpt: "Unterschiedliche Felle, unterschiedliche Bedürfnisse. Ein Leitfaden für jeden Felltyp.",
     content: `
-      <h2>Jedes Fell ist anders</h2>
-      <p>Ob kurzes, borstiges Haar oder lange, weiche Mähne – die Pflegebedürfnisse von Hunden sind so individuell wie ihre Persönlichkeiten.</p>
-      <h3>Kurzhaar-Pflege</h3>
-      <p>Viele Besitzer von Kurzhaar-Rassen glauben irrtümlich, diese bräuchten keine Pflege. Falsch! Auch kurzes Fell muss regelmäßig gebürstet werden, um lose Haare zu entfernen und die Durchblutung der Haut anzuregen. Ein Gummistriegel wirkt hier Wunder.</p>
-      <h3>Langhaar-Herausforderungen</h3>
-      <p>Langhaarige Hunde neigen zu Verfilzungen, besonders hinter den Ohren und unter den Achseln. Tägliches Bürsten ist Pflicht. Professionelle Pflege alle 6-8 Wochen hilft, die Frisur in Form zu halten und die Haut gesund zu bewahren.</p>
+      <h2>Kurzhaar vs. Langhaar: Welche Pflege braucht Ihr Hund?</h2>
+      <p>Kurzhaar braucht weniger Schnittarbeit, Langhaar braucht häufigere Pflege.</p>
+      <p>Für beide Felltypen bieten wir spezialisierte Services:</p>
+
+      <h3>Kurzhaar:</h3>
+      <p><a href="/service/wunderschnitt-kurzhaar">👉 Der Wunderschnitt Kurzhaar</a></p>
+      <p><a href="/service/frisch-flauschig-kurzhaar">👉 Frisch & Flauschig Kurzhaar</a></p>
+
+      <h3>Langhaar:</h3>
+      <p><a href="/service/wunderschnitt-langhaar">👉 Der Wunderschnitt Langhaar</a></p>
+      <p><a href="/service/frisch-flauschig-langhaar">👉 Frisch & Flauschig Langhaar</a></p>
+
+      <h3>Warum Langhaar mehr Pflege benötigt</h3>
+      <p>Verfilzungen → Lesen Sie auch: <a href="/blog/umgang-verfilzungen">👉 Der richtige Umgang mit verfilztem Fell</a></p>
     `,
     image: longHairImage
   },
@@ -149,6 +170,10 @@ export const blogPosts = [
         <li><strong>Haare in den Augen:</strong> Wenn der Pony die Sicht versperrt, ist ein Schnitt fällig.</li>
         <li><strong>Juckreiz:</strong> Häufiges Kratzen kann auf Parasiten, aber auch auf nicht entfernte Unterwolle hindeuten.</li>
       </ol>
+      <h3>Professionelle Hilfe</h3>
+      <p>Bei Geruch, Filz, Juckreiz oder häufigem Haarverlust → <a href="/booking">👉 Termin vereinbaren</a></p>
+      <p>Mehr Infos zu Verfilzungen im Artikel: <a href="/blog/umgang-verfilzungen">👉 Verfilztes Fell – Ursachen & Lösungen</a></p>
+      <p>Bei starkem Haaren empfehlen wir: <a href="/service/wunderschnitt-kurzhaar">👉 Der Wunderschnitt Kurzhaar</a></p>
     `,
     image: shortHairImage
   },
@@ -156,63 +181,63 @@ export const blogPosts = [
     slug: "fellpflege-tipps-zuhause",
     title: "Die besten Fellpflege-Tipps für Zuhause",
     excerpt: "So halten Sie Ihren Hund zwischen den Salonbesuchen gepflegt und sauber.",
-    content: "<h2>Routine ist alles</h2><p>Gewöhnen Sie Ihren Hund schon im Welpenalter an Kamm und Bürste. Machen Sie die Pflege zu einem positiven Ritual mit vielen Leckerlis.</p><h3>Das richtige Werkzeug</h3><p>Investieren Sie in gute Bürsten. Eine Zupfbürste für Unterwolle und ein Kamm für die Kontrolle sind die Grundausstattung.</p>",
+    content: "<h2>Routine ist alles</h2><p>Gewöhnen Sie Ihren Hund schon im Welpenalter an Kamm und Bürste. Machen Sie die Pflege zu einem positiven Ritual mit vielen Leckerlis.</p><h3>Das richtige Werkzeug</h3><p>Investieren Sie in gute Bürsten. Eine Zupfbürste für Unterwolle und ein Kamm für die Kontrolle sind die Grundausstattung.</p><h3>Weiterführende Tipps</h3><p>Shampoo wählen: <a href=\"/blog/shampoo-arten\">👉 Welche Shampoo-Arten sind sicher?</a></p><p>Richtige Bürste: <a href=\"/blog/buersten-vergleich\">👉 Hundebürsten im Vergleich</a></p>",
     image: detailImage
   },
   {
     slug: "ohrenpflege-wichtig",
     title: "Warum professionelle Ohrenpflege so wichtig ist",
     excerpt: "Ohrenentzündungen vorbeugen durch richtige Reinigung und Pflege.",
-    content: "<h2>Ein sensibles Organ</h2><p>Hundeohren sind warm und feucht – das perfekte Klima für Bakterien und Pilze. Besonders Hunderassen mit Schlappohren sind gefährdet.</p><p>Im Salon zupfen wir sanft die Haare aus dem Gehörgang (falls nötig) und reinigen die Ohrmuschel fachgerecht.</p>",
+    content: "<h2>Ein sensibles Organ</h2><p>Hundeohren sind warm und feucht – das perfekte Klima für Bakterien und Pilze. Besonders Hunderassen mit Schlappohren sind gefährdet.</p><p>Im Salon zupfen wir sanft die Haare aus dem Gehörgang (falls nötig) und reinigen die Ohrmuschel fachgerecht.</p><p>Bei Symptomen → jetzt Termin buchen: <a href=\"/booking\">👉 Pflege buchen</a></p>",
     image: groomerImage
   },
   {
     slug: "buersten-vergleich",
     title: "Hundebürsten im Vergleich: Welche ist die richtige?",
     excerpt: "Zupfbürste, Striegel oder Kamm? Wir erklären den Dschungel der Pflegewerkzeuge.",
-    content: "<h2>Werkzeugkunde</h2><p>Für jede Fellart gibt es die passende Bürste. Wir zeigen Ihnen, welche Sie wirklich brauchen und welche nur Marketing sind.</p>",
+    content: "<h2>Werkzeugkunde</h2><p>Für jede Fellart gibt es die passende Bürste. Wir zeigen Ihnen, welche Sie wirklich brauchen und welche nur Marketing sind.</p><p>Weitere Lesetipps: <a href=\"/blog/fellpflege-tipps-zuhause\">👉 Fellpflege-Tipps für Zuhause</a></p>",
     image: detailImage
   },
   {
     slug: "umgang-verfilzungen",
     title: "Der richtige Umgang mit verfilztem Fell",
     excerpt: "Warum man Filz nicht einfach herausschneiden sollte und wie man ihn verhindert.",
-    content: "<h2>Filz ist schmerzhaft</h2><p>Verfilzungen ziehen bei jeder Bewegung an der Haut. Versuchen Sie niemals, Filz mit einer Schere nah an der Haut herauszuschneiden – die Verletzungsgefahr ist riesig! Lassen Sie Profis ran.</p>",
+    content: "<h2>Filz ist schmerzhaft</h2><p>Verfilzungen ziehen bei jeder Bewegung an der Haut. Versuchen Sie niemals, Filz mit einer Schere nah an der Haut herauszuschneiden – die Verletzungsgefahr ist riesig! Lassen Sie Profis ran.</p><h3>Passende Services gegen Verfilzungen:</h3><p><a href=\"/service/wunderschnitt-langhaar\">👉 Der Wunderschnitt Langhaar</a></p><p><a href=\"/service/frisch-flauschig-langhaar\">👉 Frisch & Flauschig Langhaar</a></p>",
     image: longHairImage
   },
   {
     slug: "vorbereitung-grooming",
     title: "So bereiten Sie Ihren Hund auf den Grooming-Termin vor",
     excerpt: "Ein entspannter Hund macht die Pflege für alle leichter. Tipps für einen stressfreien Besuch.",
-    content: "<h2>Vor dem Termin</h2><p>Gehen Sie vorher eine große Runde Gassi. Ein ausgepowerter Hund ist entspannter. Bitte füttern Sie kurz vor dem Termin keine großen Mengen.</p>",
+    content: "<h2>Vor dem Termin</h2><p>Gehen Sie vorher eine große Runde Gassi. Ein ausgepowerter Hund ist entspannter. Bitte füttern Sie kurz vor dem Termin keine großen Mengen.</p><p>Jetzt Vorbereitung abschließen → <a href=\"/booking\">👉 Grooming-Termin buchen</a></p>",
     image: groomerImage
   },
   {
     slug: "mythen-hundepflege",
     title: "Die größten Mythen über Hundepflege",
     excerpt: "Wir räumen auf mit Ammenmärchen rund um Fell und Hygiene.",
-    content: "<h2>Stimmt das wirklich?</h2><p>Mythos 1: Hunde im Winter nicht schneiden. Falsch! Verfilztes langes Fell wärmt nicht, sondern speichert Nässe. Ein gepflegter Schnitt ist auch im Winter wichtig.</p>",
+    content: "<h2>Stimmt das wirklich?</h2><p>Mythos 1: Hunde im Winter nicht schneiden. Falsch! Verfilztes langes Fell wärmt nicht, sondern speichert Nässe. Ein gepflegter Schnitt ist auch im Winter wichtig.</p><p>Empfohlene Lektüre: <a href=\"/blog/kurzhaar-vs-langhaar\">👉 Stimmt es, dass Kurzhaar keine Pflege braucht?</a></p>",
     image: shortHairImage
   },
   {
     slug: "shampoo-arten",
     title: "Welche Shampoo-Arten sind sicher für Hunde?",
     excerpt: "Inhaltsstoffe, auf die Sie achten sollten, und was Sie vermeiden müssen.",
-    content: "<h2>Natur pur</h2><p>Wir verwenden ausschließlich Shampoos auf natürlicher Basis ohne aggressive Chemikalien. Achten Sie auf pH-Neutralität und vermeiden Sie künstliche Duftstoffe.</p>",
+    content: "<h2>Natur pur</h2><p>Wir verwenden ausschließlich Shampoos auf natürlicher Basis ohne aggressive Chemikalien. Achten Sie auf pH-Neutralität und vermeiden Sie künstliche Duftstoffe.</p><p>Mehr Pflegewissen: <a href=\"/blog/fellpflege-tipps-zuhause\">👉 Die besten Fellpflege-Tipps</a></p>",
     image: detailImage
   },
   {
     slug: "stressfreie-pflege",
     title: "Stressfreie Hundepflege: Unsere sanften Methoden erklärt",
     excerpt: "Wie wir auch ängstlichen Hunden eine angenehme Erfahrung bereiten.",
-    content: "<h2>Angstfrei zum schönen Fell</h2><p>Wir arbeiten mit viel Geduld, Pausen und positiver Verstärkung. Kein Zwang, kein Stress. Ihr Hund bestimmt das Tempo.</p>",
+    content: "<h2>Angstfrei zum schönen Fell</h2><p>Wir arbeiten mit viel Geduld, Pausen und positiver Verstärkung. Kein Zwang, kein Stress. Ihr Hund bestimmt das Tempo.</p><h3>Empfohlene Services für sensible Hunde:</h3><p><a href=\"/service/frisch-flauschig-kurzhaar\">👉 Frisch & Flauschig Kurzhaar</a></p><p><a href=\"/service/frisch-flauschig-langhaar\">👉 Frisch & Flauschig Langhaar</a></p>",
     image: groomerImage
   },
   {
     slug: "pfotenkontrolle",
     title: "Warum regelmäßige Pfotenkontrolle gesundheitsrelevant ist",
     excerpt: "Streusalz, Grannen und lange Krallen – warum die Pfoten besondere Aufmerksamkeit brauchen.",
-    content: "<h2>Tragende Rolle</h2><p>Die Pfoten tragen das ganze Gewicht. Kontrollieren Sie regelmäßig die Ballen auf Risse und die Zehenzwischenräume auf Fremdkörper wie Grannen.</p>",
+    content: "<h2>Tragende Rolle</h2><p>Die Pfoten tragen das ganze Gewicht. Kontrollieren Sie regelmäßig die Ballen auf Risse und die Zehenzwischenräume auf Fremdkörper wie Grannen.</p><h3>Direkt Pfotenservice mitbuchen:</h3><p><a href=\"/service/wunderschnitt-kurzhaar\">👉 Wunderschnitt Kurzhaar</a></p><p><a href=\"/service/wunderschnitt-langhaar\">👉 Wunderschnitt Langhaar</a></p>",
     image: detailImage
   }
 ];
