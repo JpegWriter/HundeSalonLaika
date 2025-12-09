@@ -1,0 +1,299 @@
+Absolutely — here is your single, consolidated, copy-and-paste master prompt for Bolt.new.
+This prompt includes everything: full website, design system, ecommerce, booking flow, blog posts, SEO, structure, copy, branding, images, and technical requirements — all in ONE prompt.
+
+You can paste this into Bolt as-is.
+
+⭐ MASTER PROMPT — BUILD A PREMIUM DOG GROOMING SALON WEBSITE (HUNDESALON LAIKA WIEN)
+
+Create a complete, industry-leading website for a Vienna dog grooming salon called Hundesalon Laika Wien.
+The site must have a premium boutique grooming-salon feel, a full cart system, booking + payment portal, service pages, blog, contact page, and all copywriting included.
+Design it to outperform standard groomer websites and look as polished as luxury salons.
+
+🎨 BRAND & DESIGN SYSTEM
+
+Brand Name: Hundesalon Laika Wien
+Tagline: Premium Pflege. Liebevolle Betreuung. Glückliche Hunde.
+Brand Voice: Warm, expert, trustworthy, boutique, gentle, Viennese charm.
+Audience: Dog owners in Vienna seeking safe, high-quality grooming, transparent pricing, & online booking.
+
+Design Style (VERY IMPORTANT):
+
+Elegant, modern, boutique grooming salon aesthetic
+
+Warm neutral tones: beige, cream, champagne-gold accents
+
+Luxurious typography (serif headings + clean sans-serif body text)
+
+Soft shadows, subtle animations, high-end spacing
+
+Premium imagery of dogs being groomed, happy dogs, cozy atmosphere
+
+Sticky header with booking button
+
+Clean mobile-first layout
+
+Gallery and icons styled with gentle elegance
+
+Do NOT reference any portrait studios or unrelated businesses.
+
+🧭 SITE STRUCTURE — GENERATE ALL PAGES BELOW
+1. Home Page
+
+Include sections with full text + layout:
+
+Hero Section:
+Headline, subheadline, CTA “Online Termin Buchen”, beautiful dog grooming header image.
+
+Why Choose Us:
+4–6 benefit cards (gentle handling, certified groomer, stress-free methods, clean tools, etc.)
+
+Services Overview with Pricing Cards (matching the luxury style in screenshots)
+
+Featured Services:
+
+Der Wunderschnitt (Kurzhaar) — From €75
+
+Frisch & Flauschig (Kurzhaar) — From €45
+
+Der Wunderschnitt (Langhaar) — From €115
+
+Frisch & Flauschig (Langhaar) — From €55
+
+About the Groomer:
+Friendly intro, experience, certifications.
+
+Testimonials Carousel:
+4–6 entries, natural and warm.
+
+Before/After Gallery
+
+FAQ
+
+CTA Section: “Jetzt bequem online buchen”
+
+Footer: Hours, Contact, Map, quick WhatsApp button.
+
+2. Service Pages (create 4 full service pages)
+
+Each page must include:
+
+Premium hero banner
+
+Service description
+
+What’s included
+
+Duration
+
+Tiered size pricing
+
+Add to Cart button
+
+Grooming philosophy
+
+Internal links to related services and blog posts
+
+Services to create pages for:
+
+Der Wunderschnitt — Kurzhaar
+
+Frisch & Flauschig — Kurzhaar
+
+Der Wunderschnitt — Langhaar
+
+Frisch & Flauschig — Langhaar
+
+🛒 ECOMMERCE + CART + BOOKING FLOW
+
+Build a fully functioning flow:
+
+Step 1: Select Service
+
+Cards for each service with clear pricing.
+
+Step 2: Select Dog Size
+
+Exact size-based price tiers:
+
+Für Kurzhaar-Rassen:
+
+Small — €75
+
+Medium — €105
+
+Large — €125
+
+X-Large — €165
+
+Für Langhaar-Rassen:
+
+Small — €115
+
+Medium — €145
+
+Large — €165
+
+X-Large — €195
+
+Step 3: Add to Cart
+
+Cart summary must show:
+Service name, size, duration, price.
+
+Step 4: Booking Calendar UI
+
+Similar to the competitor example:
+
+Monthly calendar
+
+Select date
+
+Select time slot (multiple times shown: 9:00, 9:30, 10:00, etc.)
+
+Update summary automatically
+
+Step 5: Customer Information Form
+
+Fields required:
+
+Name
+
+Email
+
+Phone
+
+Dog name
+
+Breed
+
+Notes
+
+Checkbox for policy agreement
+
+Step 6: Payment Page
+
+Stripe-ready structure with:
+
+Total price
+
+Add/remove services
+
+Coupon field
+
+Step 7: Confirmation Page
+
+Clear summary + email template text.
+
+📖 ABOUT PAGE
+
+Include:
+
+Story of the salon
+
+Who is Laika?
+
+Groomer’s certifications
+
+Gentle, stress-free grooming philosophy
+
+Mission & values section
+
+✉️ CONTACT PAGE
+
+Contact form
+
+Email & phone
+
+Embedded Google Map
+
+Opening hours
+
+WhatsApp click-to-chat button
+
+🐶 BLOG SYSTEM + 12 FULL ARTICLES
+
+Create a Blog Hub page and 12 high-quality SEO blog posts with:
+
+Metadata
+
+Featured image (AI placeholder)
+
+600–1,200 words
+
+H2/H3 structure
+
+Internal links to services
+
+Optimized for “Hundesalon Wien”, “Hundefriseur Wien”, grooming-related queries
+
+Blog Topics to Generate:
+
+Wie oft sollte man einen Hund wirklich baden?
+
+Kurzhaar vs. Langhaar: Welche Pflege braucht Ihr Hund?
+
+5 Anzeichen, dass Ihr Hund einen professionellen Pflegetermin braucht
+
+Die besten Fellpflege-Tipps für Zuhause
+
+Warum professionelle Ohrenpflege so wichtig ist
+
+Hundebürsten im Vergleich: Welche ist die richtige?
+
+Der richtige Umgang mit verfilztem Fell
+
+So bereiten Sie Ihren Hund auf den Grooming-Termin vor
+
+Die größten Mythen über Hundepflege
+
+Welche Shampoo-Arten sind sicher für Hunde?
+
+Stressfreie Hundepflege: Unsere sanften Methoden erklärt
+
+Warum regelmäßige Pfotenkontrolle gesundheitsrelevant ist
+
+🔧 TECHNICAL REQUIREMENTS
+
+Fully SEO-optimized
+
+Schema markup for Local Business + Services
+
+Breadcrumbs
+
+Fast, lightweight code
+
+Mobile-first responsive
+
+WCAG accessibility
+
+Fancy but subtle animations
+
+All images with alt text
+
+Optimized call-to-actions throughout
+
+🎁 BONUS REQUIREMENTS
+
+Include:
+
+Brand colour palette
+
+Typography system
+
+Icon style guidelines
+
+Photography style prompts
+
+Custom dog grooming illustrations or pictograms
+
+404 page
+
+Privacy policy
+
+Cookie policy
+
+🚀 FINAL INSTRUCTION
+
+Produce the complete website, with all pages, all text, all design, all booking flows, all pricing, all blog posts, all SEO metadata, all branding, and all sections fully written and ready to deploy.
+Make the site look more beautiful and more premium than competitors.
+Ensure everything is elegantly styled and conversion-optimized.
