@@ -4,13 +4,23 @@ import longHairImage from "@assets/generated_images/long_haired_dog_grooming_spa
 import groomerImage from "@assets/generated_images/professional_dog_groomer_portrait.png";
 import detailImage from "@assets/generated_images/dog_spa_detail_shot.png";
 
+// Blog Images
+import bathImage from "@assets/generated_images/dog_getting_a_gentle_bath.png";
+import brushingImage from "@assets/generated_images/dog_owner_brushing_dog_at_home.png";
+import earImage from "@assets/generated_images/close_up_of_dog_ear_cleaning.png";
+import pawImage from "@assets/generated_images/close_up_of_dog_paw_check.png";
+import mattedImage from "@assets/generated_images/groomer_dealing_with_matted_fur.png";
+import winterImage from "@assets/generated_images/happy_dog_in_winter_setting.png";
+import calmImage from "@assets/generated_images/calm_relaxed_dog_in_salon.png";
+import shampooImage from "@assets/generated_images/natural_dog_shampoo_bottles.png";
+
 export const siteData = {
-  name: "Hundesalon Laika Wien",
+  name: "Hundesalon Laika",
   tagline: "Premium Pflege. Liebevolle Betreuung. Glückliche Hunde.",
-  phone: "+43 1 234 5678",
-  email: "hallo@hundesalon-laika.at",
-  address: "Premiumstraße 1, 1010 Wien",
-  openingHours: "Mo-Fr: 09:00 - 18:00 | Sa: 10:00 - 14:00",
+  phone: "0699 10 36 71 16",
+  email: "hundesalon-laika-1090-wien@hotmail.com",
+  address: "Grünentorgasse, 8/1 1090, Wien",
+  openingHours: "Mo-Sa: 09:00 - 18:00 | So & Feiertag möglich\nTermine nach telefonischer Vereinbarung",
   bookingLink: "/booking",
   images: {
     hero: heroImage,
@@ -133,7 +143,7 @@ export const blogPosts = [
       </ul>
       <p>→ Dann direkt hier Termin sichern: <a href="/booking">👉 Online buchen</a></p>
     `,
-    image: detailImage
+    image: bathImage
   },
   {
     slug: "kurzhaar-vs-langhaar",
@@ -175,69 +185,69 @@ export const blogPosts = [
       <p>Mehr Infos zu Verfilzungen im Artikel: <a href="/blog/umgang-verfilzungen">👉 Verfilztes Fell – Ursachen & Lösungen</a></p>
       <p>Bei starkem Haaren empfehlen wir: <a href="/service/wunderschnitt-kurzhaar">👉 Der Wunderschnitt Kurzhaar</a></p>
     `,
-    image: shortHairImage
+    image: mattedImage
   },
   {
     slug: "fellpflege-tipps-zuhause",
     title: "Die besten Fellpflege-Tipps für Zuhause",
     excerpt: "So halten Sie Ihren Hund zwischen den Salonbesuchen gepflegt und sauber.",
     content: "<h2>Routine ist alles</h2><p>Gewöhnen Sie Ihren Hund schon im Welpenalter an Kamm und Bürste. Machen Sie die Pflege zu einem positiven Ritual mit vielen Leckerlis.</p><h3>Das richtige Werkzeug</h3><p>Investieren Sie in gute Bürsten. Eine Zupfbürste für Unterwolle und ein Kamm für die Kontrolle sind die Grundausstattung.</p><h3>Weiterführende Tipps</h3><p>Shampoo wählen: <a href=\"/blog/shampoo-arten\">👉 Welche Shampoo-Arten sind sicher?</a></p><p>Richtige Bürste: <a href=\"/blog/buersten-vergleich\">👉 Hundebürsten im Vergleich</a></p>",
-    image: detailImage
+    image: brushingImage
   },
   {
     slug: "ohrenpflege-wichtig",
     title: "Warum professionelle Ohrenpflege so wichtig ist",
     excerpt: "Ohrenentzündungen vorbeugen durch richtige Reinigung und Pflege.",
     content: "<h2>Ein sensibles Organ</h2><p>Hundeohren sind warm und feucht – das perfekte Klima für Bakterien und Pilze. Besonders Hunderassen mit Schlappohren sind gefährdet.</p><p>Im Salon zupfen wir sanft die Haare aus dem Gehörgang (falls nötig) und reinigen die Ohrmuschel fachgerecht.</p><p>Bei Symptomen → jetzt Termin buchen: <a href=\"/booking\">👉 Pflege buchen</a></p>",
-    image: groomerImage
+    image: earImage
   },
   {
     slug: "buersten-vergleich",
     title: "Hundebürsten im Vergleich: Welche ist die richtige?",
     excerpt: "Zupfbürste, Striegel oder Kamm? Wir erklären den Dschungel der Pflegewerkzeuge.",
     content: "<h2>Werkzeugkunde</h2><p>Für jede Fellart gibt es die passende Bürste. Wir zeigen Ihnen, welche Sie wirklich brauchen und welche nur Marketing sind.</p><p>Weitere Lesetipps: <a href=\"/blog/fellpflege-tipps-zuhause\">👉 Fellpflege-Tipps für Zuhause</a></p>",
-    image: detailImage
+    image: brushingImage
   },
   {
     slug: "umgang-verfilzungen",
     title: "Der richtige Umgang mit verfilztem Fell",
     excerpt: "Warum man Filz nicht einfach herausschneiden sollte und wie man ihn verhindert.",
     content: "<h2>Filz ist schmerzhaft</h2><p>Verfilzungen ziehen bei jeder Bewegung an der Haut. Versuchen Sie niemals, Filz mit einer Schere nah an der Haut herauszuschneiden – die Verletzungsgefahr ist riesig! Lassen Sie Profis ran.</p><h3>Passende Services gegen Verfilzungen:</h3><p><a href=\"/service/wunderschnitt-langhaar\">👉 Der Wunderschnitt Langhaar</a></p><p><a href=\"/service/frisch-flauschig-langhaar\">👉 Frisch & Flauschig Langhaar</a></p>",
-    image: longHairImage
+    image: mattedImage
   },
   {
     slug: "vorbereitung-grooming",
     title: "So bereiten Sie Ihren Hund auf den Grooming-Termin vor",
     excerpt: "Ein entspannter Hund macht die Pflege für alle leichter. Tipps für einen stressfreien Besuch.",
     content: "<h2>Vor dem Termin</h2><p>Gehen Sie vorher eine große Runde Gassi. Ein ausgepowerter Hund ist entspannter. Bitte füttern Sie kurz vor dem Termin keine großen Mengen.</p><p>Jetzt Vorbereitung abschließen → <a href=\"/booking\">👉 Grooming-Termin buchen</a></p>",
-    image: groomerImage
+    image: calmImage
   },
   {
     slug: "mythen-hundepflege",
     title: "Die größten Mythen über Hundepflege",
     excerpt: "Wir räumen auf mit Ammenmärchen rund um Fell und Hygiene.",
     content: "<h2>Stimmt das wirklich?</h2><p>Mythos 1: Hunde im Winter nicht schneiden. Falsch! Verfilztes langes Fell wärmt nicht, sondern speichert Nässe. Ein gepflegter Schnitt ist auch im Winter wichtig.</p><p>Empfohlene Lektüre: <a href=\"/blog/kurzhaar-vs-langhaar\">👉 Stimmt es, dass Kurzhaar keine Pflege braucht?</a></p>",
-    image: shortHairImage
+    image: winterImage
   },
   {
     slug: "shampoo-arten",
     title: "Welche Shampoo-Arten sind sicher für Hunde?",
     excerpt: "Inhaltsstoffe, auf die Sie achten sollten, und was Sie vermeiden müssen.",
     content: "<h2>Natur pur</h2><p>Wir verwenden ausschließlich Shampoos auf natürlicher Basis ohne aggressive Chemikalien. Achten Sie auf pH-Neutralität und vermeiden Sie künstliche Duftstoffe.</p><p>Mehr Pflegewissen: <a href=\"/blog/fellpflege-tipps-zuhause\">👉 Die besten Fellpflege-Tipps</a></p>",
-    image: detailImage
+    image: shampooImage
   },
   {
     slug: "stressfreie-pflege",
     title: "Stressfreie Hundepflege: Unsere sanften Methoden erklärt",
     excerpt: "Wie wir auch ängstlichen Hunden eine angenehme Erfahrung bereiten.",
     content: "<h2>Angstfrei zum schönen Fell</h2><p>Wir arbeiten mit viel Geduld, Pausen und positiver Verstärkung. Kein Zwang, kein Stress. Ihr Hund bestimmt das Tempo.</p><h3>Empfohlene Services für sensible Hunde:</h3><p><a href=\"/service/frisch-flauschig-kurzhaar\">👉 Frisch & Flauschig Kurzhaar</a></p><p><a href=\"/service/frisch-flauschig-langhaar\">👉 Frisch & Flauschig Langhaar</a></p>",
-    image: groomerImage
+    image: calmImage
   },
   {
     slug: "pfotenkontrolle",
     title: "Warum regelmäßige Pfotenkontrolle gesundheitsrelevant ist",
     excerpt: "Streusalz, Grannen und lange Krallen – warum die Pfoten besondere Aufmerksamkeit brauchen.",
     content: "<h2>Tragende Rolle</h2><p>Die Pfoten tragen das ganze Gewicht. Kontrollieren Sie regelmäßig die Ballen auf Risse und die Zehenzwischenräume auf Fremdkörper wie Grannen.</p><h3>Direkt Pfotenservice mitbuchen:</h3><p><a href=\"/service/wunderschnitt-kurzhaar\">👉 Wunderschnitt Kurzhaar</a></p><p><a href=\"/service/wunderschnitt-langhaar\">👉 Wunderschnitt Langhaar</a></p>",
-    image: detailImage
+    image: pawImage
   }
 ];
