@@ -79,9 +79,9 @@ export function Footer() {
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Hundesalon Laika Wien. Alle Rechte vorbehalten.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-primary">Impressum</a>
-            <a href="#" className="hover:text-primary">Datenschutz</a>
-            <a href="#" className="hover:text-primary">AGB</a>
+            <Link href="/impressum" className="hover:text-primary">Impressum</Link>
+            <Link href="/privacy" className="hover:text-primary">Datenschutz</Link>
+            <Link href="/privacy" className="hover:text-primary">AGB</Link>
           </div>
         </div>
       </div>

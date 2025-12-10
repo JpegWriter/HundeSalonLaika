@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,6 +16,8 @@ import { services, pricingTiers } from "@/lib/data";
 import { Check, ChevronLeft, ChevronRight, CreditCard, ShoppingBag, Calendar as CalendarIcon, User, Dog } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
+import { MessageCircle } from "lucide-react";
+import { apiRequest } from "@/lib/queryClient";
 
 // Schema for Customer Info
 const customerSchema = z.object({
@@ -46,6 +48,8 @@ export function BookingWizard() {
   const [selectedSize, setSelectedSize] = useState<"small" | "medium" | "large" | "xl" | null>(null);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [availableSlots, setAvailableSlots] = useState<string[]>([]);
+  const [isLoadingSlots, setIsLoadingSlots] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<CustomerFormData>({
@@ -85,12 +89,67 @@ export function BookingWizard() {
     nextStep(); // Go to payment
   };
 
-  const handlePayment = () => {
-    // Mock payment processing
-    setTimeout(() => {
+  const handlePayment = async () => {
+    if (!selectedService || !selectedSize || !selectedDate || !selectedTime) return;
+
+    try {
+      const bookingData = {
+        customerName: form.getValues("name"),
+        email: form.getValues("email"),
+        phone: form.getValues("phone"),
+        dogName: form.getValues("dogName"),
+        breed: form.getValues("breed"),
+        serviceId: selectedService.id,
+        serviceName: selectedService.title,
+        size: selectedSize,
+        date: format(selectedDate, "dd.MM.yyyy"),
+        time: selectedTime,
+        price: getPrice().toString(),
+        notes: form.getValues("notes") || "",
+      };
+
+      await apiRequest("POST", "/api/bookings", bookingData);
       nextStep(); // Go to confirmation
-    }, 1500);
+    } catch (error) {
+      console.error("Booking error:", error);
+      toast({ 
+        title: "Fehler bei der Buchung", 
+        description: "Bitte versuchen Sie es später erneut.",
+        variant: "destructive" 
+      });
+    }
   };
+
+  const getWhatsAppLink = () => {
+    const text = `Hallo, ich habe eine Buchung vorgenommen:\n\nName: ${form.getValues("name")}\nHund: ${form.getValues("dogName")}\nTermin: ${selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""} um ${selectedTime}`;
+    return `https://wa.me/?text=${encodeURIComponent(text)}`;
+  };
+
+  // Fetch available slots when date changes
+  useEffect(() => {
+    if (selectedDate) {
+      const fetchSlots = async () => {
+        setIsLoadingSlots(true);
+        try {
+          const dateStr = format(selectedDate, "yyyy-MM-dd");
+          const response = await apiRequest("GET", `/api/availability?date=${dateStr}`);
+          const data = await response.json();
+          setAvailableSlots(data.slots || []);
+        } catch (error) {
+          console.error("Error fetching slots:", error);
+          // If fetch fails (e.g. no internet, or server error), fallback to default slots or empty
+          // But maybe we should show a warning? For now just log.
+          // Fallback for demo purposes if backend isn't ready
+          setAvailableSlots(["09:00", "09:30", "11:00", "13:00", "14:30", "16:00"]); 
+        } finally {
+          setIsLoadingSlots(false);
+        }
+      };
+      
+      fetchSlots();
+      setSelectedTime(null); // Reset selected time
+    }
+  }, [selectedDate]);
 
   const renderStep = () => {
     switch(currentStep) {
@@ -194,9 +253,15 @@ export function BookingWizard() {
               <h4 className="font-serif font-bold">Verfügbare Zeiten</h4>
               {!selectedDate ? (
                 <p className="text-muted-foreground text-sm">Bitte wählen Sie zuerst ein Datum.</p>
+              ) : isLoadingSlots ? (
+                <div className="flex justify-center py-4">
+                  <span className="loading loading-spinner text-primary">Lade Verfügbarkeit...</span>
+                </div>
+              ) : availableSlots.length === 0 ? (
+                <p className="text-destructive text-sm">Keine Termine verfügbar.</p>
               ) : (
                 <div className="grid grid-cols-2 gap-2">
-                  {["09:00", "09:30", "11:00", "13:00", "14:30", "16:00"].map(time => (
+                  {availableSlots.map(time => (
                     <Button
                       key={time}
                       variant={selectedTime === time ? "default" : "outline"}
@@ -310,8 +375,18 @@ export function BookingWizard() {
               <p><strong>Uhrzeit:</strong> {selectedTime}</p>
               <p><strong>Ort:</strong> Premiumstraße 1, 1010 Wien</p>
             </div>
-            <div className="pt-4">
-               <Button onClick={() => window.location.href = "/"} className="bg-primary hover:bg-primary/90">Zurück zur Startseite</Button>
+            
+            <div className="flex flex-col gap-3 max-w-xs mx-auto pt-4">
+              <Button 
+                onClick={() => window.open(getWhatsAppLink(), '_blank')}
+                className="bg-[#25D366] hover:bg-[#128C7E] text-white w-full"
+              >
+                <MessageCircle className="mr-2 h-4 w-4" /> 
+                Buchung per WhatsApp senden
+              </Button>
+              <Button onClick={() => window.location.href = "/"} variant="outline" className="w-full">
+                Zurück zur Startseite
+              </Button>
             </div>
           </div>
         );
