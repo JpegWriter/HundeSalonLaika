@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/layout/SEO";
 import { ServiceCard } from "@/components/ui/ServiceCard";
-import { services } from "@/lib/data";
+import { services, siteData } from "@/lib/data";
 import { PawPrint } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -118,19 +118,33 @@ export default function Services() {
 
             {/* Cat services */}
             <section>
-              <div className="flex items-center gap-3 mb-3">
-                <PawPrint className="text-primary h-6 w-6" />
-                <h2 className="font-serif text-3xl font-bold">
-                  Katzenpflege & Grooming
-                </h2>
+              <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)] gap-10 items-center mb-10">
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <PawPrint className="text-primary h-6 w-6" />
+                    <h2 className="font-serif text-3xl font-bold">
+                      Katzenpflege & Grooming
+                    </h2>
+                  </div>
+                  <p className="text-muted-foreground max-w-3xl">
+                    Katzen sind für uns genauso wichtig wie Hunde. Wir arbeiten
+                    mit viel Ruhe, Erfahrung und speziell auf Katzen abgestimmten
+                    Pflegeprodukten. Ob Kurzpflege, Entfilzen oder
+                    Komplett-Grooming – wir stimmen jeden Termin auf Charakter
+                    und Felltyp Ihrer Katze ab.
+                  </p>
+                </div>
+                <div className="hidden lg:block">
+                  <div className="rounded-2xl overflow-hidden shadow-xl border border-border bg-white">
+                    <img
+                      src={siteData.images.groomer}
+                      alt="Groomerin Dominique im Salon – sanfte Pflege auch für Katzen"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </div>
-              <p className="text-muted-foreground max-w-3xl mb-8">
-                Katzen sind für uns genauso wichtig wie Hunde. Wir arbeiten mit
-                viel Ruhe, Erfahrung und speziell auf Katzen abgestimmten
-                Pflegeprodukten. Ob Kurzpflege, Entfilzen oder Komplett-Grooming
-                – wir stimmen jeden Termin auf Charakter und Felltyp Ihrer Katze
-                ab.
-              </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {catServices.map((service) => (
