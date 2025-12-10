@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
@@ -37,17 +36,39 @@ export default function Contact() {
 
     try {
       setIsSubmitting(true);
-      await apiRequest("POST", "/api/contact", payload);
+
+      // Build a mailto: link so the form works without a backend on Vercel
+      const subject = encodeURIComponent(
+        `[Kontaktformular] ${payload.subject} - ${payload.firstName} ${payload.lastName}`,
+      );
+      const bodyLines = [
+        `Neue Kontaktanfrage vom Hundesalon Laika Formular:`,
+        ``,
+        `Name: ${payload.firstName} ${payload.lastName}`,
+        `E-Mail: ${payload.email}`,
+        `Betreff: ${payload.subject}`,
+        ``,
+        `Nachricht:`,
+        payload.message,
+      ];
+      const body = encodeURIComponent(bodyLines.join("\n"));
+
+      window.location.href = `mailto:${encodeURIComponent(
+        siteData.email,
+      )}?subject=${subject}&body=${body}`;
+
       toast({
-        title: "Nachricht gesendet",
-        description: "Vielen Dank für Ihre Anfrage. Dominique meldet sich so bald wie möglich bei Ihnen.",
+        title: "Nachricht vorbereitet",
+        description:
+          "Ihr E-Mail Programm wurde geöffnet. Bitte prüfen und senden Sie die Nachricht, um Ihre Anfrage abzuschließen.",
       });
       form.reset();
     } catch (error) {
       console.error("Contact form error:", error);
       toast({
-        title: "Fehler beim Senden",
-        description: "Bitte versuchen Sie es später erneut oder kontaktieren Sie uns telefonisch.",
+        title: "Fehler beim Vorbereiten der Nachricht",
+        description:
+          "Bitte senden Sie uns direkt eine E-Mail oder kontaktieren Sie uns telefonisch.",
         variant: "destructive",
       });
     } finally {

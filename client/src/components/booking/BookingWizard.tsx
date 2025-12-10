@@ -428,13 +428,17 @@ export function BookingWizard() {
             </div>
             <h2 className="font-serif text-3xl font-bold">Buchung bestätigt!</h2>
             <p className="text-muted-foreground max-w-md mx-auto">
-              Vielen Dank für Ihre Buchung, {form.getValues("name")}. Wir freuen uns auf Sie und {form.getValues("dogName")} am {selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""} um {selectedTime} Uhr.
+              Vielen Dank für Ihre Buchung, {form.getValues("name")}. Wir freuen uns auf Sie und{" "}
+              {form.getValues("dogName")} am{" "}
+              {selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""} um {selectedTime} Uhr.
             </p>
             <div className="bg-secondary/20 p-6 rounded-xl max-w-md mx-auto text-left space-y-2 text-sm mt-8">
               <p><strong>Service:</strong> {selectedService?.title}</p>
               <p><strong>Datum:</strong> {selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""}</p>
               <p><strong>Uhrzeit:</strong> {selectedTime}</p>
-              <p><strong>Ort:</strong> Premiumstraße 1, 1010 Wien</p>
+              <p>
+                <strong>Ort:</strong> {siteData.address}
+              </p>
             </div>
             
             <div className="flex flex-col gap-3 max-w-xs mx-auto pt-4">
