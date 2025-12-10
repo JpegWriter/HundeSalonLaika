@@ -8,6 +8,135 @@ import NotFound from "@/pages/not-found";
 import { format } from "date-fns";
 import { de } from "date-fns/locale";
 
+const seoMetaBySlug: Record<
+  string,
+  {
+    title: string;
+    description: string;
+  }
+> = {
+  "sommerfell-oder-winterfell": {
+    title: "Sommerfell vs. Winterfell – Wie viel Pflege braucht mein Hund?",
+    description:
+      "Erfahren Sie, warum Hunde im Sommer und Winter unterschiedlich haaren und welche Pflegeroutine in Wien am besten schützt.",
+  },
+  "wie-oft-hund-baden": {
+    title: "Wie oft Hund baden? Empfehlungen für gesunde Haut & Fell",
+    description:
+      "Viele Hunde werden zu oft oder zu selten gebadet. Hier erfahren Sie, wie oft Baden wirklich gesund ist – plus Tipps für die richtige Pflege.",
+  },
+  "kurzhaar-vs-langhaar": {
+    title: "Kurzhaar oder Langhaar? Die richtige Fellpflege für jeden Hund",
+    description:
+      "Jeder Felltyp hat eigene Bedürfnisse. Entdecken Sie die optimale Pflege für Kurzhaar- und Langhaarhunde.",
+  },
+  "anzeichen-professionelle-pflege": {
+    title: "5 klare Anzeichen: Jetzt braucht Ihr Hund professionelle Pflege",
+    description:
+      "Wann reicht Bürsten zuhause nicht mehr aus? Diese 5 Signale zeigen, dass Ihr Hund einen Grooming-Termin benötigt.",
+  },
+  "fellpflege-tipps-zuhause": {
+    title: "Fellpflege zuhause – Die 8 wichtigsten Tipps für gesundes Fell",
+    description:
+      "So pflegen Sie das Fell Ihres Hundes zwischen den Terminen richtig: Bürsten, Waschen und Pflegeroutinen für jedes Fell.",
+  },
+  "professionelle-ohrenpflege": {
+    title: "Ohrenpflege Hund – Warum professionelle Reinigung wichtig ist",
+    description:
+      "Entzündungen beginnen oft unbemerkt. Lesen Sie, warum regelmäßige Ohrenpflege so entscheidend für die Gesundheit ist.",
+  },
+  "hundebuersen-vergleich": {
+    title: "Hundebürsten im Vergleich – Welche Bürste passt zu Ihrem Hund?",
+    description:
+      "Zupfbürste, Striegel oder Kamm? Wir erklären, welche Bürste für welchen Felltyp ideal ist.",
+  },
+  "verfilztes-fell": {
+    title: "Verfilztes Fell beim Hund – Was wirklich hilft",
+    description:
+      "Warum Filz nie selbst herausgeschnitten werden sollte und wie Sie zukünftige Verfilzungen vermeiden.",
+  },
+  "hund-vorbereiten-grooming": {
+    title: "Hund vorbereiten fürs Grooming – So wird der Termin stressfrei",
+    description:
+      "Mit diesen Tipps wird der Besuch beim Hundefriseur entspannt – ideal für Welpen, Angsthunde und sensible Hunde.",
+  },
+  "mythen-hundepflege": {
+    title: "Hundepflege Mythen – Was stimmt wirklich?",
+    description:
+      "Viele Irrtümer gefährden die Fellgesundheit. Wir klären auf, welche Mythen Sie kennen sollten.",
+  },
+  "shampoo-arten-sicher": {
+    title: "Hundeshampoo – Welche Arten sind wirklich sicher?",
+    description:
+      "Erfahren Sie, welche Inhaltsstoffe gut für die Hundehaut sind – und welche Shampoos Sie vermeiden sollten.",
+  },
+  "stressfreie-hundepflege": {
+    title: "Stressfreie Hundepflege – Sanfte Methoden für Angsthunde",
+    description:
+      "Wie Hunde ohne Stress gepflegt werden können: Unsere bewährten Techniken für sensible Hunde.",
+  },
+  "pfotencheck-warum-wichtig": {
+    title: "Pfotenpflege beim Hund – Warum Kontrolle so wichtig ist",
+    description:
+      "Salz, Asphalt & Grannen: Erfahren Sie, warum Pfotenpflege ein Muss ist und wie Sie Schäden vermeiden.",
+  },
+  fruehjahrsfell: {
+    title: "Frühjahrsfell beim Hund – Warum Hunde stark haaren",
+    description:
+      "Im Frühjahr verlieren Hunde massiv Fell. Hier erfahren Sie, wie Sie Ihren Hund optimal unterstützen.",
+  },
+  "fellpflege-routinen-winter": {
+    title: "Winterfell Pflege – Die beste Fellroutine für Hunde in Wien",
+    description:
+      "Schnee, Salz und Kälte belasten das Fell. So schützen Sie Ihren Hund im Winter richtig.",
+  },
+  "wie-oft-krallen-schneiden": {
+    title: "Hundekrallen schneiden – Wie oft & wie richtig?",
+    description:
+      "Zu lange Krallen schmerzen. Ein kompletter Leitfaden zum sicheren Schneiden und zur idealen Häufigkeit.",
+  },
+  "fellpflege-pudel-doodles": {
+    title: "Doodle & Pudel Fellpflege – Tipps gegen Filz & Knoten",
+    description:
+      "Pudel & Doodles haben anspruchsvolles Fell. So verhindern Sie Filz und pflegen Locken richtig.",
+  },
+  "pflege-golden-retriever": {
+    title: "Golden Retriever Pflege – Unterwolle richtig entfernen",
+    description:
+      "Golden Retriever haaren stark. Erfahren Sie, wie Unterwolle schonend entfernt und Hautproblemen vorgebeugt wird.",
+  },
+  "pflege-shih-tzu-malteser": {
+    title: "Shih Tzu & Maltese Pflege – Schnitte, Bürsten, Tipps",
+    description:
+      "Seidiges Fell braucht besondere Pflege: Die besten Schnitte und Routinen für Shih Tzu & Maltese.",
+  },
+  "welpenpflege-erster-termin": {
+    title: "Welpenpflege – Ab wann braucht ein Welpe seinen ersten Termin?",
+    description:
+      "Der erste Besuch beim Hundefriseur ist entscheidend. Lesen Sie, wann und wie Welpen am besten starten.",
+  },
+  "angsthunde-beim-grooming": {
+    title: "Angsthunde pflegen – 7 Schritte zu einem stressfreien Grooming",
+    description:
+      "Viele Hunde haben Angst vor Schere & Föhn. Diese 7 Schritte machen das Grooming sicher und entspannt.",
+  },
+  "hunde-ungern-gebuerstet": {
+    title: "Hund lässt sich nicht bürsten – Ursachen & Lösungen",
+    description:
+      "Warum Hunde Bürsten ablehnen und wie Sie es mit einfachen Techniken verbessern können.",
+  },
+  "senioren-hunde-pflege": {
+    title: "Senioren-Hunde Pflege – Worauf Sie im Alter achten müssen",
+    description:
+      "Ältere Hunde brauchen besondere Pflege. Hier lesen Sie, wie Fell, Pfoten und Haut im Alter gesund bleiben.",
+  },
+  "allergien-empfindliche-haut": {
+    title: "Hunde mit Allergien – Welche Pflege ist die richtige?",
+    description:
+      "Juckreiz, Rötungen & empfindliche Haut? Diese Pflegepakete helfen Hunden mit Allergien.",
+  },
+};
+
 export default function BlogPost() {
   const [match, params] = useRoute("/blog/:slug");
   const post = blogPosts.find(p => p.slug === params?.slug);
@@ -18,20 +147,41 @@ export default function BlogPost() {
 
   const publishedDate = post.date ? new Date(post.date) : new Date();
   const articleUrl = `https://www.hundesalonlaika-wien.at/blog/${post.slug}`;
+  const seoMeta = seoMetaBySlug[post.slug];
 
   const articleJson = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
     headline: post.title,
-    description: post.excerpt,
-    datePublished: publishedDate.toISOString(),
-    mainEntityOfPage: articleUrl,
+    description: seoMeta?.description ?? post.excerpt,
+    image: "https://www.hundesalonlaika-wien.at/opengraph.jpg",
     author: {
       "@type": "Organization",
-      name: "Hundesalon Laika",
+      name: "Hundesalon Laika Wien",
     },
+    publisher: {
+      "@type": "Organization",
+      name: "Hundesalon Laika Wien",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.hundesalonlaika-wien.at/logo.png",
+      },
+    },
+    datePublished: publishedDate.toISOString(),
+    dateModified: publishedDate.toISOString(),
+    articleSection: "Hundepflege",
+    keywords: [
+      "Hundepflege",
+      "Hundefriseur Wien",
+      "Fellpflege Hund",
+      "Hundesalon Wien",
+      "Grooming",
+    ],
     url: articleUrl,
-    image: "https://www.hundesalonlaika-wien.at/opengraph.jpg",
   };
 
   const relatedPosts = blogPosts
@@ -41,8 +191,8 @@ export default function BlogPost() {
   return (
     <Layout>
       <SEO
-        title={`${post.title} | Pflege-Blog Hundesalon Laika Wien`}
-        description={post.excerpt}
+        title={seoMeta?.title ?? `${post.title} | Pflege-Blog Hundesalon Laika Wien`}
+        description={seoMeta?.description ?? post.excerpt}
         jsonLd={{ id: "ld-blog-article", data: articleJson }}
       />
       <article className="min-h-screen pb-20">
