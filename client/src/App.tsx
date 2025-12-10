@@ -8,6 +8,7 @@ import Home from "@/pages/Home";
 import Services from "@/pages/Services";
 import ServiceDetail from "@/pages/ServiceDetail";
 import Booking from "@/pages/Booking";
+import CatBooking from "@/pages/CatBooking";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/services" component={Services} />
       <Route path="/service/:id" component={ServiceDetail} />
       <Route path="/booking" component={Booking} />
+      <Route path="/cat-booking" component={CatBooking} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/blog" component={Blog} />
