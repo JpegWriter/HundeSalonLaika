@@ -50,7 +50,7 @@ export function BookingWizard() {
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
   const [isLoadingSlots, setIsLoadingSlots] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState<"card" | "onsite" | null>(null);
+  const [paymentMethod, setPaymentMethod] = useState<"onsite" | null>("onsite");
   const { toast } = useToast();
 
   const form = useForm<CustomerFormData>({
@@ -130,14 +130,6 @@ export function BookingWizard() {
 
   const handlePayment = async () => {
     if (!selectedService || !selectedSize || !selectedDate || !selectedTime) return;
-
-    if (!paymentMethod) {
-      toast({
-        title: "Bitte wählen Sie eine Zahlungsmethode",
-        variant: "destructive",
-      });
-      return;
-    }
 
     const baseNotes = form.getValues("notes") || "";
     const paymentNote =
@@ -412,36 +404,15 @@ export function BookingWizard() {
             </div>
             
             <div className="space-y-4">
-              <h4 className="font-semibold mb-2">Zahlungsmethode wählen</h4>
+              <h4 className="font-semibold mb-2">Zahlungsart</h4>
               <div className="grid gap-2">
-                <div
-                  className={cn(
-                    "border p-4 rounded-lg flex items-center gap-3 cursor-pointer transition-colors bg-white",
-                    paymentMethod === "card"
-                      ? "border-primary bg-primary/5"
-                      : "hover:border-primary"
-                  )}
-                  onClick={() => setPaymentMethod("card")}
-                >
-                  <CreditCard className="text-primary" />
-                  <div>
-                    <p className="font-medium">Kreditkarte</p>
-                    <p className="text-xs text-muted-foreground">Sichere Zahlung via Stripe</p>
-                  </div>
-                </div>
-                <div
-                  className={cn(
-                    "border p-4 rounded-lg flex items-center gap-3 cursor-pointer transition-colors bg-white",
-                    paymentMethod === "onsite"
-                      ? "border-primary bg-primary/5"
-                      : "hover:border-primary"
-                  )}
-                  onClick={() => setPaymentMethod("onsite")}
-                >
+                <div className="border p-4 rounded-lg flex items-center gap-3 bg-white border-primary bg-primary/5">
                   <ShoppingBag className="text-primary" />
                   <div>
                     <p className="font-medium">Vor Ort bezahlen</p>
-                    <p className="text-xs text-muted-foreground">Bar oder Karte im Salon</p>
+                    <p className="text-xs text-muted-foreground">
+                      Die Bezahlung erfolgt direkt im Salon – bar oder mit Karte.
+                    </p>
                   </div>
                 </div>
               </div>
