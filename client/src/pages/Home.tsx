@@ -21,60 +21,57 @@ export default function Home() {
     }
   };
 
-  const homeSchema = {
+  const localBusinessJson = {
     "@context": "https://schema.org",
-    "@graph": [
+    "@type": "PetGrooming",
+    "@id": "https://www.hundesalonlaika-wien.at/#business",
+    name: "Hundesalon Laika",
+    url: "https://www.hundesalonlaika-wien.at/",
+    image: "https://www.hundesalonlaika-wien.at/path-to-hero-image.jpg",
+    logo: "https://www.hundesalonlaika-wien.at/path-to-logo.png",
+    telephone: siteData.phone,
+    priceRange: "€€",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Grünentorgasse 8",
+      addressLocality: "Wien",
+      postalCode: "1090",
+      addressCountry: "AT",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 48.22,
+      longitude: 16.36,
+    },
+    openingHoursSpecification: [
       {
-        "@type": "PetGrooming",
-        "@id": "https://www.hundesalonlaika-wien.at/#petgrooming",
-        name: "Hundesalon Laika",
-        url: "https://www.hundesalonlaika-wien.at/",
-        telephone: siteData.phone,
-        image: "https://www.hundesalonlaika-wien.at/opengraph.jpg",
-        hasMap: "https://maps.app.goo.gl/c6GHPHxbzYv175zU6",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Grünentorgasse 8",
-          postalCode: "1090",
-          addressLocality: "Wien",
-          addressCountry: "AT",
-        },
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-            ],
-            opens: "09:00",
-            closes: "18:00",
-          },
-        ],
-        priceRange: "€€",
-      },
-      {
-        "@type": "Service",
-        "@id": "https://www.hundesalonlaika-wien.at/#hundepflege-service",
-        name: "Hundepflege & Hundefriseur in Wien",
-        provider: {
-          "@id": "https://www.hundesalonlaika-wien.at/#petgrooming",
-        },
-        areaServed: {
-          "@type": "AdministrativeArea",
-          name: "1090 Wien-Alsergrund",
-        },
-        serviceType: "Dog grooming",
-        offers: {
-          "@type": "AggregateOffer",
-          priceCurrency: "EUR",
-          lowPrice: 55,
-          highPrice: 175,
-        },
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
       },
     ],
+    sameAs: [
+      "https://maps.app.goo.gl/c6GHPHxbzYv175zU6",
+    ],
+  };
+
+  const websiteJson = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.hundesalonlaika-wien.at/#website",
+    url: "https://www.hundesalonlaika-wien.at/",
+    name: "Hundesalon Laika Wien",
+    publisher: {
+      "@type": "Organization",
+      name: "Hundesalon Laika Wien",
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target:
+        "https://www.hundesalonlaika-wien.at/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (
@@ -82,7 +79,10 @@ export default function Home() {
       <SEO
         title="Hundesalon Laika Wien – Premium Hundepflege & Grooming in 1090 Wien"
         description="Exklusive Hundepflege in Wien-Alsergrund (1090). Professionelles Waschen, Schneiden & Pflegen für Kurzhaar und Langhaar. Jetzt online Termin bei Hundesalon Laika buchen!"
-        jsonLd={{ id: "ld-home", data: homeSchema }}
+        jsonLd={[
+          { id: "ld-business", data: localBusinessJson },
+          { id: "ld-website", data: websiteJson },
+        ]}
       />
 
       {/* Hero Section */}

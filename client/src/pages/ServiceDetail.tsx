@@ -28,25 +28,47 @@ export default function ServiceDetail() {
     provider: {
       "@type": "PetGrooming",
       name: "Hundesalon Laika",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Grünentorgasse 8",
-        postalCode: "1090",
-        addressLocality: "Wien",
-        addressCountry: "AT",
-      },
+      "@id": "https://www.hundesalonlaika-wien.at/#business",
     },
     areaServed: {
       "@type": "AdministrativeArea",
-      name: "1090 Wien-Alsergrund",
+      name: "Wien",
     },
-    url: serviceUrl,
+    serviceType:
+      service.category === "Kurzhaar"
+        ? "Hundepflege, Kurzhaar-Grooming"
+        : "Hundepflege, Langhaar-Grooming",
     offers: {
-      "@type": "AggregateOffer",
+      "@type": "Offer",
+      price: String(lowPrice),
       priceCurrency: "EUR",
-      lowPrice,
-      highPrice,
+      url: serviceUrl,
     },
+  };
+
+  const breadcrumbJson = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.hundesalonlaika-wien.at/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://www.hundesalonlaika-wien.at/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: service.title,
+        item: serviceUrl,
+      },
+    ],
   };
 
   const suitabilityText =
@@ -63,7 +85,10 @@ export default function ServiceDetail() {
       <SEO
         title={`${service.title} | Hundesalon Laika Wien`}
         description={`${service.shortDescription} Dieser Service ist in unserem Hundesalon in 1090 Wien-Alsergrund verfügbar.`}
-        jsonLd={{ id: "ld-service", data: serviceJson }}
+        jsonLd={[
+          { id: "ld-service", data: serviceJson },
+          { id: "ld-service-breadcrumb", data: breadcrumbJson },
+        ]}
       />
       <div className="min-h-screen pb-20">
         {/* Hero */}

@@ -160,8 +160,13 @@ export default function BlogPost() {
     description: seoMeta?.description ?? post.excerpt,
     image: "https://www.hundesalonlaika-wien.at/opengraph.jpg",
     author: {
-      "@type": "Organization",
-      name: "Hundesalon Laika Wien",
+      "@type": "Person",
+      name: "Dominique",
+      jobTitle: "Hundefriseurin",
+      worksFor: {
+        "@type": "Organization",
+        name: "Hundesalon Laika Wien",
+      },
     },
     publisher: {
       "@type": "Organization",
@@ -178,10 +183,34 @@ export default function BlogPost() {
       "Hundepflege",
       "Hundefriseur Wien",
       "Fellpflege Hund",
-      "Hundesalon Wien",
-      "Grooming",
+      "Hundesalon 1090",
     ],
     url: articleUrl,
+  };
+
+  const breadcrumbJson = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.hundesalonlaika-wien.at/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Pflege-Blog",
+        item: "https://www.hundesalonlaika-wien.at/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: articleUrl,
+      },
+    ],
   };
 
   const relatedPosts = blogPosts
@@ -191,9 +220,14 @@ export default function BlogPost() {
   return (
     <Layout>
       <SEO
-        title={seoMeta?.title ?? `${post.title} | Pflege-Blog Hundesalon Laika Wien`}
+        title={
+          seoMeta?.title ?? `${post.title} | Pflege-Blog Hundesalon Laika Wien`
+        }
         description={seoMeta?.description ?? post.excerpt}
-        jsonLd={{ id: "ld-blog-article", data: articleJson }}
+        jsonLd={[
+          { id: "ld-blog-article", data: articleJson },
+          { id: "ld-breadcrumb", data: breadcrumbJson },
+        ]}
       />
       <article className="min-h-screen pb-20">
         {/* Header */}
