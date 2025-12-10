@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/layout/SEO";
 import { siteData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -7,6 +8,10 @@ import { CheckCircle2, Award, Heart, Shield } from "lucide-react";
 export default function About() {
   return (
     <Layout>
+      <SEO
+        title="Über Hundesalon Laika – Ihr Hundefriseur in Wien"
+        description="Erfahren Sie mehr über die Geschichte, Philosophie und Werte des Hundesalon Laika in 1090 Wien. Sanfte Hundepflege, langjährige Erfahrung und Liebe zum Detail."
+      />
       {/* Hero */}
       <div className="bg-secondary/30 py-20">
         <div className="container mx-auto px-4 text-center max-w-3xl">
@@ -36,10 +41,10 @@ export default function About() {
                   Der Name "Laika" steht nicht nur für die berühmte Hündin im Weltall, sondern war auch der Name meiner ersten Golden Retriever Hündin, die mich zur Hundefriseurin inspiriert hat.
                 </p>
                 <p>
-                  Nach meiner Ausbildung in London und Wien habe ich 2018 den Hundesalon Laika eröffnet, mit dem Ziel, einen Standard zu setzen: Keine Massenabfertigung, keine Käfigtrockner, kein Stress.
+                  Ich bin Dominique, ursprünglich aus Schottland, und lebe seit vielen Jahren in Wien. Nach meiner Ausbildung in London und Wien habe ich 2018 den Hundesalon Laika eröffnet, mit dem Ziel, einen Standard zu setzen: Keine Massenabfertigung, keine Käfigtrockner, kein Stress.
                 </p>
                 <p>
-                  Heute sind wir stolz darauf, einer der führenden Salons in Wien zu sein, bekannt für unseren sanften Umgang ("Fear Free Handling") und unsere exzellenten Ergebnisse.
+                  Heute sind wir stolz darauf, einer der führenden Salons in Wien zu sein, bekannt für unseren sanften Umgang ("Fear Free Handling") und unsere exzellenten Ergebnisse – für Hunde und Katzen gleichermaßen.
                 </p>
               </div>
             </div>

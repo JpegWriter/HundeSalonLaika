@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/layout/SEO";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { services } from "@/lib/data";
 
@@ -8,12 +9,17 @@ export default function Services() {
 
   return (
     <Layout>
+      <SEO
+        title="Services – Hundepflege & Hundefriseur in Wien | Hundesalon Laika"
+        description="Übersicht aller Hundepflege-Services im Hundesalon Laika in 1090 Wien-Alsergrund. Wunderschnitt & Frisch & Flauschig für Kurzhaar und Langhaar mit klaren Ab-Preisen."
+      />
       <div className="bg-background min-h-screen py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4">Unsere Services</h1>
             <p className="text-muted-foreground text-lg">
-              Professionelle Pflege für jede Rasse und jeden Felltyp. Wählen Sie das passende Paket für Ihren Liebling.
+              Professionelle Hundepflege und Hundefriseur-Leistungen in 1090 Wien-Alsergrund. 
+              Wählen Sie das passende Paket für Ihren Liebling – alle Ab-Preise sind transparent dargestellt.
             </p>
           </div>
 

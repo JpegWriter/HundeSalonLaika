@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/layout/SEO";
 import { blogPosts } from "@/lib/data";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -30,12 +31,16 @@ export default function Blog() {
 
   return (
     <Layout>
+      <SEO
+        title="Pflege-Blog – Hundepflege Tipps in Wien | Hundesalon Laika"
+        description="Der Pflege-Blog von Hundesalon Laika in 1090 Wien-Alsergrund. Wissen rund um Hundepflege, Hundefriseur-Termine und Gesundheit für Ihren Hund in Wien."
+      />
       <div className="bg-background min-h-screen py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4">Pflege-Blog</h1>
             <p className="text-muted-foreground text-lg">
-              Tipps, Tricks und Wissenswertes rund um die Pflege Ihres Vierbeiners.
+              Der Pflege-Blog von Hundesalon Laika in 1090 Wien-Alsergrund – Ihr Wissenshub rund um Hundepflege, Hundefriseur-Besuche und gesunde Fellpflege in Wien.
             </p>
           </div>
 

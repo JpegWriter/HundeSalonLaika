@@ -62,17 +62,28 @@ export function Footer() {
                 <span className="whitespace-pre-line">{siteData.openingHours.replace("|", "\n")}</span>
               </li>
             </ul>
-            <Link href="/booking" className="block">
-              <div className="inline-block bg-white px-6 py-3 rounded-xl border border-border shadow-sm hover:shadow-md transition-all cursor-pointer">
-                <span className="text-primary font-medium flex items-center gap-2">
-                  <span className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            <div className="flex flex-col gap-3">
+              <Link href="/booking" className="block">
+                <div className="inline-block bg-white px-6 py-3 rounded-xl border border-border shadow-sm hover:shadow-md transition-all cursor-pointer">
+                  <span className="text-primary font-medium flex items-center gap-2">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
+                    Jetzt geöffnet
                   </span>
-                  Jetzt geöffnet
-                </span>
-              </div>
-            </Link>
+                </div>
+              </Link>
+              <a
+                href="https://maps.app.goo.gl/c6GHPHxbzYv175zU6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors"
+              >
+                <MapPin size={14} className="text-primary" />
+                Wegbeschreibung auf Google Maps
+              </a>
+            </div>
           </div>
         </div>
 

@@ -23,6 +23,9 @@ export function ServiceCard({ id, title, description, price, image, features, fe
         <img 
           src={image} 
           alt={title} 
+          loading="lazy"
+          width={400}
+          height={300}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />

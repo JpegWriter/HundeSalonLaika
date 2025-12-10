@@ -47,7 +47,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Hauptnavigation">
           {navItems.map((item) => (
             <Link 
               key={item.href} 
@@ -75,7 +75,7 @@ export function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-            <nav className="flex flex-col gap-6 mt-10">
+            <nav className="flex flex-col gap-6 mt-10" aria-label="Hauptnavigation mobil">
               {navItems.map((item) => (
                 <Link 
                   key={item.href} 

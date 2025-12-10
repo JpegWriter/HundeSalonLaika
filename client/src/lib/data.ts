@@ -25,22 +25,82 @@ export const siteData = {
   }
 };
 
-// Testimonials
+// Testimonials (Google Reviews – gekürzt)
 export const testimonials = [
   {
-    text: "Endlich ein Salon, in dem sich mein ängstlicher Pudel wohlfühlt. Das Team ist unglaublich geduldig!",
-    name: "Maria S.",
-    dog: "Pudel 'Charlie'"
+    text: "Ich kenne niemanden, der so freundlich und fürsorglich mit den flauschigen Freunden umgeht wie Dominique. Flexibel, aufmerksam und geduldig – auch mit sehr verspielt‑frechen Hunden.",
+    name: "ggh 1806",
+    dog: "Mehrere Hunde"
   },
   {
-    text: "Der Wunderschnitt ist wirklich ein Wunder. Mein Golden Retriever sieht aus wie ein Show-Hund.",
-    name: "Thomas K.",
-    dog: "Golden Retriever 'Max'"
+    text: "Sie kümmert sich seit Jahren perfekt um meinen Husky‑Malamute‑Mix – waschen, bürsten, trimmen. Er hat ordentlich Charakter, aber bei Dominique ist er in den besten Händen.",
+    name: "Cristina Colamonici",
+    dog: "Husky‑Malamute"
   },
   {
-    text: "Professionelle Beratung und super Ergebnis. Wir kommen definitiv wieder.",
-    name: "Julia R.",
-    dog: "Malteser 'Sissi'"
+    text: "Elvis sieht immer top gestylt und süß aus. Dominique ist die liebste Person – vielen Dank für das großartige Grooming.",
+    name: "Mel White",
+    dog: "Elvis"
+  },
+  {
+    text: "Ich bin super happy – mein Pudel sieht großartig aus und Dominique hatte unglaublich viel Geduld mit den vielen Knoten. Absolute Empfehlung.",
+    name: "Constance Jacques",
+    dog: "Pudel"
+  },
+  {
+    text: "Dominique versucht immer, die Erfahrung für meine Katzen so angenehm wie möglich zu machen. Wir kommen seit Jahren gerne wieder.",
+    name: "Rebecca Lee",
+    dog: "Zwei Katzen"
+  },
+  {
+    text: "Sehr freundlicher, aufmerksamer und vorsichtiger Service. Unser Hund war entspannt und das Ergebnis war hervorragend – zu einem fairen Preis.",
+    name: "Tim MacDonald",
+    dog: "Familienhund"
+  },
+  {
+    text: "Dominique macht die Grooming‑Erfahrung für meine Katze so gut wie möglich. Mein Stubentiger und ich kommen immer wieder gerne.",
+    name: "Jana K",
+    dog: "Katze"
+  },
+  {
+    text: "Unser Hund Rocky hat heute den besten Haarschnitt in Wien bekommen. Wir freuen uns schon auf das nächste Mal.",
+    name: "Natasam M.",
+    dog: "Rocky"
+  },
+  {
+    text: "Sehr freundlicher, aufmerksamer und behutsamer Service – unser kleiner Balu kam am zweiten Tag freiwillig wieder. Wärmstens zu empfehlen.",
+    name: "Manuel Eising",
+    dog: "Balu"
+  },
+  {
+    text: "Mein Border‑Collie‑Mädchen sieht fantastisch aus! Wir waren vom ersten Besuch an begeistert und kommen sicher wieder.",
+    name: "Gisela Aistleitner",
+    dog: "Border Collie"
+  },
+  {
+    text: "Unser Malteser hat eine elegante Frisur bekommen und wurde herzlich empfangen. Wir gehen seit Langem zu Dominique und waren immer zufrieden.",
+    name: "Thomas P",
+    dog: "Malteser"
+  },
+  {
+    text: "Ich war heute das erste Mal da und bin sehr zufrieden. Dominique hat sich Zeit genommen, war super freundlich zu Bella und hat definitiv eine neue Stammkundin gewonnen.",
+    name: "Branislava Matic",
+    dog: "Bella"
+  },
+  {
+    text: "Flocki sah nach dem Termin wieder so lieb und hübsch aus und kam entspannt und fröhlich zurück. Danke für Geduld, Flexibilität und Freundlichkeit.",
+    name: "I K",
+    dog: "Malteser Flocki"
+  },
+  {
+    text: "Mein Spitz war zum ersten Mal beim Hundefriseur und ich war begeistert. Super flauschig, strahlend weiß und sauber – und das sehr kurzfristig und zu einem top Preis‑Leistungsverhältnis.",
+    name: "Marie Blümel",
+    dog: "Mittelspitz"
+  },
+  {
+    text: "Ein kleiner, smarter Hundesalon zu moderaten Preisen. Dominique nimmt sich wirklich Zeit und geht mit Liebe und Feingefühl an die Fellpflege.",
+    name: "Susanne Delpin",
+    dog: "Mehrere Hunde"
   }
 ];
 

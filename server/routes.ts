@@ -4,12 +4,20 @@ import { storage } from "./storage";
 import { insertBookingSchema } from "@shared/schema";
 import nodemailer from "nodemailer";
 import { checkAvailability, createCalendarEvent } from "./googleCalendar";
+import { z } from "zod";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  
+  const contactSchema = z.object({
+    firstName: z.string().min(1),
+    lastName: z.string().min(1),
+    email: z.string().email(),
+    subject: z.string().min(1),
+    message: z.string().min(1),
+  });
+
   app.get("/api/availability", async (req, res) => {
     const { date } = req.query;
     if (!date || typeof date !== 'string') {
@@ -114,6 +122,47 @@ export async function registerRoutes(
       } else {
         res.status(500).json({ message: "Internal Server Error" });
       }
+    }
+  });
+
+  app.post("/api/contact", async (req, res) => {
+    try {
+      const data = contactSchema.parse(req.body);
+
+      if (process.env.GMAIL_USER && process.env.GMAIL_PASS) {
+        const transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASS,
+          },
+        });
+
+        const ownerMail = {
+          from: process.env.GMAIL_USER,
+          to: process.env.GMAIL_USER,
+          replyTo: data.email,
+          subject: `[Kontaktformular] ${data.subject} - ${data.firstName} ${data.lastName}`,
+          text: `Neue Anfrage über das Kontaktformular:\n\nName: ${data.firstName} ${data.lastName}\nE-Mail: ${data.email}\nBetreff: ${data.subject}\n\nNachricht:\n${data.message}\n`,
+        };
+
+        try {
+          await transporter.sendMail(ownerMail);
+        } catch (emailError) {
+          console.error("Error sending contact email:", emailError);
+          // continue, but still answer success so user doesn't see an error
+        }
+      } else {
+        console.log("Gmail credentials not found, skipping contact email sending.");
+      }
+
+      res.status(200).json({ ok: true });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: "Ungültige Eingabe", issues: error.issues });
+      }
+      console.error("Contact form error:", error);
+      res.status(500).json({ message: "Internal Server Error" });
     }
   });
 

@@ -1,22 +1,97 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/layout/SEO";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { Button } from "@/components/ui/button";
 import { siteData, services } from "@/lib/data";
-import { ArrowRight, CheckCircle2, Heart, ShieldCheck, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Heart,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
 
 export default function Home() {
+  const handleScrollToServices = () => {
+    const section = document.getElementById("services-section");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "PetGrooming",
+        "@id": "https://www.hundesalonlaika-wien.at/#petgrooming",
+        name: "Hundesalon Laika",
+        url: "https://www.hundesalonlaika-wien.at/",
+        telephone: siteData.phone,
+        image: "https://www.hundesalonlaika-wien.at/opengraph.jpg",
+        hasMap: "https://maps.app.goo.gl/c6GHPHxbzYv175zU6",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Grünentorgasse 8",
+          postalCode: "1090",
+          addressLocality: "Wien",
+          addressCountry: "AT",
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+            ],
+            opens: "09:00",
+            closes: "18:00",
+          },
+        ],
+        priceRange: "€€",
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.hundesalonlaika-wien.at/#hundepflege-service",
+        name: "Hundepflege & Hundefriseur in Wien",
+        provider: {
+          "@id": "https://www.hundesalonlaika-wien.at/#petgrooming",
+        },
+        areaServed: {
+          "@type": "AdministrativeArea",
+          name: "1090 Wien-Alsergrund",
+        },
+        serviceType: "Dog grooming",
+        offers: {
+          "@type": "AggregateOffer",
+          priceCurrency: "EUR",
+          lowPrice: 55,
+          highPrice: 175,
+        },
+      },
+    ],
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Hundesalon Laika Wien – Premium Hundepflege & Grooming in 1090 Wien"
+        description="Exklusive Hundepflege in Wien-Alsergrund (1090). Professionelles Waschen, Schneiden & Pflegen für Kurzhaar und Langhaar. Jetzt online Termin bei Hundesalon Laika buchen!"
+        jsonLd={{ id: "ld-home", data: homeSchema }}
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-background">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
           <img 
             src={siteData.images.hero} 
-            alt="Hundesalon Laika Interior" 
+            alt="Hund wird im Hundesalon Laika in Wien gepflegt" 
             className="w-full h-full object-cover object-center"
           />
         </div>
@@ -27,6 +102,9 @@ export default function Home() {
               <Sparkles size={14} />
               <span>Wiens exklusivster Hundesalon</span>
             </div>
+            <p className="text-sm md:text-base font-medium text-primary/90 bg-white/80 inline-flex px-4 py-1 rounded-full shadow-sm">
+              Hundesalon in 1090 Wien-Alsergrund – Premium Hundepflege im Herzen von Wien.
+            </p>
             
             <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight text-foreground">
               Premium Pflege <br/>
@@ -44,12 +122,21 @@ export default function Home() {
                   Online Termin Buchen
                 </Button>
               </Link>
-              <Link href="/services">
-                <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-lg bg-white/50 backdrop-blur-sm border-2 border-foreground hover:bg-white transition-all">
-                  Services ansehen
-                </Button>
-              </Link>
+              <Button
+                type="button"
+                variant="outline"
+                size="lg"
+                className="rounded-full px-8 h-14 text-lg bg-white/50 backdrop-blur-sm border-2 border-foreground hover:bg-white transition-all"
+                onClick={handleScrollToServices}
+                aria-label="Zu den Hundefriseur-Services von Hundesalon Laika scrollen"
+              >
+                Services ansehen
+              </Button>
             </div>
+
+            <p className="text-sm text-muted-foreground pt-1">
+              Direkt buchen – freie Termine sofort sichtbar.
+            </p>
 
             <div className="flex items-center gap-8 pt-8 text-sm font-medium text-muted-foreground">
               <div className="flex items-center gap-2">
@@ -61,6 +148,20 @@ export default function Home() {
                 <span>Stressfreie Behandlung</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing teaser */}
+      <section aria-label="Preisübersicht" className="bg-primary/5 border-b border-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="py-4 md:py-5 flex flex-col md:flex-row items-center justify-center gap-3 text-sm md:text-base text-foreground">
+            <span className="font-semibold tracking-wide uppercase text-xs md:text-sm text-primary">
+              Schnellüberblick Preise
+            </span>
+            <span className="text-muted-foreground text-center md:text-left">
+              Pflege ab <strong>€45</strong> · Schneiden ab <strong>€75</strong> · Langhaar-Pflege ab <strong>€115</strong>
+            </span>
           </div>
         </div>
       </section>
@@ -108,7 +209,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-24 bg-secondary/30 relative">
+      <section id="services-section" className="py-24 bg-secondary/30 relative">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl space-y-4">
@@ -131,7 +232,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Groomer Intro */}
+      {/* Meet the Groomer / Groomer Intro */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -139,21 +240,21 @@ export default function Home() {
               <div className="absolute -inset-4 bg-primary/10 rounded-[2rem] rotate-3" />
               <img 
                 src={siteData.images.groomer} 
-                alt="Laika Team" 
+                alt="Groomerin im Hundesalon Laika in Wien bei der Arbeit" 
                 className="relative rounded-2xl shadow-2xl w-full aspect-[4/5] object-cover"
               />
             </div>
             <div className="lg:w-1/2 space-y-8">
               <h2 className="font-serif text-4xl lg:text-5xl font-bold leading-tight">
-                Leidenschaft für <br/>
-                <span className="text-primary">Perfektion</span>
+                Lernen Sie Ihre Groomerin kennen
               </h2>
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  "Jeder Hund hat seinen eigenen Charakter und seine eigene Schönheit. Meine Aufgabe ist es, diese hervorzuheben, ohne dabei Stress zu verursachen."
+                  "Jeder Hund hat seinen eigenen Charakter und seine eigene Schönheit. Meine Aufgabe ist es, diese ganz ohne Stress zum Strahlen zu bringen."
                 </p>
                 <p>
-                  Als zertifizierte Hundefriseurin mit über 10 Jahren Erfahrung habe ich mich auf den sanften Umgang spezialisiert. In meinem Salon in Wien biete ich eine Oase der Ruhe, in der sich Ihr Vierbeiner wohlfühlen kann.
+                  Dominique, Ihre Groomerin im Hundesalon Laika, stammt ursprünglich aus Schottland und ist seit über 10 Jahren als Hundefriseurin tätig. 
+                  Sie hat sich auf sanfte, stressfreie Hundepflege in Wien spezialisiert – mit besonderem Fokus auf sensible Hunde, Doodles, Senioren-Hunde und Angsthunde, die eine ruhige Hand und viel Feingefühl brauchen.
                 </p>
               </div>
               
@@ -196,13 +297,13 @@ export default function Home() {
       <section className="py-24 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10 text-center text-white space-y-8">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold">Bereit für den Wunderschnitt?</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold">Bereit für den nächsten Grooming-Termin?</h2>
           <p className="text-white/90 text-lg max-w-xl mx-auto">
-            Buchen Sie Ihren Termin ganz einfach online. Wir freuen uns darauf, Sie und Ihren Vierbeiner kennenzulernen.
+            Vereinbaren Sie jetzt Ihren Termin im Hundesalon Laika in 1090 Wien und gönnen Sie Ihrem Vierbeiner eine hochwertige, stressfreie Pflege.
           </p>
           <Link href="/booking">
             <Button size="lg" variant="secondary" className="h-14 px-10 rounded-full text-lg shadow-xl hover:scale-105 transition-transform bg-white text-primary hover:bg-white/90">
-              Jetzt Termin vereinbaren
+              Jetzt Termin buchen
             </Button>
           </Link>
         </div>

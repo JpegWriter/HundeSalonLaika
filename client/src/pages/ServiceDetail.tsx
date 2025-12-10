@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/layout/SEO";
 import { services, pricingTiers } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Link, useRoute } from "wouter";
@@ -14,17 +15,65 @@ export default function ServiceDetail() {
   }
 
   const pricing = service.category === "Kurzhaar" ? pricingTiers.shortHair : pricingTiers.longHair;
+  const lowPrice = Math.min(pricing.small, pricing.medium, pricing.large, pricing.xl);
+  const highPrice = Math.max(pricing.small, pricing.medium, pricing.large, pricing.xl);
+
+  const serviceUrl = `https://www.hundesalonlaika-wien.at/service/${service.id}`;
+
+  const serviceJson = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.shortDescription,
+    provider: {
+      "@type": "PetGrooming",
+      name: "Hundesalon Laika",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Grünentorgasse 8",
+        postalCode: "1090",
+        addressLocality: "Wien",
+        addressCountry: "AT",
+      },
+    },
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "1090 Wien-Alsergrund",
+    },
+    url: serviceUrl,
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "EUR",
+      lowPrice,
+      highPrice,
+    },
+  };
+
+  const suitabilityText =
+    service.category === "Kurzhaar"
+      ? "Besonders geeignet für kurzhaarige Hunde, die eine gründliche Fell- und Hautpflege benötigen – vom Beagle bis zum Mops."
+      : "Ideal für langhaarige Rassen wie Golden Retriever, Spaniel, Doodles & Co., bei denen Unterwolle und Verfilzungen professionell entfernt werden sollen.";
+
+  const relatedService =
+    services.find((s) => s.id !== service.id && s.category === service.category) ??
+    services.find((s) => s.id !== service.id);
 
   return (
     <Layout>
+      <SEO
+        title={`${service.title} | Hundesalon Laika Wien`}
+        description={`${service.shortDescription} Dieser Service ist in unserem Hundesalon in 1090 Wien-Alsergrund verfügbar.`}
+        jsonLd={{ id: "ld-service", data: serviceJson }}
+      />
       <div className="min-h-screen pb-20">
         {/* Hero */}
         <div className="relative h-[50vh] min-h-[400px]">
           <div className="absolute inset-0 bg-black/40 z-10" />
-          <img 
-            src={service.image} 
-            alt={service.title} 
+          <img
+            src={service.image}
+            alt={service.title}
             className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 z-20 container mx-auto px-4 flex flex-col justify-end pb-12">
             <Link href="/services" className="text-white/80 hover:text-white flex items-center gap-2 mb-6 transition-colors">
@@ -43,6 +92,9 @@ export default function ServiceDetail() {
                 <h2 className="font-serif text-2xl font-bold mb-4">Über diesen Service</h2>
                 <p className="text-muted-foreground leading-relaxed text-lg">
                   {service.description}
+                </p>
+                <p className="text-muted-foreground leading-relaxed text-base mt-4">
+                  Dieser Service ist in unserem Hundesalon in <strong>1090 Wien-Alsergrund</strong> verfügbar und wird individuell auf das Temperament und den Felltyp Ihres Hundes abgestimmt.
                 </p>
               </section>
 
@@ -67,7 +119,37 @@ export default function ServiceDetail() {
                 <p className="text-muted-foreground italic">
                   "Wir nehmen uns für jeden Hund die Zeit, die er braucht. Bei diesem Service achten wir besonders auf eine stressfreie Behandlung und gehen individuell auf die Bedürfnisse Ihres Hundes ein."
                 </p>
+                <p className="text-muted-foreground mt-4">
+                  {suitabilityText}
+                </p>
               </section>
+
+              {relatedService && (
+                <section className="mt-10">
+                  <h2 className="font-serif text-2xl font-bold mb-3">
+                    Passt dieser Service nicht ganz?
+                  </h2>
+                  <p className="text-muted-foreground mb-2">
+                    Vielleicht ist folgendes Angebot von Hundesalon Laika in Wien besser geeignet:
+                  </p>
+                  <Link
+                    href={`/service/${relatedService.id}`}
+                    className="text-primary underline-offset-4 hover:underline font-medium"
+                  >
+                    {relatedService.title}
+                  </Link>
+                  <p className="mt-4 text-sm text-muted-foreground">
+                    Oder kehren Sie zur{" "}
+                    <Link
+                      href="/services"
+                      className="text-primary underline-offset-4 hover:underline"
+                    >
+                      Service-Übersicht
+                    </Link>{" "}
+                    zurück.
+                  </p>
+                </section>
+              )}
             </div>
 
             {/* Sidebar Pricing */}

@@ -50,6 +50,7 @@ export function BookingWizard() {
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
   const [isLoadingSlots, setIsLoadingSlots] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState<"card" | "onsite" | null>(null);
   const { toast } = useToast();
 
   const form = useForm<CustomerFormData>({
@@ -89,10 +90,65 @@ export function BookingWizard() {
     nextStep(); // Go to payment
   };
 
+  const buildWhatsAppText = () => {
+    const name = form.getValues("name");
+    const phone = form.getValues("phone");
+    const email = form.getValues("email");
+    const dogName = form.getValues("dogName");
+    const breed = form.getValues("breed");
+    const notes = form.getValues("notes") || "";
+    const serviceTitle = selectedService?.title ?? "";
+    const dateStr = selectedDate ? format(selectedDate, "dd.MM.yyyy") : "";
+    const price = getPrice();
+    const paymentText =
+      paymentMethod === "onsite"
+        ? "Zahlungsmethode: Vor Ort bezahlen (Bar oder Karte im Salon)"
+        : paymentMethod === "card"
+        ? "Zahlungsmethode: Kreditkarte (Stripe, falls verfügbar)"
+        : "Zahlungsmethode: nicht angegeben";
+
+    return (
+      `Neue Buchung im Hundesalon Laika:\n\n` +
+      `Kunde: ${name}\n` +
+      `Telefon: ${phone}\n` +
+      `E-Mail: ${email}\n\n` +
+      `Hund: ${dogName} (${breed})\n` +
+      `Service: ${serviceTitle}\n` +
+      `Größe: ${selectedSize}\n` +
+      `Termin: ${dateStr} um ${selectedTime} Uhr\n` +
+      `Preis: €${price}\n` +
+      `${paymentText}\n\n` +
+      (notes ? `Hinweise des Kunden:\n${notes}\n` : "")
+    );
+  };
+
+  const getWhatsAppLink = () => {
+    const text = buildWhatsAppText();
+    // Dominique's number: +43 699 1036 7116 -> 4369910367116
+    return `https://wa.me/4369910367116?text=${encodeURIComponent(text)}`;
+  };
+
   const handlePayment = async () => {
     if (!selectedService || !selectedSize || !selectedDate || !selectedTime) return;
 
+    if (!paymentMethod) {
+      toast({
+        title: "Bitte wählen Sie eine Zahlungsmethode",
+        variant: "destructive",
+      });
+      return;
+    }
+
     try {
+      const baseNotes = form.getValues("notes") || "";
+      const paymentNote =
+        paymentMethod === "onsite"
+          ? "Zahlungsmethode: Vor Ort bezahlen (Bar oder Karte im Salon)"
+          : "Zahlungsmethode: Kreditkarte (Stripe, falls verfügbar)";
+      const combinedNotes = baseNotes
+        ? `${baseNotes}\n\n${paymentNote}`
+        : paymentNote;
+
       const bookingData = {
         customerName: form.getValues("name"),
         email: form.getValues("email"),
@@ -105,24 +161,26 @@ export function BookingWizard() {
         date: format(selectedDate, "dd.MM.yyyy"),
         time: selectedTime,
         price: getPrice().toString(),
-        notes: form.getValues("notes") || "",
+        notes: combinedNotes,
       };
 
       await apiRequest("POST", "/api/bookings", bookingData);
+
+      // For "Vor Ort bezahlen" zusätzlich WhatsApp-Nachricht öffnen
+      if (paymentMethod === "onsite") {
+        const waUrl = getWhatsAppLink();
+        window.open(waUrl, "_blank");
+      }
+
       nextStep(); // Go to confirmation
     } catch (error) {
       console.error("Booking error:", error);
-      toast({ 
-        title: "Fehler bei der Buchung", 
+      toast({
+        title: "Fehler bei der Buchung",
         description: "Bitte versuchen Sie es später erneut.",
-        variant: "destructive" 
+        variant: "destructive",
       });
     }
-  };
-
-  const getWhatsAppLink = () => {
-    const text = `Hallo, ich habe eine Buchung vorgenommen:\n\nName: ${form.getValues("name")}\nHund: ${form.getValues("dogName")}\nTermin: ${selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""} um ${selectedTime}`;
-    return `https://wa.me/?text=${encodeURIComponent(text)}`;
   };
 
   // Fetch available slots when date changes
@@ -340,14 +398,30 @@ export function BookingWizard() {
             <div className="space-y-4">
               <h4 className="font-semibold mb-2">Zahlungsmethode wählen</h4>
               <div className="grid gap-2">
-                <div className="border p-4 rounded-lg flex items-center gap-3 cursor-pointer hover:border-primary transition-colors bg-white">
+                <div
+                  className={cn(
+                    "border p-4 rounded-lg flex items-center gap-3 cursor-pointer transition-colors bg-white",
+                    paymentMethod === "card"
+                      ? "border-primary bg-primary/5"
+                      : "hover:border-primary"
+                  )}
+                  onClick={() => setPaymentMethod("card")}
+                >
                   <CreditCard className="text-primary" />
                   <div>
                     <p className="font-medium">Kreditkarte</p>
                     <p className="text-xs text-muted-foreground">Sichere Zahlung via Stripe</p>
                   </div>
                 </div>
-                <div className="border p-4 rounded-lg flex items-center gap-3 cursor-pointer hover:border-primary transition-colors bg-white">
+                <div
+                  className={cn(
+                    "border p-4 rounded-lg flex items-center gap-3 cursor-pointer transition-colors bg-white",
+                    paymentMethod === "onsite"
+                      ? "border-primary bg-primary/5"
+                      : "hover:border-primary"
+                  )}
+                  onClick={() => setPaymentMethod("onsite")}
+                >
                   <ShoppingBag className="text-primary" />
                   <div>
                     <p className="font-medium">Vor Ort bezahlen</p>
