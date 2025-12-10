@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { services, pricingTiers } from "@/lib/data";
+import { services, pricingTiers, siteData } from "@/lib/data";
 import { Check, ChevronLeft, ChevronRight, CreditCard, ShoppingBag, Calendar as CalendarIcon, User, Dog } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -139,45 +139,61 @@ export function BookingWizard() {
       return;
     }
 
-    try {
-      const baseNotes = form.getValues("notes") || "";
-      const paymentNote =
-        paymentMethod === "onsite"
-          ? "Zahlungsmethode: Vor Ort bezahlen (Bar oder Karte im Salon)"
-          : "Zahlungsmethode: Kreditkarte (Stripe, falls verfügbar)";
-      const combinedNotes = baseNotes
-        ? `${baseNotes}\n\n${paymentNote}`
-        : paymentNote;
+    const baseNotes = form.getValues("notes") || "";
+    const paymentNote =
+      paymentMethod === "onsite"
+        ? "Zahlungsmethode: Vor Ort bezahlen (Bar oder Karte im Salon)"
+        : "Zahlungsmethode: Kreditkarte (Stripe, falls verfügbar)";
+    const combinedNotes = baseNotes ? `${baseNotes}\n\n${paymentNote}` : paymentNote;
 
-      const bookingData = {
-        customerName: form.getValues("name"),
-        email: form.getValues("email"),
-        phone: form.getValues("phone"),
-        dogName: form.getValues("dogName"),
-        breed: form.getValues("breed"),
-        serviceId: selectedService.id,
-        serviceName: selectedService.title,
-        size: selectedSize,
-        date: format(selectedDate, "dd.MM.yyyy"),
-        time: selectedTime,
-        price: getPrice().toString(),
-        notes: combinedNotes,
-      };
+    const bookingData = {
+      customerName: form.getValues("name"),
+      email: form.getValues("email"),
+      phone: form.getValues("phone"),
+      dogName: form.getValues("dogName"),
+      breed: form.getValues("breed"),
+      serviceId: selectedService.id,
+      serviceName: selectedService.title,
+      size: selectedSize,
+      date: format(selectedDate, "dd.MM.yyyy"),
+      time: selectedTime,
+      price: getPrice().toString(),
+      notes: combinedNotes,
+    };
 
-      await apiRequest("POST", "/api/bookings", bookingData);
-
-      // For "Vor Ort bezahlen" zusätzlich WhatsApp-Nachricht öffnen
-      if (paymentMethod === "onsite") {
-        const waUrl = getWhatsAppLink();
-        window.open(waUrl, "_blank");
+    // Special handling for "Vor Ort bezahlen" so it works even without backend
+    if (paymentMethod === "onsite") {
+      try {
+        // Try to notify backend if available, but don't block UX if it fails (e.g. Vercel without API)
+        await apiRequest("POST", "/api/bookings", bookingData);
+      } catch (error) {
+        console.warn("Onsite booking: backend not reachable, using WhatsApp/mail only.", error);
       }
 
+      // Always send full inquiry via WhatsApp
+      const waUrl = getWhatsAppLink();
+      window.open(waUrl, "_blank");
+
+      // And as backup, open a prefilled email to the salon
+      const emailSubject = encodeURIComponent("Neue Buchungsanfrage (Vor Ort bezahlen)");
+      const emailBody = encodeURIComponent(buildWhatsAppText());
+      window.location.href = `mailto:${encodeURIComponent(
+        siteData.email,
+      )}?subject=${emailSubject}&body=${emailBody}`;
+
+      nextStep();
+      return;
+    }
+
+    // Card payment path – requires backend to be available
+    try {
+      await apiRequest("POST", "/api/bookings", bookingData);
       nextStep(); // Go to confirmation
     } catch (error) {
       console.error("Booking error:", error);
       toast({
         title: "Fehler bei der Buchung",
-        description: "Bitte versuchen Sie es später erneut.",
+        description: "Die Online-Zahlung ist derzeit nicht verfügbar. Bitte wählen Sie 'Vor Ort bezahlen' oder versuchen Sie es später erneut.",
         variant: "destructive",
       });
     }
