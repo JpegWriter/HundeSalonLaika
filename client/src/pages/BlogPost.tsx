@@ -236,12 +236,15 @@ export default function BlogPost() {
             />
           </div>
           
-          <div 
-            className="prose prose-lg prose-stone mx-auto max-w-3xl
+          <div
+            className="
+              prose prose-lg prose-stone mx-auto max-w-3xl
               prose-headings:font-serif prose-headings:font-bold prose-headings:text-foreground
-              prose-p:text-muted-foreground prose-p:leading-relaxed
+              prose-h2:text-3xl prose-h2:mt-10 prose-h2:mb-4
+              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-3
+              prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mt-4
+              prose-ul:mt-3 prose-ol:mt-3 prose-li:text-muted-foreground
               prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-              prose-li:text-muted-foreground
               prose-strong:text-foreground prose-strong:font-bold
             "
             dangerouslySetInnerHTML={{ __html: post.content }}
