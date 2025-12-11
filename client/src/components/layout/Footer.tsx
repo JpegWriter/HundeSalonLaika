@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, MapPin, Mail, Phone, Clock } from "lucide-react";
+import { Facebook, MapPin, Mail, Phone, Clock } from "lucide-react";
 import { siteData } from "@/lib/data";
 
 export function Footer() {
@@ -17,10 +17,12 @@ export function Footer() {
               Ihr Premium-Partner für Hundepflege in Wien.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="bg-white p-3 rounded-full hover:text-primary transition-colors shadow-sm hover:shadow-md">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="bg-white p-3 rounded-full hover:text-primary transition-colors shadow-sm hover:shadow-md">
+              <a
+                href="https://www.facebook.com/HundesalonLaika1090Wien"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white p-3 rounded-full hover:text-primary transition-colors shadow-sm hover:shadow-md"
+              >
                 <Facebook size={20} />
               </a>
             </div>
