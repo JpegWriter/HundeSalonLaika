@@ -37,38 +37,34 @@ export default function Contact() {
     try {
       setIsSubmitting(true);
 
-      // Build a mailto: link so the form works without a backend on Vercel
-      const subject = encodeURIComponent(
-        `[Kontaktformular] ${payload.subject} - ${payload.firstName} ${payload.lastName}`,
-      );
-      const bodyLines = [
-        `Neue Kontaktanfrage vom Hundesalon Laika Formular:`,
-        ``,
+      const textLines = [
+        "Neue Kontaktanfrage über das Formular auf der Website:",
+        "",
         `Name: ${payload.firstName} ${payload.lastName}`,
         `E-Mail: ${payload.email}`,
         `Betreff: ${payload.subject}`,
-        ``,
-        `Nachricht:`,
+        "",
+        "Nachricht:",
         payload.message,
       ];
-      const body = encodeURIComponent(bodyLines.join("\n"));
 
-      window.location.href = `mailto:${encodeURIComponent(
-        siteData.email,
-      )}?subject=${subject}&body=${body}`;
+      const waText = encodeURIComponent(textLines.join("\n"));
+      const waUrl = `https://wa.me/4369910367116?text=${waText}`;
+
+      window.open(waUrl, "_blank");
 
       toast({
-        title: "Nachricht vorbereitet",
+        title: "WhatsApp wird geöffnet",
         description:
-          "Ihr E-Mail Programm wurde geöffnet. Bitte prüfen und senden Sie die Nachricht, um Ihre Anfrage abzuschließen.",
+          "Ihre Anfrage wurde in einer WhatsApp-Nachricht vorbereitet. Bitte prüfen und senden Sie die Nachricht in WhatsApp.",
       });
       form.reset();
     } catch (error) {
       console.error("Contact form error:", error);
       toast({
-        title: "Fehler beim Vorbereiten der Nachricht",
+        title: "Fehler beim Öffnen von WhatsApp",
         description:
-          "Bitte senden Sie uns direkt eine E-Mail oder kontaktieren Sie uns telefonisch.",
+          "Bitte schreiben Sie uns direkt per WhatsApp oder rufen Sie uns an.",
         variant: "destructive",
       });
     } finally {
