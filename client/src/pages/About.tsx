@@ -92,7 +92,7 @@ export default function About() {
 
             <div className="bg-white rounded-2xl shadow-lg border border-border p-6 md:p-8 space-y-4">
               <h3 className="font-serif text-2xl font-bold mb-2">
-                Termin vereinbaren
+                Terminanfrage stellen
               </h3>
               <p className="text-muted-foreground">
                 Am besten erreichen Sie uns per SMS oder WhatsApp – so können
@@ -119,7 +119,7 @@ export default function About() {
               <div className="pt-4 flex flex-wrap gap-3">
                 <Link href="/booking">
                   <Button className="bg-primary hover:bg-primary/90">
-                    Online Termin buchen
+                    Terminanfrage
                   </Button>
                 </Link>
                 <a

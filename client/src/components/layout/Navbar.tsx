@@ -62,7 +62,7 @@ export function Navbar() {
           ))}
           <Link href="/booking">
             <Button size="lg" className="rounded-full px-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 bg-primary hover:bg-primary/90 text-white font-serif">
-              Termin Buchen
+              Terminanfrage
             </Button>
           </Link>
         </nav>
@@ -91,7 +91,7 @@ export function Navbar() {
               ))}
               <Link href="/booking" onClick={() => setIsOpen(false)}>
                 <Button size="lg" className="w-full rounded-full mt-4 text-lg py-6">
-                  Termin Buchen
+                  Terminanfrage
                 </Button>
               </Link>
             </nav>

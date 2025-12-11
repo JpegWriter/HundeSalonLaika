@@ -78,7 +78,7 @@ export default function Home() {
     <Layout>
       <SEO
         title="Hundesalon Laika Wien – Premium Hundepflege & Grooming in 1090 Wien"
-        description="Exklusive Hundepflege in Wien-Alsergrund (1090). Professionelles Waschen, Schneiden & Pflegen für Kurzhaar und Langhaar. Jetzt online Termin bei Hundesalon Laika buchen!"
+        description="Exklusive Hundepflege in Wien-Alsergrund (1090). Professionelles Waschen, Schneiden & Pflegen für Kurzhaar und Langhaar. Stellen Sie jetzt Ihre Terminanfrage bei Hundesalon Laika!"
         jsonLd={[
           { id: "ld-business", data: localBusinessJson },
           { id: "ld-website", data: websiteJson },
@@ -119,7 +119,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/booking">
                 <Button size="lg" className="rounded-full px-8 h-14 text-lg bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-                  Online Termin Buchen
+                  Terminanfrage
                 </Button>
               </Link>
               <Button
@@ -135,7 +135,7 @@ export default function Home() {
             </div>
 
             <p className="text-sm text-muted-foreground pt-1">
-              Direkt buchen – freie Termine sofort sichtbar.
+              Stellen Sie Ihre Terminanfrage – wir melden uns zeitnah zurück.
             </p>
 
             <div className="flex items-center gap-8 pt-8 text-sm font-medium text-muted-foreground">
@@ -297,13 +297,21 @@ export default function Home() {
       <section className="py-24 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10 text-center text-white space-y-8">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold">Bereit für den nächsten Grooming-Termin?</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold">
+            Bereit für Ihre nächste Grooming-Terminanfrage?
+          </h2>
           <p className="text-white/90 text-lg max-w-xl mx-auto">
-            Vereinbaren Sie jetzt Ihren Termin im Hundesalon Laika in 1090 Wien und gönnen Sie Ihrem Vierbeiner eine hochwertige, stressfreie Pflege.
+            Stellen Sie jetzt Ihre Terminanfrage für den Hundesalon Laika in
+            1090 Wien und gönnen Sie Ihrem Vierbeiner eine hochwertige,
+            stressfreie Pflege.
           </p>
           <Link href="/booking">
-            <Button size="lg" variant="secondary" className="h-14 px-10 rounded-full text-lg shadow-xl hover:scale-105 transition-transform bg-white text-primary hover:bg-white/90">
-              Jetzt Termin buchen
+            <Button
+              size="lg"
+              variant="secondary"
+              className="h-14 px-10 rounded-full text-lg shadow-xl hover:scale-105 transition-transform bg-white text-primary hover:bg-white/90"
+            >
+              Terminanfrage senden
             </Button>
           </Link>
         </div>

@@ -309,11 +309,11 @@ export default function BlogPost() {
               Hundepflege in Wien leicht gemacht
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Wenn Sie in Wien nach professioneller Hundepflege suchen, buchen Sie jetzt Ihren Termin bei Hundesalon Laika in 1090 Wien-Alsergrund.
+              Wenn Sie in Wien nach professioneller Hundepflege suchen, stellen Sie jetzt Ihre Terminanfrage bei Hundesalon Laika in 1090 Wien-Alsergrund.
             </p>
             <Link href="/booking">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Termin buchen
+                Terminanfrage senden
               </Button>
             </Link>
           </div>

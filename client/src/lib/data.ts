@@ -228,7 +228,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Die perfekte Badefrequenz hängt von Felltyp, Hautgesundheit und Lebensstil ab. Regelmäßige professionelle Pflege sorgt für Glanz, Hygiene und Komfort – und verhindert, dass sich kleine Probleme zu großen Themen entwickeln.</p>
 
-      <p><a href="/booking">👉 Termin buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
       <p><a href="/services">👉 Pflegepakete ansehen</a></p>
     `,
     image: bathImage
@@ -273,7 +273,7 @@ export const blogPosts = [
       <p>Kurzhaar- und Langhaarhunde unterscheiden sich stark – die passende Routine verhindert Haut- und Fellprobleme langfristig. Professionelle Unterstützung im Hundesalon Laika in 1090 Wien hilft Ihnen, die ideale Pflege für Ihren Vierbeiner zu finden.</p>
 
       <p><a href="/services">👉 Unsere Kurz- und Langhaar-Pflegepakete ansehen</a></p>
-      <p><a href="/booking">👉 Direkt Termin buchen</a></p>
+      <p><a href="/booking">👉 Direkt Terminanfrage senden</a></p>
     `,
     image: longHairImage
   },
@@ -637,7 +637,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Mit entspannter Vorbereitung wird der Grooming-Besuch ein positives Erlebnis. Vertrauen entsteht durch Wiederholung – und durch eine ruhige, liebevolle Einstellung von Mensch und Groomerin.</p>
 
-      <p><a href="/booking">👉 Jetzt Termin buchen</a></p>
+      <p><a href="/booking">👉 Jetzt Terminanfrage senden</a></p>
       <p><a href="/services">👉 Unsere sanften Pflegepakete ansehen</a></p>
     `,
     image: calmImage

@@ -36,9 +36,9 @@ const steps = [
   "Service",
   "Größe",
   "Warenkorb",
-  "Termin",
+  "Wunschtermin",
   "Daten",
-  "Zahlung",
+  "Anfrage",
   "Bestätigung"
 ];
 
@@ -115,7 +115,7 @@ export function BookingWizard() {
       `Hund: ${dogName} (${breed})\n` +
       `Service: ${serviceTitle}\n` +
       `Größe: ${selectedSize}\n` +
-      `Termin: ${dateStr} um ${selectedTime} Uhr\n` +
+      `Wunschtermin: ${dateStr} um ${selectedTime} Uhr\n` +
       `Preis: €${price}\n` +
       `${paymentText}\n\n` +
       (notes ? `Hinweise des Kunden:\n${notes}\n` : "")
@@ -426,7 +426,7 @@ export function BookingWizard() {
             <div className="h-20 w-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Check size={40} />
             </div>
-            <h2 className="font-serif text-3xl font-bold">Buchung bestätigt!</h2>
+            <h2 className="font-serif text-3xl font-bold">Terminanfrage übermittelt!</h2>
             <p className="text-muted-foreground max-w-md mx-auto">
               Vielen Dank für Ihre Buchung, {form.getValues("name")}. Wir freuen uns auf Sie und{" "}
               {form.getValues("dogName")} am{" "}
@@ -434,8 +434,7 @@ export function BookingWizard() {
             </p>
             <div className="bg-secondary/20 p-6 rounded-xl max-w-md mx-auto text-left space-y-2 text-sm mt-8">
               <p><strong>Service:</strong> {selectedService?.title}</p>
-              <p><strong>Datum:</strong> {selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""}</p>
-              <p><strong>Uhrzeit:</strong> {selectedTime}</p>
+              <p><strong>Wunschtermin:</strong> {selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""} um {selectedTime} Uhr</p>
               <p>
                 <strong>Ort:</strong> {siteData.address}
               </p>
@@ -447,7 +446,7 @@ export function BookingWizard() {
                 className="bg-[#25D366] hover:bg-[#128C7E] text-white w-full"
               >
                 <MessageCircle className="mr-2 h-4 w-4" /> 
-                Buchung per WhatsApp senden
+                Terminanfrage per WhatsApp senden
               </Button>
               <Button onClick={() => window.location.href = "/"} variant="outline" className="w-full">
                 Zurück zur Startseite
@@ -523,7 +522,7 @@ export function BookingWizard() {
                className="w-48 bg-primary hover:bg-primary/90"
                onClick={handlePayment}
              >
-               Zahlungspflichtig buchen
+               Terminanfrage senden
              </Button>
           ) : (
             <Button

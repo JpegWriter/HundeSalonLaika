@@ -44,9 +44,9 @@ const steps = [
   "Service",
   "Felltyp",
   "Warenkorb",
-  "Termin",
+  "Wunschtermin",
   "Daten",
-  "Zahlung",
+  "Anfrage",
   "Bestätigung",
 ];
 
@@ -169,7 +169,7 @@ export function CatBookingWizard() {
       `Katze: ${catName} (${breed})\n` +
       `Service: ${serviceTitle}\n` +
       `Felltyp: ${selectedFelltyp ?? ""}\n` +
-      `Termin: ${dateStr} um ${selectedTime} Uhr\n` +
+      `Wunschtermin: ${dateStr} um ${selectedTime} Uhr\n` +
       `Preis: €${price}\n` +
       `Zahlungsmethode: Vor Ort bezahlen (Bar oder Karte im Salon)\n\n` +
       (notes ? `Hinweise des Kunden:\n${notes}\n` : "")
@@ -548,7 +548,7 @@ export function CatBookingWizard() {
               <Check size={40} />
             </div>
             <h2 className="font-serif text-3xl font-bold">
-              Katzen-Termin bestätigt!
+              Katzen-Termanfrage übermittelt!
             </h2>
             <p className="text-muted-foreground max-w-md mx-auto">
               Vielen Dank für Ihre Buchung, {form.getValues("name")}. Wir
@@ -561,11 +561,9 @@ export function CatBookingWizard() {
                 <strong>Service:</strong> {selectedService?.title}
               </p>
               <p>
-                <strong>Datum:</strong>{" "}
-                {selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""}
-              </p>
-              <p>
-                <strong>Uhrzeit:</strong> {selectedTime}
+                <strong>Wunschtermin:</strong>{" "}
+                {selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""} um{" "}
+                {selectedTime}
               </p>
               <p>
                 <strong>Ort:</strong> {siteData.address}
@@ -578,7 +576,7 @@ export function CatBookingWizard() {
                 className="bg-[#25D366] hover:bg-[#128C7E] text-white w-full"
               >
                 <MessageCircle className="mr-2 h-4 w-4" />
-                Buchungsdetails per WhatsApp senden
+                Terminanfrage per WhatsApp senden
               </Button>
               <Button
                 onClick={() => (window.location.href = "/")}
@@ -666,13 +664,13 @@ export function CatBookingWizard() {
           </Button>
         ) : null}
         {currentStep === steps.length - 2 && (
-          <Button
-            onClick={handlePayment}
-            className="flex items-center gap-2 bg-primary hover:bg-primary/90"
-          >
-            <CalendarIcon className="h-4 w-4" />
-            Zahlungspflichtig buchen
-          </Button>
+      <Button
+        onClick={handlePayment}
+        className="flex items-center gap-2 bg-primary hover:bg-primary/90"
+      >
+        <CalendarIcon className="h-4 w-4" />
+        Terminanfrage senden
+      </Button>
         )}
       </div>
     </div>

@@ -171,7 +171,7 @@ export default function Services() {
                     <div className="pt-1">
                       <Link href="/cat-booking">
                         <Button className="w-full text-sm md:text-base bg-primary hover:bg-primary/90">
-                          Katzen-Termin buchen
+                          Katzen-Terminanfrage
                         </Button>
                       </Link>
                     </div>
