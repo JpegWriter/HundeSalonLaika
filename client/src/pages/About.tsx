@@ -433,7 +433,7 @@ export default function About() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary underline-offset-4 hover:underline"
             >
-              👉 hundesalonlaika.xantara-partner.de
+              👉 Hier klicken für Futterempfehlungen
             </a>
           </div>
 
