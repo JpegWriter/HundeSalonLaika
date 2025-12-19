@@ -100,14 +100,14 @@ export default function Home() {
           <div className="max-w-2xl space-y-8 animate-in slide-in-from-left-10 duration-1000 fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary font-medium text-sm shadow-sm">
               <Sparkles size={14} />
-              <span>Wiens exklusivster Hundesalon</span>
+              <span>Wiens bester Hundesalon</span>
             </div>
             <p className="text-sm md:text-base font-medium text-primary/90 bg-white/80 inline-flex px-4 py-1 rounded-full shadow-sm">
               Hundesalon in 1090 Wien-Alsergrund – Premium Hundepflege im Herzen von Wien.
             </p>
             
             <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight text-foreground">
-              Premium Pflege <br/>
+              Pflege <br/>
               <span className="text-primary italic font-script pr-4">für Ihren</span>
               Liebling
             </h1>
