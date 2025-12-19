@@ -103,7 +103,7 @@ export default function Home() {
               <span>Wiens bester Hundesalon</span>
             </div>
             <p className="text-sm md:text-base font-medium text-primary/90 bg-white/80 inline-flex px-4 py-1 rounded-full shadow-sm">
-              Hundesalon in 1090 Wien-Alsergrund – Premium Hundepflege im Herzen von Wien.
+              Hundesalon in 1090 Wien-Alsergrund – Hundepflege im Herzen von Wien.
             </p>
             
             <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight text-foreground">
