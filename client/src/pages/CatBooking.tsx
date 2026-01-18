@@ -8,7 +8,7 @@ export default function CatBooking() {
     <Layout>
       <SEO
         title="Katzen-Terminanfrage – Sanfte Katzenpflege in Wien"
-        description="Stellen Sie eine sanfte Katzenpflege-Terminanfrage im Hundesalon Laika in 1090 Wien. Spezialisierte Katzengrooming-Pakete, stressarme Behandlung und individuelle Betreuung."
+        description="Stellen Sie eine Katzenpflege-Terminanfrage im Hundesalon Laika in 1090 Wien. Sanft, ruhig und individuell betreut."
       />
       <div className="bg-secondary/30 min-h-screen py-12 md:py-20">
         <div className="container mx-auto px-4">
@@ -18,8 +18,8 @@ export default function CatBooking() {
                 Katzen-Terminanfrage bei Laika
               </h1>
               <p className="text-muted-foreground text-lg">
-                Stellen Sie die passende Grooming-Terminanfrage für Ihre Katze
-                in wenigen Schritten – sanft, ruhig und katzenerfahren.
+                Stellen Sie Ihre Terminanfrage für Ihre Katze in wenigen
+                Schritten – sanft, ruhig und katzenerfahren.
               </p>
             </div>
             <div className="hidden lg:block">

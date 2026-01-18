@@ -278,29 +278,18 @@ export default function BlogPost() {
           {/* Recommended services block */}
           <section className="mt-16 p-6 md:p-8 bg-secondary/20 rounded-2xl border border-border/60">
             <h3 className="font-serif text-2xl font-bold mb-3">
-              Passende Services im Hundesalon Laika
+              Passende Leistungen im Hundesalon Laika
             </h3>
             <p className="text-muted-foreground mb-4">
-              Für eine professionelle Hundepflege in Wien können Sie unsere
-              Spezialpakete für Kurzhaar und Langhaar direkt online buchen:
+              Für eine professionelle Hunde- / Katzenpflege in Wien können Sie
+              hier online anfragen:
             </p>
-            <div className="flex flex-wrap gap-3 text-sm">
-              <Link href="/service/wunderschnitt-kurzhaar" className="text-primary underline-offset-4 hover:underline">
-                Der Wunderschnitt Kurzhaar
-              </Link>
-              <span className="text-muted-foreground">·</span>
-              <Link href="/service/frisch-flauschig-kurzhaar" className="text-primary underline-offset-4 hover:underline">
-                Frisch &amp; Flauschig Kurzhaar
-              </Link>
-              <span className="text-muted-foreground">·</span>
-              <Link href="/service/wunderschnitt-langhaar" className="text-primary underline-offset-4 hover:underline">
-                Der Wunderschnitt Langhaar
-              </Link>
-              <span className="text-muted-foreground">·</span>
-              <Link href="/service/frisch-flauschig-langhaar" className="text-primary underline-offset-4 hover:underline">
-                Frisch &amp; Flauschig Langhaar
-              </Link>
-            </div>
+            <Link
+              href="/booking"
+              className="text-primary underline-offset-4 hover:underline font-medium"
+            >
+              Terminanfrage
+            </Link>
           </section>
 
           {/* CTA */}

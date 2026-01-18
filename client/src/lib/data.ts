@@ -8,21 +8,21 @@ import calmImage from "@assets/generated_images/calm_relaxed_dog_in_salon.png";
 import winterImage from "@assets/generated_images/happy_dog_in_winter_setting.png";
 import shampooImage from "@assets/generated_images/natural_dog_shampoo_bottles.png";
 import pawImage from "@assets/generated_images/close_up_of_dog_paw_check.png";
-import beagleImage from "@assets/generated_images/beagle_dog_grooming_close_up.png";
 import spaImage from "@assets/generated_images/dog_spa_detail_shot.png";
 import groomerImage from "@assets/generated_images/professional_dog_groomer_portrait.png";
 
 // Site Data
 export const siteData = {
-  tagline: "Exklusive Fellpflege mit Herz & Verstand",
+  tagline: "Sanfte Fellpflege mit Herz & Verstand",
   address: "Grünentorgasse 8, 1090 Wien",
-  phone: "+43 699 1036 7116",
+  phone: "+43 650 861 3405",
+  phoneSecondary: "+43 699 1036 7116",
   email: "hundesalonlaika@gmail.com",
-  openingHours: "Mo-Fr: 09:00 - 18:00 | Sa: Nach Vereinbarung",
+  openingHours: "Terminvereinbarung / by appointment",
   images: {
     hero: spaImage, // Using spa image as hero for now
-    groomer: groomerImage
-  }
+    groomer: groomerImage,
+  },
 };
 
 // Testimonials (Google Reviews – gekürzt)
@@ -107,65 +107,49 @@ export const testimonials = [
 // Service Data
 export const services = [
   {
-    id: "wunderschnitt-kurzhaar",
-    title: "Der Wunderschnitt (Kurzhaar)",
-    slug: "der-wunderschnitt-kurzhaar",
-    category: "Kurzhaar",
-    price: 85,
-    image: beagleImage,
-    shortDescription: "Komplettpflege für kurzhaarige Rassen. Waschen, Föhnen, Schneiden & Styling.",
-    description: "Unser Premium-Paket für alle Kurzhaar-Rassen. Wir beginnen mit einer sanften Wäsche...",
-    features: ["Waschen & Föhnen", "Individueller Schnitt", "Ohren & Krallen", "Intimhygiene"]
-  },
-  {
-    id: "frisch-flauschig-kurzhaar",
-    title: "Frisch & Flauschig (Kurzhaar)",
-    slug: "frisch-flauschig-kurzhaar",
-    category: "Kurzhaar",
-    price: 55,
+    id: "erfrischungsbad-hund",
+    title: "Erfrischungsbad, Frisch & Flauschig (Hund) – ideal für Zwischendurch",
+    slug: "erfrischungsbad-frisch-flauschig-hund",
+    category: "Hund",
+    price: 0,
     image: bathImage,
-    shortDescription: "Die perfekte Zwischenpflege. Waschen, Bürsten & Hygiene.",
-    description: "Ideal für zwischendurch...",
-    features: ["Waschen", "Ausbürsten", "Ohrenreinigung", "Krallen kürzen"]
+    shortDescription:
+      "Sanftes Bad, trocknen und ausbürsten – die perfekte Zwischenpflege.",
+    description:
+      "Sanfte Pflege für zwischendurch: Waschen, trocknen, ausbürsten/auskämmen, Ohrenreinigung, Krallen kürzen, Pfotenballen von Haaren befreien und Pfotenpflege.",
+    features: [
+      "Waschen, trocknen, ausbürsten/auskämmen",
+      "Ohrenreinigung & Krallen kürzen",
+      "Pfotenballen befreien & Pfotenpflege",
+    ],
   },
   {
-    id: "wunderschnitt-langhaar",
-    title: "Der Wunderschnitt (Langhaar)",
-    slug: "der-wunderschnitt-langhaar",
-    category: "Langhaar",
-    price: 105,
+    id: "komplettpflege-hund",
+    title: "Komplettpflege (Hund)",
+    slug: "komplettpflege-hund",
+    category: "Hund",
+    price: 0,
     image: longHairImage,
-    shortDescription: "Meisterhafte Schere für langes Fell. Rassestandard oder Teddy-Schnitt.",
-    description: "Für anspruchsvolles Langhaar...",
-    features: ["Spezial-Shampoo", "Hand-Schnitt (Scissoring)", "Entfilzen (bis 15 Min)", "Styling"]
+    shortDescription:
+      "Komplette Pflege inkl. Schnitt und individueller Fellbearbeitung.",
+    description:
+      "Komplettpflege mit individuellem Styling: Waschen, trocknen, ausbürsten/auskämmen, Ohrenreinigung, Krallen kürzen, Pfotenballen von Haaren befreien, Pfotenpflege. Je nachdem: Scherenschnitt, Schur, von Hand trimmen und carden, Unterwolle entfernen. Entfilzen, falls vertretbar, maximal 15 Minuten. Konturen-Schnitt.",
+    features: [
+      "Komplettpflege inklusive Hygiene",
+      "Scherenschnitt/Schur/Trimmen nach Bedarf",
+      "Unterwolle entfernen & Konturen-Schnitt",
+    ],
   },
-  {
-    id: "frisch-flauschig-langhaar",
-    title: "Frisch & Flauschig (Langhaar)",
-    slug: "frisch-flauschig-langhaar",
-    category: "Langhaar",
-    price: 75,
-    image: spaImage,
-    shortDescription: "Waschen, Föhnen & Unterwolle entfernen für Langhaar-Hunde.",
-    description: "Befreit von loser Unterwolle...",
-    features: ["Deep Clean Shampoo", "Unterwolle entfernen", "Konturen säubern", "Pfotenpflege"]
-  }
 ];
 
-export const pricingTiers = {
-  shortHair: {
-    small: 85,
-    medium: 95,
-    large: 110,
-    xl: 130
-  },
-  longHair: {
-    small: 105,
-    medium: 125,
-    large: 145,
-    xl: 175
-  }
-};
+export const sizeOptions = [
+  { id: "xxs", label: "XXS", desc: "z.B. Kurzhaar Chihuahua", price: 50 },
+  { id: "xs", label: "XS", desc: "bis 3 Kg (auch junge Katzen)", price: 60 },
+  { id: "s", label: "S", desc: "bis 6 Kg (auch kooperative Hauskatzen)", price: 75 },
+  { id: "m", label: "M", desc: "bis 16 Kg (oder z.B. Maine Coon)", price: 80 },
+  { id: "l", label: "L", desc: "bis 39 Kg", price: 90 },
+  { id: "xl", label: "XL", desc: "ab 40 Kg", price: 100 },
+];
 
 // Calculate dates for the blog plan
 // Week 1 was ~12 weeks ago, Week 24 is ~12 weeks in future
@@ -312,7 +296,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Wenn Sie eines oder mehrere dieser Anzeichen bei Ihrem Hund beobachten, ist es Zeit für einen Termin im Hundesalon. Frühzeitige professionelle Pflege verhindert, dass kleine Probleme zu großen gesundheitlichen Baustellen werden.</p>
 
-      <p><a href="/booking">👉 Jetzt Fellanalyse &amp; Pflegetermin buchen</a></p>
+      <p><a href="/booking">👉 Jetzt Terminanfrage senden</a></p>
     `,
     image: mattedImage
   },
@@ -375,7 +359,7 @@ export const blogPosts = [
       <h3>6. Fazit</h3>
       <p>Zuhause lässt sich mit der richtigen Bürste, einer sanften Technik und etwas Konsequenz sehr viel erreichen. Die Kombination aus professioneller Pflege und täglicher, kurzer Routine ist jedoch das absolute Optimum – für ein gesundes, glänzendes Fell und einen rundum zufriedenen Hund.</p>
 
-      <p><a href="/booking">👉 Professionelle Fellpflege in Wien buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
       <p><a href="/services">👉 Komplettes Pflegeangebot ansehen</a></p>
     `,
     image: brushingImage
@@ -444,7 +428,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Saubere, gepflegte Ohren sind weit mehr als ein Schönheitsdetail – sie schützen Ihren Hund vor Schmerzen, Infektionen und langfristigen Schäden. Professionelle Ohrenpflege in Kombination mit regelmäßiger Kontrolle zu Hause ist der beste Schutz für empfindliche Hundeohren.</p>
 
-      <p><a href="/booking">👉 Ohrenpflege-Termin direkt buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
       <p><a href="/services">👉 Kombi-Pflegepakete ansehen</a></p>
     `,
     image: earImage
@@ -511,7 +495,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Die perfekte Bürste hängt immer vom Felltyp, der Haut und der Empfindlichkeit Ihres Hundes ab. Im Hundesalon Laika beraten wir Sie gerne persönlich, welche Werkzeuge für Ihren Vierbeiner ideal sind – damit die Fellpflege zuhause leicht von der Hand geht.</p>
 
-      <p><a href="/booking">👉 Beratungstermin buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: brushingImage
   },
@@ -573,8 +557,8 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Filz ist kein rein kosmetisches Problem, sondern ein ernstzunehmendes Gesundheitsrisiko. Je früher Sie reagieren und professionelle Hilfe in Anspruch nehmen, desto stressfreier und schmerzfreier bleibt es für Ihren Hund.</p>
 
-      <p><a href="/booking">👉 Entfilzungsberatung buchen</a></p>
-      <p><a href="/services/der-wunderschnitt-langhaar">👉 Langhaar-Pflege ansehen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
+      <p><a href="/services">👉 Langhaar-Pflege ansehen</a></p>
     `,
     image: mattedImage
   },
@@ -703,7 +687,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Viele Pflegefehler entstehen aus gut gemeinten, aber falschen Annahmen. Professionelles Grooming kombiniert Wissen, Erfahrung und sichere Technik – damit Ihr Hund gesund, gepflegt und entspannt bleibt.</p>
 
-      <p><a href="/booking">👉 Jetzt professionelle Beratung buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: winterImage
   },
@@ -820,8 +804,8 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Sanftes Grooming ist keine einzelne Technik – es ist eine Haltung. Ihr Hund soll sich wohl, sicher und verstanden fühlen. Mit Geduld, positiver Verstärkung und der richtigen Umgebung wird aus dem Grooming-Termin ein entspanntes Pflegeritual.</p>
 
-      <p><a href="/booking">👉 Sanftes Pflegepaket buchen</a></p>
-      <p><a href="/services">👉 Für Angsthunde geeignete Services ansehen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
+      <p><a href="/services">👉 Für Angsthunde geeignete Leistungen ansehen</a></p>
     `,
     image: calmImage
   },
@@ -873,7 +857,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Gesunde Pfoten bedeuten einen glücklichen, bewegungsfreudigen Hund. Eine kleine Pfoten-Routine hat eine große Wirkung auf Gesundheit und Wohlbefinden.</p>
 
-      <p><a href="/booking">👉 Pfotenpflege buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: pawImage
   },
@@ -905,7 +889,7 @@ export const blogPosts = [
         <li>verfilzende Partien hinter den Ohren und an den Hosen</li>
       </ul>
       <p><strong>Tipp:</strong> Nutzen Sie in dieser Phase professionelle Entfilzungs- und Entwollungsbehandlungen, um die Haut zu entlasten.</p>
-      <p>Mehr dazu finden Sie in unserem Service für Unterwolle &amp; Entfilzen: <a href="/services/entwollung">👉 Entwollungs-Service ansehen</a></p>
+      <p>Mehr dazu finden Sie in unseren Leistungen zur Unterwolle &amp; Entfilzen: <a href="/services">👉 Leistungen ansehen</a></p>
 
       <h3>3. Herbstfellwechsel – Vorbereitung auf die Kälte</h3>
       <p>Im September/Oktober baut der Hund sein Winterfell auf. Es kommt zu:</p>
@@ -946,8 +930,8 @@ export const blogPosts = [
 
       <h3>Termin vereinbaren</h3>
       <p>Wenn Sie unsicher sind, ob das Fell Ihres Hundes Unterstützung braucht, beraten wir Sie gerne im Salon.</p>
-      <p><a href="/booking">👉 Jetzt Fellwechsel-Pflege buchen</a></p>
-      <p><a href="/services">👉 Alle Services ansehen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
+      <p><a href="/services">👉 Alle Leistungen ansehen</a></p>
     `,
     image: winterImage
   },
@@ -993,7 +977,7 @@ export const blogPosts = [
         <li>mildes, pH-neutrales Shampoo</li>
         <li>gründliches Trocknen nach dem Baden</li>
       </ul>
-      <p>Für intensive Unterwollpflege empfehlen wir unseren Entwollungs-Service: <a href="/services/entwollung">👉 Entwollungs-Service ansehen</a>.</p>
+      <p>Für intensive Unterwollpflege empfehlen wir unsere Leistungen: <a href="/services">👉 Leistungen ansehen</a>.</p>
 
       <h3>Fazit</h3>
       <p>Mit der richtigen Pflege wird der Frühjahrsfellwechsel nicht zur Belastung, sondern zu einer Phase, in der das Fell besonders gesund und schön nachwächst. Professionelle Unterstützung hilft, Haut und Fell optimal durch diese Zeit zu begleiten.</p>
@@ -1090,7 +1074,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Regelmäßige Krallenpflege verbessert die Beweglichkeit, schützt Gelenke und verhindert Schmerzen. Eine kurze Kontrolle in regelmäßigen Abständen lohnt sich für jeden Hund.</p>
 
-      <p><a href="/booking">👉 Krallenservice buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: pawImage
   },
@@ -1141,7 +1125,7 @@ export const blogPosts = [
         <li>vollständiges Entfilzen und Entwollen</li>
         <li>Pfoten, Augen &amp; Ohren frei halten</li>
       </ul>
-      <p>Unser Langhaar-Spezialservice hilft, die Lockenstruktur gesund und pflegeleicht zu erhalten: <a href="/services/der-wunderschnitt-langhaar">👉 Der Wunderschnitt Langhaar</a></p>
+      <p>Unser Langhaar-Spezialservice hilft, die Lockenstruktur gesund und pflegeleicht zu erhalten: <a href="/services">👉 Langhaar-Pflege ansehen</a></p>
 
       <h3>5. Häufige Pflegefehler bei Doodles</h3>
       <ul>
@@ -1154,7 +1138,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Doodle- und Pudelfell ist wunderschön – aber nur mit konsequenter Betreuung. Die Kombination aus täglicher Heimroutine und professionellen Terminen ist der Schlüssel zu gesundem, weichem und filzfreiem Fell.</p>
 
-      <p><a href="/booking">👉 Doodle-Pflege buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: longHairImage
   },
@@ -1203,7 +1187,7 @@ export const blogPosts = [
         <li>bessere Luftzirkulation bis zur Haut</li>
         <li>eine gesündere, atmende Haut</li>
       </ul>
-      <p>Mehr dazu im Serviceprofil: <a href="/services/entwollung">👉 Entwollungsservice ansehen</a></p>
+      <p>Mehr dazu in unseren Leistungen: <a href="/services">👉 Leistungen ansehen</a></p>
 
       <h3>4. Saisonale Pflege für Golden Retriever</h3>
       <p>Je nach Jahreszeit variieren die Schwerpunkte:</p>
@@ -1226,7 +1210,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Golden Retriever sind pflegeleicht im Wesen – aber anspruchsvoll im Fell. Wer die Unterwolle kontrolliert, kontrolliert auch den Haarflug. Mit professioneller Entwollung und einer guten Bürstroutine wird das Zusammenleben deutlich entspannter.</p>
 
-      <p><a href="/booking">👉 Entwollungsservice buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: longHairImage
   },
@@ -1297,7 +1281,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Shih Tzus und Maltese sind kleine Schönheiten – aber nur mit konsequenter Pflege. Die richtige Routine spart Zeit, Stress und Tierarztkosten. Regelmäßige Grooming-Termine sorgen dafür, dass das Fell gesund, glänzend und filzfrei bleibt.</p>
 
-      <p><a href="/booking">👉 Langhaarschnitt buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: spaImage
   },
@@ -1363,7 +1347,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Früh übt sich – gut vorbereitete Welpen werden zu entspannten, pflegeleichten Hunden. Ein liebevoll gestalteter erster Termin ist die beste Investition in ein stressfreies Hundeleben.</p>
 
-      <p><a href="/booking">👉 Welpen-Ersttermin buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: groomerImage
   },
@@ -1425,7 +1409,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Angsthunde können lernen, Grooming zu akzeptieren – manchmal sogar zu genießen. Mit Geduld, Verständnis und professioneller Technik gelingt es in den meisten Fällen, den Pflegetermin zu einem deutlich entspannteren Erlebnis zu machen.</p>
 
-      <p><a href="/booking">👉 Sanftes Pflegepaket für Angsthunde buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: calmImage
   },
@@ -1476,7 +1460,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Kein Hund „hasst“ Bürsten ohne Grund. Mit der richtigen Technik, passenden Werkzeugen und viel Geduld kann Bürsten für beide Seiten deutlich angenehmer werden.</p>
 
-      <p><a href="/booking">👉 Beratungstermin buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: brushingImage
   },
@@ -1530,7 +1514,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Mit angepasster Pflege bleibt Ihr Seniorhund länger mobil, glücklich und schmerzfrei. Ein sanfter, respektvoller Umgang macht den Grooming-Termin für ältere Hunde deutlich angenehmer.</p>
 
-      <p><a href="/booking">👉 Seniorfreundliche Pflege buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: calmImage
   },
@@ -1587,7 +1571,7 @@ export const blogPosts = [
       <h3>Fazit</h3>
       <p>Die richtige Kombination aus professioneller, schonender Pflege und angepasster Heimpflege bringt empfindliche Hunde wieder ins Gleichgewicht. So können Haut und Fell sich erholen und langfristig stabilisieren.</p>
 
-      <p><a href="/booking">👉 Hypoallergene Pflege buchen</a></p>
+      <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: shampooImage
   }

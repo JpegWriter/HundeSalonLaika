@@ -43,14 +43,6 @@ export default function Home() {
       latitude: 48.22,
       longitude: 16.36,
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "18:00",
-      },
-    ],
     sameAs: [
       "https://maps.app.goo.gl/c6GHPHxbzYv175zU6",
     ],
@@ -77,8 +69,8 @@ export default function Home() {
   return (
     <Layout>
       <SEO
-        title="Hundesalon Laika Wien – Premium Hundepflege & Grooming in 1090 Wien"
-        description="Exklusive Hundepflege in Wien-Alsergrund (1090). Professionelles Waschen, Schneiden & Pflegen für Kurzhaar und Langhaar. Stellen Sie jetzt Ihre Terminanfrage bei Hundesalon Laika!"
+        title="Hundesalon Laika Wien – Hundepflege / Katzenpflege in 1090 Wien"
+        description="Liebevolle Hunde- und Katzenpflege im Herzen von Wien. Sanfter Umgang, hochwertige Produkte und eine entspannte Atmosphäre. Stellen Sie jetzt Ihre Terminanfrage bei Hundesalon Laika!"
         jsonLd={[
           { id: "ld-business", data: localBusinessJson },
           { id: "ld-website", data: websiteJson },
@@ -100,20 +92,25 @@ export default function Home() {
           <div className="max-w-2xl space-y-8 animate-in slide-in-from-left-10 duration-1000 fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary font-medium text-sm shadow-sm">
               <Sparkles size={14} />
-              <span>Wiens bester Hundesalon</span>
+              <span>Liebevolle Pflege in Wien</span>
             </div>
             <p className="text-sm md:text-base font-medium text-primary/90 bg-white/80 inline-flex px-4 py-1 rounded-full shadow-sm">
-              Hundesalon in 1090 Wien-Alsergrund – Hundepflege im Herzen von Wien.
+              Hundesalon in 1090 Wien-Alsergrund – Hunde- und Katzenpflege im Herzen von Wien.
             </p>
             
-            <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight text-foreground">
-              Pflege <br/>
-              <span className="text-primary italic font-script pr-4">für Ihren</span>
-              Liebling
+            <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight text-foreground">
+              Liebevolle und professionelle Pflege
+              <br />
+              <span className="text-primary italic font-script pr-3">
+                für Ihren
+              </span>
+              Hund / Ihre Katze
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-              Erleben Sie Hundepflege auf höchstem Niveau. Sanfter Umgang, hochwertige Produkte und eine entspannte Atmosphäre im Herzen von Wien.
+              Erleben Sie Hunde- und Katzenpflege auf höchstem Niveau. Sanfter
+              Umgang, hochwertige Produkte und eine entspannte Atmosphäre im
+              Herzen von Wien.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -128,9 +125,9 @@ export default function Home() {
                 size="lg"
                 className="rounded-full px-8 h-14 text-lg bg-white/50 backdrop-blur-sm border-2 border-foreground hover:bg-white transition-all"
                 onClick={handleScrollToServices}
-                aria-label="Zu den Hundefriseur-Services von Hundesalon Laika scrollen"
+                aria-label="Zu den Leistungen von Hundesalon Laika scrollen"
               >
-                Services ansehen
+                Leistungen ansehen
               </Button>
             </div>
 
@@ -141,7 +138,7 @@ export default function Home() {
             <div className="flex items-center gap-8 pt-8 text-sm font-medium text-muted-foreground">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="text-primary h-5 w-5" />
-                <span>Zertifizierte Groomer</span>
+                <span>Zertifizierte Profis</span>
               </div>
               <div className="flex items-center gap-2">
                 <Heart className="text-primary h-5 w-5" />
@@ -152,27 +149,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing teaser */}
-      <section aria-label="Preisübersicht" className="bg-primary/5 border-b border-primary/10">
-        <div className="container mx-auto px-4">
-          <div className="py-4 md:py-5 flex flex-col md:flex-row items-center justify-center gap-3 text-sm md:text-base text-foreground">
-            <span className="font-semibold tracking-wide uppercase text-xs md:text-sm text-primary">
-              Schnellüberblick Preise
-            </span>
-            <span className="text-muted-foreground text-center md:text-left">
-              Pflege ab <strong>€45</strong> · Schneiden ab <strong>€75</strong> · Langhaar-Pflege ab <strong>€115</strong>
-            </span>
-          </div>
-        </div>
-      </section>
+      {/* Pricing teaser removed */}
 
       {/* Why Choose Us */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <h2 className="font-serif text-4xl font-bold">Warum Hundesalon Laika?</h2>
+            <h2 className="font-serif text-4xl font-bold">
+              Warum Hundesalon Laika?
+            </h2>
             <p className="text-muted-foreground text-lg">
-              Wir verbinden fachliche Kompetenz mit liebevoller Zuwendung. Bei uns steht das Wohlbefinden Ihres Hundes an erster Stelle.
+              Wir verbinden fachliche Kompetenz mit liebevoller Zuwendung. Bei
+              uns steht das Wohlbefinden Ihres Tieres an erster Stelle.
             </p>
           </div>
 
@@ -181,17 +169,17 @@ export default function Home() {
               {
                 icon: Heart,
                 title: "Liebevolle Betreuung",
-                text: "Wir nehmen uns Zeit für jeden Hund. Pausen, Streicheleinheiten und positive Verstärkung sind Teil unseres Konzepts."
+                text: "Wir nehmen uns Zeit für jeden Hund. Pausen, Streicheleinheiten und positive Verstärkung sind Teil unseres Konzepts. Bei Hunden ist Welpengewöhnung ab dem 4. Monat sehr zu empfehlen. Da Katzen wenig Geduld haben, ist es besonders wichtig, schon nach den ersten Impfungen mit Pflegeterminen zu beginnen."
               },
               {
                 icon: ShieldCheck,
                 title: "Zertifizierte Profis",
-                text: "Unser Team besteht aus ausgebildeten Hundefriseuren mit jahrelanger Erfahrung und stetiger Weiterbildung."
+                text: "Unser Team besteht aus ausgebildeten Tierfriseuren mit jahrelanger Erfahrung und stetiger Weiterbildung."
               },
               {
                 icon: Sparkles,
-                title: "Premium Produkte",
-                text: "Wir verwenden ausschließlich hochwertige, pH-neutrale Pflegeprodukte auf natürlicher Basis."
+                title: "Premium-Produkte",
+                text: "Wir verwenden ausschließlich hochwertige auf Hund und Katze abgestimmte Pflegeprodukte auf natürlicher Basis (ohne Parabene), u.a. auch pH-neutrale Produkte."
               }
             ].map((feature, idx) => (
               <div key={idx} className="p-8 rounded-2xl bg-secondary/20 border border-border hover:border-primary/30 transition-all hover:shadow-lg group">
@@ -219,14 +207,18 @@ export default function Home() {
                 Vom schnellen Bad bis zum kompletten Styling – wir haben das passende Paket für jede Rasse.
               </p>
             </div>
-            <Link href="/services" className="group text-foreground hover:text-primary flex items-center font-medium">
-              Alle Services ansehen <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Link
+              href="/services"
+              className="group text-foreground hover:text-primary flex items-center font-medium"
+            >
+              Alle Leistungen ansehen{" "}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service) => (
-              <ServiceCard key={service.id} {...service} featured={service.id.includes("wunderschnitt")} />
+              <ServiceCard key={service.id} {...service} />
             ))}
           </div>
         </div>
@@ -253,8 +245,9 @@ export default function Home() {
                   "Jeder Hund hat seinen eigenen Charakter und seine eigene Schönheit. Meine Aufgabe ist es, diese ganz ohne Stress zum Strahlen zu bringen."
                 </p>
                 <p>
-                  Dominique, Ihre Groomerin im Hundesalon Laika, stammt ursprünglich aus Schottland und ist seit über 10 Jahren als Hundefriseurin tätig. 
-                  Sie hat sich auf sanfte, stressfreie Hundepflege in Wien spezialisiert – mit besonderem Fokus auf sensible Hunde, Doodles, Senioren-Hunde und Angsthunde, die eine ruhige Hand und viel Feingefühl brauchen.
+                  Dominique, Ihre Groomerin im Hundesalon Laika, stammt
+                  ursprünglich aus dem Vereinigten Königreich und ist seit 2015
+                  als Tierfriseurin tätig.
                 </p>
               </div>
               
@@ -283,10 +276,9 @@ export default function Home() {
       <section className="py-24 bg-secondary/20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="font-serif text-4xl font-bold mb-4">Das sagen unsere Kunden</h2>
-            <p className="text-muted-foreground">
-              Die Zufriedenheit von Hund und Halter ist unser größter Erfolg.
-            </p>
+            <h2 className="font-serif text-4xl font-bold mb-4">
+              Das sagen unsere Kunden
+            </h2>
           </div>
           
           <TestimonialCarousel />
@@ -298,12 +290,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10 text-center text-white space-y-8">
           <h2 className="font-serif text-4xl md:text-5xl font-bold">
-            Bereit für Ihre nächste Grooming-Terminanfrage?
+            Bereit für den nächsten Pflege-Termin?
           </h2>
           <p className="text-white/90 text-lg max-w-xl mx-auto">
             Stellen Sie jetzt Ihre Terminanfrage für den Hundesalon Laika in
-            1090 Wien und gönnen Sie Ihrem Vierbeiner eine hochwertige,
-            stressfreie Pflege.
+            1090 Wien und gönnen Sie Ihrem Tier eine hochwertige, stressfreie
+            Pflege.
           </p>
           <Link href="/booking">
             <Button
@@ -314,6 +306,9 @@ export default function Home() {
               Terminanfrage senden
             </Button>
           </Link>
+          <p className="text-white/80 text-sm">
+            (Kg, Alter, Rasse, etwaige gesundheitliche Einschränkungen)
+          </p>
         </div>
       </section>
     </Layout>

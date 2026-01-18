@@ -54,8 +54,7 @@ export default function About() {
                   <div>
                     <p className="font-semibold">{siteData.address}</p>
                     <p className="text-sm">
-                      Gut erreichbar: U4 Rossauer Lände · Bus 40A · Straßenbahn
-                      D (Bauernfeldplatz)
+                      (U4 Roßauer Lände oder D-Waggon / Bus 40a Bauernfeldplatz)
                     </p>
                   </div>
                 </div>
@@ -63,7 +62,9 @@ export default function About() {
                   <Phone className="mt-1 text-primary" />
                   <div>
                     <p className="font-semibold">{siteData.phone}</p>
-                    <p className="font-semibold">+43 650 861 3405</p>
+                    {siteData.phoneSecondary && (
+                      <p className="font-semibold">{siteData.phoneSecondary}</p>
+                    )}
                     <p className="text-sm">
                       Wenn ein Anruf nicht sofort beantwortet werden kann,
                       erfolgt zuverlässig ein Rückruf oder eine Nachricht per
@@ -80,7 +81,9 @@ export default function About() {
                 <div className="flex items-start gap-3">
                   <Clock className="mt-1 text-primary" />
                   <div>
-                    <p className="font-semibold">Termine nach Vereinbarung</p>
+                    <p className="font-semibold">
+                      Terminvereinbarung / by appointment
+                    </p>
                     <p className="text-sm">
                       Bitte vereinbaren Sie Ihren Termin im Voraus, da jeder
                       Besuch genügend Zeit und Ruhe benötigt.
@@ -103,8 +106,14 @@ export default function About() {
                   🐾 SMS / WhatsApp bevorzugt:
                   <br />
                   <span className="font-semibold">{siteData.phone}</span>
-                  <br />
-                  <span className="font-semibold">+43 650 861 3405</span>
+                  {siteData.phoneSecondary ? (
+                    <>
+                      <br />
+                      <span className="font-semibold">
+                        {siteData.phoneSecondary}
+                      </span>
+                    </>
+                  ) : null}
                 </p>
                 <p>
                   📩{" "}
@@ -123,7 +132,7 @@ export default function About() {
                   </Button>
                 </Link>
                 <a
-                  href="https://wa.me/4369910367116"
+                    href="https://wa.me/436508613405"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -435,6 +444,16 @@ export default function About() {
             >
               👉 Hier klicken für Futterempfehlungen
             </a>
+            <p className="text-muted-foreground leading-relaxed text-sm">
+              Weitere bewährte Empfehlungen für Hund und Katze können wir in
+              einem persönlichen Gespräch gerne erörtern.{" "}
+              <Link
+                href="/contact"
+                className="text-primary underline-offset-4 hover:underline"
+              >
+                Anfrage
+              </Link>
+            </p>
           </div>
 
           <div className="space-y-4">
@@ -449,7 +468,7 @@ export default function About() {
             <div className="flex flex-wrap gap-4 items-center">
               <Link href="/booking">
                 <Button className="bg-primary hover:bg-primary/90">
-                  Termin vereinbaren
+                  Terminanfrage
                 </Button>
               </Link>
               <a

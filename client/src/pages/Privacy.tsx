@@ -13,7 +13,7 @@ export default function Privacy() {
               <p>
                 <strong>Hundesalon Laika</strong><br />
                 Grünentorgasse 8, 1090 Wien<br />
-                Kontakt: +43 699 1036 7116 oder +43 650 861 3405
+                Kontakt: +43 650 861 3405
               </p>
               
               <h3 className="text-xl font-serif mt-6 mb-2">DSGVO-Erklärung</h3>

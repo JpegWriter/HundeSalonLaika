@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/layout/SEO";
 import { siteData } from "@/lib/data";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,11 +22,19 @@ export default function Contact() {
       firstName: (data.get("firstName") || "").toString().trim(),
       lastName: (data.get("lastName") || "").toString().trim(),
       email: (data.get("email") || "").toString().trim(),
+      phone: (data.get("phone") || "").toString().trim(),
       subject: (data.get("subject") || "").toString().trim(),
       message: (data.get("message") || "").toString().trim(),
     };
 
-    if (!payload.firstName || !payload.lastName || !payload.email || !payload.subject || !payload.message) {
+    if (
+      !payload.firstName ||
+      !payload.lastName ||
+      !payload.email ||
+      !payload.phone ||
+      !payload.subject ||
+      !payload.message
+    ) {
       toast({
         title: "Bitte füllen Sie alle Felder aus.",
         variant: "destructive",
@@ -42,6 +50,7 @@ export default function Contact() {
         "",
         `Name: ${payload.firstName} ${payload.lastName}`,
         `E-Mail: ${payload.email}`,
+        `Telefon: ${payload.phone}`,
         `Betreff: ${payload.subject}`,
         "",
         "Nachricht:",
@@ -49,7 +58,7 @@ export default function Contact() {
       ];
 
       const waText = encodeURIComponent(textLines.join("\n"));
-      const waUrl = `https://wa.me/4369910367116?text=${waText}`;
+      const waUrl = `https://wa.me/436508613405?text=${waText}`;
 
       window.open(waUrl, "_blank");
 
@@ -83,7 +92,8 @@ export default function Contact() {
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4">Kontaktieren Sie uns</h1>
             <p className="text-muted-foreground text-lg">
-              Haben Sie Fragen zu unseren Services oder möchten Sie einen speziellen Wunsch äußern? Wir sind für Sie da.
+              Haben Sie Fragen zu unseren Leistungen oder möchten Sie einen
+              speziellen Wunsch äußern? Wir sind für Sie da.
             </p>
           </div>
 
@@ -99,7 +109,11 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold mb-1">Adresse</h3>
-                      <p className="text-muted-foreground">{siteData.address}</p>
+                      <p className="text-muted-foreground">
+                        {siteData.address}
+                        <br />
+                        (U4 Roßauer Lände oder D-Waggon / Bus 40a Bauernfeldplatz)
+                      </p>
                     </div>
                   </div>
                   
@@ -109,7 +123,15 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold mb-1">Telefon</h3>
-                      <p className="text-muted-foreground">{siteData.phone}</p>
+                      <p className="text-muted-foreground">
+                        {siteData.phone}
+                        {siteData.phoneSecondary ? (
+                          <>
+                            <br />
+                            {siteData.phoneSecondary}
+                          </>
+                        ) : null}
+                      </p>
                     </div>
                   </div>
 
@@ -125,11 +147,13 @@ export default function Contact() {
 
                   <div className="flex items-start gap-4">
                     <div className="bg-primary/10 p-3 rounded-full text-primary">
-                      <Clock size={24} />
+                      <MessageCircle size={24} />
                     </div>
                     <div>
-                      <h3 className="font-bold mb-1">Öffnungszeiten</h3>
-                      <p className="text-muted-foreground whitespace-pre-line">{siteData.openingHours.replace("|", "\n")}</p>
+                      <h3 className="font-bold mb-1">Terminvereinbarung</h3>
+                      <p className="text-muted-foreground">
+                        {siteData.openingHours}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -149,7 +173,7 @@ export default function Contact() {
                     </Button>
                   </a>
                   <a
-                    href="https://wa.me/4369910367116?text=Hallo%20Dominique%2C%20ich%20h%C3%A4tte%20eine%20Frage%20zu%20Hundesalon%20Laika%20in%20Wien."
+                    href="https://wa.me/436508613405?text=Hallo%20Dominique%2C%20ich%20h%C3%A4tte%20eine%20Frage%20zu%20Hundesalon%20Laika%20in%20Wien."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -190,6 +214,11 @@ export default function Contact() {
                   <Label htmlFor="email">E-Mail Adresse</Label>
                   <Input id="email" name="email" type="email" placeholder="max@beispiel.com" />
                 </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Telefon- / Handy-Nr.</Label>
+                  <Input id="phone" name="phone" placeholder="+43 ..." />
+                </div>
                 
                 <div className="space-y-2">
                   <Label htmlFor="subject">Betreff</Label>
@@ -198,7 +227,12 @@ export default function Contact() {
                 
                 <div className="space-y-2">
                   <Label htmlFor="message">Nachricht</Label>
-                  <Textarea id="message" name="message" placeholder="Wie können wir Ihnen helfen?" className="min-h-[150px]" />
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Wie können wir helfen? (Nennen Sie bitte Rasse, Kg, Alter, Gesundheitszustand des Tieres. Hunde bitte mit Maulkorb und Leckerli bringen, Katzen bitte in einer sicheren Transportbox. Danke.)"
+                    className="min-h-[150px]"
+                  />
                 </div>
                 
                 <Button type="submit" className="w-full h-12 text-lg bg-primary hover:bg-primary/90" disabled={isSubmitting}>

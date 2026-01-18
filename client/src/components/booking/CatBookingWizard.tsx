@@ -16,8 +16,6 @@ import {
   ChevronLeft,
   ChevronRight,
   ShoppingBag,
-  Calendar as CalendarIcon,
-  User,
   PawPrint,
   MessageCircle,
 } from "lucide-react";
@@ -42,8 +40,6 @@ type CustomerFormData = z.infer<typeof customerSchema>;
 
 const steps = [
   "Service",
-  "Felltyp",
-  "Warenkorb",
   "Wunschtermin",
   "Daten",
   "Anfrage",
@@ -53,51 +49,17 @@ const steps = [
 const catServices = [
   {
     id: "cat-bath",
-    title: "Kurzpflege Katze (Bath & Blow-Dry)",
+    title: "Komplettpflege inkl. Erfrischungsbad, Frisch & Flauschig (Katze)",
     description:
-      "Sanftes Bad mit pH-neutralem Katzenshampoo, Föhnen und Pfoten- & Krallencheck.",
-  },
-  {
-    id: "cat-longhair",
-    title: "Langhaar Katzenpflege & Entfilzen",
-    description:
-      "Entfilzen, Unterwolle-Entfernung und Pflege für langes Katzenfell.",
-  },
-  {
-    id: "cat-trim",
-    title: "Trimmen & Styling Katze",
-    description:
-      "Sanftes Kürzen & Styling für hygienische und gepflegte Katzen.",
-  },
-  {
-    id: "cat-soft",
-    title: "Sanfte Pflege für Angst- & Schmusekatzen",
-    description:
-      "Besonders ruhige, stressarme Sessions für sensible Katzen.",
-  },
-  {
-    id: "cat-full",
-    title: "Komplett-Grooming Katze (Full-Service)",
-    description:
-      "Rundum-Sorglos-Paket mit Bad, Fellpflege, Krallen, Ohren & Unterwolle.",
+      "Unabhängig von Lang- oder Kurzhaar, Unterwolle, Trimmen oder Felltyp.",
   },
 ];
-
-const catPricing = {
-  short: 85,
-  medium: 95,
-  long: 110,
-  extra: 130,
-};
 
 export function CatBookingWizard() {
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(
     null,
   );
-  const [selectedFelltyp, setSelectedFelltyp] = useState<
-    "short" | "medium" | "long" | "extra" | null
-  >(null);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
@@ -114,11 +76,6 @@ export function CatBookingWizard() {
 
   const selectedService = catServices.find((s) => s.id === selectedServiceId);
 
-  const getPrice = () => {
-    if (!selectedFelltyp) return 0;
-    return catPricing[selectedFelltyp];
-  };
-
   const nextStep = () => {
     if (currentStep === 0 && !selectedServiceId) {
       toast({
@@ -127,14 +84,7 @@ export function CatBookingWizard() {
       });
       return;
     }
-    if (currentStep === 1 && !selectedFelltyp) {
-      toast({
-        title: "Bitte wählen Sie den Felltyp Ihrer Katze",
-        variant: "destructive",
-      });
-      return;
-    }
-    if (currentStep === 3 && (!selectedDate || !selectedTime)) {
+    if (currentStep === 1 && (!selectedDate || !selectedTime)) {
       toast({
         title: "Bitte wählen Sie Datum und Uhrzeit",
         variant: "destructive",
@@ -159,35 +109,30 @@ export function CatBookingWizard() {
     const notes = form.getValues("notes") || "";
     const serviceTitle = selectedService?.title ?? "";
     const dateStr = selectedDate ? format(selectedDate, "dd.MM.yyyy") : "";
-    const price = getPrice();
-
     return (
-      `Neue Katzenbuchung im Hundesalon Laika:\n\n` +
+      `Neue Katzen-Terminanfrage im Hundesalon Laika:\n\n` +
       `Kunde: ${name}\n` +
       `Telefon: ${phone}\n` +
       `E-Mail: ${email}\n\n` +
       `Katze: ${catName} (${breed})\n` +
       `Service: ${serviceTitle}\n` +
-      `Felltyp: ${selectedFelltyp ?? ""}\n` +
       `Wunschtermin: ${dateStr} um ${selectedTime} Uhr\n` +
-      `Preis: €${price}\n` +
-      `Zahlungsmethode: Vor Ort bezahlen (Bar oder Karte im Salon)\n\n` +
+      `Zahlungsmethode: Vor Ort bezahlen (bar oder Sofort-Überweisung). Bei Neukunden kann eine Vorauszahlung erforderlich sein.\n\n` +
       (notes ? `Hinweise des Kunden:\n${notes}\n` : "")
     );
   };
 
   const getWhatsAppLink = () => {
     const text = buildWhatsAppText();
-    return `https://wa.me/4369910367116?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/436508613405?text=${encodeURIComponent(text)}`;
   };
 
   const handlePayment = async () => {
-    if (!selectedService || !selectedFelltyp || !selectedDate || !selectedTime)
-      return;
+    if (!selectedService || !selectedDate || !selectedTime) return;
 
     const baseNotes = form.getValues("notes") || "";
     const paymentNote =
-      "Zahlungsmethode: Vor Ort bezahlen (Bar oder Karte im Salon)";
+      "Zahlungsmethode: Vor Ort bezahlen (bar oder Sofort-Überweisung). Bei Neukunden kann eine Vorauszahlung erforderlich sein.";
     const combinedNotes = baseNotes ? `${baseNotes}\n\n${paymentNote}` : paymentNote;
 
     const bookingData = {
@@ -198,10 +143,10 @@ export function CatBookingWizard() {
       breed: form.getValues("breed"),
       serviceId: selectedService.id,
       serviceName: selectedService.title,
-      size: selectedFelltyp,
+      size: "n/a",
       date: format(selectedDate, "dd.MM.yyyy"),
       time: selectedTime,
-      price: getPrice().toString(),
+      price: "0",
       notes: combinedNotes,
     };
 
@@ -218,7 +163,7 @@ export function CatBookingWizard() {
     window.open(waUrl, "_blank");
 
     const emailSubject = encodeURIComponent(
-      "Neue Katzenbuchungsanfrage (Vor Ort bezahlen)",
+      "Neue Katzen-Terminanfrage (Vor Ort bezahlen)",
     );
     const emailBody = encodeURIComponent(buildWhatsAppText());
     window.location.href = `mailto:${encodeURIComponent(
@@ -290,95 +235,6 @@ export function CatBookingWizard() {
 
       case 1:
         return (
-          <div className="space-y-6">
-            <h3 className="text-xl font-serif font-bold text-center">
-              Welchen Felltyp hat Ihre Katze?
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                {
-                  id: "short",
-                  label: "Kurz",
-                  desc: "Kurzhaar / wenig Unterwolle",
-                  price: catPricing.short,
-                },
-                {
-                  id: "medium",
-                  label: "Mittel",
-                  desc: "Halblang / normaler Fellwechsel",
-                  price: catPricing.medium,
-                },
-                {
-                  id: "long",
-                  label: "Lang",
-                  desc: "Langhaar mit Unterwolle",
-                  price: catPricing.long,
-                },
-                {
-                  id: "extra",
-                  label: "Sehr dicht",
-                  desc: "Sehr viel Fell / starke Unterwolle",
-                  price: catPricing.extra,
-                },
-              ].map((ft) => (
-                <div
-                  key={ft.id}
-                  onClick={() =>
-                    setSelectedFelltyp(ft.id as "short" | "medium" | "long" | "extra")
-                  }
-                  className={cn(
-                    "cursor-pointer rounded-xl border-2 p-6 text-center transition-all hover:shadow-md flex flex-col items-center justify-center gap-2 bg-white",
-                    selectedFelltyp === ft.id
-                      ? "border-primary bg-primary/5"
-                      : "border-border",
-                  )}
-                >
-                  <PawPrint
-                    size={28}
-                    className={cn(
-                      selectedFelltyp === ft.id
-                        ? "text-primary"
-                        : "text-muted-foreground",
-                    )}
-                  />
-                  <span className="font-bold">{ft.label}</span>
-                  <span className="text-xs text-muted-foreground">{ft.desc}</span>
-                  <span className="text-primary font-medium">€{ft.price}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-
-      case 2:
-        return (
-          <div className="max-w-md mx-auto bg-white rounded-xl border border-border p-6 shadow-sm">
-            <h3 className="font-serif font-bold text-xl mb-4 flex items-center gap-2">
-              <ShoppingBag className="text-primary" /> Zusammenfassung
-            </h3>
-            <div className="space-y-4 divide-y divide-border">
-              <div className="flex justify-between py-2">
-                <span className="text-muted-foreground">Service</span>
-                <span className="font-medium text-right">
-                  {selectedService?.title}
-                </span>
-              </div>
-              <div className="flex justify-between py-2">
-                <span className="text-muted-foreground">Felltyp</span>
-                <span className="font-medium capitalize">
-                  {selectedFelltyp ?? "-"}
-                </span>
-              </div>
-              <div className="flex justify-between pt-4 text-lg font-bold">
-                <span>Gesamt</span>
-                <span className="text-primary">€{getPrice()}</span>
-              </div>
-            </div>
-          </div>
-        );
-
-      case 3:
-        return (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-4 rounded-xl border border-border">
               <Calendar
@@ -393,7 +249,6 @@ export function CatBookingWizard() {
               />
             </div>
             <div className="space-y-4">
-              <h4 className="font-serif font-bold">Verfügbare Zeiten</h4>
               {!selectedDate ? (
                 <p className="text-muted-foreground text-sm">
                   Bitte wählen Sie zuerst ein Datum.
@@ -428,7 +283,7 @@ export function CatBookingWizard() {
           </div>
         );
 
-      case 4:
+      case 2:
         return (
           <form
             id="cat-customer-form"
@@ -486,7 +341,11 @@ export function CatBookingWizard() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="notes">Anmerkungen (Optional)</Label>
-              <Input id="notes" {...form.register("notes")} />
+              <Input
+                id="notes"
+                placeholder="Kg, Alter, Rasse, etwaige gesundheitliche Einschränkungen, bisherige Erfahrungen im Tiersalon und in der Tierarzt-Praxis"
+                {...form.register("notes")}
+              />
             </div>
             <div className="flex items-center space-x-2 pt-2">
               <Checkbox
@@ -500,7 +359,7 @@ export function CatBookingWizard() {
                 htmlFor="policy"
                 className="text-sm text-muted-foreground"
               >
-                Ich stimme den Stornierungsbedingungen zu.
+                Ich stimme den Stornierungsbedingungen zu. Hundename / Katzenname
               </Label>
             </div>
             {form.formState.errors.policy && (
@@ -511,14 +370,14 @@ export function CatBookingWizard() {
           </form>
         );
 
-      case 5:
+      case 3:
         return (
           <div className="max-w-md mx-auto space-y-6">
             <div className="bg-secondary/20 p-6 rounded-xl border border-border">
               <div className="flex justify-between items-center mb-4">
-                <span className="font-bold">Gesamtsumme</span>
+                <span className="font-bold">Zahlung</span>
                 <span className="font-serif text-2xl font-bold text-primary">
-                  €{getPrice()}
+                  Vor Ort
                 </span>
               </div>
             </div>
@@ -531,8 +390,10 @@ export function CatBookingWizard() {
                   <div>
                     <p className="font-medium">Vor Ort bezahlen</p>
                     <p className="text-xs text-muted-foreground">
-                      Die Bezahlung erfolgt direkt im Salon – bar oder mit
-                      Karte.
+                      Die Bezahlung erfolgt direkt im Salon – bar oder
+                      Sofort-Überweisung. Bei Neukunden behalten wir uns das
+                      Recht vor, eine Vorauszahlung zu verlangen, die am Tag
+                      der Pflege mit dem tatsächlichen Endpreis abgerechnet wird.
                     </p>
                   </div>
                 </div>
@@ -541,17 +402,17 @@ export function CatBookingWizard() {
           </div>
         );
 
-      case 6:
+      case 4:
         return (
           <div className="text-center space-y-6 py-8">
             <div className="h-20 w-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Check size={40} />
             </div>
             <h2 className="font-serif text-3xl font-bold">
-              Katzen-Termanfrage übermittelt!
+              Katzen-Terminanfrage übermittelt!
             </h2>
             <p className="text-muted-foreground max-w-md mx-auto">
-              Vielen Dank für Ihre Buchung, {form.getValues("name")}. Wir
+              Vielen Dank für Ihre Terminanfrage, {form.getValues("name")}. Wir
               freuen uns auf Sie und {form.getValues("catName")} am{" "}
               {selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""} um{" "}
               {selectedTime} Uhr.
@@ -654,24 +515,19 @@ export function CatBookingWizard() {
         </Button>
         {currentStep < steps.length - 1 ? (
           <Button
-            onClick={currentStep === 4 ? form.handleSubmit(onSubmit) : nextStep}
+            onClick={
+              currentStep === 2
+                ? form.handleSubmit(onSubmit)
+                : currentStep === steps.length - 2
+                ? handlePayment
+                : nextStep
+            }
             className="flex items-center gap-2"
           >
-            {currentStep === steps.length - 2
-              ? "Zahlungspflichtig buchen"
-              : "Weiter"}
+            {currentStep === steps.length - 2 ? "Terminanfrage senden" : "Weiter"}
             <ChevronRight className="h-4 w-4" />
           </Button>
         ) : null}
-        {currentStep === steps.length - 2 && (
-      <Button
-        onClick={handlePayment}
-        className="flex items-center gap-2 bg-primary hover:bg-primary/90"
-      >
-        <CalendarIcon className="h-4 w-4" />
-        Terminanfrage senden
-      </Button>
-        )}
       </div>
     </div>
   );

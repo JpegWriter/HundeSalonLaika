@@ -25,7 +25,7 @@ export default function Impressum() {
             <section className="mb-8">
               <h2 className="text-2xl font-serif mb-4">Kontakt</h2>
               <p>
-                <strong>Tel. / SMS / WhatsApp:</strong> +43 699 1036 7116 oder +43 650 861 3405<br />
+                <strong>Tel. / SMS / WhatsApp:</strong> +43 650 861 3405<br />
                 <strong>E-Mail:</strong> <a href="mailto:hundesalonlaika@gmail.com">hundesalonlaika@gmail.com</a>
               </p>
               <p className="mt-2">

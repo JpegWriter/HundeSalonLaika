@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/layout/SEO";
-import { services, pricingTiers } from "@/lib/data";
+import { services, sizeOptions } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Link, useRoute } from "wouter";
 import { Check, ArrowLeft, Clock, Scissors } from "lucide-react";
@@ -14,9 +14,7 @@ export default function ServiceDetail() {
     return <NotFound />;
   }
 
-  const pricing = service.category === "Kurzhaar" ? pricingTiers.shortHair : pricingTiers.longHair;
-  const lowPrice = Math.min(pricing.small, pricing.medium, pricing.large, pricing.xl);
-  const highPrice = Math.max(pricing.small, pricing.medium, pricing.large, pricing.xl);
+  const lowPrice = Math.min(...sizeOptions.map((o) => o.price));
 
   const serviceUrl = `https://www.hundesalonlaika-wien.at/service/${service.id}`;
 
@@ -34,10 +32,7 @@ export default function ServiceDetail() {
       "@type": "AdministrativeArea",
       name: "Wien",
     },
-    serviceType:
-      service.category === "Kurzhaar"
-        ? "Hundepflege, Kurzhaar-Grooming"
-        : "Hundepflege, Langhaar-Grooming",
+    serviceType: "Hundepflege",
     offers: {
       "@type": "Offer",
       price: String(lowPrice),
@@ -59,7 +54,7 @@ export default function ServiceDetail() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Services",
+        name: "Leistungen",
         item: "https://www.hundesalonlaika-wien.at/services",
       },
       {
@@ -72,9 +67,7 @@ export default function ServiceDetail() {
   };
 
   const suitabilityText =
-    service.category === "Kurzhaar"
-      ? "Besonders geeignet für kurzhaarige Hunde, die eine gründliche Fell- und Hautpflege benötigen – vom Beagle bis zum Mops."
-      : "Ideal für langhaarige Rassen wie Golden Retriever, Spaniel, Doodles & Co., bei denen Unterwolle und Verfilzungen professionell entfernt werden sollen.";
+    "Geeignet für Hunde aller Rassen – die Pflege wird individuell auf Temperament, Felltyp und Pflegezustand abgestimmt.";
 
   const relatedService =
     services.find((s) => s.id !== service.id && s.category === service.category) ??
@@ -169,7 +162,7 @@ export default function ServiceDetail() {
                       href="/services"
                       className="text-primary underline-offset-4 hover:underline"
                     >
-                      Service-Übersicht
+                    Leistungs-Übersicht
                     </Link>{" "}
                     zurück.
                   </p>
@@ -180,37 +173,48 @@ export default function ServiceDetail() {
             {/* Sidebar Pricing */}
             <div className="lg:col-span-1">
               <div className="bg-white p-6 rounded-2xl border border-border shadow-lg sticky top-24">
-                <h3 className="font-serif text-2xl font-bold mb-6">Preise nach Größe</h3>
+                <h3 className="font-serif text-2xl font-bold mb-6">Größe</h3>
                 
                 <div className="space-y-4 mb-8">
-                  <div className="flex justify-between items-center pb-3 border-b border-border/50">
-                    <div>
-                      <span className="font-bold block">Small</span>
-                      <span className="text-xs text-muted-foreground">Bis 10kg</span>
+                  {sizeOptions.map((size) => (
+                    <div
+                      key={size.id}
+                      className="flex justify-between items-center pb-3 border-b border-border/50"
+                    >
+                      <div>
+                        <span className="font-bold block">{size.label}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {size.desc}
+                        </span>
+                      </div>
+                      <span className="font-serif text-xl text-primary">
+                        ab €{size.price}
+                      </span>
                     </div>
-                    <span className="font-serif text-xl text-primary">€{pricing.small}</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-3 border-b border-border/50">
-                    <div>
-                      <span className="font-bold block">Medium</span>
-                      <span className="text-xs text-muted-foreground">10-25kg</span>
-                    </div>
-                    <span className="font-serif text-xl text-primary">€{pricing.medium}</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-3 border-b border-border/50">
-                    <div>
-                      <span className="font-bold block">Large</span>
-                      <span className="text-xs text-muted-foreground">25-40kg</span>
-                    </div>
-                    <span className="font-serif text-xl text-primary">€{pricing.large}</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-3 border-b border-border/50">
-                    <div>
-                      <span className="font-bold block">X-Large</span>
-                      <span className="text-xs text-muted-foreground">Über 40kg</span>
-                    </div>
-                    <span className="font-serif text-xl text-primary">€{pricing.xl}</span>
-                  </div>
+                  ))}
+                </div>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <p>
+                    Kooperative Hauskatzen Komplettpflege inkl. Bad, falls
+                    geduldet und Schur falls nötig/erwünscht ab € 75.
+                  </p>
+                  <p>Krallen-, Augen- und Ohrenpflege je ab € 10.</p>
+                  <p>
+                    Toypudel ab € 65, Kleinpudel ab € 70, Mittelpudel ab € 80,
+                    Großpudel ab € 95.
+                  </p>
+                  <p>
+                    Der Pflegeaufwand und die notwendige Pflegezeit ist ja von
+                    Tier zu Tier individuell. Ein kleines Tier kann einfacher
+                    oder sehr viel schwieriger als ein größeres Tier sein.
+                    Trimmen von Hand ist körperlich sehr anstrengend, daher kann
+                    die Pflege eines Trimmhundes ggf. etwas mehr kosten, als ein
+                    anderes Haarkleid / Fellbeschaffenheit mit dem gleichen
+                    Körpergewicht. Eine längere Fönzeit bei dichtem Fell oder
+                    Langhaar verursacht einen höheren Stromverbrauch. Man bemüht
+                    sich, möglichst effektiv zu arbeiten, ohne dem Tier Hektik
+                    und Stress auszusetzen.
+                  </p>
                 </div>
 
                 <div className="space-y-4">
@@ -220,7 +224,7 @@ export default function ServiceDetail() {
                   </div>
                   <Link href="/booking">
                     <Button className="w-full h-12 text-lg bg-primary hover:bg-primary/90">
-                      Jetzt Buchen
+                      Terminanfrage
                     </Button>
                   </Link>
                 </div>

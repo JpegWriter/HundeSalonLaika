@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { format, addDays } from "date-fns";
+import { format } from "date-fns";
 import { de } from "date-fns/locale";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
@@ -11,9 +11,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { services, pricingTiers, siteData } from "@/lib/data";
-import { Check, ChevronLeft, ChevronRight, CreditCard, ShoppingBag, Calendar as CalendarIcon, User, Dog } from "lucide-react";
+import { services, sizeOptions, siteData } from "@/lib/data";
+import { Check, ChevronLeft, ChevronRight, ShoppingBag, Dog } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { MessageCircle } from "lucide-react";
@@ -45,7 +44,9 @@ const steps = [
 export function BookingWizard() {
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
-  const [selectedSize, setSelectedSize] = useState<"small" | "medium" | "large" | "xl" | null>(null);
+  const [selectedSize, setSelectedSize] = useState<
+    "xxs" | "xs" | "s" | "m" | "l" | "xl" | null
+  >(null);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
@@ -63,9 +64,8 @@ export function BookingWizard() {
   const selectedService = services.find(s => s.id === selectedServiceId);
   
   const getPrice = () => {
-    if (!selectedService || !selectedSize) return 0;
-    const tier = selectedService.category === "Kurzhaar" ? pricingTiers.shortHair : pricingTiers.longHair;
-    return tier[selectedSize];
+    if (!selectedSize) return 0;
+    return sizeOptions.find((o) => o.id === selectedSize)?.price ?? 0;
   };
 
   const nextStep = () => {
@@ -74,7 +74,7 @@ export function BookingWizard() {
       return;
     }
     if (currentStep === 1 && !selectedSize) {
-      toast({ title: "Bitte wählen Sie die Größe Ihres Hundes", variant: "destructive" });
+      toast({ title: "Bitte wählen Sie die Größe Ihres Hundes / Ihrer Katze", variant: "destructive" });
       return;
     }
     if (currentStep === 3 && (!selectedDate || !selectedTime)) {
@@ -102,13 +102,13 @@ export function BookingWizard() {
     const price = getPrice();
     const paymentText =
       paymentMethod === "onsite"
-        ? "Zahlungsmethode: Vor Ort bezahlen (Bar oder Karte im Salon)"
+        ? "Zahlungsmethode: Vor Ort bezahlen (bar oder Sofort-Überweisung). Bei Neukunden kann eine Vorauszahlung erforderlich sein."
         : paymentMethod === "card"
         ? "Zahlungsmethode: Kreditkarte (Stripe, falls verfügbar)"
         : "Zahlungsmethode: nicht angegeben";
 
     return (
-      `Neue Buchung im Hundesalon Laika:\n\n` +
+      `Neue Terminanfrage im Hundesalon Laika:\n\n` +
       `Kunde: ${name}\n` +
       `Telefon: ${phone}\n` +
       `E-Mail: ${email}\n\n` +
@@ -124,8 +124,8 @@ export function BookingWizard() {
 
   const getWhatsAppLink = () => {
     const text = buildWhatsAppText();
-    // Dominique's number: +43 699 1036 7116 -> 4369910367116
-    return `https://wa.me/4369910367116?text=${encodeURIComponent(text)}`;
+    // Dominique's number: +43 650 861 3405 -> 436508613405
+    return `https://wa.me/436508613405?text=${encodeURIComponent(text)}`;
   };
 
   const handlePayment = async () => {
@@ -134,7 +134,7 @@ export function BookingWizard() {
     const baseNotes = form.getValues("notes") || "";
     const paymentNote =
       paymentMethod === "onsite"
-        ? "Zahlungsmethode: Vor Ort bezahlen (Bar oder Karte im Salon)"
+        ? "Zahlungsmethode: Vor Ort bezahlen (bar oder Sofort-Überweisung). Bei Neukunden kann eine Vorauszahlung erforderlich sein."
         : "Zahlungsmethode: Kreditkarte (Stripe, falls verfügbar)";
     const combinedNotes = baseNotes ? `${baseNotes}\n\n${paymentNote}` : paymentNote;
 
@@ -167,7 +167,7 @@ export function BookingWizard() {
       window.open(waUrl, "_blank");
 
       // And as backup, open a prefilled email to the salon
-      const emailSubject = encodeURIComponent("Neue Buchungsanfrage (Vor Ort bezahlen)");
+      const emailSubject = encodeURIComponent("Neue Terminanfrage (Vor Ort bezahlen)");
       const emailBody = encodeURIComponent(buildWhatsAppText());
       window.location.href = `mailto:${encodeURIComponent(
         siteData.email,
@@ -184,7 +184,7 @@ export function BookingWizard() {
     } catch (error) {
       console.error("Booking error:", error);
       toast({
-        title: "Fehler bei der Buchung",
+        title: "Fehler bei der Terminanfrage",
         description: "Die Online-Zahlung ist derzeit nicht verfügbar. Bitte wählen Sie 'Vor Ort bezahlen' oder versuchen Sie es später erneut.",
         variant: "destructive",
       });
@@ -238,7 +238,6 @@ export function BookingWizard() {
                   <div>
                     <h3 className="font-serif font-bold text-lg">{service.title}</h3>
                     <p className="text-sm text-muted-foreground line-clamp-2">{service.shortDescription}</p>
-                    <p className="mt-2 font-medium text-primary">Ab €{service.price}</p>
                   </div>
                 </div>
               </div>
@@ -249,14 +248,11 @@ export function BookingWizard() {
       case 1: // Size Selection
         return (
           <div className="space-y-6">
-            <h3 className="text-xl font-serif font-bold text-center">Wie groß ist Ihr Hund?</h3>
+            <h3 className="text-xl font-serif font-bold text-center">
+              Wie groß ist Ihr Hund / Ihre Katze?
+            </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { id: "small", label: "Klein", desc: "Bis 10kg", price: selectedService?.category === "Kurzhaar" ? pricingTiers.shortHair.small : pricingTiers.longHair.small },
-                { id: "medium", label: "Mittel", desc: "10-25kg", price: selectedService?.category === "Kurzhaar" ? pricingTiers.shortHair.medium : pricingTiers.longHair.medium },
-                { id: "large", label: "Groß", desc: "25-40kg", price: selectedService?.category === "Kurzhaar" ? pricingTiers.shortHair.large : pricingTiers.longHair.large },
-                { id: "xl", label: "Riesig", desc: "Über 40kg", price: selectedService?.category === "Kurzhaar" ? pricingTiers.shortHair.xl : pricingTiers.longHair.xl },
-              ].map((size) => (
+              {sizeOptions.map((size) => (
                 <div 
                   key={size.id}
                   onClick={() => setSelectedSize(size.id as any)}
@@ -271,6 +267,28 @@ export function BookingWizard() {
                   <span className="text-primary font-medium">€{size.price}</span>
                 </div>
               ))}
+            </div>
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p>
+                Kooperative Hauskatzen Komplettpflege inkl. Bad, falls geduldet
+                und Schur falls nötig / erwünscht ab € 75. Krallen-, Augen- und
+                Ohrenpflege je ab € 10.
+              </p>
+              <p>
+                Toypudel ab € 65, Kleinpudel ab € 70, Mittelpudel ab € 80,
+                Großpudel ab € 95.
+              </p>
+              <p>
+                Der Pflegeaufwand und die notwendige Pflegezeit ist von Tier zu
+                Tier individuell. Ein kleines Tier kann einfacher oder sehr
+                viel schwieriger als ein größeres Tier sein. Trimmen von Hand
+                ist körperlich sehr anstrengend, daher kann die Pflege eines
+                Trimmhundes ggf. etwas mehr kosten, als ein anderes Haarkleid /
+                Fellbeschaffenheit mit dem gleichen Körpergewicht. Eine längere
+                Fönzeit bei dichtem Fell oder Langhaar verursacht einen höheren
+                Stromverbrauch. Man bemüht sich, möglichst effektiv zu
+                arbeiten, ohne dem Tier Hektik und Stress auszusetzen.
+              </p>
             </div>
           </div>
         );
@@ -316,7 +334,6 @@ export function BookingWizard() {
               />
             </div>
             <div className="space-y-4">
-              <h4 className="font-serif font-bold">Verfügbare Zeiten</h4>
               {!selectedDate ? (
                 <p className="text-muted-foreground text-sm">Bitte wählen Sie zuerst ein Datum.</p>
               ) : isLoadingSlots ? (
@@ -376,12 +393,20 @@ export function BookingWizard() {
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="notes">Anmerkungen (Optional)</Label>
-              <Input id="notes" {...form.register("notes")} />
+              <Label htmlFor="notes">
+                Anmerkungen (Optional)
+              </Label>
+              <Input
+                id="notes"
+                placeholder="Kg, Alter, Rasse, etwaige gesundheitliche Einschränkungen"
+                {...form.register("notes")}
+              />
             </div>
             <div className="flex items-center space-x-2 pt-2">
               <Checkbox id="policy" checked={form.watch("policy")} onCheckedChange={(c) => form.setValue("policy", c as boolean)} />
-              <Label htmlFor="policy" className="text-sm text-muted-foreground">Ich stimme den Stornierungsbedingungen zu.</Label>
+              <Label htmlFor="policy" className="text-sm text-muted-foreground">
+                Ich stimme den Stornierungsbedingungen zu. Hundename / Katzenname
+              </Label>
             </div>
             {form.formState.errors.policy && <span className="text-destructive text-xs block">{form.formState.errors.policy.message}</span>}
           </form>
@@ -411,7 +436,10 @@ export function BookingWizard() {
                   <div>
                     <p className="font-medium">Vor Ort bezahlen</p>
                     <p className="text-xs text-muted-foreground">
-                      Die Bezahlung erfolgt direkt im Salon – bar oder mit Karte.
+                      Die Bezahlung erfolgt direkt im Salon – bar oder
+                      Sofort-Überweisung. Bei Neukunden behalten wir uns das
+                      Recht vor, eine Vorauszahlung zu verlangen, die am Tag
+                      der Pflege mit dem tatsächlichen Endpreis abgerechnet wird.
                     </p>
                   </div>
                 </div>
@@ -428,7 +456,7 @@ export function BookingWizard() {
             </div>
             <h2 className="font-serif text-3xl font-bold">Terminanfrage übermittelt!</h2>
             <p className="text-muted-foreground max-w-md mx-auto">
-              Vielen Dank für Ihre Buchung, {form.getValues("name")}. Wir freuen uns auf Sie und{" "}
+              Vielen Dank für Ihre Terminanfrage, {form.getValues("name")}. Wir freuen uns auf Sie und{" "}
               {form.getValues("dogName")} am{" "}
               {selectedDate ? format(selectedDate, "dd.MM.yyyy") : ""} um {selectedTime} Uhr.
             </p>

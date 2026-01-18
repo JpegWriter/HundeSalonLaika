@@ -48,6 +48,12 @@ export default function Blog() {
             <p className="text-muted-foreground text-lg">
               Der Pflege-Blog von Hundesalon Laika in 1090 Wien-Alsergrund – Ihr Wissenshub rund um Hundepflege, Hundefriseur-Besuche und gesunde Fellpflege in Wien.
             </p>
+            <p className="text-muted-foreground text-sm mt-4">
+              Achtung: Diese Blog-Texte dienen als Gedankenanstoß. Für eine
+              Beratung spezifisch zu Ihrem Hund oder Ihrer Katze kontaktieren
+              Sie uns bitte. Wir helfen Ihnen bei der Wahl von geeigneten
+              Produkten gerne. Danke.
+            </p>
           </div>
 
           {/* Featured Post (nur wenn bereits veröffentlichte Beiträge existieren) */}
