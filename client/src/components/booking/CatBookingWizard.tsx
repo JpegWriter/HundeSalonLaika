@@ -162,6 +162,23 @@ export function CatBookingWizard() {
     const waUrl = getWhatsAppLink();
     window.open(waUrl, "_blank");
 
+    // Track the cat booking WhatsApp submission
+    try {
+      await fetch("/api/track", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "whatsapp_cat_booking",
+          firstName: form.getValues("name"),
+          email: form.getValues("email"),
+          phone: form.getValues("phone"),
+          subject: selectedService?.title ?? "",
+          message: buildWhatsAppText(),
+          page: "cat-booking",
+        }),
+      });
+    } catch { /* tracking is best-effort */ }
+
     const emailSubject = encodeURIComponent(
       "Neue Katzen-Terminanfrage (Vor Ort bezahlen)",
     );
@@ -433,7 +450,24 @@ export function CatBookingWizard() {
 
             <div className="flex flex-col gap-3 max-w-xs mx-auto pt-4">
               <Button
-                onClick={() => window.open(getWhatsAppLink(), "_blank")}
+                onClick={async () => {
+                  try {
+                    await fetch("/api/track", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({
+                        type: "whatsapp_cat_booking",
+                        firstName: form.getValues("name"),
+                        email: form.getValues("email"),
+                        phone: form.getValues("phone"),
+                        subject: selectedService?.title ?? "",
+                        message: buildWhatsAppText(),
+                        page: "cat-booking",
+                      }),
+                    });
+                  } catch {}
+                  window.open(getWhatsAppLink(), "_blank");
+                }}
                 className="bg-[#25D366] hover:bg-[#128C7E] text-white w-full"
               >
                 <MessageCircle className="mr-2 h-4 w-4" />

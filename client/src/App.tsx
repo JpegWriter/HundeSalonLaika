@@ -3,6 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
@@ -15,6 +16,7 @@ import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import Impressum from "@/pages/Impressum";
 import Privacy from "@/pages/Privacy";
+import Dev from "@/pages/Dev";
 
 function Router() {
   return (
@@ -30,6 +32,7 @@ function Router() {
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/impressum" component={Impressum} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/dev" component={Dev} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -5,11 +5,15 @@ import { insertBookingSchema } from "@shared/schema";
 import nodemailer from "nodemailer";
 import { checkAvailability, createCalendarEvent } from "./googleCalendar";
 import { z } from "zod";
+import { initSubmissionsTable } from "./db";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  // Initialize the submissions table in the background
+  initSubmissionsTable().catch(console.error);
+
   const contactSchema = z.object({
     firstName: z.string().min(1),
     lastName: z.string().min(1),
@@ -129,6 +133,18 @@ export async function registerRoutes(
     try {
       const data = contactSchema.parse(req.body);
 
+      // Log the contact form submission
+      await storage.addSubmission({
+        type: "contact_form",
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: null,
+        subject: data.subject,
+        message: data.message,
+        page: "contact",
+      });
+
       if (process.env.GMAIL_USER && process.env.GMAIL_PASS) {
         const transporter = nodemailer.createTransport({
           service: "gmail",
@@ -162,6 +178,49 @@ export async function registerRoutes(
         return res.status(400).json({ message: "Ungültige Eingabe", issues: error.issues });
       }
       console.error("Contact form error:", error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+
+  // ── Submission tracking ──────────────────────────────────
+  const trackSchema = z.object({
+    type: z.string().min(1),
+    firstName: z.string().optional(),
+    lastName: z.string().optional(),
+    email: z.string().optional(),
+    phone: z.string().optional(),
+    subject: z.string().optional(),
+    message: z.string().optional(),
+    page: z.string().optional(),
+  });
+
+  app.post("/api/track", async (req, res) => {
+    try {
+      const data = trackSchema.parse(req.body);
+      const submission = await storage.addSubmission({
+        type: data.type,
+        firstName: data.firstName || null,
+        lastName: data.lastName || null,
+        email: data.email || null,
+        phone: data.phone || null,
+        subject: data.subject || null,
+        message: data.message || null,
+        page: data.page || null,
+      });
+      res.status(201).json({ ok: true, id: submission.id });
+    } catch (error) {
+      console.error("Track error:", error);
+      res.status(400).json({ message: "Invalid tracking data" });
+    }
+  });
+
+  // Dev page – retrieve all submissions
+  app.get("/api/dev/submissions", async (_req, res) => {
+    try {
+      const submissions = await storage.getSubmissions();
+      res.json(submissions);
+    } catch (error) {
+      console.error("Dev submissions error:", error);
       res.status(500).json({ message: "Internal Server Error" });
     }
   });

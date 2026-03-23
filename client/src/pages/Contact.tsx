@@ -45,6 +45,26 @@ export default function Contact() {
     try {
       setIsSubmitting(true);
 
+      // Track the contact form submission
+      try {
+        await fetch("/api/track", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            type: "whatsapp_contact",
+            firstName: payload.firstName,
+            lastName: payload.lastName,
+            email: payload.email,
+            phone: payload.phone,
+            subject: payload.subject,
+            message: payload.message,
+            page: "contact",
+          }),
+        });
+      } catch {
+        // Tracking failure should not block the user
+      }
+
       const textLines = [
         "Neue Kontaktanfrage über das Formular auf der Website:",
         "",

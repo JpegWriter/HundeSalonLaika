@@ -162,6 +162,23 @@ export function BookingWizard() {
         console.warn("Onsite booking: backend not reachable, using WhatsApp/mail only.", error);
       }
 
+      // Track the WhatsApp booking submission
+      try {
+        await fetch("/api/track", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            type: "whatsapp_booking",
+            firstName: form.getValues("name"),
+            email: form.getValues("email"),
+            phone: form.getValues("phone"),
+            subject: selectedService?.title ?? "",
+            message: buildWhatsAppText(),
+            page: "booking",
+          }),
+        });
+      } catch { /* tracking is best-effort */ }
+
       // Always send full inquiry via WhatsApp
       const waUrl = getWhatsAppLink();
       window.open(waUrl, "_blank");
