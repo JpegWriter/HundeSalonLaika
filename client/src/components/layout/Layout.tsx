@@ -9,6 +9,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Track page view (best-effort, non-blocking)
+    try {
+      fetch("/api/pageview", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          path: pathname,
+          referrer: document.referrer || null,
+        }),
+      }).catch(() => {});
+    } catch {}
   }, [pathname]);
 
   return (
