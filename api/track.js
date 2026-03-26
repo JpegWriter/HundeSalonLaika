@@ -1,4 +1,5 @@
 import pg from "pg";
+import nodemailer from "nodemailer";
 
 const { Pool } = pg;
 
@@ -63,6 +64,54 @@ export default async function handler(req, res) {
        RETURNING id`,
       [type, firstName || null, lastName || null, email || null, phone || null, subject || null, message || null, page || null]
     );
+
+    // Send email notification to salon owner
+    if (process.env.GMAIL_USER && process.env.GMAIL_PASS) {
+      try {
+        const transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASS,
+          },
+        });
+
+        const typeLabels = {
+          whatsapp_contact: "Kontaktformular (WhatsApp)",
+          whatsapp_booking: "Buchungsanfrage (Hund)",
+          whatsapp_cat_booking: "Buchungsanfrage (Katze)",
+          contact_form: "Kontaktformular (E-Mail)",
+        };
+
+        const emailText = [
+          `Neue Anfrage über die Website!`,
+          ``,
+          `Typ: ${typeLabels[type] || type}`,
+          `Seite: ${page || "-"}`,
+          `Name: ${[firstName, lastName].filter(Boolean).join(" ") || "-"}`,
+          `E-Mail: ${email || "-"}`,
+          `Telefon: ${phone || "-"}`,
+          `Betreff: ${subject || "-"}`,
+          ``,
+          `Nachricht:`,
+          message || "(keine)",
+          ``,
+          `---`,
+          `Diese E-Mail wurde automatisch von hundesalonlaika-wien.at gesendet.`,
+        ].join("\n");
+
+        await transporter.sendMail({
+          from: process.env.GMAIL_USER,
+          to: process.env.GMAIL_USER,
+          replyTo: email || undefined,
+          subject: `🐾 Neue Anfrage: ${typeLabels[type] || type} – ${[firstName, lastName].filter(Boolean).join(" ") || "Unbekannt"}`,
+          text: emailText,
+        });
+      } catch (emailErr) {
+        console.error("Email notification failed:", emailErr);
+        // Don't fail the request if email fails
+      }
+    }
 
     return res.status(201).json({ ok: true, id: result.rows[0].id });
   } catch (err) {
