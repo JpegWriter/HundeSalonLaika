@@ -26,8 +26,14 @@ export default function DevPage() {
     }
     setAuthed(true);
     fetch("/api/dev/submissions")
-      .then((r) => r.json())
-      .then(setSubmissions)
+      .then(async (r) => {
+        const data = await r.json();
+        if (r.ok && Array.isArray(data)) {
+          setSubmissions(data);
+        } else {
+          setError(data.error || data.message || "Unbekannter Fehler");
+        }
+      })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
   }, []);

@@ -6,8 +6,11 @@ let pool = null;
 
 function getPool() {
   if (!pool && process.env.DATABASE_URL) {
+    const connStr = process.env.DATABASE_URL.includes('sslmode=')
+      ? process.env.DATABASE_URL
+      : process.env.DATABASE_URL + '?sslmode=require';
     pool = new Pool({
-      connectionString: process.env.DATABASE_URL,
+      connectionString: connStr,
       max: 3,
       ssl: { rejectUnauthorized: false },
     });

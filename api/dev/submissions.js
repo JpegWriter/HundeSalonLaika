@@ -6,8 +6,11 @@ let pool = null;
 
 function getPool() {
   if (!pool && process.env.DATABASE_URL) {
+    const connStr = process.env.DATABASE_URL.includes('sslmode=')
+      ? process.env.DATABASE_URL
+      : process.env.DATABASE_URL + '?sslmode=require';
     pool = new Pool({
-      connectionString: process.env.DATABASE_URL,
+      connectionString: connStr,
       max: 3,
       ssl: { rejectUnauthorized: false },
     });
@@ -54,6 +57,6 @@ export default async function handler(req, res) {
     return res.status(200).json(result.rows);
   } catch (err) {
     console.error("Dev submissions error:", err);
-    return res.status(500).json({ message: "Internal Server Error" });
+    return res.status(500).json({ message: "Internal Server Error", error: err.message });
   }
 }
