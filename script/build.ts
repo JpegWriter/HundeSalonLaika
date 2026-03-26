@@ -59,25 +59,6 @@ async function buildAll() {
     external: externals,
     logLevel: "info",
   });
-
-  // Build Vercel serverless function
-  console.log("building Vercel serverless API...");
-  await esbuild({
-    entryPoints: ["api/server.ts"],
-    platform: "node",
-    bundle: true,
-    format: "esm",
-    outfile: "api/server.js",
-    define: {
-      "process.env.NODE_ENV": '"production"',
-    },
-    minify: true,
-    external: externals,
-    logLevel: "info",
-    banner: {
-      js: 'import { createRequire } from "module"; const require = createRequire(import.meta.url);',
-    },
-  });
 }
 
 buildAll().catch((err) => {
