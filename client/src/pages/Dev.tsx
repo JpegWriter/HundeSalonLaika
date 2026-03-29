@@ -3,6 +3,24 @@ import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 
+function MessageCell({ message }: { message: string }) {
+  const [expanded, setExpanded] = useState(false);
+  if (!message) return <td className="border p-1 text-muted-foreground">—</td>;
+  const isLong = message.length > 80;
+  return (
+    <td
+      className={`border p-1 max-w-sm ${isLong ? "cursor-pointer hover:bg-secondary/30" : ""} ${expanded ? "whitespace-pre-wrap break-words" : "truncate"}`}
+      onClick={() => isLong && setExpanded(!expanded)}
+      title={expanded ? "" : message}
+    >
+      {expanded ? message : message.length > 80 ? message.slice(0, 80) + "…" : message}
+      {isLong && !expanded && (
+        <span className="text-primary ml-1 text-[10px]">[mehr]</span>
+      )}
+    </td>
+  );
+}
+
 interface Stats {
   totalViews: number;
   todayViews: number;
@@ -176,7 +194,7 @@ export default function DevPage() {
                       <td className="border p-1">{s.email}</td>
                       <td className="border p-1">{s.phone}</td>
                       <td className="border p-1">{s.subject}</td>
-                      <td className="border p-1 max-w-xs truncate" title={s.message}>{s.message}</td>
+                      <MessageCell message={s.message} />
                       <td className="border p-1">{s.page}</td>
                       <td className="border p-1 whitespace-nowrap">{new Date(s.createdAt).toLocaleString()}</td>
                     </tr>
