@@ -281,13 +281,13 @@ export default function HundAngstGrooming() {
                 {
                   title: "Krallenschneiden",
                   text: "Einer der häufigsten Angst-Trigger. Wir schneiden nur eine Kralle, wenn der Hund bereit ist. Lieber mehrere kurze Sitzungen als ein traumatisches Erlebnis.",
-                  link: "/blog/fallstudie-krallenschneiden-dackel-coco",
+                  link: new Date("2026-06-04") <= new Date() ? "/blog/fallstudie-krallenschneiden-dackel-coco" : undefined,
                   linkText: "→ Cocos Geschichte lesen",
                 },
                 {
                   title: "Baden und Föhnen",
                   text: "Viele Hunde hassen Wasser oder den Föhn. Wir arbeiten mit reduzierter Lautstärke, warmem Wasser und nähern uns schrittweise.",
-                  link: "/blog/fallstudie-hund-hasst-wasser-milo",
+                  link: new Date("2026-05-28") <= new Date() ? "/blog/fallstudie-hund-hasst-wasser-milo" : undefined,
                   linkText: "→ Milos Geschichte lesen",
                 },
                 {
@@ -347,42 +347,58 @@ export default function HundAngstGrooming() {
                 title: "Schnauzer Max – abgelehnt vom letzten Salon",
                 summary: "Max hat aus Angst geschnappt. Kein anderer Salon wollte ihn nehmen. Bei uns hat er es geschafft – ruhig und in seinem Tempo.",
                 slug: "fallstudie-angsthund-schnauzer-max",
+                date: "2026-04-09",
               },
               {
                 title: "Jack Russell Milo – Panik vor Wasser",
                 summary: "Milo hat sich beim letzten Bad so gewehrt, dass ein Helfer dazukommen musste. Bei uns: schrittweise Gewöhnung, kein Zwang.",
                 slug: "fallstudie-hund-hasst-wasser-milo",
+                date: "2026-05-28",
               },
               {
                 title: "Dackel Coco – Krallen-Trauma",
                 summary: "Nach einer schmerzhaften Erfahrung beim Tierarzt ließ Coco niemanden mehr an ihre Pfoten. Wir haben es langsam aufgebaut.",
                 slug: "fallstudie-krallenschneiden-dackel-coco",
+                date: "2026-06-04",
               },
               {
                 title: "Welpe Teddy – Prävention statt Therapie",
                 summary: "Mit 13 Wochen den Grundstein gelegt: ruhige Einführung, positive Verknüpfung – damit Angst gar nicht erst entsteht.",
                 slug: "fallstudie-erste-welpenpflege-teddy",
+                date: "2026-04-16",
               },
               {
                 title: "Senior Charlie – alt und unsicher",
                 summary: "Mit 13 Jahren war Charlie nicht nur langsam, sondern auch verunsichert. Ruhiges Handling und Pausen machten den Unterschied.",
                 slug: "fallstudie-senior-hund-charlie",
+                date: "2026-04-23",
               },
-            ].map((study, idx) => (
-              <Link key={idx} href={`/blog/${study.slug}`}>
-                <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-all hover:shadow-lg group cursor-pointer h-full">
-                  <h3 className="font-serif text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+            ].map((study, idx) => {
+              const isPublished = new Date(study.date) <= new Date();
+              const card = (
+                <div className={`p-6 rounded-2xl border transition-all h-full ${isPublished ? 'border-border hover:border-primary/30 hover:shadow-lg group cursor-pointer' : 'border-border/50 opacity-75'}`}>
+                  {!isPublished && (
+                    <span className="inline-block px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium mb-3">Kommt bald</span>
+                  )}
+                  <h3 className={`font-serif text-lg font-bold mb-2 ${isPublished ? 'group-hover:text-primary transition-colors' : 'text-muted-foreground'}`}>
                     {study.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">
                     {study.summary}
                   </p>
-                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Fallstudie lesen <ArrowRight size={14} />
-                  </span>
+                  {isPublished && (
+                    <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Fallstudie lesen <ArrowRight size={14} />
+                    </span>
+                  )}
                 </div>
-              </Link>
-            ))}
+              );
+              return isPublished ? (
+                <Link key={idx} href={`/blog/${study.slug}`}>{card}</Link>
+              ) : (
+                <div key={idx}>{card}</div>
+              );
+            })}
           </div>
 
           <div className="text-center mt-10">

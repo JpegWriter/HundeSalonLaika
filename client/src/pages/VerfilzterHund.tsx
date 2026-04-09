@@ -338,37 +338,52 @@ export default function VerfilzterHund() {
                 title: "Cockapoo Bella – extremer Filzpanzer",
                 summary: "Das Fell war so verfilzt, dass die Haut nicht mehr sichtbar war. Eine behutsame Komplett-Schur brachte sofortige Erleichterung.",
                 slug: "fallstudie-verfilzter-cockapoo-bella",
+                date: "2026-04-09",
               },
               {
                 title: "Maltipoo Alfie – Erwartung vs. Realität",
                 summary: "Die Besitzerin wünschte sich einen Teddy-Look. Im Salon zeigte sich: verfilztes Fell, das nicht mehr rettbar war.",
                 slug: "fallstudie-erwartung-vs-realitaet-alfie",
+                date: "2026-06-11",
               },
               {
                 title: "Mischling Bruno – vernachlässigtes Fell",
                 summary: "Ein Pflegefall mit massivem Filz und Hautproblemen. Schritt für Schritt befreit – ohne Stress.",
                 slug: "fallstudie-vernachlaessigter-hund-bruno",
+                date: "2026-05-14",
               },
               {
                 title: "Welpe Teddy – Prävention von Anfang an",
                 summary: "Wie ein erster Pflegetermin mit 13 Wochen hilft, Verfilzung gar nicht erst entstehen zu lassen.",
                 slug: "fallstudie-erste-welpenpflege-teddy",
+                date: "2026-04-16",
               },
-            ].map((study, idx) => (
-              <Link key={idx} href={`/blog/${study.slug}`}>
-                <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-all hover:shadow-lg group cursor-pointer h-full">
-                  <h3 className="font-serif text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+            ].map((study, idx) => {
+              const isPublished = new Date(study.date) <= new Date();
+              const card = (
+                <div className={`p-6 rounded-2xl border transition-all h-full ${isPublished ? 'border-border hover:border-primary/30 hover:shadow-lg group cursor-pointer' : 'border-border/50 opacity-75'}`}>
+                  {!isPublished && (
+                    <span className="inline-block px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium mb-3">Kommt bald</span>
+                  )}
+                  <h3 className={`font-serif text-lg font-bold mb-2 ${isPublished ? 'group-hover:text-primary transition-colors' : 'text-muted-foreground'}`}>
                     {study.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">
                     {study.summary}
                   </p>
-                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Fallstudie lesen <ArrowRight size={14} />
-                  </span>
+                  {isPublished && (
+                    <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Fallstudie lesen <ArrowRight size={14} />
+                    </span>
+                  )}
                 </div>
-              </Link>
-            ))}
+              );
+              return isPublished ? (
+                <Link key={idx} href={`/blog/${study.slug}`}>{card}</Link>
+              ) : (
+                <div key={idx}>{card}</div>
+              );
+            })}
           </div>
         </div>
       </section>
