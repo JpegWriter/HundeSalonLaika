@@ -71,7 +71,7 @@ export default function Home() {
   return (
     <Layout>
       <SEO
-        title="Hundefriseur Wien 1090 – Ruhiges, stressfreies Grooming | Hundesalon Laika"
+        title="Hundefriseur Wien 1090 – Ruhiges, stressfreies Grooming für Hunde & Katzen | Hundesalon Laika"
         description="Hundefriseur Wien 1090 Alsergrund – Individuelle Hunde- und Katzenpflege ohne Stress. Erfahrung mit Angsthunden, Verfilzungen und Problemfällen. Jetzt Termin anfragen!"
         jsonLd={[
           { id: "ld-business", data: localBusinessJson },
@@ -106,12 +106,14 @@ export default function Home() {
               <span className="text-primary italic font-script pr-3">
                 Ruhiges, stressfreies
               </span>
-              Grooming für Hunde
+              Grooming für Hunde & Katzen
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-              Individuelle Pflege ohne Stress – mit Erfahrung bei Angsthunden,
-              Verfilzungen und schwierigen Fällen. Ihr Hundesalon in Wien.
+              Individuelle Fellpflege ohne Druck – mit viel Erfahrung bei sensiblen, ängstlichen oder anspruchsvollen Tieren.
+            </p>
+            <p className="text-base text-muted-foreground max-w-lg">
+              Auch für sensible Hunde und Katzen geeignet – mit viel Geduld und ruhigem Umgang.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -161,7 +163,7 @@ export default function Home() {
             </h2>
             <p className="text-muted-foreground text-lg">
               Ruhig, individuell und mit Erfahrung bei schwierigen Fällen –
-              so arbeiten wir als Hundefriseur in Wien.
+              so arbeiten wir als Hundefriseur in Wien. Für Hunde und Katzen.
             </p>
           </div>
 
@@ -170,17 +172,17 @@ export default function Home() {
               {
                 icon: Heart,
                 title: "Kein Stress, kein Druck",
-                text: "Wir nehmen uns Zeit für jeden Hund. Pausen, ruhiges Handling und positive Erfahrungen sind Teil unseres Konzepts. Auch Angsthunde und reaktive Hunde sind bei uns willkommen."
+                text: "Wir nehmen uns Zeit für jedes Tier. Pausen, ruhiges Handling und positive Erfahrungen sind Teil unseres Konzepts. Auch Angsthunde und reaktive Hunde sind bei uns willkommen."
               },
               {
                 icon: ShieldCheck,
-                title: "Erfahrung mit Problemfällen",
-                text: "Verfilztes Fell, Angst vorm Wasser, schwierige Krallenpflege – wir haben Erfahrung mit Situationen, die andere Salons ablehnen. Jeder Hund verdient professionelle Pflege."
+                title: "Erfahrung mit Angsthunden & sensiblen Katzen",
+                text: "Verfilztes Fell, Angst vorm Wasser, schwierige Krallenpflege – wir haben Erfahrung mit Situationen, die andere Salons ablehnen. Jeder Hund und jede Katze verdient professionelle Pflege."
               },
               {
                 icon: Sparkles,
-                title: "Individuelle Betreuung",
-                text: "Kein Hund ist wie der andere. Wir passen den Ablauf an Rasse, Alter und Verhalten an – mit hochwertigen Produkten auf natürlicher Basis (ohne Parabene)."
+                title: "Individuelle Betreuung ohne Zeitdruck",
+                text: "Kein Tier ist wie das andere. Wir passen den Ablauf an Rasse, Alter und Verhalten an – mit hochwertigen Produkten auf natürlicher Basis. Ruhiger, sicherer Umgang – auch bei schwierigen Fällen."
               }
             ].map((feature, idx) => (
               <div key={idx} className="p-8 rounded-2xl bg-secondary/20 border border-border hover:border-primary/30 transition-all hover:shadow-lg group">
@@ -194,10 +196,15 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <div className="mt-12 max-w-2xl mx-auto text-center space-y-2">
+            <h3 className="font-serif text-xl font-bold">🐱 Katzenpflege in Wien</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Auch Katzen sind bei uns willkommen. Gerade bei sensiblen oder ungewohnten Tieren arbeiten wir ruhig, stressfrei und mit viel Geduld.
+            </p>
+          </div>
         </div>
       </section>
-
-      {/* Services Preview */}
       <section id="services-section" className="py-24 bg-secondary/30 relative">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
@@ -205,7 +212,7 @@ export default function Home() {
               <span className="text-primary font-bold tracking-wider uppercase text-sm">Unsere Leistungen</span>
               <h2 className="font-serif text-4xl font-bold">Leistungen im Hundesalon Wien</h2>
               <p className="text-muted-foreground">
-                Waschen, Schneiden, Krallenpflege oder Fellpflege bei Problemfällen – als Hundefriseur in Wien bieten wir das passende Paket für jede Rasse.
+                Sanfte Pflege für Hunde und Katzen – angepasst an Fell, Verhalten und Bedürfnisse. Als Hundefriseur in Wien bieten wir das passende Paket für jede Rasse und jedes Temperament.
               </p>
             </div>
             <Link
@@ -237,8 +244,10 @@ export default function Home() {
               🐾 Echte Fälle aus dem Hundesalon Laika
             </h2>
             <p className="text-muted-foreground text-lg">
-              Jeder Hund ist anders – hier sind echte Beispiele aus unserem
-              Alltag als Hundefriseur in Wien.
+              Diese echten Fälle zeigen, wie wir im Hundesalon Wien auch schwierige Situationen ruhig, sicher und stressfrei lösen.
+            </p>
+            <p className="text-muted-foreground">
+              Vom verfilzten Fell bis zum Angsthund – echte Ergebnisse aus unserem Alltag in Wien.
             </p>
           </div>
 
@@ -369,19 +378,19 @@ export default function Home() {
               Hundefriseur in Wien 1090 (Alsergrund)
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Unser Hundesalon liegt im Herzen von Wien-Alsergrund – ruhig,
+              Unser Hundesalon liegt im Herzen von Wien 1090, Alsergrund – ruhig,
               gut erreichbar und mit einer entspannten Atmosphäre für Ihren
-              Hund. Viele unserer Kunden kommen aus Wien und Umgebung und
+              Hund oder Ihre Katze. Viele unserer Kunden kommen aus Wien und Umgebung und
               schätzen die ruhige, stressfreie Betreuung.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Ob Grooming für Welpen, Senioren, Angsthunde oder
+              Ob Grooming für Welpen, Senioren, Angsthunde, sensible Katzen oder
               rassespezifische Fellpflege – als Hundefriseur in Wien bieten
-              wir individuelle Lösungen für jeden Hund. Besuchen Sie uns in
+              wir individuelle Lösungen für jedes Tier. Besuchen Sie uns in
               der Grünentorgasse 8, 1090 Wien.
             </p>
             <div className="flex flex-wrap justify-center gap-3 pt-4">
-              {["Hundefriseur Wien", "Hundesalon Wien 1090", "Hundepflege Alsergrund", "Grooming Wien"].map((tag) => (
+              {["Hundefriseur Wien", "Hundesalon Wien 1090", "Hundepflege Alsergrund", "Katzenpflege Wien", "Grooming Wien"].map((tag) => (
                 <span key={tag} className="px-4 py-2 rounded-full bg-white border border-border text-sm text-muted-foreground">
                   {tag}
                 </span>
@@ -399,7 +408,7 @@ export default function Home() {
             Termin im Hundesalon Wien sichern
           </h2>
           <p className="text-white/90 text-lg max-w-xl mx-auto">
-            Wenn du deinem Hund eine ruhige und professionelle Pflege bieten
+            Wenn du deinem Hund oder deiner Katze eine ruhige, professionelle Pflege bieten
             willst – melde dich frühzeitig. Wir nehmen uns Zeit und arbeiten
             individuell.
           </p>
