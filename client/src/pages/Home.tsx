@@ -8,6 +8,8 @@ import {
   ArrowRight,
   CheckCircle2,
   Heart,
+  MapPin,
+  PawPrint,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
@@ -69,8 +71,8 @@ export default function Home() {
   return (
     <Layout>
       <SEO
-        title="Hundesalon Laika Wien – Hundepflege / Katzenpflege in 1090 Wien"
-        description="Liebevolle Hunde- und Katzenpflege im Herzen von Wien. Sanfter Umgang, hochwertige Produkte und eine entspannte Atmosphäre. Stellen Sie jetzt Ihre Terminanfrage bei Hundesalon Laika!"
+        title="Hundefriseur Wien 1090 – Ruhiges, stressfreies Grooming | Hundesalon Laika"
+        description="Hundefriseur Wien 1090 Alsergrund – Individuelle Hunde- und Katzenpflege ohne Stress. Erfahrung mit Angsthunden, Verfilzungen und Problemfällen. Jetzt Termin anfragen!"
         jsonLd={[
           { id: "ld-business", data: localBusinessJson },
           { id: "ld-website", data: websiteJson },
@@ -92,31 +94,30 @@ export default function Home() {
           <div className="max-w-2xl space-y-8 animate-in slide-in-from-left-10 duration-1000 fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary font-medium text-sm shadow-sm">
               <Sparkles size={14} />
-              <span>Liebevolle Pflege in Wien</span>
+              <span>Hundefriseur in Wien 1090</span>
             </div>
             <p className="text-sm md:text-base font-medium text-primary/90 bg-white/80 inline-flex px-4 py-1 rounded-full shadow-sm">
-              Hundesalon in 1090 Wien-Alsergrund – Hunde- und Katzenpflege im Herzen von Wien.
+              Hundesalon in Wien-Alsergrund – Ruhige, stressfreie Hunde- und Katzenpflege.
             </p>
             
             <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight text-foreground">
-              Liebevolle und professionelle Pflege
+              Hundefriseur Wien 1090
               <br />
               <span className="text-primary italic font-script pr-3">
-                für Ihren
+                Ruhiges, stressfreies
               </span>
-              Hund / Ihre Katze
+              Grooming für Hunde
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-              Erleben Sie Hunde- und Katzenpflege auf höchstem Niveau. Sanfter
-              Umgang, hochwertige Produkte und eine entspannte Atmosphäre im
-              Herzen von Wien.
+              Individuelle Pflege ohne Stress – mit Erfahrung bei Angsthunden,
+              Verfilzungen und schwierigen Fällen. Ihr Hundesalon in Wien.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/booking">
                 <Button size="lg" className="rounded-full px-8 h-14 text-lg bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-                  Terminanfrage
+                  Termin anfragen
                 </Button>
               </Link>
               <Button
@@ -138,11 +139,11 @@ export default function Home() {
             <div className="flex items-center gap-8 pt-8 text-sm font-medium text-muted-foreground">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="text-primary h-5 w-5" />
-                <span>Zertifizierte Profis</span>
+                <span>Erfahrung mit Problemfällen</span>
               </div>
               <div className="flex items-center gap-2">
                 <Heart className="text-primary h-5 w-5" />
-                <span>Stressfreie Behandlung</span>
+                <span>Kein Stress, kein Druck</span>
               </div>
             </div>
           </div>
@@ -159,8 +160,8 @@ export default function Home() {
               Warum Hundesalon Laika?
             </h2>
             <p className="text-muted-foreground text-lg">
-              Wir verbinden fachliche Kompetenz mit liebevoller Zuwendung. Bei
-              uns steht das Wohlbefinden Ihres Tieres an erster Stelle.
+              Ruhig, individuell und mit Erfahrung bei schwierigen Fällen –
+              so arbeiten wir als Hundefriseur in Wien.
             </p>
           </div>
 
@@ -168,18 +169,18 @@ export default function Home() {
             {[
               {
                 icon: Heart,
-                title: "Liebevolle Betreuung",
-                text: "Wir nehmen uns Zeit für jeden Hund. Pausen, Streicheleinheiten und positive Verstärkung sind Teil unseres Konzepts. Bei Hunden ist Welpengewöhnung ab dem 4. Monat sehr zu empfehlen. Da Katzen wenig Geduld haben, ist es besonders wichtig, schon nach den ersten Impfungen mit Pflegeterminen zu beginnen."
+                title: "Kein Stress, kein Druck",
+                text: "Wir nehmen uns Zeit für jeden Hund. Pausen, ruhiges Handling und positive Erfahrungen sind Teil unseres Konzepts. Auch Angsthunde und reaktive Hunde sind bei uns willkommen."
               },
               {
                 icon: ShieldCheck,
-                title: "Zertifizierte Profis",
-                text: "Unser Team besteht aus ausgebildeten Tierfriseuren mit jahrelanger Erfahrung und stetiger Weiterbildung."
+                title: "Erfahrung mit Problemfällen",
+                text: "Verfilztes Fell, Angst vorm Wasser, schwierige Krallenpflege – wir haben Erfahrung mit Situationen, die andere Salons ablehnen. Jeder Hund verdient professionelle Pflege."
               },
               {
                 icon: Sparkles,
-                title: "Premium-Produkte",
-                text: "Wir verwenden ausschließlich hochwertige auf Hund und Katze abgestimmte Pflegeprodukte auf natürlicher Basis (ohne Parabene), u.a. auch pH-neutrale Produkte."
+                title: "Individuelle Betreuung",
+                text: "Kein Hund ist wie der andere. Wir passen den Ablauf an Rasse, Alter und Verhalten an – mit hochwertigen Produkten auf natürlicher Basis (ohne Parabene)."
               }
             ].map((feature, idx) => (
               <div key={idx} className="p-8 rounded-2xl bg-secondary/20 border border-border hover:border-primary/30 transition-all hover:shadow-lg group">
@@ -202,9 +203,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl space-y-4">
               <span className="text-primary font-bold tracking-wider uppercase text-sm">Unsere Leistungen</span>
-              <h2 className="font-serif text-4xl font-bold">Exklusive Pflegepakete</h2>
+              <h2 className="font-serif text-4xl font-bold">Leistungen im Hundesalon Wien</h2>
               <p className="text-muted-foreground">
-                Vom schnellen Bad bis zum kompletten Styling – wir haben das passende Paket für jede Rasse.
+                Waschen, Schneiden, Krallenpflege oder Fellpflege bei Problemfällen – als Hundefriseur in Wien bieten wir das passende Paket für jede Rasse.
               </p>
             </div>
             <Link
@@ -224,8 +225,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Case Studies */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 text-primary font-bold tracking-wider uppercase text-sm">
+              <PawPrint size={16} />
+              <span>Echte Fälle aus dem Salon</span>
+            </div>
+            <h2 className="font-serif text-4xl font-bold">
+              🐾 Echte Fälle aus dem Hundesalon Laika
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Jeder Hund ist anders – hier sind echte Beispiele aus unserem
+              Alltag als Hundefriseur in Wien.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Stark verfilzter Cockapoo",
+                summary: "Bella kam mit extremer Ganzkörper-Verfilzung – ein Notfall-Pflegetermin brachte ihr sofortige Erleichterung.",
+                slug: "fallstudie-verfilzter-cockapoo-bella"
+              },
+              {
+                title: "Angsthund beim Grooming",
+                summary: "Zwergschnauzer Max schnappte aus Angst – ein anderer Salon hatte ihn abgelehnt. Bei uns wurde es ein Erfolg.",
+                slug: "fallstudie-angsthund-schnauzer-max"
+              },
+              {
+                title: "Hund hasst Wasser",
+                summary: "Jack Russell Milo flippt beim Baden aus. Schritt für Schritt haben wir die Erfahrung verändert.",
+                slug: "fallstudie-hund-hasst-wasser-milo"
+              },
+              {
+                title: "Erste Welpenpflege",
+                summary: "Cockapoo-Welpe Teddy hatte mit 13 Wochen seinen allerersten Termin – so legen wir den Grundstein.",
+                slug: "fallstudie-erste-welpenpflege-teddy"
+              },
+              {
+                title: "Krallenschneiden als Albtraum",
+                summary: "Dackel Coco ließ nach einer schlechten Erfahrung niemanden mehr ran. Mit Geduld und Technik hat es geklappt.",
+                slug: "fallstudie-krallenschneiden-dackel-coco"
+              }
+            ].map((study, idx) => (
+              <Link key={idx} href={`/blog/${study.slug}`}>
+                <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-all hover:shadow-lg group cursor-pointer h-full">
+                  <h3 className="font-serif text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                    {study.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                    {study.summary}
+                  </p>
+                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Fallstudie lesen <ArrowRight size={14} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/blog">
+              <Button variant="outline" className="rounded-full px-8 border-foreground text-foreground hover:bg-foreground hover:text-white">
+                Alle Fallstudien ansehen <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Meet the Groomer / Groomer Intro */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-24 bg-secondary/20 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 relative">
@@ -273,7 +345,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-secondary/20">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="font-serif text-4xl font-bold mb-4">
@@ -285,17 +357,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Local SEO Block */}
+      <section className="py-24 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <div className="inline-flex items-center gap-2 text-primary font-bold tracking-wider uppercase text-sm">
+              <MapPin size={16} />
+              <span>Standort</span>
+            </div>
+            <h2 className="font-serif text-4xl font-bold">
+              Hundefriseur in Wien 1090 (Alsergrund)
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Unser Hundesalon liegt im Herzen von Wien-Alsergrund – ruhig,
+              gut erreichbar und mit einer entspannten Atmosphäre für Ihren
+              Hund. Viele unserer Kunden kommen aus Wien und Umgebung und
+              schätzen die ruhige, stressfreie Betreuung.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Ob Grooming für Welpen, Senioren, Angsthunde oder
+              rassespezifische Fellpflege – als Hundefriseur in Wien bieten
+              wir individuelle Lösungen für jeden Hund. Besuchen Sie uns in
+              der Grünentorgasse 8, 1090 Wien.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 pt-4">
+              {["Hundefriseur Wien", "Hundesalon Wien 1090", "Hundepflege Alsergrund", "Grooming Wien"].map((tag) => (
+                <span key={tag} className="px-4 py-2 rounded-full bg-white border border-border text-sm text-muted-foreground">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10 text-center text-white space-y-8">
           <h2 className="font-serif text-4xl md:text-5xl font-bold">
-            Bereit für den nächsten Pflege-Termin?
+            Termin im Hundesalon Wien sichern
           </h2>
           <p className="text-white/90 text-lg max-w-xl mx-auto">
-            Stellen Sie jetzt Ihre Terminanfrage für den Hundesalon Laika in
-            1090 Wien und gönnen Sie Ihrem Tier eine hochwertige, stressfreie
-            Pflege.
+            Wenn du deinem Hund eine ruhige und professionelle Pflege bieten
+            willst – melde dich frühzeitig. Wir nehmen uns Zeit und arbeiten
+            individuell.
           </p>
           <Link href="/booking">
             <Button
@@ -303,7 +409,7 @@ export default function Home() {
               variant="secondary"
               className="h-14 px-10 rounded-full text-lg shadow-xl hover:scale-105 transition-transform bg-white text-primary hover:bg-white/90"
             >
-              Terminanfrage senden
+              Jetzt Termin anfragen
             </Button>
           </Link>
           <p className="text-white/80 text-sm">

@@ -135,6 +135,66 @@ const seoMetaBySlug: Record<
     description:
       "Juckreiz, Rötungen & empfindliche Haut? Diese Pflegepakete helfen Hunden mit Allergien.",
   },
+  "fallstudie-verfilzter-cockapoo-bella": {
+    title: "Fallstudie: Stark verfilzter Cockapoo – Bellas Verwandlung im Hundesalon",
+    description:
+      "Cockapoo Bella kam mit extremer Ganzkörper-Verfilzung. Lesen Sie, wie ein einfühlsamer Notfall-Pflegetermin ihr sofortige Erleichterung brachte.",
+  },
+  "fallstudie-angsthund-schnauzer-max": {
+    title: "Aggressiver Hund beim Grooming – Zwergschnauzer Max' Verwandlung in Wien",
+    description:
+      "Max schnappte aus Angst – ein anderer Salon lehnte ihn ab. So wurde sein Pflegetermin im Hundesalon Laika trotzdem ein Erfolg.",
+  },
+  "fallstudie-erste-welpenpflege-teddy": {
+    title: "Erste Welpenpflege: Cockapoo Teddy mit 13 Wochen im Hundesalon",
+    description:
+      "Welpe Teddy hatte seinen allerersten Pflegetermin. So legen wir den Grundstein für stressfreies Grooming – ein Leben lang.",
+  },
+  "fallstudie-senior-hund-charlie": {
+    title: "Senior-Hund beim Hundefriseur – Cavalier Charlie mit 13 Jahren schonend gepflegt",
+    description:
+      "Charlie hat Arthrose und wenig Ausdauer. Lesen Sie, wie ein angepasster Pflegetermin im Hundesalon Laika Komfort vor Optik stellt.",
+  },
+  "fallstudie-hautprobleme-franzoesische-bulldogge-rocky": {
+    title: "Hund mit Hautproblemen – Französische Bulldogge Rocky beim Hautpflege-Grooming",
+    description:
+      "Rocky hatte entzündete Hautfalten und Hefepilz-Verdacht. So sah sein hautorientierter Pflegetermin im Hundesalon Laika aus.",
+  },
+  "fallstudie-doppelfell-husky-luna": {
+    title: "Husky im Fellwechsel – Komplettes De-Shedding bei Hundesalon Laika Wien",
+    description:
+      "Siberian Husky Luna war mitten im Fellwechsel. So funktioniert professionelles De-Shedding – Schritt für Schritt erklärt.",
+  },
+  "fallstudie-vernachlaessigter-hund-bruno": {
+    title: "Vernachlässigter Tierschutzhund – Brunos Komplett-Reset im Hundesalon",
+    description:
+      "Terrier-Mix Bruno kam frisch adoptiert und völlig verdreckt. So sah sein Reha-Grooming im Hundesalon Laika aus.",
+  },
+  "fallstudie-pudel-praezisionsschnitt-oliver": {
+    title: "Pudel Präzisionsschnitt – Großpudel Olivers Teddy-Schnitt im Detail",
+    description:
+      "Saubere Linien, perfekte Balance: So entsteht ein moderner Teddy-Pudelschnitt im Hundesalon Laika Wien.",
+  },
+  "fallstudie-hund-hasst-wasser-milo": {
+    title: "Hund hasst Wasser – Jack Russell Milos Weg zu ruhigem Baden",
+    description:
+      "Milo flippt beim Baden aus. So haben wir die Erfahrung im Hundesalon Laika Schritt für Schritt verändert – ohne Zwang.",
+  },
+  "fallstudie-krallenschneiden-dackel-coco": {
+    title: "Krallenschneiden Albtraum – Dackel Cocos Weg zur ruhigen Krallenpflege",
+    description:
+      "Dackel Coco ließ nach einer schlechten Erfahrung niemanden mehr an die Pfoten. So haben wir das im Hundesalon Laika gelöst.",
+  },
+  "fallstudie-erwartung-vs-realitaet-alfie": {
+    title: "Erwartung vs. Realität beim Grooming: Warum Alfie kurz geschoren werden musste",
+    description:
+      "Cavapoo Alfie sollte nur leicht nachgeschnitten werden – doch unter der flauschigen Oberfläche steckte Verfilzung. So haben wir's im Hundesalon Laika gelöst.",
+  },
+  "fallstudie-notfall-grooming-shihtzu-rosie": {
+    title: "Notfall-Grooming: Wie Shih Tzu Rosie in 70 Minuten wieder präsentabel wurde",
+    description:
+      "Shih Tzu Rosie brauchte dringend Hilfe vor einer Familienfeier – über 10 Wochen ohne Pflege. So haben wir das Last-Minute-Grooming im Hundesalon Laika gemeistert.",
+  },
 };
 
 export default function BlogPost() {

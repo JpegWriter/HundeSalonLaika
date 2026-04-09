@@ -10,6 +10,17 @@ import shampooImage from "@assets/generated_images/natural_dog_shampoo_bottles.p
 import pawImage from "@assets/generated_images/close_up_of_dog_paw_check.png";
 import spaImage from "@assets/generated_images/dog_spa_detail_shot.png";
 import groomerImage from "@assets/generated_images/professional_dog_groomer_portrait.png";
+import bellaImage from "@assets/generated_images/cockapoo_matted_bella.png";
+import maxImage from "@assets/generated_images/aggressive_dog_max.png";
+import teddyImage from "@assets/generated_images/puppy_grooming_teddy.jpg";
+import charlieImage from "@assets/generated_images/senior_dog_charlie.jpg";
+import rockyImage from "@assets/generated_images/skin_issues_rocky.jpg";
+import brunoImage from "@assets/generated_images/dirty_dog_bruno.jpg";
+import oliverImage from "@assets/generated_images/poodle_precision_oliver.jpg";
+import miloImage from "@assets/generated_images/bathing_dog_milo.jpg";
+import cocoImage from "@assets/generated_images/nail_grinding_coco.webp";
+import alfieImage from "@assets/generated_images/cavapoo_alfie_grooming.webp";
+import rosieImage from "@assets/generated_images/shihtzu_rosie_notfall_grooming.jpg";
 
 // Site Data
 export const siteData = {
@@ -1574,5 +1585,2393 @@ export const blogPosts = [
       <p><a href="/booking">👉 Terminanfrage senden</a></p>
     `,
     image: shampooImage
+  },
+
+  // CASE STUDIES
+  {
+    slug: "fallstudie-verfilzter-cockapoo-bella",
+    title: "Stark verfilzter Hund: Bellas Verwandlung – Vom Filzpanzer zur sofortigen Erleichterung",
+    excerpt: "Cockapoo Bella kam mit extremer Ganzkörper-Verfilzung. Ein Notfall-Pflegetermin brachte ihr sofortige Erleichterung – einfühlsam und schmerzfrei.",
+    date: getPostDate(25),
+    content: `
+      <h2>Fallstudie: Stark verfilzter Hund – Bellas Verwandlung</h2>
+      <p><strong>Vom Filzpanzer zur sofortigen Erleichterung</strong></p>
+
+      <h3>📍 Fallübersicht</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Bella</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Cockapoo</td></tr>
+          <tr><td><strong>Alter</strong></td><td>4 Jahre</td></tr>
+          <tr><td><strong>Temperament</strong></td><td>Verschlossen bei Ankunft, reaktiv an den Beinen</td></tr>
+          <tr><td><strong>Besitzerin</strong></td><td>Sarah M.</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Notfall-Pflegetermin</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>1 Stunde 45 Minuten</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Zustand bei Ankunft</h3>
+      <p>Bella kam langsam herein. Kopf gesenkt. Keine Rutenbewegung.</p>
+      <p>Aus der Ferne sah sie flauschig aus. Aus der Nähe war es etwas ganz anderes.</p>
+      <p><strong>Das war kein Fell. Das war ein fester Panzer.</strong></p>
+      <ul>
+        <li>Ohren zu dicken Strängen verschmolzen</li>
+        <li>Brust zu einer dichten Masse komprimiert</li>
+        <li>Hinterpartie stark verschmutzt und verfilzt</li>
+        <li>Augen teilweise verdeckt</li>
+      </ul>
+      <p>Als ich das Fell an ihrer Schulter teilte, bewegte sich die Haut nicht mit.</p>
+      <p>In diesem Moment weiß man: <strong>Das ist keine Fellpflege mehr. Das ist Soforthilfe.</strong></p>
+
+      <h3>🔍 Verfilzungsgrad</h3>
+      <p>Es handelte sich um extreme Ganzkörper-Verfilzung. Nichts durchdrang das Fell:</p>
+      <ul>
+        <li>Grober Kamm → sofort blockiert</li>
+        <li>Finger → kamen nicht bis zur Haut</li>
+      </ul>
+      <p>An mehreren Stellen war die Verfilzung <strong>1–2 cm dick</strong>. Achseln und Leisten waren fest zusammengebunden. Keine Luftzirkulation. Keine Trennung.</p>
+      <p>Das nennen wir <strong>„verpelzt"</strong> – das Fell hebt sich in Stücken wie eine Schale ab, sobald es entfernt wird. Ein ähnliches Muster – wenn auch weniger extrem – zeigt sich oft <a href="/blog/fallstudie-erwartung-vs-realitaet-alfie">bei versteckter Verfilzung wie bei Cavapoo Alfie</a>.</p>
+
+      <h4>Verfilzung nach Körperbereich</h4>
+      <table>
+        <thead><tr><th>Bereich</th><th>Schweregrad (1–5)</th><th>Anmerkung</th></tr></thead>
+        <tbody>
+          <tr><td>Ohren</td><td>5</td><td>Vollständig verkordet, dicht</td></tr>
+          <tr><td>Brust</td><td>5</td><td>Solide Masse, keine Luftzirkulation</td></tr>
+          <tr><td>Beine</td><td>4</td><td>Eingeschränkte Bewegung</td></tr>
+          <tr><td>Hinterpartie</td><td>5</td><td>Komprimiert mit Verschmutzung</td></tr>
+          <tr><td>Achseln</td><td>5</td><td>Eng gebunden, hohes Risiko</td></tr>
+        </tbody>
+      </table>
+
+      <h3>⚠️ Tierschutzrisiken</h3>
+      <p>Das war kein kosmetisches Problem. Es war ein <strong>Tierschutzproblem</strong>.</p>
+      <p><strong>Akute Risiken:</strong></p>
+      <ul>
+        <li>Hautrisse durch Spannung</li>
+        <li>Bakterienbildung durch eingeschlossene Feuchtigkeit</li>
+        <li>Versteckte Hotspots (2 hinter den Ohren gefunden)</li>
+        <li>Eingeschränkte Beinbewegung</li>
+      </ul>
+      <p><strong>Weniger sichtbar – aber ernst:</strong></p>
+      <ul>
+        <li>Verminderte Durchblutung</li>
+        <li>Überhitzung (keine Belüftung)</li>
+        <li>Parasiten versteckt im Fell</li>
+        <li>Konstanter, leiser Schmerz</li>
+      </ul>
+      <p>👉 Jede Bewegung zieht an der Haut.</p>
+
+      <h3>✂️ Scheren oder Retten – Die entscheidende Frage</h3>
+      <p>Sarahs erste Frage war einfach: <em>„Können wir sie flauschig lassen?"</em></p>
+      <p>Also habe ich es gezeigt:</p>
+      <ul>
+        <li>Kamm einsetzen versucht → blockiert</li>
+        <li>Filzmatte angehoben → Haut spannt sich</li>
+      </ul>
+      <p>Dann klar erklärt: <strong>„Wenn ich versuche, das auszubürsten, wird es ihr wehtun. Die freundlichste Option ist, es zu entfernen."</strong></p>
+      <p>Entscheidung gefallen. ✅ Komplettschur mit einer #10 Klinge unter der Filzmatte.</p>
+      <p>Sobald Besitzer es sehen, verstehen sie es.</p>
+
+      <h3>🐶 Bellas Verhalten während der Pflege</h3>
+      <p><strong>Erste 10 Minuten:</strong> Komplett still. Klassisches Shutdown-Verhalten.</p>
+      <p><strong>Als die Schermaschine lief:</strong> Zucken an den Beinen. Anspannung an der Hinterpartie.</p>
+      <p><strong>Dann kam der Wendepunkt.</strong></p>
+      <p>In dem Moment, als das erste Stück von ihrer Seite abkam – <strong>entspannte sie sich</strong>.</p>
+      <p>Man braucht kein Messgerät dafür. Man spürt es sofort.</p>
+
+      <h3>🧘 Bella ruhig & sicher halten</h3>
+      <p>Hier wird Vertrauen aufgebaut – oder verloren.</p>
+      <p><strong>Ansatz:</strong></p>
+      <ul>
+        <li>Kein Hetzen. Gleichmäßiger Rhythmus</li>
+        <li>Schermaschine immer flach gehalten</li>
+        <li>Häufige Pausen (alle 3–5 Minuten)</li>
+        <li>Minimale Fixierung</li>
+      </ul>
+      <p><strong>Strategie:</strong></p>
+      <ul>
+        <li>An der Schulter begonnen (am wenigsten empfindlich)</li>
+        <li>Beine bis später gelassen (erst Vertrauen)</li>
+        <li>Durchgehende stimmliche Beruhigung</li>
+      </ul>
+      <p>👉 <strong>Kein Zwang. Niemals.</strong></p>
+
+      <h3>🧰 Verwendete Werkzeuge & Produkte</h3>
+      <table>
+        <thead><tr><th>Phase</th><th>Werkzeug/Produkt</th><th>Zweck</th></tr></thead>
+        <tbody>
+          <tr><td>Schur</td><td>Heiniger Schermaschine + #10 Klinge</td><td>Sichere Entfernung unter dem Filz</td></tr>
+          <tr><td>Prüfung</td><td>Grober Kamm</td><td>Schweregrad bestätigen</td></tr>
+          <tr><td>Bad</td><td>Chlorhexidin-Shampoo</td><td>Hautreizungen behandeln</td></tr>
+          <tr><td>Trocknung</td><td>Niederdruckföhn</td><td>Empfindliche Haut schonen</td></tr>
+          <tr><td>Finish</td><td>Pflegespray</td><td>Feuchtigkeit wiederherstellen</td></tr>
+        </tbody>
+      </table>
+      <p>👉 Keine Entfilzungswerkzeuge verwendet. Das hätte Schmerzen verursacht.</p>
+
+      <h3>✨ Das Ergebnis</h3>
+      <p>Das war kein Styling. Das war ein <strong>Neustart</strong>.</p>
+      <ul>
+        <li>Kompletter Filzpanzer in Stücken entfernt</li>
+        <li>Haut sichtbar – leicht rosa, aber intakt</li>
+        <li>Zwei Hotspots behandelt</li>
+        <li>Augen vollständig frei</li>
+        <li>Bewegung sofort verbessert</li>
+      </ul>
+      <p><strong>Bella lief anders vom Tisch, als sie gekommen war.</strong></p>
+      <p>Das ist das Ergebnis, das zählt.</p>
+
+      <h3>🧠 Groomer-Tipp: Verfilzung früh erkennen</h3>
+      <p>Die meisten schweren Fälle fangen klein an. Achten Sie auf:</p>
+      <ul>
+        <li>Fell fühlt sich dicht an, nicht weich</li>
+        <li>Kamm gleitet nicht einfach durch</li>
+        <li>Haut bewegt sich nicht unter dem Fell</li>
+        <li>Hund vermeidet Berührungen</li>
+      </ul>
+      <p>👉 Wenn Bürsten sich schwierig anfühlt, ist das Fell bereits zu weit verfilzt.</p>
+
+      <h3>💬 Rat an Besitzer</h3>
+      <p>Kein Urteil. Nur Klarheit.</p>
+      <p><strong>Sofortige Nachsorge:</strong></p>
+      <ul>
+        <li>Kratzen verhindern (Haut ist empfindlich)</li>
+        <li>Hotspots beobachten</li>
+        <li>Sanftes Bürsten sobald das Fell nachwächst</li>
+      </ul>
+      <p><strong>Langfristiger Plan:</strong></p>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Häufigkeit</th></tr></thead>
+        <tbody>
+          <tr><td>Professionelle Pflege</td><td>Alle 6–8 Wochen</td></tr>
+          <tr><td>Bürsten zuhause</td><td>3–4× pro Woche</td></tr>
+          <tr><td>Fellmanagement</td><td>Kürzer halten bei Bedarf</td></tr>
+        </tbody>
+      </table>
+      <p>Und der eine Satz, den ich als Hundefriseur in Wien immer sage: <strong>„Wenn Bürsten sich wie eine Last anfühlt, ist das Fell zu lang."</strong> Wer früh mit der Pflege beginnt – <a href="/blog/fallstudie-erste-welpenpflege-teddy">wie bei Welpe Teddy</a> – vermeidet solche Situationen von Anfang an.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Kann starke Verfilzung ausgebürstet werden?</strong></p>
+      <p>Nein. Es verursacht Schmerzen und kann die Haut einreißen. Scheren ist die humane Option.</p>
+      <p><strong>Tut Scheren dem Hund weh?</strong></p>
+      <p>Nicht wenn es richtig gemacht wird. Es bringt sofortige Erleichterung der Spannung.</p>
+      <p><strong>Wie lange dauert das Nachwachsen?</strong></p>
+      <p>Typischerweise 6–12 Wochen, abhängig von Felltyp und Pflege.</p>
+
+      <h3>Fazit</h3>
+      <p>Diese Situation ist häufiger als man denkt. Nicht weil Besitzer sich nicht kümmern – sondern weil das Leben dazwischenkommt.</p>
+      <p>Aber Verfilzung baut sich leise auf – und Hunde beschweren sich nicht. Sie leben einfach damit. Bis jemand eingreift und es in Ordnung bringt.</p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-erwartung-vs-realitaet-alfie">Erwartung vs. Realität: Warum Cavapoo Alfie geschoren werden musste</a></li>
+        <li><a href="/blog/fallstudie-vernachlaessigter-hund-bruno">Vernachlässigter Hund: Brunos Komplett-Reset nach der Adoption</a></li>
+        <li><a href="/blog/fallstudie-angsthund-schnauzer-max">Angsthund Max: Von Panik zu ruhiger Pflege</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: bellaImage
+  },
+  {
+    slug: "fallstudie-angsthund-schnauzer-max",
+    title: "Aggressiver Hund beim Grooming: Max' Weg von Panik zu ruhiger Pflege",
+    excerpt: "Zwergschnauzer Max schnappte aus Angst – ein anderer Salon hatte ihn abgelehnt. So wurde sein Termin im Hundesalon Laika trotzdem ein Erfolg.",
+    date: getPostDate(26),
+    content: `
+      <h2>Fallstudie: Aggressiver / ängstlicher Hund beim Grooming</h2>
+      <p><strong>Von Schnappen & Panik zu ruhiger, kontrollierter Pflege</strong></p>
+
+      <h3>📍 Fallübersicht</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Max</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Zwergschnauzer</td></tr>
+          <tr><td><strong>Alter</strong></td><td>3 Jahre</td></tr>
+          <tr><td><strong>Temperament</strong></td><td>Angstbasierte Aggression (defensiv)</td></tr>
+          <tr><td><strong>Besitzer</strong></td><td>Daniel R.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Vorheriger Groomer verweigerte den Service</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Verhaltens-Pflegetermin</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>2 Stunden 10 Minuten (mit Pausen)</td></tr>
+          <tr><td><strong>Standort</strong></td><td>Wien – 1090 (Alsergrund)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Erster Eindruck: Ruhig… aber geladen</h3>
+      <p>Dieser Fall fand im Hundesalon Laika statt, wo die Arbeit mit ängstlichen oder reaktiven Hunden zum täglichen Alltag gehört.</p>
+      <p>Max kam nicht bellend herein. Er kam <strong>ruhig – aber angespannt</strong>.</p>
+      <p>Und das ist oft aufschlussreicher.</p>
+      <ul>
+        <li>Kopf gesenkt, Augen fixiert auf jede Bewegung</li>
+        <li>Ohren eng angelegt</li>
+        <li>Rute eingezogen, aber steif – nicht entspannt</li>
+      </ul>
+      <p>Innerhalb von Sekunden auf dem Tisch häuften sich die Signale:</p>
+      <ul>
+        <li>Lippenlecken</li>
+        <li>Whale Eye (Weißes im Auge sichtbar)</li>
+        <li>Ein leises, kontrolliertes Knurren</li>
+      </ul>
+      <p>Als ich nach seinem Vorderbein griff:</p>
+      <p>👉 <strong>Ein schnelles, gezieltes Schnappen.</strong> Kein Kontakt – aber klare Absicht.</p>
+      <p>Das war kein schlechtes Benehmen.</p>
+      <p>👉 Das war Kommunikation: <strong>„Ich fühle mich nicht sicher."</strong></p>
+
+      <h3>📊 Trigger-Empfindlichkeit</h3>
+      <table>
+        <thead><tr><th>Auslöser</th><th>Reaktionslevel (1–5)</th><th>Anmerkung</th></tr></thead>
+        <tbody>
+          <tr><td>Vorderbeine</td><td>5</td><td>Sofortige Schnapp-Reaktion</td></tr>
+          <tr><td>Gesicht / Kopf</td><td>4</td><td>Hohe Anspannung</td></tr>
+          <tr><td>Plötzliche Bewegung</td><td>5</td><td>Eskalationsauslöser</td></tr>
+          <tr><td>Schermaschine nahe Gesicht</td><td>4</td><td>Angstspitze</td></tr>
+          <tr><td>Rücken / Schultern</td><td>2</td><td>Sichere Startzone</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🔍 Trigger identifizieren</h3>
+      <p>Anstatt zu reagieren, habe ich beobachtet. Die Muster wurden schnell deutlich:</p>
+      <ul>
+        <li>Hände Richtung Pfoten → sofortige Anspannung</li>
+        <li>Schermaschine nahe Gesicht → starker Angstanstieg</li>
+        <li>Physische Fixierung → sofortige Eskalation</li>
+      </ul>
+      <p>Was am meisten auffiel:</p>
+      <p>👉 Ruhig wenn in Ruhe gelassen<br/>👉 Reaktiv wenn Kontrolle ausgeübt wurde</p>
+      <p>Das ist <strong>klassisches angstbasiertes Verhalten</strong>.</p>
+
+      <h3>🔄 Vorgehensweise anpassen</h3>
+      <p><strong>Erste Entscheidung:</strong> 👉 Alles verlangsamen.</p>
+      <p><strong>Zweite Entscheidung:</strong> 👉 Druck wegnehmen – nicht erhöhen.</p>
+      <p><strong>Was sich änderte:</strong></p>
+      <ul>
+        <li>Kein Pflegeversuch in den ersten Minuten</li>
+        <li>Max durfte frei stehen</li>
+        <li>Werkzeuge schrittweise eingeführt, in seinem Sichtfeld</li>
+      </ul>
+      <p>Ich habe nicht mit Pflegen begonnen. <strong>Ich habe mit Vorhersehbarkeit begonnen.</strong> Denselben Ansatz verwenden wir im Hundesalon Laika Wien auch <a href="/blog/fallstudie-hund-hasst-wasser-milo">bei Hunden mit Wasserangst wie Milo</a>.</p>
+
+      <h3>🧠 Handling-Strategie</h3>
+      <table>
+        <thead><tr><th>Phase</th><th>Vorgehensweise</th></tr></thead>
+        <tbody>
+          <tr><td>Phase 1</td><td>Nur Beobachtung</td></tr>
+          <tr><td>Phase 2</td><td>Leichte Berührung → Loslassen</td></tr>
+          <tr><td>Phase 3</td><td>Werkzeuge auf Distanz einführen</td></tr>
+          <tr><td>Phase 4</td><td>Bereiche mit niedrigem Triggerlevel pflegen</td></tr>
+        </tbody>
+      </table>
+      <p>Der Startpunkt ist entscheidend: 👉 <strong>Rücken und Schultern zuerst</strong> – nicht Gesicht oder Pfoten.</p>
+
+      <h3>🦺 Sicherheit ohne Zwang</h3>
+      <p>Sicherheit geht nicht über Dominanz – sondern über <strong>Timing und Positionierung</strong>.</p>
+      <p><strong>Was verwendet wurde:</strong></p>
+      <ul>
+        <li>Lockere Pflegeschlinge (Führung, keine Fixierung)</li>
+        <li>Weicher Stoff-Maulkorb (schrittweise eingeführt)</li>
+      </ul>
+      <p>Wichtiges Detail:</p>
+      <p>👉 Der Maulkorb wurde <strong>nicht sofort</strong> angelegt<br/>👉 Er wurde eingeführt, nachdem erstes Vertrauen aufgebaut war</p>
+      <p>Dieses Timing macht den gesamten Unterschied.</p>
+
+      <h3>🧘 Die Situation ruhig halten</h3>
+      <p>Kleine Entscheidungen bestimmen das Ergebnis:</p>
+      <ul>
+        <li>Leicht seitlich gearbeitet – nicht direkt von vorne</li>
+        <li>Eine stabilisierende Hand – nie greifend</li>
+        <li>Ständige Überwachung von Anspannung und Atmung</li>
+      </ul>
+      <p>Wenn Max sich versteifte: 👉 <strong>Ich stoppte.</strong></p>
+      <p>Kein Drängen. Kein Hetzen.</p>
+
+      <h3>🔄 Fortschritte während des Termins</h3>
+      <p>Nicht dramatisch – aber real:</p>
+      <ul>
+        <li>Knurren ließ nach ~20 Minuten nach</li>
+        <li>Schulterschur ruhig abgeschlossen</li>
+        <li>Maulkorb ohne Widerstand akzeptiert</li>
+        <li>Vorderbeine noch reaktiv – aber handhabbar</li>
+      </ul>
+      <p><strong>Schlüsselmoment:</strong></p>
+      <p>👉 Er hörte auf, ständig alles abzuscannen.</p>
+      <p>Das ist der Moment, in dem der Hund mental zur Ruhe kommt.</p>
+      <p>In der geschäftigen Umgebung Wiens sind Hunde oft überreizt – deshalb wird ruhige Vorhersehbarkeit noch wichtiger.</p>
+
+      <h3>🧰 Verwendete Werkzeuge & Setup</h3>
+      <table>
+        <thead><tr><th>Phase</th><th>Werkzeug</th><th>Grund</th></tr></thead>
+        <tbody>
+          <tr><td>Schur</td><td>Wahl KM10 + #7F Klinge</td><td>Geringe Vibration</td></tr>
+          <tr><td>Gesicht</td><td>Kleiner Trimmer</td><td>Weniger einschüchternd</td></tr>
+          <tr><td>Sicherheit</td><td>Weicher Maulkorb</td><td>Ruhige Kontrolle</td></tr>
+          <tr><td>Tisch</td><td>Pflegeschlinge</td><td>Stabilität</td></tr>
+          <tr><td>Pausen</td><td>Wasser + Unterbrechungen</td><td>Stressabbau</td></tr>
+        </tbody>
+      </table>
+      <p>Kein lauter Föhn in Gesichtsnähe verwendet – das hätte den Fortschritt sofort zunichte gemacht.</p>
+
+      <h3>✨ Das Ergebnis</h3>
+      <p>Nicht perfekt – und das ist wichtig.</p>
+      <ul>
+        <li>Körper sauber geschoren</li>
+        <li>Sanitärbereiche sicher abgeschlossen</li>
+        <li>Gesicht teilweise getrimmt</li>
+        <li>Krallen mit Pausen geschnitten</li>
+      </ul>
+      <p><strong>Am wichtigsten:</strong></p>
+      <ul>
+        <li>👉 Keine Verletzungen</li>
+        <li>👉 Keine Eskalation</li>
+        <li>👉 Hund ging ruhiger als er kam</li>
+      </ul>
+      <p><strong>Das ist der echte Erfolg.</strong></p>
+
+      <h3>🚫 Was man nicht tun sollte</h3>
+      <ul>
+        <li>Zu früh fixieren</li>
+        <li>Mit empfindlichen Bereichen anfangen</li>
+        <li>Werkzeuge plötzlich einschalten</li>
+        <li>Den Prozess überstürzen</li>
+        <li>Warnsignale ignorieren</li>
+      </ul>
+
+      <h3>💬 Rat an den Besitzer</h3>
+      <p>Kein Vorwurf. Nur Klarheit.</p>
+      <p>Max ist nicht aggressiv – <strong>er hat Angst</strong>. Und das bedeutet: sein Verhalten ist vorhersehbar – und verbesserbar.</p>
+      <p><strong>Plan für die Zukunft:</strong></p>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Häufigkeit</th></tr></thead>
+        <tbody>
+          <tr><td>Pflegetermine</td><td>Alle 4–6 Wochen</td></tr>
+          <tr><td>Handling zuhause</td><td>Täglich (Pfoten + Gesicht)</td></tr>
+          <tr><td>Desensibilisierung</td><td>Schrittweise Gewöhnung</td></tr>
+        </tbody>
+      </table>
+      <p>Und ein Satz, der hängen blieb: <strong>„Wenn Sie ihn nur pflegen, wenn er überwachsen ist, fühlt sich jeder Besuch wie eine Bedrohung an."</strong> Genau deshalb empfehlen wir als Hundefriseur in Wien, <a href="/blog/fallstudie-krallenschneiden-dackel-coco">regelmäßige Termine – auch für sensible Bereiche wie Krallenpflege</a>.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Sollten ängstliche Hunde sediert werden?</strong></p>
+      <p>Nicht immer. Viele verbessern sich mit korrektem Handling und Routine.</p>
+      <p><strong>Kann sich das Verhalten verbessern?</strong></p>
+      <p>Ja – Konsequenz verändert alles.</p>
+      <p><strong>Ist ein Maulkorb grausam?</strong></p>
+      <p>Nein. Richtig eingeführt, reduziert er Stress und erhöht die Sicherheit.</p>
+
+      <h3>Fazit</h3>
+      <p>Hunde wie Max sind nicht schwierig. Sie sind <strong>unsicher</strong>.</p>
+      <p>Geben Sie ihnen Struktur. Geben Sie ihnen Vorhersehbarkeit.</p>
+      <p>Und der Großteil der Aggression verschwindet.</p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-hund-hasst-wasser-milo">Hund hasst Wasser: Milos Weg von Panik zu ruhigem Baden</a></li>
+        <li><a href="/blog/fallstudie-krallenschneiden-dackel-coco">Krallenschneiden-Angst: Dackel Cocos Weg zur Ruhe</a></li>
+        <li><a href="/blog/fallstudie-verfilzter-cockapoo-bella">Verfilzter Cockapoo Bella: Vom Filzpanzer zur Erleichterung</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: maxImage
+  },
+  {
+    slug: "fallstudie-erste-welpenpflege-teddy",
+    title: "Erste Welpenpflege: Teddys Einführung in stressfreies Grooming",
+    excerpt: "Cockapoo-Welpe Teddy hatte seinen allerersten Pflegetermin mit 13 Wochen. So legen wir im Hundesalon Laika den Grundstein für ein stressfreies Hundeleben.",
+    date: getPostDate(27),
+    content: `
+      <h2>Fallstudie: Erste Welpenpflege</h2>
+      <p><strong>Den Grundstein für ein Leben voller stressfreier Pflege legen</strong></p>
+
+      <h3>📍 Fallübersicht</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Teddy</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Cockapoo</td></tr>
+          <tr><td><strong>Alter</strong></td><td>13 Wochen</td></tr>
+          <tr><td><strong>Temperament</strong></td><td>Neugierig, leicht unsicher, sehr aufnahmefähig</td></tr>
+          <tr><td><strong>Besitzerin</strong></td><td>Emma L.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Erster Hund, erste Pflegeerfahrung</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Einführungs-Welpenpflege</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>1 Stunde (mit Mikropausen)</td></tr>
+          <tr><td><strong>Standort</strong></td><td>Wien – 1090 (Alsergrund)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Erster Eindruck – Von Aufregung zu Unsicherheit</h3>
+      <p>Dieser Termin fand im Hundesalon Laika statt, wo frühe Welpenerfahrungen als Grundlagenarbeit behandelt werden – nicht als Routinepflege.</p>
+      <p>Teddy kam genau so an, wie man es von einem jungen Welpen erwartet:</p>
+      <p><strong>Aufgeregt… neugierig… voller Energie.</strong></p>
+      <p>Dann, innerhalb von Sekunden auf dem Tisch:</p>
+      <ul>
+        <li>Rute wedelt noch – aber langsamer</li>
+        <li>Kopf schief gelegt, den Raum scannend</li>
+        <li>Bewegungen werden vorsichtiger</li>
+      </ul>
+      <p>Der bekannte Wechsel: 👉 <strong>Selbstvertrauen → Unsicherheit</strong></p>
+      <p>Und genau dieser Moment ist entscheidend. Hier baut man entweder Vertrauen auf – oder schafft zukünftige Probleme. Wir sehen im Hundesalon Laika Wien regelmäßig, <a href="/blog/fallstudie-angsthund-schnauzer-max">was passiert, wenn die erste Erfahrung schlecht läuft – wie bei Angsthund Max</a>.</p>
+
+      <h3>🧠 Werkzeuge richtig einführen</h3>
+      <p>Nichts wurde überstürzt. Nicht für eine Sekunde.</p>
+      <p><strong>Schritt-für-Schritt-Ansatz:</strong></p>
+      <ul>
+        <li>Bürste auf den Tisch gelegt → Teddy durfte sie untersuchen</li>
+        <li>Schermaschine auf der anderen Seite des Raums eingeschaltet</li>
+        <li>Über einige Minuten schrittweise näher gebracht</li>
+      </ul>
+      <p>Grundprinzip:</p>
+      <p>👉 Ich gehe nicht mit dem Werkzeug auf den Welpen zu<br/>👉 Ich lasse den Welpen die Erfahrung selbst entdecken</p>
+      <p>Das nimmt sofort den Druck.</p>
+
+      <h3>🐶 Teddys Verhalten (Echt, nicht perfekt)</h3>
+      <p>Kein Welpe steht still und verhält sich perfekt – und das ist in Ordnung.</p>
+      <p><strong>Was Teddy zeigte:</strong></p>
+      <ul>
+        <li>Kleines Zusammenzucken beim Schermaschinengeräusch</li>
+        <li>Spielerisches Knabbern an der Bürste</li>
+        <li>Gelegentliches Pfotenrückziehen</li>
+      </ul>
+      <p><strong>Aber am wichtigsten:</strong></p>
+      <ul>
+        <li>👉 Keine Panik</li>
+        <li>👉 Kein Shutdown</li>
+        <li>👉 Keine Eskalation</li>
+      </ul>
+      <p>Das ist das grüne Licht.</p>
+
+      <h3>🤝 Vertrauen durch Handling aufbauen</h3>
+      <p>Hier werden langfristige Ergebnisse entschieden.</p>
+      <p><strong>Angewandte Techniken:</strong></p>
+      <ul>
+        <li>Eine Hand liegt immer leicht auf seinem Körper</li>
+        <li>Kurze, wiederholende Bewegungen</li>
+        <li>Durchgehend konsistenter Tonfall</li>
+      </ul>
+      <p><strong>Pausenstruktur:</strong> Alle 5–7 Minuten:</p>
+      <ul>
+        <li>Pause</li>
+        <li>Teddy darf sich leicht bewegen</li>
+        <li>Fokus zurücksetzen</li>
+      </ul>
+      <p>Kein langes, ununterbrochenes Pflegen.</p>
+      <p>👉 <strong>Welpen brauchen keine Ausdauer – sie brauchen positive Wiederholung.</strong></p>
+
+      <h3>🎯 Was bei einer ersten Pflege wirklich zählt</h3>
+      <p>Nicht der Haarschnitt. Nicht die Symmetrie. Nicht die Perfektion.</p>
+      <p>👉 Das eigentliche Ziel:</p>
+      <p><strong>„Beim nächsten Mal kommt der Welpe selbstbewusst herein."</strong></p>
+      <p>Alles andere ist zweitrangig.</p>
+
+      <h3>🛁 Das Badeerlebnis</h3>
+      <p>Hier gehen viele erste Pflegetermine schief.</p>
+      <p><strong>Anpassungen:</strong></p>
+      <ul>
+        <li>Nur lauwarmes Wasser</li>
+        <li>Sehr geringer Wasserdruck</li>
+        <li>An den Hinterbeinen begonnen – nicht am Kopf</li>
+      </ul>
+      <p><strong>Teddys Reaktion:</strong></p>
+      <ul>
+        <li>Kurzes Zögern</li>
+        <li>Dann sichtbare Entspannung innerhalb einer Minute</li>
+      </ul>
+      <p>Das sagt eines: 👉 <strong>Das Tempo war richtig.</strong></p>
+
+      <h3>✂️ Durchgeführte Pflegearbeiten</h3>
+      <p>Das war absichtlich <strong>kein vollständiger Pflegetermin</strong>.</p>
+      <p><strong>Was gemacht wurde:</strong></p>
+      <ul>
+        <li>Leichtes Körper-Aufräumen</li>
+        <li>Sanitärschnitt</li>
+        <li>Augenbereich freigelegt</li>
+        <li>Sanftes Durchbürsten</li>
+        <li>Krallen gekürzt (nur Spitzen)</li>
+      </ul>
+      <p><strong>Was nicht erzwungen wurde:</strong></p>
+      <ul>
+        <li>Vollständiger Haarschnitt</li>
+        <li>Perfektes Finish</li>
+        <li>Enges Gesichtsstyling</li>
+      </ul>
+      <p>Denn das früh zu erzwingen: 👉 <strong>erzeugt Widerstand für später.</strong></p>
+
+      <h3>🧰 Verwendete Werkzeuge & Produkte</h3>
+      <table>
+        <thead><tr><th>Phase</th><th>Werkzeug</th><th>Grund</th></tr></thead>
+        <tbody>
+          <tr><td>Bürsten</td><td>Weiche Slicker-Bürste</td><td>Sanfte Einführung</td></tr>
+          <tr><td>Schur</td><td>Leise Schermaschine</td><td>Angst reduzieren</td></tr>
+          <tr><td>Trimmen</td><td>Abgerundete Schere</td><td>Sicherheit</td></tr>
+          <tr><td>Bad</td><td>Welpen-Shampoo</td><td>Empfindliche Haut</td></tr>
+          <tr><td>Trocknung</td><td>Niederdruckföhn</td><td>Nicht überwältigen</td></tr>
+        </tbody>
+      </table>
+      <p>Keine starken Düfte. Keine aggressiven Produkte.</p>
+
+      <h3>✨ Das Ergebnis</h3>
+      <p>Nicht perfekt – und genau darum geht es.</p>
+      <ul>
+        <li>Weiches, natürliches Finish</li>
+        <li>Stellenweise leicht ungleichmäßig</li>
+        <li>Welpe am Ende entspannt</li>
+      </ul>
+      <p><strong>Am wichtigsten:</strong></p>
+      <ul>
+        <li>👉 Handling akzeptiert</li>
+        <li>👉 Keine Angst erzeugt</li>
+        <li>👉 Ging neugierig – nicht vorsichtig</li>
+      </ul>
+      <p><strong>Das ist der echte Erfolg.</strong></p>
+
+      <h3>🧠 Rat an Besitzer (Wo alles weitergeht)</h3>
+      <p>Hier wird die Zukunft geformt.</p>
+      <p><strong>1. Zuhause mit der Pflege beginnen:</strong></p>
+      <ul>
+        <li>Täglich Pfoten anfassen</li>
+        <li>Ohren sanft handhaben</li>
+        <li>Bürsten als Spiel einführen</li>
+      </ul>
+      <p><strong>2. Konsistenz beibehalten:</strong></p>
+      <table>
+        <thead><tr><th>Phase</th><th>Häufigkeit</th></tr></thead>
+        <tbody>
+          <tr><td>Welpenphase</td><td>Alle 4 Wochen</td></tr>
+          <tr><td>Ab 6 Monaten</td><td>Alle 4–6 Wochen</td></tr>
+        </tbody>
+      </table>
+      <p><strong>3. Positiv halten:</strong></p>
+      <ul>
+        <li>Kein Zwang</li>
+        <li>Nicht mit Werkzeugen hinterherjagen</li>
+        <li>Sitzungen kurz und ruhig halten</li>
+      </ul>
+      <p>Und ein Satz, den ich immer sage: <strong>„Wenn die ersten Pflegetermine gut laufen, werden Sie nie Probleme haben."</strong> Das gilt auch für spezifische Bereiche – <a href="/blog/fallstudie-verfilzter-cockapoo-bella">regelmäßiges Bürsten verhindert Verfilzung wie bei Bella</a>.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Wann sollte ein Welpe seinen ersten Pflegetermin haben?</strong></p>
+      <p>Etwa mit 10–14 Wochen, sobald er sich in seinem neuen Zuhause eingelebt hat.</p>
+      <p><strong>Was, wenn mein Welpe nervös ist?</strong></p>
+      <p>Das ist normal – sanfte, positive Gewöhnung ist der Schlüssel.</p>
+      <p><strong>Sollte beim ersten Besuch ein vollständiger Haarschnitt gemacht werden?</strong></p>
+      <p>Nein. Der Fokus sollte auf der Erfahrung liegen, nicht auf dem Ergebnis.</p>
+
+      <h3>Fazit</h3>
+      <p>Einen schlechten Haarschnitt kann man korrigieren.</p>
+      <p>Eine schlechte erste Erfahrung nicht so leicht.</p>
+      <p>Welpen entscheiden schnell: 👉 <strong>Ist Pflege sicher – oder nicht?</strong></p>
+      <p>Das früh richtig machen… und Sie vermeiden Angst, Stress und Widerstand für die Zukunft.</p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-angsthund-schnauzer-max">Angsthund Max: Was passiert, wenn die erste Erfahrung schlecht war</a></li>
+        <li><a href="/blog/fallstudie-verfilzter-cockapoo-bella">Verfilzter Cockapoo: Warum regelmäßige Pflege so wichtig ist</a></li>
+        <li><a href="/blog/fallstudie-krallenschneiden-dackel-coco">Krallenpflege bei Dackel Coco: Angst nach schlechter Erfahrung</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: teddyImage
+  },
+  {
+    slug: "fallstudie-senior-hund-charlie",
+    title: "Senior-Hund beim Hundefriseur: Charlies schonende Pflege mit 13 Jahren",
+    excerpt: "Cavalier King Charles Spaniel Charlie ist 13 und hat Arthrose. So sieht ein angepasster Pflegetermin im Hundesalon Laika aus – Komfort vor Optik.",
+    date: getPostDate(28),
+    content: `
+      <h2>Fallstudie: Senior-Hund beim Hundefriseur</h2>
+      <p><strong>Komfort vor Optik – Wie man einen alten Hund schonend pflegt</strong></p>
+
+      <h3>📍 Überblick</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Charlie</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Cavalier King Charles Spaniel</td></tr>
+          <tr><td><strong>Alter</strong></td><td>13 Jahre</td></tr>
+          <tr><td><strong>Wesen</strong></td><td>Ruhig, brav, wird schnell müde</td></tr>
+          <tr><td><strong>Besitzerin</strong></td><td>Margaret H.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Stammkunde seit Welpenalter</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Senior-Komfort-Grooming</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>1 Stunde 20 Minuten (mit Pausen)</td></tr>
+          <tr><td><strong>Standort</strong></td><td>Wien – 1090</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Erster Eindruck – Langsamer, aber noch voll dabei</h3>
+      <p>Der Termin fand bei Hundesalon Laika statt – hier geht's bei älteren Hunden nicht um Perfektion, sondern um Wohlbefinden. Als erfahrener Hundefriseur in Wien wissen wir: Jeder Senior braucht einen individuellen Pflegeplan.</p>
+      <p>Charlie ist nicht einfach reingelaufen. Er ist <strong>langsam reingeschlurft</strong>.</p>
+      <p>Und genau da siehst du's sofort:</p>
+      <ul>
+        <li>Hinterbeine steif</li>
+        <li>Unsicher auf dem Boden</li>
+        <li>Kopf etwas tiefer als früher</li>
+      </ul>
+      <p>Der Schwanz hat noch gewedelt – aber langsamer.</p>
+      <p>Und das sagt alles: 👉 <strong>Er will… aber sein Körper kann nimmer wie früher.</strong></p>
+
+      <h3>🧠 Gesundheitliche Situation</h3>
+      <p>Bei Senioren ist nix „Standard". Alles richtet sich danach, was der Hund noch schafft.</p>
+      <p><strong>Bekannte Probleme:</strong></p>
+      <ul>
+        <li>Arthrose in Hüfte und Hinterbeinen</li>
+        <li>Leichte Herzprobleme</li>
+        <li>Weniger Ausdauer</li>
+      </ul>
+      <p><strong>Beim Grooming aufgefallen:</strong></p>
+      <ul>
+        <li>Muskeln im hinteren Bereich abgebaut</li>
+        <li>Empfindlich beim Anheben der Beine</li>
+        <li>Dünnere, sensiblere Haut</li>
+      </ul>
+      <p>Das sind keine Nebensachen. 👉 <strong>Das bestimmt den ganzen Ablauf.</strong></p>
+
+      <h3>⚠️ Was das fürs Grooming bedeutet</h3>
+      <p>Bei alten Hunden hast du immer zwei Fragen im Kopf:</p>
+      <p>👉 Was gehört gemacht<br/>👉 Und was hält er überhaupt aus</p>
+      <p><strong>Einschränkungen:</strong></p>
+      <ul>
+        <li>Langes Stehen geht nicht</li>
+        <li>Schnelles Umpositionieren geht nicht</li>
+        <li>Stress muss runter (Herz!)</li>
+      </ul>
+      <p>Darum: 👉 <strong>Kein durchgehendes Grooming – sondern in Etappen arbeiten.</strong></p>
+
+      <h3>🔄 Anpassungen im Ablauf</h3>
+      <h4>1. Ablauf in Blöcken</h4>
+      <p>Statt durchziehen:</p>
+      <ul>
+        <li>10–15 Minuten arbeiten</li>
+        <li>3–5 Minuten Pause</li>
+      </ul>
+      <p>Charlie durfte: 👉 <strong>sitzen oder liegen, wann er wollte.</strong></p>
+
+      <h4>2. Tisch & Setup</h4>
+      <ul>
+        <li>Rutschfeste Unterlage</li>
+        <li>Halterung nur zur Unterstützung – nicht zum Fixieren</li>
+        <li>Bauch leicht gestützt</li>
+      </ul>
+      <p>Kein unnötiges Hochheben.</p>
+
+      <h4>3. Reihenfolge geändert</h4>
+      <p>Normal: Körper → Beine → Kopf</p>
+      <p>Hier: 👉 <strong>Beine zuerst – solange noch Energie da ist.</strong></p>
+      <p>Kleine Änderung, große Wirkung.</p>
+
+      <h3>✂️ Technik angepasst</h3>
+      <p>Einen Senior groomt man anders.</p>
+      <p><strong>Was geändert wurde:</strong></p>
+      <ul>
+        <li>Lieber mit Maschine als mit Schere (schneller, sicherer)</li>
+        <li>Kein Ziehen oder Strecken</li>
+        <li>Keine unnatürlichen Positionen</li>
+      </ul>
+      <p>Alles war: 👉 <strong>langsam, ruhig, kontrolliert.</strong></p>
+
+      <h3>🧘 Ständige Beobachtung</h3>
+      <p>Bei alten Hunden muss man permanent schauen.</p>
+      <p><strong>Worauf geachtet wurde:</strong></p>
+      <ul>
+        <li>Mehr Hecheln</li>
+        <li>Unruhiges Verlagern vom Gewicht</li>
+        <li>Augen schließen (Erschöpfung)</li>
+      </ul>
+      <p>Nach ca. 40 Minuten: 👉 <strong>Charlie hat sich einfach hingesetzt.</strong></p>
+      <p>Und das ist kein „Ungehorsam". Das ist Kommunikation.</p>
+      <p>👉 Also sofort Pause.</p>
+
+      <h3>🧰 Werkzeuge & Produkte</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Werkzeug</th><th>Warum</th></tr></thead>
+        <tbody>
+          <tr><td>Schneiden</td><td>Andis Maschine + #5F</td><td>Schnell, effizient</td></tr>
+          <tr><td>Bürsten</td><td>Weiche Slicker</td><td>Schonend</td></tr>
+          <tr><td>Baden</td><td>Hafer-Shampoo</td><td>Beruhigt die Haut</td></tr>
+          <tr><td>Trocknen</td><td>Niedrige Hitze & Luft</td><td>Weniger Stress</td></tr>
+          <tr><td>Unterstützung</td><td>Grooming-Sling</td><td>Stabilität</td></tr>
+        </tbody>
+      </table>
+      <p>Kein Lärm. Keine Hitze.</p>
+
+      <h3>🛁 Baden – besonders sensibel</h3>
+      <p>Für ältere Hunde oft der anstrengendste Teil.</p>
+      <p><strong>Anpassungen:</strong></p>
+      <ul>
+        <li>Kürzere Badezeit</li>
+        <li>Ständige Unterstützung</li>
+        <li>Kein langes Stehen</li>
+      </ul>
+      <p>Charlie war leicht wackelig – aber ruhig. 👉 <strong>Genau so soll's sein.</strong></p>
+
+      <h3>✨ Ergebnis</h3>
+      <p>Kein Show-Schnitt. Ein <strong>Komfort-Schnitt</strong>.</p>
+      <ul>
+        <li>Fell gekürzt für einfache Pflege</li>
+        <li>Hygiene sauber gemacht</li>
+        <li>Weniger Verfilzung durch kürzeres Fell</li>
+        <li>Krallen vorsichtig geschnitten</li>
+      </ul>
+      <p><strong>Das Wichtigste:</strong></p>
+      <ul>
+        <li>👉 Kein Stress</li>
+        <li>👉 Keine Überforderung</li>
+        <li>👉 Schwanz hat noch gewedelt</li>
+      </ul>
+
+      <h3>🧠 Beratung für die Besitzerin</h3>
+      <p>Da entscheidet sich, wie's weitergeht.</p>
+      <h4>1. Öfter, aber kürzer</h4>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Rhythmus</th></tr></thead>
+        <tbody>
+          <tr><td>Grooming</td><td>Alle 4–6 Wochen</td></tr>
+          <tr><td>Zuhause bürsten</td><td>2–3× pro Woche</td></tr>
+        </tbody>
+      </table>
+      <h4>2. Zuhause anpassen</h4>
+      <ul>
+        <li>Orthopädisches Bett</li>
+        <li>Rutschfeste Böden</li>
+        <li>Leichte Zugänge</li>
+      </ul>
+      <h4>3. Fell anpassen</h4>
+      <p><strong>„In dem Alter ist kürzer einfach freundlicher für den Hund."</strong></p>
+      <p>Langes Fell + alter Hund = selten eine gute Kombi. Ähnlich schonende Ansätze nutzen wir auch <a href="/blog/fallstudie-hautprobleme-franzoesische-bulldogge-rocky">bei Hunden mit Hautproblemen wie Rocky</a> und <a href="/blog/fallstudie-notfall-grooming-shihtzu-rosie">bei zeitlich angepassten Terminen wie bei Rosie</a>.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Soll man alte Hunde überhaupt noch regelmäßig pflegen?</strong></p>
+      <p>Ja – aber angepasst und ohne Druck.</p>
+      <p><strong>Ist Grooming stressig für Senioren?</strong></p>
+      <p>Kann es sein, wenn man's falsch macht. Mit Ruhe geht's gut.</p>
+      <p><strong>Soll man den Stil ändern?</strong></p>
+      <p>Ja. Komfort geht vor Optik.</p>
+
+      <h3>Fazit</h3>
+      <p>Ein alter Hund braucht kein perfektes Styling.</p>
+      <p>Er braucht: 👉 <strong>Geduld, Gefühl und Respekt für seine Grenzen.</strong></p>
+      <p>Der größte Fehler? 👉 <strong>Ihn behandeln, als wär er noch jung.</strong></p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-hautprobleme-franzoesische-bulldogge-rocky">Hautprobleme bei Rocky: Wenn Pflege besonders schonend sein muss</a></li>
+        <li><a href="/blog/fallstudie-erste-welpenpflege-teddy">Welpe Teddy: Pflegeroutine von Anfang an aufbauen</a></li>
+        <li><a href="/blog/fallstudie-notfall-grooming-shihtzu-rosie">Notfall-Grooming bei Rosie: Angepasste Pflege unter Zeitdruck</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: charlieImage
+  },
+  {
+    slug: "fallstudie-hautprobleme-franzoesische-bulldogge-rocky",
+    title: "Hund mit Hautproblemen: Rockys Weg von gereizter Haut zu spürbarer Erleichterung",
+    excerpt: "Französische Bulldogge Rocky hatte entzündete Hautfalten und Hefepilz-Verdacht. So sah sein hautorientierter Pflegetermin im Hundesalon Laika aus.",
+    date: getPostDate(29),
+    content: `
+      <h2>Fallstudie: Hund mit Hautproblemen</h2>
+      <p><strong>Von gereizter, entzündeter Haut zu spürbarer Erleichterung</strong></p>
+
+      <h3>📍 Überblick</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Rocky</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Französische Bulldogge</td></tr>
+          <tr><td><strong>Alter</strong></td><td>5 Jahre</td></tr>
+          <tr><td><strong>Wesen</strong></td><td>Freundlich, aber unruhig bei Reizung</td></tr>
+          <tr><td><strong>Besitzer</strong></td><td>Jason T.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Wiederkehrende Hautprobleme, bereits tierärztlich behandelt</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Hautorientiertes Pflege-Grooming</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>1 Stunde 30 Minuten</td></tr>
+          <tr><td><strong>Standort</strong></td><td>Wien – 1090</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Erster Eindruck – Du riechst es zuerst</h3>
+      <p>Noch bevor du den Hund richtig anschaust, nimmst du den Geruch wahr.</p>
+      <p>So ein leicht süßlicher, „muffiger" Geruch.</p>
+      <p>Wenn du als Hundefriseur in Wien Erfahrung hast, weißt du sofort: 👉 <strong>Das geht oft Richtung Hefepilz (Yeast)</strong></p>
+      <p><strong>Sichtbare Anzeichen:</strong></p>
+      <ul>
+        <li>Rötungen an Brust und Achseln</li>
+        <li>Fettiges, leicht klebriges Fell</li>
+        <li>Permanentes Kratzen beim Reinkommen</li>
+        <li>Kleine kahle Stellen rund um die Halsfalten</li>
+      </ul>
+      <p>Rocky war nicht panisch. Aber eindeutig: 👉 <strong>Unwohl.</strong></p>
+
+      <h3>🔍 Worum es sich wahrscheinlich handelt</h3>
+      <p>Wichtig vorweg: 👉 <strong>Das ist keine Diagnose – sondern eine fachliche Einschätzung.</strong></p>
+      <p><strong>Wahrscheinliche Kombination:</strong></p>
+      <ul>
+        <li>Hefepilz-Überwuchs</li>
+        <li>Leichte allergische Reaktion</li>
+      </ul>
+      <p><strong>Hinweise dafür:</strong></p>
+      <ul>
+        <li>Typischer Geruch</li>
+        <li>Fettiger Film im Fell</li>
+        <li>Rote, entzündete Hautfalten</li>
+      </ul>
+      <p>Zusätzlich klar sichtbar: 👉 <strong>Feuchtigkeit in den Hautfalten – typisch bei dieser Rasse.</strong></p>
+
+      <h3>🧠 Wie ich das einschätze (Praxislogik)</h3>
+      <p>Man rät nicht – man liest Muster.</p>
+      <p><strong>Worauf ich achte:</strong></p>
+      <ul>
+        <li>Farbunterschiede in der Haut</li>
+        <li>Wärmeentwicklung an betroffenen Stellen</li>
+        <li>Fellstruktur (trocken vs. fettig)</li>
+      </ul>
+      <p>Beim Auseinanderziehen der Haut in der Achsel: 👉 <strong>Warm, leicht klebrig.</strong></p>
+      <p>Das ist kein Normalzustand.</p>
+
+      <h3>⚠️ Was ich bewusst NICHT gemacht habe</h3>
+      <p>Hier passieren die größten Fehler.</p>
+      <p><strong>Ich habe bewusst verzichtet auf:</strong></p>
+      <ul>
+        <li>Stark entfettende Shampoos</li>
+        <li>Intensive Duftstoffe</li>
+        <li>Heißes oder starkes Föhnen</li>
+      </ul>
+      <p>Warum? 👉 <strong>Gereizte Haut reagiert extrem schnell auf zu aggressive Behandlung.</strong></p>
+      <p>Und dann wird's nur schlimmer.</p>
+
+      <h3>🛁 Ablauf der Behandlung</h3>
+      <h4>1. Vorcheck (trocken)</h4>
+      <p>Kein Bürsten über gereizte Stellen. So wenig Reibung wie möglich.</p>
+
+      <h4>2. Erste Wäsche</h4>
+      <ul>
+        <li>Lauwarmes Wasser</li>
+        <li>Sanftes Auftragen</li>
+        <li>Kein Schrubben</li>
+      </ul>
+
+      <h4>3. Medizinisches Shampoo</h4>
+      <p>Verwendet: 👉 <strong>Chlorhexidin-Shampoo</strong></p>
+      <p><strong>Anwendung:</strong></p>
+      <ul>
+        <li>Direkt auf Problemzonen</li>
+        <li>8–10 Minuten einwirken lassen</li>
+      </ul>
+      <p>Ganz wichtig: 👉 <strong>Die meisten spülen viel zu früh aus – dann wirkt das Ganze nicht.</strong></p>
+
+      <h4>4. Zweite, leichte Reinigung</h4>
+      <ul>
+        <li>Mild</li>
+        <li>Fokus aufs Fell, nicht auf die Haut</li>
+      </ul>
+
+      <h4>5. Trocknen</h4>
+      <ul>
+        <li>Niedrige Temperatur</li>
+        <li>Wenig Druck</li>
+        <li>Ständige Bewegung</li>
+      </ul>
+      <p>Wichtig: 👉 <strong>Haut muss trocken sein – aber darf nicht überhitzen.</strong></p>
+
+      <h3>✂️ Schur-Anpassungen</h3>
+      <p>Rocky hat zwar kurzes Fell, aber leicht gekürzt wurde:</p>
+      <ul>
+        <li>Halsfalten</li>
+        <li>Achselbereich</li>
+        <li>Hygienezonen</li>
+      </ul>
+      <p>Ziel: 👉 <strong>Mehr Luft an die Haut – weniger Feuchtigkeit → weniger Probleme.</strong></p>
+      <p>Kein kurzes Schneiden direkt auf entzündeten Stellen.</p>
+
+      <h3>🧰 Verwendete Produkte & Tools</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Werkzeug</th><th>Warum</th></tr></thead>
+        <tbody>
+          <tr><td>Hauptwäsche</td><td>Chlorhexidin-Shampoo</td><td>Antibakteriell & antifungal</td></tr>
+          <tr><td>Nachwäsche</td><td>Hypoallergenes Shampoo</td><td>Schonend</td></tr>
+          <tr><td>Trocknen</td><td>Low-Pressure Föhn</td><td>Hautschutz</td></tr>
+          <tr><td>Trimmen</td><td>Kleine Maschine</td><td>Präzise & kontrolliert</td></tr>
+        </tbody>
+      </table>
+      <p>👉 Kein Conditioner – kann Feuchtigkeit einschließen.</p>
+
+      <h3>✨ Ergebnis nach dem Termin</h3>
+      <p>Man „heilt" Hautprobleme nicht in einer Sitzung. Aber man verbessert die Situation deutlich.</p>
+      <p><strong>Nach dem Grooming:</strong></p>
+      <ul>
+        <li>Rötung etwas zurückgegangen</li>
+        <li>Fell deutlich sauberer, weniger fettig</li>
+        <li>Geruch stark reduziert</li>
+        <li>Rocky deutlich ruhiger</li>
+      </ul>
+      <p>Wichtiges Zeichen: 👉 <strong>Weniger Kratzen in den letzten 15 Minuten.</strong></p>
+      <p>Das ist immer ein gutes Signal.</p>
+
+      <h3>🧠 Empfehlung an den Besitzer</h3>
+      <p>Das ist entscheidend für den langfristigen Erfolg.</p>
+      <p>Ich hab Jason klar gesagt:</p>
+      <p><strong>„Das schaut gut behandelbar aus – aber wenn's immer wieder kommt, muss der Tierarzt tiefer schauen."</strong></p>
+      <p>Denn: 👉 Grooming unterstützt – ersetzt aber keine medizinische Abklärung.</p>
+
+      <h4>Pflegeplan für zuhause</h4>
+      <p><strong>Direkt danach:</strong></p>
+      <ul>
+        <li>Hautfalten täglich sanft reinigen</li>
+        <li>Gut trocken halten</li>
+        <li>Nicht zu oft baden</li>
+      </ul>
+      <p><strong>Langfristig:</strong></p>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Rhythmus</th></tr></thead>
+        <tbody>
+          <tr><td>Grooming</td><td>Alle 4–6 Wochen</td></tr>
+          <tr><td>Faltenpflege</td><td>Täglich</td></tr>
+          <tr><td>Medizinische Wäsche</td><td>Nach Bedarf / Tierarzt</td></tr>
+        </tbody>
+      </table>
+      <p>Und der Satz, der hängen bleibt: <strong>„Hautprobleme sind kein Sauberkeitsproblem – sondern ein Gleichgewichtsproblem."</strong> Ähnliche Hygiene-Themen behandeln wir auch <a href="/blog/fallstudie-vernachlaessigter-hund-bruno">bei vernachlässigten Hunden wie Bruno</a> und <a href="/blog/fallstudie-doppelfell-husky-luna">bei rassetypischer Fellpflege wie bei Husky Luna</a>.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Warum kratzt sich mein Hund ständig?</strong></p>
+      <p>Oft wegen Hautreizungen, Allergien oder Hefepilzen.</p>
+      <p><strong>Hilft häufiges Waschen?</strong></p>
+      <p>Nein – zu viel Waschen kann die Haut sogar verschlechtern.</p>
+      <p><strong>Braucht man immer einen Tierarzt?</strong></p>
+      <p>Bei wiederkehrenden Problemen: Ja, unbedingt.</p>
+
+      <h3>Fazit</h3>
+      <p>Hautprobleme kommen selten plötzlich. Sie bauen sich auf:</p>
+      <p>👉 Feuchtigkeit, Wärme, zu wenig Luft.</p>
+      <p>Und irgendwann kippt's.</p>
+      <p>Deine Aufgabe ist nicht nur, den Hund zu waschen. 👉 <strong>Sondern das Umfeld der Haut zu verbessern.</strong></p>
+      <p>Du kannst die Ursache im Salon nicht heilen. Aber du kannst dafür sorgen, dass der Hund weniger Juckreiz hat, ruhiger ist und besser damit leben kann.</p>
+      <p>Und für die meisten Besitzer… 👉 <strong>ist genau das der Unterschied.</strong></p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-vernachlaessigter-hund-bruno">Vernachlässigter Hund Bruno: Haut- und Hygiene-Reset</a></li>
+        <li><a href="/blog/fallstudie-senior-hund-charlie">Senior-Hund Charlie: Schonende Pflege mit 13 Jahren</a></li>
+        <li><a href="/blog/fallstudie-doppelfell-husky-luna">Doppelfell bei Husky Luna: Fellpflege für empfindliche Rassen</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: rockyImage
+  },
+  {
+    slug: "fallstudie-doppelfell-husky-luna",
+    title: "Doppelfell-Rasse im Fellwechsel: Lunas komplettes De-Shedding",
+    excerpt: "Siberian Husky Luna war mitten im Fellwechsel – Unterwolle überall. So funktioniert ein professionelles De-Shedding im Hundesalon Laika.",
+    date: getPostDate(30),
+    content: `
+      <h2>Fallstudie: Doppelfell-Rasse im Fellwechsel</h2>
+      <p><strong>Vom Fellchaos zur kontrollierten, gesunden Fellpflege</strong></p>
+
+      <h3>📍 Überblick</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Luna</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Siberian Husky</td></tr>
+          <tr><td><strong>Alter</strong></td><td>6 Jahre</td></tr>
+          <tr><td><strong>Temperament</strong></td><td>Energetisch, aber kooperativ</td></tr>
+          <tr><td><strong>Besitzer</strong></td><td>Mark D.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Starker saisonaler Fellwechsel</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Komplettes De-Shedding / Fell-Reset</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>2 Stunden 30 Minuten</td></tr>
+          <tr><td><strong>Standort</strong></td><td>Wien – 1090</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Erster Eindruck – Fell überall</h3>
+      <p>Man hat es sofort gesehen. Und ehrlich gesagt: auch gespürt.</p>
+      <p>👉 <strong>Haare. Überall.</strong></p>
+      <p>Nicht einfach lose – sondern regelrecht aus dem Fell herausdrückend.</p>
+      <p><strong>Beim Ankommen:</strong></p>
+      <ul>
+        <li>Büschel, die beim Schütteln abfallen</li>
+        <li>Unterwolle, die durch das Deckhaar nach oben kommt</li>
+        <li>Besitzer bereits voller Haare</li>
+      </ul>
+      <p>Als ich mit der Hand über den Rücken gefahren bin: 👉 <strong>Eine ganze Hand voll Fell.</strong></p>
+      <p>Das ist ein klares Zeichen: 👉 <strong>Das Fell ist komplett im „Blow-Out".</strong> Als Hundefriseur in Wien sehen wir das bei Doppelfell-Rassen regelmäßig – und wissen: ohne Pflege endet es wie <a href="/blog/fallstudie-verfilzter-cockapoo-bella">bei Cockapoo Bella, wo das Fell komplett verfilzt war</a>.</p>
+
+      <h3>🔍 Wie stark war der Fellwechsel?</h3>
+      <p>Das war Hochphase. Kein normales Bürsten mehr – das war ein <strong>kompletter Fellwechsel</strong>.</p>
+      <p><strong>Fellzustand:</strong></p>
+      <ul>
+        <li>Dichte, fest sitzende Unterwolle</li>
+        <li>Deckhaar intakt (sehr wichtig!)</li>
+        <li>Keine Verfilzungen – aber starke Verdichtung</li>
+      </ul>
+      <p>Entscheidender Punkt: 👉 <strong>Die Haut bekommt kaum noch Luft.</strong></p>
+      <p>Wenn man das ignoriert:</p>
+      <ul>
+        <li>Überhitzung</li>
+        <li>Hautprobleme</li>
+        <li>Geruchsbildung</li>
+      </ul>
+
+      <h3>⚠️ Typischer Fehler – und sofort angesprochen</h3>
+      <p>Mark hat gefragt: <em>„Wäre es nicht einfacher, sie einfach zu scheren?"</em></p>
+      <p>Das hört man ständig. Meine klare Antwort:</p>
+      <p>👉 <strong>Doppelfell niemals scheren.</strong></p>
+      <p><strong>Warum:</strong></p>
+      <ul>
+        <li>Zerstört die natürliche Temperaturregulierung</li>
+        <li>Fell wächst oft ungleichmäßig oder beschädigt nach</li>
+        <li>Erhöht das Risiko für Sonnenbrand</li>
+      </ul>
+      <p>Sobald man das verständlich erklärt, ist das Thema erledigt. Ähnliche Erwartungsgespräche führen wir auch <a href="/blog/fallstudie-erwartung-vs-realitaet-alfie">bei Cavapoo Alfie, wo die Besitzerin ebenfalls einen anderen Schnitt wollte</a>.</p>
+
+      <h3>🛠️ Der Ablauf – So funktioniert richtiges De-Shedding</h3>
+      <p>Das ist kein schnelles Durchbürsten. 👉 <strong>Das ist ein System.</strong></p>
+
+      <h4>1. Pre-Blow (trockenes Fell)</h4>
+      <p>Bevor Wasser ins Spiel kommt: 👉 <strong>Einsatz vom Hochleistungsföhn im trockenen Fell.</strong></p>
+      <p><strong>Ziel:</strong></p>
+      <ul>
+        <li>Lose Unterwolle rausblasen</li>
+        <li>Verdichtung auflockern</li>
+      </ul>
+      <p>Ergebnis: 👉 Sofort massive Fellmengen.</p>
+
+      <h4>2. Baden</h4>
+      <p>Verwendet: 👉 <strong>Spezielles De-Shedding Shampoo</strong></p>
+      <ul>
+        <li>Komplett durchfeuchten (dauert bei Huskys!)</li>
+        <li>Nicht nur oberflächlich waschen</li>
+      </ul>
+
+      <h4>3. Conditioner</h4>
+      <p>Ein Schritt, den viele auslassen.</p>
+      <p>👉 <strong>Leichter De-Shedding Conditioner</strong></p>
+      <p><strong>Warum:</strong></p>
+      <ul>
+        <li>Löst restliche Unterwolle</li>
+        <li>Reduziert statische Aufladung</li>
+        <li>Erleichtert das Ausföhnen</li>
+      </ul>
+      <p>Einwirkzeit: 👉 Mindestens 5–7 Minuten.</p>
+
+      <h4>4. Föhnen (der wichtigste Teil)</h4>
+      <p>Hier passiert der Großteil der Arbeit.</p>
+      <p><strong>Vorgehen:</strong></p>
+      <ul>
+        <li>In Sektionen arbeiten</li>
+        <li>Luftstrom mit dem Fellverlauf</li>
+        <li>Kein „wildes Draufhalten"</li>
+      </ul>
+      <p>Visuell: 👉 <strong>Das Fell hebt sich in Wellen ab.</strong></p>
+
+      <h4>5. Bürsten & Feinarbeit</h4>
+      <p><strong>Tools:</strong> Unterwollrechen + Slicker-Bürste</p>
+      <p>Wichtig: 👉 <strong>Nur das entfernen, was sich lösen will – kein aggressives Herausreißen.</strong></p>
+
+      <h3>🧰 Werkzeuge & Produkte</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Werkzeug</th><th>Zweck</th></tr></thead>
+        <tbody>
+          <tr><td>Pre-Blow</td><td>Hochleistungsföhn</td><td>Grobe Unterwolle entfernen</td></tr>
+          <tr><td>Baden</td><td>De-Shedding Shampoo</td><td>Fellwechsel unterstützen</td></tr>
+          <tr><td>Pflege</td><td>Conditioner</td><td>Unterwolle lösen</td></tr>
+          <tr><td>Bürsten</td><td>Unterwollrechen</td><td>Kontrolliertes Entfernen</td></tr>
+          <tr><td>Finish</td><td>Slicker</td><td>Deckhaar glätten</td></tr>
+        </tbody>
+      </table>
+
+      <h3>⏱️ Dauer im Überblick</h3>
+      <p>Gesamt: 👉 <strong>2,5 Stunden</strong></p>
+      <table>
+        <thead><tr><th>Phase</th><th>Dauer</th></tr></thead>
+        <tbody>
+          <tr><td>Pre-Blow</td><td>30 Min</td></tr>
+          <tr><td>Baden + Einwirkzeit</td><td>30 Min</td></tr>
+          <tr><td>Föhnen</td><td>60 Min</td></tr>
+          <tr><td>Finish</td><td>30 Min</td></tr>
+        </tbody>
+      </table>
+      <p>👉 Kein Schnellservice – sondern saubere Arbeit.</p>
+
+      <h3>✨ Ergebnis</h3>
+      <p>Der Unterschied war deutlich.</p>
+      <p><strong>Nach dem Grooming:</strong></p>
+      <ul>
+        <li>80–90 % der losen Unterwolle entfernt</li>
+        <li>Fell liegt wieder sauber an</li>
+        <li>Natürlicher Glanz zurück</li>
+        <li>Kaum noch Haarverlust beim Anfassen</li>
+      </ul>
+      <p>Der entscheidende Moment: 👉 <strong>Besitzer streicht drüber… und es bleibt nichts mehr hängen.</strong></p>
+      <p>Das ist genau das, was Kunden wollen.</p>
+
+      <h3>🧠 Beratung für den Besitzer</h3>
+      <p>Hier entscheidet sich, ob das Problem wiederkommt.</p>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Häufigkeit</th></tr></thead>
+        <tbody>
+          <tr><td>Bürsten</td><td>2–3× pro Woche</td></tr>
+          <tr><td>Komplettes Grooming</td><td>Alle 8–10 Wochen</td></tr>
+          <tr><td>Fellwechsel-Behandlung</td><td>2× pro Jahr</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Wichtige Punkte:</strong></p>
+      <ul>
+        <li>Nicht warten, bis es „explodiert"</li>
+        <li>Niemals scheren</li>
+        <li>Gute Werkzeuge verwenden (billige Bürsten bringen nichts)</li>
+      </ul>
+      <p>Und mein Satz dazu: <strong>„Wenn du dem Fell voraus bist, ist es einfach. Wenn du hinterher bist, wird's Arbeit."</strong></p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Kann man das Haaren stoppen?</strong></p>
+      <p>Nein – aber man kann es kontrollieren.</p>
+      <p><strong>Hilft Scheren gegen Haaren?</strong></p>
+      <p>Nein, macht es oft schlimmer.</p>
+      <p><strong>Warum verliert mein Hund so viel Fell?</strong></p>
+      <p>Meist wegen saisonalem Fellwechsel und angestauter Unterwolle.</p>
+
+      <h3>Fazit</h3>
+      <p>Das Problem ist nicht das Haaren. 👉 <strong>Das Problem ist verdichtete Unterwolle.</strong></p>
+      <p>Wenn die sich staut: Hitze bleibt im Fell, Haut leidet, Haaren wird schlimmer.</p>
+      <p>Ein richtig gemachtes De-Shedding: 👉 <strong>setzt alles wieder zurück auf „normal".</strong></p>
+      <p>Bei Doppelfell geht es nicht darum, das Haaren zu stoppen. 👉 <strong>Sondern es richtig zu managen.</strong></p>
+      <p>Machst du das sauber… haben Hund und Besitzer ein deutlich entspannteres Leben.</p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-verfilzter-cockapoo-bella">Verfilzter Cockapoo Bella: Wenn Fellpflege vernachlässigt wird</a></li>
+        <li><a href="/blog/fallstudie-erwartung-vs-realitaet-alfie">Erwartung vs. Realität: Cavapoo Alfies versteckte Verfilzung</a></li>
+        <li><a href="/blog/fallstudie-pudel-praezisionsschnitt-oliver">Pudel Oliver: Rassespezifisches Grooming auf höchstem Niveau</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: winterImage
+  },
+  {
+    slug: "fallstudie-vernachlaessigter-hund-bruno",
+    title: "Stark verschmutzter Hund: Brunos Komplett-Reset nach der Adoption",
+    excerpt: "Tierschutz-Mischling Bruno kam frisch adoptiert und völlig verdreckt. So sah sein Reha-Grooming im Hundesalon Laika aus – Schritt für Schritt.",
+    date: getPostDate(31),
+    content: `
+      <h2>Fallstudie: Stark verschmutzter / vernachlässigter Hund</h2>
+      <p><strong>Vom komplett verdreckten Fell… zu sauber, entspannt und wieder „Hund sein"</strong></p>
+
+      <h3>📍 Überblick</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Bruno</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Mischling (Terrier-Mix)</td></tr>
+          <tr><td><strong>Alter</strong></td><td>7 Jahre</td></tr>
+          <tr><td><strong>Wesen</strong></td><td>Nervös, aber nicht aggressiv</td></tr>
+          <tr><td><strong>Besitzerin</strong></td><td>Lisa K.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Frisch adoptiert (Tierschutzhund)</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Komplett-Reset / Reha-Grooming</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>2 Stunden 15 Minuten</td></tr>
+          <tr><td><strong>Standort</strong></td><td>Wien – 1090</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Erster Eindruck – Du gehst nicht gleich ran</h3>
+      <p>Das ist so ein Fall, wo du nicht einfach drauflos arbeitest.</p>
+      <p>👉 <strong>Zuerst schauen. Einschätzen. Plan machen.</strong></p>
+      <p>Und ehrlich gesagt: Man hat's gerochen, bevor man's richtig gesehen hat.</p>
+      <p><strong>Sofort aufgefallen:</strong></p>
+      <ul>
+        <li>Fell komplett durchtränkt mit Schmutz und Fett</li>
+        <li>Starker, saurer Geruch (kein normaler „Hundegeruch")</li>
+        <li>Eingetrockneter Schlamm an Beinen und Bauch</li>
+        <li>Dreck und kleine Partikel im ganzen Fell</li>
+      </ul>
+      <p>Als Bruno sich geschüttelt hat: 👉 <strong>Staub und Dreck sind wie eine Wolke runtergefallen.</strong></p>
+      <p>Da weißt du sofort: 👉 <strong>Das wird keine „einmal schnell waschen"-Nummer.</strong></p>
+
+      <h3>🔍 Zustand im Detail</h3>
+      <p>Das war nicht einfach ein dreckiger Hund. Das war aufgebaut über Zeit – ähnlich wie <a href="/blog/fallstudie-verfilzter-cockapoo-bella">bei Cockapoo Bella, wo sich die Verfilzung schleichend entwickelt hat</a>.</p>
+      <p><strong>Fell:</strong></p>
+      <ul>
+        <li>Fettige obere Schicht</li>
+        <li>Dreck tief im Fell eingebettet</li>
+        <li>Leichte Verfilzungen an typischen Stellen</li>
+      </ul>
+      <p><strong>Haut:</strong></p>
+      <ul>
+        <li>Leichte Rötung am Bauch</li>
+        <li>Kratzspuren sichtbar</li>
+        <li>Keine offenen Wunden (sehr gut)</li>
+      </ul>
+      <p>Zusätzlich: 👉 <strong>Flohkot entlang der Wirbelsäule.</strong></p>
+      <p>Keine aktiven Flöhe – aber vor Kurzem da gewesen.</p>
+
+      <h3>⚠️ Risiken vor dem Start</h3>
+      <p>Bevor du überhaupt anfängst, denkst du schon weiter.</p>
+      <p><strong>Mögliche Probleme:</strong></p>
+      <ul>
+        <li>Haut reagiert empfindlich auf zu starkes Waschen</li>
+        <li>Parasiten könnten sich im Salon verteilen</li>
+        <li>Zu aggressive Reinigung = Stress für den Hund</li>
+      </ul>
+      <p>Darum: 👉 <strong>Kein „alles runter in einem Schritt" – sondern kontrollierter Reset.</strong></p>
+
+      <h3>🛠️ Ablauf – So gehst du richtig ran</h3>
+      <p>Das hier ist keine Standardwäsche. <strong>Das ist ein Prozess.</strong></p>
+
+      <h4>1. Vorbereitung (trocken)</h4>
+      <p>Bevor Wasser dazukommt:</p>
+      <ul>
+        <li>Groben Dreck vorsichtig rausgebürstet</li>
+        <li>Größere Teile von Hand entfernt</li>
+      </ul>
+      <p>Warum? 👉 <strong>Wasser + Dreck = Schlamm – und das willst du vermeiden.</strong></p>
+
+      <h4>2. Erste Wäsche (Entfetten)</h4>
+      <p>Verwendet: 👉 <strong>Tiefenreinigendes, entfettendes Shampoo</strong></p>
+      <ul>
+        <li>Komplett durchnässen (dauert!)</li>
+        <li>Gründlich einarbeiten – aber ohne Rubbeln</li>
+      </ul>
+      <p>Ergebnis: 👉 <strong>Wasser wurde sofort braun.</strong> Ganz normal bei so einem Zustand.</p>
+
+      <h4>3. Zweite Wäsche (die eigentliche Reinigung)</h4>
+      <p>Nach dem Ausspülen: 👉 <strong>Noch einmal Shampoo.</strong></p>
+      <p>Jetzt passiert das Entscheidende:</p>
+      <ul>
+        <li>Restlicher Dreck wird gelöst</li>
+        <li>Fell fühlt sich deutlich leichter an</li>
+      </ul>
+      <p>Wichtig zu wissen: 👉 <strong>Richtig sauber wird's oft erst beim zweiten Durchgang.</strong></p>
+
+      <h4>4. Floh-Management</h4>
+      <p>Auch ohne aktive Flöhe:</p>
+      <ul>
+        <li>Antiparasitäres Shampoo gezielt eingesetzt</li>
+        <li>Besonders gründlich gespült</li>
+      </ul>
+      <p>Salon-Hygiene dabei immer im Blick.</p>
+
+      <h4>5. Pflege (Balance wiederherstellen)</h4>
+      <p>Nach so einer Reinigung braucht die Haut Unterstützung.</p>
+      <p>👉 <strong>Leichte Pflege verwendet</strong></p>
+      <ul>
+        <li>Feuchtigkeit zurückgeben</li>
+        <li>Haut beruhigen</li>
+        <li>Austrocknen verhindern</li>
+      </ul>
+
+      <h4>6. Trocknen – jetzt sieht man die Veränderung</h4>
+      <p>Hier wird's sichtbar.</p>
+      <ul>
+        <li>Hochleistungsföhn</li>
+        <li>In Sektionen gearbeitet</li>
+      </ul>
+      <p>Während dem Trocknen: 👉 <strong>Die echte Fellfarbe kommt zurück.</strong></p>
+      <p>Das ist jedes Mal ein richtig guter Moment.</p>
+
+      <h4>7. Schneiden & Finish</h4>
+      <p>Erst wenn alles sauber ist:</p>
+      <ul>
+        <li>Leicht in Form gebracht</li>
+        <li>Hygienebereiche sauber gemacht</li>
+        <li>Kleine Verfilzungen entfernt</li>
+      </ul>
+      <p>Kein extremes Styling. 👉 <strong>Nur zurück zu einem gesunden Zustand.</strong></p>
+
+      <h3>🧰 Werkzeuge & Produkte</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Werkzeug</th><th>Warum</th></tr></thead>
+        <tbody>
+          <tr><td>Vorbereitung</td><td>Slicker-Bürste</td><td>Groben Schmutz lösen</td></tr>
+          <tr><td>1. Wäsche</td><td>Entfettendes Shampoo</td><td>Öl & Dreck aufbrechen</td></tr>
+          <tr><td>2. Wäsche</td><td>Mildes Shampoo</td><td>Tiefenreinigung</td></tr>
+          <tr><td>Behandlung</td><td>Antiparasitär</td><td>Flohkontrolle</td></tr>
+          <tr><td>Pflege</td><td>Leichte Pflege</td><td>Haut schützen</td></tr>
+          <tr><td>Trocknen</td><td>Hochleistungsföhn</td><td>Fell komplett öffnen</td></tr>
+        </tbody>
+      </table>
+
+      <h3>✨ Ergebnis – der Unterschied ist enorm</h3>
+      <p><strong>Vorher:</strong></p>
+      <ul>
+        <li>Schweres, stumpfes Fell</li>
+        <li>Starker Geruch</li>
+        <li>Lebloser Eindruck</li>
+      </ul>
+      <p><strong>Nachher:</strong></p>
+      <ul>
+        <li>Sauberes, luftiges Fell</li>
+        <li>Natürliche Farbe zurück</li>
+        <li>Weichere Struktur</li>
+        <li>Frischer Geruch</li>
+      </ul>
+      <p>Aber das Wichtigste: 👉 <strong>Bruno hat sich anders bewegt.</strong></p>
+      <ul>
+        <li>Kopf höher</li>
+        <li>Körper entspannter</li>
+        <li>Mehr Energie</li>
+      </ul>
+      <p>Das ist kein kosmetischer Effekt. 👉 <strong>Das ist Wohlbefinden.</strong></p>
+
+      <h3>🧠 Verhalten während des Grooms</h3>
+      <p><strong>Am Anfang:</strong> Vorsichtig, etwas zurückhaltend.</p>
+      <p><strong>Währenddessen:</strong> Im Wasser deutlich ruhiger geworden. Stand stabiler.</p>
+      <p><strong>Am Ende:</strong> 👉 Aufmerksamer. Mehr „da".</p>
+      <p>Das sieht man oft bei Hunden, die sich endlich wieder sauber fühlen.</p>
+
+      <h3>🧠 Beratung für Lisa</h3>
+      <p>Gerade bei einem neuen Hund extrem wichtig.</p>
+      <h4>1. Regelmäßigkeit ist alles</h4>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Rhythmus</th></tr></thead>
+        <tbody>
+          <tr><td>Bürsten</td><td>2–3× pro Woche</td></tr>
+          <tr><td>Grooming</td><td>Alle 6–8 Wochen</td></tr>
+        </tbody>
+      </table>
+      <h4>2. Früh erkennen</h4>
+      <p>Achte auf:</p>
+      <ul>
+        <li>Fettiges Fell</li>
+        <li>Geruch</li>
+        <li>Mehr Kratzen</li>
+      </ul>
+      <h4>3. Tierschutzhunde brauchen Zeit</h4>
+      <p><strong>„Das ist jetzt der Neustart – kein einmaliges Fixen."</strong></p>
+      <p>Das hat sie sofort verstanden.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Warum riecht mein Hund so stark?</strong></p>
+      <p>Oft wegen Fett, Schmutz und Hautproblemen, die sich aufbauen.</p>
+      <p><strong>Reicht einmal Waschen?</strong></p>
+      <p>Nein – bei solchen Fällen brauchst du mehrere Schritte.</p>
+      <p><strong>Wie schnell wird das wieder besser?</strong></p>
+      <p>Mit regelmäßiger Pflege ziemlich schnell.</p>
+
+      <h3>Fazit</h3>
+      <p>Hunde wie Bruno sind keine „dreckigen Hunde". Sie hatten einfach keine konstante Pflege, keine Struktur, keine richtigen Bedingungen.</p>
+      <p>Sobald du das einmal richtig resettest… 👉 <strong>wird alles viel leichter zu managen.</strong></p>
+      <p>Einen sauberen Hund waschen kann jeder. Die echte Fähigkeit als Hundefriseur in Wien ist: 👉 <strong>Einen vernachlässigten Hund nehmen und ihn richtig zurückholen – ohne ihn zu überfordern.</strong> Wie wichtig ruhiges Handling dabei ist, zeigt auch <a href="/blog/fallstudie-angsthund-schnauzer-max">der Fall von Angsthund Max</a>.</p>
+      <p>Genau da entsteht Vertrauen.</p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-verfilzter-cockapoo-bella">Verfilzter Cockapoo Bella: Extremfall mit Filzpanzer</a></li>
+        <li><a href="/blog/fallstudie-angsthund-schnauzer-max">Angsthund Max: Vertrauen aufbauen beim Grooming</a></li>
+        <li><a href="/blog/fallstudie-hautprobleme-franzoesische-bulldogge-rocky">Hautprobleme bei Rocky: Haut und Hygiene wiederherstellen</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: brunoImage
+  },
+  {
+    slug: "fallstudie-pudel-praezisionsschnitt-oliver",
+    title: "Rassespezifisches Grooming: Olivers Pudel-Präzisionsschnitt",
+    excerpt: "Großpudel Oliver bekommt seinen modernen Teddy-Schnitt – saubere Linien, perfekte Balance. So entsteht ein Präzisionsschnitt im Hundesalon Laika.",
+    date: getPostDate(32),
+    content: `
+      <h2>Fallstudie: Rassespezifisches Grooming (Pudel Präzisionsschnitt)</h2>
+      <p><strong>Saubere Linien, perfekte Balance – Grooming auf höchstem Niveau</strong></p>
+
+      <h3>📍 Überblick</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Oliver</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Großpudel</td></tr>
+          <tr><td><strong>Alter</strong></td><td>4 Jahre</td></tr>
+          <tr><td><strong>Wesen</strong></td><td>Ruhig, grooming-erfahren</td></tr>
+          <tr><td><strong>Besitzerin</strong></td><td>Victoria S.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Stammkundin, wünscht konstanten Stil</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Voller Rasseschnitt (Teddy / moderner Pudelschnitt)</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>2 Stunden 45 Minuten</td></tr>
+          <tr><td><strong>Standort</strong></td><td>Wien – 1090</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Erster Eindruck – Der weiß genau, wie's läuft</h3>
+      <p>Oliver ist reingekommen und du hast sofort gemerkt: 👉 <strong>Der kennt das alles schon.</strong></p>
+      <ul>
+        <li>Ruhig</li>
+        <li>Sicher</li>
+        <li>Kein Stress</li>
+      </ul>
+      <p><strong>Fellzustand:</strong></p>
+      <ul>
+        <li>Sauber, aber deutlich rausgewachsen</li>
+        <li>Gute Dichte und Struktur</li>
+        <li>Leicht ungleichmäßig vom letzten Wachstum</li>
+      </ul>
+      <p>Und genau das ist ideal. 👉 <strong>Wenn das Fell passt, arbeitest du an Präzision – nicht an Schadensbegrenzung.</strong> Als Hundefriseur in Wien ist das ein Luxus – denn oft sieht der Alltag anders aus, wie etwa <a href="/blog/fallstudie-doppelfell-husky-luna">beim De-Shedding von Husky Luna</a>.</p>
+
+      <h3>✂️ Gewünschter Stil</h3>
+      <p>Victoria wollte: 👉 <strong>Einen modernen Teddy-Pudelschnitt</strong></p>
+      <p><strong>Charakteristisch:</strong></p>
+      <ul>
+        <li>Rund geschnittener Kopf</li>
+        <li>Weicher, voller Ohrbereich</li>
+        <li>Gleichmäßige, „säulenartige" Beine</li>
+        <li>Saubere Füße und Hygienebereich</li>
+      </ul>
+      <p>Kein Show-Schnitt – aber trotzdem: 👉 <strong>technisch anspruchsvoll.</strong></p>
+
+      <h3>🧠 Warum Pudel nicht verzeihen</h3>
+      <p>Pudel sind ehrlich. <strong>Jeder Fehler bleibt sichtbar.</strong></p>
+      <p><strong>Warum?</strong></p>
+      <ul>
+        <li>Dichtes, lockiges Fell → jede Unebenheit fällt auf</li>
+        <li>Linien müssen exakt passen</li>
+        <li>Struktur verstärkt jeden Schnitt</li>
+      </ul>
+      <p>Die Realität: 👉 <strong>Wenn die Vorbereitung nicht passt, wird das Ergebnis nie sauber.</strong></p>
+
+      <h3>🛠️ Ablauf – So entsteht ein sauberer Schnitt</h3>
+      <p>Das hier ist kein „einfach drüber schneiden". <strong>Das ist ein präziser Ablauf.</strong></p>
+
+      <h4>1. Waschen & Vorbereitung (der wichtigste Teil)</h4>
+      <p>Verwendet: Hochwertiges Shampoo + leichte Pflege</p>
+      <p>Entscheidender Punkt: 👉 <strong>Das Fell muss komplett sauber UND komplett glatt sein.</strong></p>
+      <p>Nach dem Waschen:</p>
+      <ul>
+        <li>Föhnen mit Hochleistungsgerät</li>
+        <li>Ausbürsten</li>
+        <li>Fluff-Drying (für perfekte Glätte)</li>
+      </ul>
+      <p>Wenn das Fell nicht glatt ist: 👉 <strong>kannst du nicht sauber schneiden.</strong></p>
+
+      <h4>2. Vorschur (Grundform)</h4>
+      <p>Bevor die Schere ins Spiel kommt:</p>
+      <ul>
+        <li>Körper auf Grundlänge geschnitten</li>
+        <li>Hals und Körperform vorgezeichnet</li>
+      </ul>
+      <p>Das gibt dir: 👉 <strong>die Basis für alles Weitere.</strong></p>
+
+      <h4>3. Gesicht, Füße & Hygiene</h4>
+      <p>Die sensiblen Bereiche zuerst:</p>
+      <ul>
+        <li>Gesicht sauber und eng</li>
+        <li>Füße ordentlich freigelegt</li>
+        <li>Hygienebereich gepflegt</li>
+      </ul>
+      <p>Diese Zonen bestimmen: 👉 <strong>wie „clean" der ganze Hund wirkt.</strong></p>
+
+      <h4>4. Scherenarbeit (hier entscheidet sich alles)</h4>
+      <p>Das ist der zeitintensivste Teil.</p>
+      <p><strong>Technik:</strong></p>
+      <ul>
+        <li>Kleine, kontrollierte Schnitte</li>
+        <li>Ständiges Kontrollieren aus verschiedenen Blickwinkeln</li>
+      </ul>
+      <p><strong>Fokus:</strong></p>
+      <ul>
+        <li>Kopf (muss perfekt rund sein)</li>
+        <li>Beine (gerade, gleichmäßig)</li>
+        <li>Übergänge (keine harten Kanten)</li>
+      </ul>
+      <p>Wichtig: 👉 <strong>Du schneidest nicht – du formst.</strong></p>
+
+      <h4>5. Finaler Check</h4>
+      <p>Am Schluss:</p>
+      <ul>
+        <li>Einen Schritt zurückgehen</li>
+        <li>Von allen Seiten anschauen</li>
+        <li>Symmetrie feinjustieren</li>
+      </ul>
+      <p>Viele Korrekturen passieren genau hier.</p>
+
+      <h3>🧰 Werkzeuge & Setup</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Werkzeug</th><th>Zweck</th></tr></thead>
+        <tbody>
+          <tr><td>Vorbereitung</td><td>Hochleistungsföhn</td><td>Fell anheben</td></tr>
+          <tr><td>Finish</td><td>Fluff-Dryer + Slicker</td><td>Glattes Fell</td></tr>
+          <tr><td>Maschine</td><td>Wahl KM10</td><td>Grundform</td></tr>
+          <tr><td>Schere</td><td>Gerade & gebogene Scheren</td><td>Präzision</td></tr>
+          <tr><td>Detail</td><td>Kleine Trimmer</td><td>Gesicht & Füße</td></tr>
+        </tbody>
+      </table>
+
+      <h3>⏱️ Zeitaufwand</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Dauer</th></tr></thead>
+        <tbody>
+          <tr><td>Waschen & Föhnen</td><td>ca. 60 Min</td></tr>
+          <tr><td>Vorschur</td><td>ca. 30 Min</td></tr>
+          <tr><td>Scherenarbeit</td><td>60–70 Min</td></tr>
+          <tr><td>Finish</td><td>ca. 15 Min</td></tr>
+        </tbody>
+      </table>
+      <p>👉 Das ist kein schneller Termin – <strong>Präzision braucht Zeit.</strong></p>
+
+      <h3>✨ Ergebnis</h3>
+      <p>Hier kommt alles zusammen.</p>
+      <ul>
+        <li>Perfekt runder Kopf</li>
+        <li>Harmonische Proportionen</li>
+        <li>Weiche Übergänge</li>
+        <li>Gleichmäßiges Fellbild</li>
+      </ul>
+      <p>Und das wichtigste Detail: 👉 <strong>Keine sichtbaren Scherenlinien.</strong></p>
+      <p>Das ist der Unterschied zwischen „okay" und „richtig gut".</p>
+
+      <h3>🧠 Verhalten während des Grooms</h3>
+      <p>Oliver hat's möglich gemacht:</p>
+      <ul>
+        <li>Ruhig gestanden</li>
+        <li>Kaum Bewegung</li>
+        <li>Voll vertraut mit dem Ablauf</li>
+      </ul>
+      <p>Für so ein Ergebnis brauchst du: 👉 <strong>Einen kooperativen Hund und Erfahrung im Handling.</strong></p>
+
+      <h3>🧠 Beratung für Victoria</h3>
+      <p>Damit der Look bleibt:</p>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Rhythmus</th></tr></thead>
+        <tbody>
+          <tr><td>Grooming</td><td>Alle 4–6 Wochen</td></tr>
+          <tr><td>Bürsten</td><td>Täglich oder jeden 2. Tag</td></tr>
+          <tr><td>Fellpflege</td><td>Regelmäßig sauber halten</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Wichtige Punkte:</strong></p>
+      <ul>
+        <li>Nicht zu lange rauswachsen lassen</li>
+        <li>Regelmäßig bürsten (sonst verfilzt es schnell)</li>
+        <li>Nächsten Termin rechtzeitig buchen</li>
+      </ul>
+      <p>Und ich hab ihr gesagt: <strong>„Der Schnitt funktioniert nur, wenn das Fell konstant gepflegt wird."</strong> Was passiert, wenn diese Pflege ausbleibt, zeigt <a href="/blog/fallstudie-erwartung-vs-realitaet-alfie">der Fall von Cavapoo Alfie</a> sehr deutlich.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Wie oft muss ein Pudel geschnitten werden?</strong></p>
+      <p>Alle 4–6 Wochen für saubere Linien.</p>
+      <p><strong>Warum ist Pudel-Grooming so aufwendig?</strong></p>
+      <p>Weil jede Ungenauigkeit sofort sichtbar ist.</p>
+      <p><strong>Kann man das zuhause machen?</strong></p>
+      <p>Grundpflege ja – Präzisionsschnitt eher schwierig.</p>
+
+      <h3>Fazit</h3>
+      <p>Einen Hund kurz scheren kann jeder. Aber:</p>
+      <p>👉 Saubere Linien schneiden, Symmetrie halten, ohne sichtbare Übergänge arbeiten – <strong>das ist Handwerk.</strong></p>
+      <p>Bei solchen Schnitten geht's nicht um Geschwindigkeit. 👉 <strong>Sondern um Kontrolle, Balance und Auge fürs Detail.</strong></p>
+      <p>Und wenn's richtig gemacht ist… sieht man's sofort.</p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-doppelfell-husky-luna">Doppelfell bei Husky Luna: Rassespezifisches De-Shedding</a></li>
+        <li><a href="/blog/fallstudie-erste-welpenpflege-teddy">Welpe Teddy: Warum regelmäßige Pflege so wichtig ist</a></li>
+        <li><a href="/blog/fallstudie-erwartung-vs-realitaet-alfie">Erwartung vs. Realität: Wenn das Fell nicht hält, was es verspricht</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: oliverImage
+  },
+  {
+    slug: "fallstudie-hund-hasst-wasser-milo",
+    title: "Hund hasst Wasser: Milos Weg von Panik zu ruhigem Baden",
+    excerpt: "Jack Russell Milo flippt beim Baden aus – zuhause kaum möglich. So haben wir im Hundesalon Laika die Erfahrung Schritt für Schritt verändert.",
+    date: getPostDate(33),
+    content: `
+      <h2>Fallstudie: Hund, der Wasser hasst</h2>
+      <p><strong>Von Panik in der Badewanne zu ruhigem, kontrolliertem Waschen</strong></p>
+
+      <h3>📍 Überblick</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Milo</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Jack Russell Terrier</td></tr>
+          <tr><td><strong>Alter</strong></td><td>2 Jahre</td></tr>
+          <tr><td><strong>Wesen</strong></td><td>Sehr aktiv, reagiert stark auf Wasser</td></tr>
+          <tr><td><strong>Besitzerin</strong></td><td>Sophie K.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Baden zuhause kaum möglich</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Verhaltensorientiertes Bad & Groom</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>1 Stunde 25 Minuten</td></tr>
+          <tr><td><strong>Standort</strong></td><td>Wien – 1090</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Erster Eindruck – Alles gut… bis zur Badewanne</h3>
+      <p>Milo ist reingekommen wie ein typischer junger Terrier: 👉 <strong>Wach, voller Energie, alles im Blick.</strong></p>
+      <p>Keine Angst am Anfang. Aber sobald er den Badebereich gesehen hat:</p>
+      <ul>
+        <li>Körper sofort angespannt</li>
+        <li>Schwanz leicht runter</li>
+        <li>Zug nach hinten an der Leine</li>
+      </ul>
+      <p>Und genau da weißt du: 👉 <strong>Trigger sofort erkannt.</strong></p>
+
+      <h3>⚠️ Reaktion auf Wasser</h3>
+      <p>Sobald die Pfoten in der Wanne waren:</p>
+      <ul>
+        <li>Versuch rauszuklettern</li>
+        <li>Schnelles Hecheln</li>
+        <li>Vorderbeine drücken nach oben</li>
+      </ul>
+      <p>Beim ersten Wasserkontakt: 👉 <strong>Komplettes Zucken + Fluchtversuch.</strong></p>
+      <p>Das ist kein „Ungehorsam". 👉 <strong>Das ist eine echte Stressreaktion.</strong> Als Hundefriseur in Wien kennen wir solches Verhalten gut – <a href="/blog/fallstudie-angsthund-schnauzer-max">ähnlich wie bei Angsthund Max, der aus Stress geschnappt hat</a>.</p>
+
+      <h3>🔍 Woher kommt das?</h3>
+      <p>Aus Erfahrung meistens eine Kombination:</p>
+      <ul>
+        <li>Rutschiger Untergrund</li>
+        <li>Kontrollverlust</li>
+        <li>Plötzliches Wasser</li>
+        <li>Geräuschkulisse</li>
+      </ul>
+      <p>Wichtiger Punkt:</p>
+      <p>👉 Die meisten Hunde hassen nicht das Wasser<br/>👉 <strong>Sie hassen die Situation rundherum.</strong></p>
+
+      <h3>🔄 Anpassung – nicht dagegen arbeiten</h3>
+      <p>Erste Regel: 👉 <strong>Nicht dagegen kämpfen.</strong></p>
+      <p>Sondern: 👉 <strong>Auslöser reduzieren.</strong></p>
+      <p><strong>Sofort geändert:</strong></p>
+      <ul>
+        <li>Wasser wieder aus</li>
+        <li>Milo durfte in der trockenen Wanne stehen</li>
+        <li>Kein Festhalten am Anfang</li>
+      </ul>
+      <p>Erst mal: 👉 <strong>Situation verstehen lassen.</strong></p>
+
+      <h3>🧠 Schritt für Schritt zur Entspannung</h3>
+
+      <h4>1. Stabilität schaffen</h4>
+      <ul>
+        <li>Rutschfeste Matte unter die Pfoten</li>
+        <li>Hand ruhig am Brustbereich</li>
+      </ul>
+      <p>Nach kurzer Zeit: 👉 <strong>Spannung wird weniger.</strong> Das ist dein Einstieg.</p>
+
+      <h4>2. Wasser langsam einführen</h4>
+      <p>Nicht gleich mit dem Schlauch drauf.</p>
+      <ul>
+        <li>Wasser zuerst mit der Hand aufgetragen</li>
+        <li>Start an den Hinterbeinen</li>
+        <li>Nicht am Kopf</li>
+      </ul>
+      <p>Wichtig: 👉 <strong>Kein direkter Strahl am Anfang.</strong></p>
+
+      <h4>3. Druck & Geräusch kontrollieren</h4>
+      <ul>
+        <li>Niedriger Wasserdruck</li>
+        <li>Gleichmäßiger Fluss</li>
+        <li>Keine plötzlichen Bewegungen</li>
+      </ul>
+      <p>Hunde reagieren stärker auf Überraschung als auf Wasser selbst.</p>
+
+      <h4>4. Kontakt halten</h4>
+      <p>Eine Hand war immer bei ihm. Nicht zum Fixieren. 👉 <strong>Einfach präsent.</strong></p>
+      <p>Das gibt: Sicherheit und Orientierung.</p>
+
+      <h3>🛁 Der Wendepunkt</h3>
+      <p>Nach ca. 5–7 Minuten:</p>
+      <ul>
+        <li>Kein Fluchtversuch mehr</li>
+        <li>Hecheln wird weniger</li>
+        <li>Körper wird weicher</li>
+      </ul>
+      <p>Er hat's nicht geliebt. Aber: 👉 <strong>Er konnte damit umgehen.</strong></p>
+      <p>Und genau das ist das Ziel.</p>
+
+      <h3>🧰 Tools & Setup</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Werkzeug</th><th>Warum</th></tr></thead>
+        <tbody>
+          <tr><td>Boden</td><td>Rutschfeste Matte</td><td>Stabilität</td></tr>
+          <tr><td>Wasser</td><td>Niedriger Druck</td><td>Weniger Stress</td></tr>
+          <tr><td>Auftrag</td><td>Hand zuerst</td><td>Kontrollierter Einstieg</td></tr>
+          <tr><td>Shampoo</td><td>Mild, wenig Duft</td><td>Keine Reizüberflutung</td></tr>
+          <tr><td>Trocknen</td><td>Handtuch + leichter Luftstrom</td><td>Sanfter Übergang</td></tr>
+        </tbody>
+      </table>
+
+      <h3>✂️ Grooming danach angepasst</h3>
+      <p>Weil das Baden schon viel war:</p>
+      <ul>
+        <li>Grooming kurz und effizient gehalten</li>
+        <li>Wenig Handling</li>
+        <li>Fokus auf das Wesentliche</li>
+      </ul>
+      <p>Kein langes Styling.</p>
+
+      <h3>✨ Ergebnis</h3>
+      <ul>
+        <li>Sauber gewaschen</li>
+        <li>Keine Eskalation</li>
+        <li>Durchgehend kontrollierbar</li>
+      </ul>
+      <p>Aber das Wichtigste: 👉 <strong>Milo ist nicht traumatisiert rausgegangen.</strong></p>
+      <p>Und genau das zählt.</p>
+
+      <h3>🧠 Verhalten am Ende</h3>
+      <p>Deutlich anders als am Anfang:</p>
+      <ul>
+        <li>Ruhiger Stand</li>
+        <li>Kein Fluchtverhalten</li>
+        <li>Handtuch wurde akzeptiert</li>
+      </ul>
+      <p>Das zeigt: 👉 <strong>Die Erfahrung wurde verbessert – nicht verschlechtert.</strong></p>
+
+      <h3>🧠 Beratung für Sophie</h3>
+      <p>Hier entscheidet sich alles.</p>
+
+      <h4>1. Zuhause nicht mehr „durchziehen"</h4>
+      <ul>
+        <li>Kein Zwingen</li>
+        <li>Kein Hinterherlaufen mit Wasser</li>
+      </ul>
+
+      <h4>2. Neu aufbauen</h4>
+      <table>
+        <thead><tr><th>Schritt</th><th>Was tun</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Hund in trockene Wanne stellen</td></tr>
+          <tr><td>2</td><td>Wasser langsam einführen</td></tr>
+          <tr><td>3</td><td>Niedrigen Druck verwenden</td></tr>
+          <tr><td>4</td><td>Kurz halten</td></tr>
+        </tbody>
+      </table>
+
+      <h4>3. Umgebung beachten</h4>
+      <ul>
+        <li>Rutschfeste Unterlage</li>
+        <li>Ruhige Atmosphäre</li>
+        <li>Kein lautes Wasser</li>
+      </ul>
+      <p>Und der wichtigste Satz: <strong>„Er hasst nicht das Wasser – er hasst den Kontrollverlust."</strong></p>
+      <p>Das versteht jeder sofort. Genau denselben Mechanismus zeigt auch <a href="/blog/fallstudie-krallenschneiden-dackel-coco">Dackel Coco beim Krallenschneiden</a> – anderer Auslöser, gleiches Prinzip.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Warum hat mein Hund Angst vorm Baden?</strong></p>
+      <p>Meist wegen schlechten Erfahrungen oder Überforderung.</p>
+      <p><strong>Soll ich ihn einfach festhalten?</strong></p>
+      <p>Nein – das verstärkt die Angst.</p>
+      <p><strong>Kann man das wieder verbessern?</strong></p>
+      <p>Ja, mit Geduld und richtigem Aufbau.</p>
+
+      <h3>Fazit</h3>
+      <p>Die meisten „Wasser-Hasser" wurden nie richtig dran gewöhnt. Sie wurden zu schnell reingesteckt, überfordert und festgehalten. Und das bleibt hängen.</p>
+      <p>Du löst das Problem nicht, indem du schneller badest. 👉 <strong>Sondern indem du die Erfahrung veränderst.</strong></p>
+      <p>Wenn sich das Gefühl ändert… wird alles leichter.</p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-angsthund-schnauzer-max">Angsthund Max: Angstverhalten erkennen und richtig handeln</a></li>
+        <li><a href="/blog/fallstudie-krallenschneiden-dackel-coco">Krallenpflege bei Coco: Ähnliche Angst, anderer Auslöser</a></li>
+        <li><a href="/blog/fallstudie-vernachlaessigter-hund-bruno">Vernachlässigter Hund Bruno: Auch hier war Baden eine Herausforderung</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: miloImage
+  },
+  {
+    slug: "fallstudie-krallenschneiden-dackel-coco",
+    title: "Krallenschneiden als Albtraum: Dackeldame Cocos Weg zur ruhigen Krallenpflege",
+    excerpt: "Dackel Coco hatte eine schlechte Erfahrung beim Krallenschneiden und ließ niemanden mehr ran. So haben wir es im Hundesalon Laika gelöst.",
+    date: getPostDate(34),
+    content: `
+      <h2>Fallstudie: Krallenschneiden als Albtraum</h2>
+      <p><strong>Von Ziehen, Panik und Widerstand… zu ruhiger, kontrollierter Krallenpflege</strong></p>
+
+      <h3>📍 Überblick</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Coco</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Dackel</td></tr>
+          <tr><td><strong>Alter</strong></td><td>5 Jahre</td></tr>
+          <tr><td><strong>Wesen</strong></td><td>Nervös, reagiert stark bei Pfoten</td></tr>
+          <tr><td><strong>Besitzerin</strong></td><td>Natalie P.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Schlechte Erfahrung beim Krallenschneiden</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Nur Krallenpflege (High-Stress-Fall)</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>35 Minuten</td></tr>
+          <tr><td><strong>Standort</strong></td><td>Wien – 1090</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Erster Eindruck – Vorsichtig, aber aufmerksam</h3>
+      <p>Coco ist ruhig reingekommen. Nicht panisch. Aber: 👉 <strong>Sehr aufmerksam auf alles, was passiert.</strong></p>
+      <p>Dann der entscheidende Moment: Ich greife zur Vorderpfote… 👉 <strong>Sofort zurückgezogen.</strong></p>
+      <p>Zweiter Versuch:</p>
+      <ul>
+        <li>Kopf dreht sich blitzschnell</li>
+        <li>Blick fixiert meine Hand</li>
+      </ul>
+      <p>Und da weißt du: 👉 <strong>Das ist kein Zufall – das ist gelerntes Verhalten.</strong></p>
+
+      <h3>⚠️ Warum das Krallenschneiden schwierig war</h3>
+      <p>Natalie hat gleich gesagt: <em>„Sie hat einmal aufgeschrien beim Schneiden… seitdem lässt sie niemanden mehr ran."</em></p>
+      <p>Und genau so entsteht das Problem. 👉 <strong>Ein schlechter Moment reicht.</strong></p>
+      <p><strong>Verhalten im Salon:</strong></p>
+      <ul>
+        <li>Pfoten werden ruckartig weggezogen</li>
+        <li>Ganzer Körper spannt sich an</li>
+        <li>Versucht sich rauszudrehen</li>
+      </ul>
+      <p>Nicht aggressiv. Aber: 👉 <strong>Kurz vor Eskalation.</strong> Im Hundesalon Laika in Wien 1090 kennen wir ähnliches Verhalten auch <a href="/blog/fallstudie-angsthund-schnauzer-max">bei Schnauzer Max, der aus Angst geschnappt hat</a>.</p>
+
+      <h3>🔍 Das eigentliche Problem</h3>
+      <p>Es ist nicht nur Angst. 👉 <strong>Es ist die Erwartung von Schmerz.</strong></p>
+      <p>Und beim Dackel kommt noch dazu:</p>
+      <ul>
+        <li>Kurze Beine</li>
+        <li>Empfindliche Gelenke</li>
+        <li>Oft längere Krallen</li>
+      </ul>
+      <p>Das macht alles schwieriger.</p>
+
+      <h3>🧠 Strategie – So bin ich rangegangen</h3>
+      <p>Erste Regel: 👉 <strong>Kein Greifen. Kein Zwingen. Kein Stress.</strong></p>
+
+      <h4>1. Desensibilisierung</h4>
+      <ul>
+        <li>Pfote kurz berühren → sofort wieder loslassen</li>
+        <li>Mehrmals wiederholen</li>
+      </ul>
+      <p>Ziel: 👉 <strong>Erwartung durchbrechen.</strong></p>
+
+      <h4>2. Werkzeug wechseln (entscheidend)</h4>
+      <p>Statt Schere: 👉 <strong>Krallenschleifer (Dremel)</strong></p>
+      <p><strong>Warum:</strong></p>
+      <ul>
+        <li>Mehr Kontrolle</li>
+        <li>Geringeres Risiko, die Blutlinie zu erwischen</li>
+        <li>Weniger „Schockmoment"</li>
+      </ul>
+
+      <h4>3. Position anpassen</h4>
+      <ul>
+        <li>Pfote niedrig halten</li>
+        <li>In natürlicher Haltung arbeiten</li>
+      </ul>
+      <p>Kein Hochziehen. 👉 <strong>Weniger Widerstand sofort spürbar.</strong></p>
+
+      <h3>🧘 Ruhe reinbringen</h3>
+      <p>Kleine Dinge machen den Unterschied:</p>
+      <ul>
+        <li>Hand immer wieder am Körper (nicht nur beim Arbeiten)</li>
+        <li>Ruhige Stimme</li>
+        <li>Keine hektischen Bewegungen</li>
+      </ul>
+      <p>Wenn Coco angespannt hat: 👉 <strong>Sofort Pause.</strong> Nicht weiterdrücken.</p>
+
+      <h3>🛠️ Ablauf – So lief es wirklich ab</h3>
+      <h4>Erste Kralle:</h4>
+      <ul>
+        <li>Berühren → Pause</li>
+        <li>Schleifer nur hörbar gemacht (noch kein Kontakt)</li>
+        <li>Dann ganz kurz angesetzt (1–2 Sekunden)</li>
+      </ul>
+      <p>Und wieder stoppen. 👉 <strong>Dieser erste Erfolg ist entscheidend.</strong></p>
+
+      <h4>Danach:</h4>
+      <ul>
+        <li>Kralle für Kralle</li>
+        <li>Immer nur kurze Intervalle</li>
+        <li>Viele kleine Pausen</li>
+      </ul>
+      <p>Kein: „Jetzt machen wir schnell fertig."</p>
+
+      <h4>Der Wendepunkt:</h4>
+      <p>Bei Kralle 3–4: 👉 <strong>Deutlich weniger Widerstand.</strong></p>
+      <p>Und da weißt du: 👉 <strong>Vertrauen baut sich auf.</strong></p>
+
+      <h3>🧰 Werkzeuge & Setup</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Werkzeug</th><th>Warum</th></tr></thead>
+        <tbody>
+          <tr><td>Haupttool</td><td>Krallenschleifer (Dremel)</td><td>Präzise & kontrolliert</td></tr>
+          <tr><td>Backup</td><td>Krallenzange</td><td>Nicht verwendet</td></tr>
+          <tr><td>Position</td><td>Groomingtisch + niedrige Haltung</td><td>Stabilität</td></tr>
+          <tr><td>Pflege</td><td>Pfotenbalsam</td><td>Nachbehandlung</td></tr>
+        </tbody>
+      </table>
+
+      <h3>✨ Ergebnis</h3>
+      <ul>
+        <li>Alle Krallen sauber gekürzt</li>
+        <li>Keine Verletzung</li>
+        <li>Kein Kontrollverlust</li>
+      </ul>
+      <p>Aber das Wichtigste: 👉 <strong>Keine Panik.</strong></p>
+      <p>Und das ist bei so einem Hund ein riesiger Schritt.</p>
+
+      <h3>🧠 Verhalten am Ende</h3>
+      <p>Deutlicher Unterschied:</p>
+      <ul>
+        <li>Weniger Zurückziehen</li>
+        <li>Mehr Toleranz bei Berührung</li>
+        <li>Körper entspannter</li>
+      </ul>
+      <p>Nicht perfekt. 👉 <strong>Aber klar besser.</strong> Und genau das zählt.</p>
+
+      <h3>🧠 Beratung für Natalie</h3>
+      <p>Hier entscheidet sich, ob es besser wird.</p>
+
+      <h4>1. Täglich üben</h4>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Rhythmus</th></tr></thead>
+        <tbody>
+          <tr><td>Pfoten anfassen</td><td>Täglich</td></tr>
+          <tr><td>Leichter Druck auf Krallen</td><td>Kurz & ruhig</td></tr>
+        </tbody>
+      </table>
+
+      <h4>2. Nicht zu lange warten</h4>
+      <p>👉 <strong>Lange Krallen = mehr Druck = mehr Schmerzgefühl.</strong></p>
+      <p>Regelmäßig schneiden ist einfacher.</p>
+
+      <h4>3. Zuhause lieber schleifen</h4>
+      <p>👉 Weniger Risiko = weniger Angst.</p>
+      <p>Und mein wichtigster Satz: <strong>„Es geht nicht um perfekte Krallen – es geht darum, dass sie ruhig bleibt."</strong></p>
+      <p>Das verändert die Sichtweise komplett – genauso wie <a href="/blog/fallstudie-hund-hasst-wasser-milo">bei Jack Russell Milo, der mit derselben Methode das Baden wieder toleriert hat</a>.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Warum hasst mein Hund Krallenschneiden?</strong></p>
+      <p>Oft wegen einer schlechten Erfahrung.</p>
+      <p><strong>Soll ich ihn festhalten?</strong></p>
+      <p>Nein – das verstärkt die Angst.</p>
+      <p><strong>Kann man das wieder verbessern?</strong></p>
+      <p>Ja – mit Geduld und richtigem Aufbau.</p>
+
+      <h3>Fazit</h3>
+      <p>Krallenschneiden ist technisch einfach. Schwierig wird es durch: Erinnerung, Angst und Erwartung.</p>
+      <p>Wenn du das löst… 👉 <strong>wird der Rest leicht.</strong></p>
+      <p>Es geht nicht darum, schnell fertig zu werden. 👉 <strong>Sondern ruhig, kontrolliert und sauber zu arbeiten.</strong></p>
+      <p>Machst du das richtig… werden selbst schwierige Hunde mit der Zeit entspannt dabei.</p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-angsthund-schnauzer-max">Angsthund Max: Angstbasiertes Verhalten verstehen und lösen</a></li>
+        <li><a href="/blog/fallstudie-hund-hasst-wasser-milo">Hund hasst Wasser: Milos ähnlicher Weg zur Ruhe</a></li>
+        <li><a href="/blog/fallstudie-erste-welpenpflege-teddy">Welpe Teddy: So vermeidest du solche Probleme von Anfang an</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: cocoImage
+  },
+  {
+    slug: "fallstudie-erwartung-vs-realitaet-alfie",
+    title: "Erwartung vs. Realität beim Grooming: Warum Alfie kurz geschoren werden musste",
+    excerpt: "Cavapoo Alfie sollte nur „leicht nachgeschnitten” werden – doch unter der flauschigen Oberfläche steckte Verfilzung. So haben wir's im Hundesalon Laika gelöst.",
+    date: getPostDate(35),
+    content: `
+      <h2>Fallstudie: Erwartung vs. Realität beim Grooming</h2>
+      <p><strong>Warum „nur ein bisschen schneiden" nicht möglich war – und wie wir's richtig gelöst haben</strong></p>
+
+      <h3>📍 Überblick</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Hundename</strong></td><td>Alfie</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Cavapoo</td></tr>
+          <tr><td><strong>Alter</strong></td><td>3 Jahre</td></tr>
+          <tr><td><strong>Wesen</strong></td><td>Freundlich, leicht empfindlich beim Bürsten</td></tr>
+          <tr><td><strong>Besitzerin</strong></td><td>Rachel D.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Unregelmäßige Grooming-Termine, Bürsten zuhause inkonsequent</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Vollgroom (gewünscht: „nur leicht nachschneiden")</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>1 Stunde 40 Minuten</td></tr>
+          <tr><td><strong>Standort</strong></td><td>Wien – 1090</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐾 Erster Eindruck – Sieht gut aus… aber nur oberflächlich</h3>
+      <p>Auf den ersten Blick: 👉 <strong>Süß, flauschig, ein bissl rausgewachsen.</strong></p>
+      <p>Aber mit Erfahrung weißt du: 👉 <strong>Oberfläche sagt gar nix.</strong></p>
+      <p><strong>Beim genaueren Hinschauen:</strong></p>
+      <ul>
+        <li>Fell weich – aber darunter dicht</li>
+        <li>Leichte Knötchen bei Ohren und Brust</li>
+        <li>Beine voller als sie wirken sollten</li>
+      </ul>
+      <p>Ich geh mit dem Kamm durch die obere Schicht: 👉 Geht problemlos.</p>
+      <p>Dann näher zur Haut: 👉 <strong>Komplett blockiert.</strong></p>
+      <p>Und genau da kippt die Situation. Als Hundefriseur in Wien sehen wir das regelmäßig – im Extremfall endet es wie <a href="/blog/fallstudie-verfilzter-cockapoo-bella">bei Cockapoo Bella, wo das gesamte Fell entfernt werden musste</a>.</p>
+
+      <h3>🔍 Wunsch der Besitzerin</h3>
+      <p>Rachel sagt: <em>„Ich würd ihn gern lang lassen – einfach nur ein bisschen aufhübschen."</em></p>
+      <p>Das hörst du ständig. Und ehrlich: 👉 <strong>Klingt erstmal völlig logisch.</strong></p>
+
+      <h3>⚠️ Warum das nicht geht</h3>
+      <p>Ich erklär das nicht sofort. <strong>Ich zeig's.</strong></p>
+      <p><strong>Demonstration:</strong></p>
+      <ul>
+        <li>Kamm bei der Brust angesetzt</li>
+        <li>Bleibt stecken – kommt nicht bis zur Haut</li>
+        <li>Fell leicht angehoben → Haut zieht mit</li>
+      </ul>
+      <p>Dann sag ich: <strong>„Das ist Verfilzung unter der Oberfläche. Wenn ich das ausbürste, tut ihm das weh."</strong></p>
+      <p>Das ist der Punkt: 👉 <strong>Nicht erklären – zeigen.</strong></p>
+
+      <h3>🧠 Der entscheidende Moment</h3>
+      <p>Hier entscheidet sich alles: 👉 <strong>Vertrauen oder Diskussion.</strong></p>
+      <p><strong>Optionen klar erklärt:</strong></p>
+      <table>
+        <thead><tr><th>Option</th><th>Ergebnis</th></tr></thead>
+        <tbody>
+          <tr><td>Entfilzen</td><td>Schmerzhaft, stressig, nicht vertretbar</td></tr>
+          <tr><td>Kurz scheren</td><td>Schonend, sauber, Reset fürs Fell</td></tr>
+        </tbody>
+      </table>
+      <p>Keine Beschönigung. Keine falschen Hoffnungen.</p>
+
+      <h3>🧠 Reaktion von Rachel</h3>
+      <p>Erst: <em>„Oh… ich hab nicht gedacht, dass es so schlimm ist."</em></p>
+      <p>Dann: <em>„Okay, machen wir das, was für ihn am besten ist."</em></p>
+      <p>Und genau dieser Wechsel passiert: 👉 <strong>Wenn der Kunde versteht – nicht wenn er nur hört.</strong></p>
+
+      <h3>✂️ Grooming-Ansatz (Reset)</h3>
+      <p>Sobald die Entscheidung steht:</p>
+      <p><strong>Plan:</strong></p>
+      <ul>
+        <li>Komplett runterscheren</li>
+        <li>Haut schonen</li>
+        <li>Sauberes, gleichmäßiges Ergebnis</li>
+      </ul>
+      <p><strong>Umsetzung:</strong></p>
+      <ul>
+        <li>#7F Scherkopf verwendet</li>
+        <li>In Abschnitten gearbeitet (keine Spannung auf der Haut)</li>
+        <li>Vorsichtig an sensiblen Stellen (Achseln, Ohren)</li>
+      </ul>
+      <p>Ganz wichtig: 👉 <strong>Kein „wir retten noch ein bisschen Länge".</strong></p>
+      <p>Das geht fast immer nach hinten los.</p>
+
+      <h3>🧰 Werkzeuge & Produkte</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Werkzeug</th><th>Warum</th></tr></thead>
+        <tbody>
+          <tr><td>Schneiden</td><td>Heiniger Maschine + #7F</td><td>Sicher unter der Verfilzung</td></tr>
+          <tr><td>Kontrolle</td><td>Metallkamm</td><td>Verfilzung sichtbar machen</td></tr>
+          <tr><td>Baden</td><td>Mildes Shampoo</td><td>Haut beruhigen</td></tr>
+          <tr><td>Finish</td><td>Leichte Pflege</td><td>Fell ausgleichen</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🐶 Verhalten während des Grooms</h3>
+      <p>Alfie war:</p>
+      <ul>
+        <li>Ruhig beim Handling</li>
+        <li>Empfindlich beim Bürsten</li>
+      </ul>
+      <p>Das bestätigt: 👉 <strong>Die Verfilzung hat schon weh getan.</strong></p>
+      <p>Sobald wir mit dem Scheren begonnen haben: 👉 <strong>Deutlich entspannter.</strong></p>
+      <p>Und das ist dein Zeichen: 👉 <strong>Richtige Entscheidung getroffen.</strong> Wer den Felltyp seines Hundes besser verstehen will, findet hilfreiche Einblicke auch <a href="/blog/fallstudie-doppelfell-husky-luna">in unserem Fall mit Husky Luna</a>.</p>
+
+      <h3>✨ Ergebnis</h3>
+      <p>Ganz anders als gewünscht – aber genau richtig.</p>
+      <ul>
+        <li>Kurzes, gleichmäßiges Fell</li>
+        <li>Keine Verfilzungen mehr</li>
+        <li>Haut gesund und frei</li>
+        <li>Sauberes Gesamtbild</li>
+      </ul>
+      <p>Und das Wichtigste:</p>
+      <ul>
+        <li>👉 Alfie hat sich leichter bewegt</li>
+        <li>👉 Kein Ziehen mehr auf der Haut</li>
+      </ul>
+      <p><strong>Das ist Komfort – nicht Optik.</strong></p>
+
+      <h3>🧠 Beratung für Rachel</h3>
+      <p>Hier verhinderst du, dass es wieder passiert.</p>
+
+      <h4>1. Richtig bürsten</h4>
+      <p>Ich hab ihr gezeigt:</p>
+      <ul>
+        <li>Fell scheiteln</li>
+        <li>Bis zur Haut durchgehen</li>
+      </ul>
+      <p>Die meisten machen nur Oberfläche. 👉 <strong>Das bringt nix.</strong></p>
+
+      <h4>2. Pflegeplan</h4>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Rhythmus</th></tr></thead>
+        <tbody>
+          <tr><td>Grooming</td><td>Alle 6–8 Wochen</td></tr>
+          <tr><td>Bürsten</td><td>3–4× pro Woche</td></tr>
+          <tr><td>Felllänge</td><td>Realistisch halten</td></tr>
+        </tbody>
+      </table>
+
+      <h4>3. Ehrlicher Satz</h4>
+      <p><strong>„Wenn du ihn lang willst, muss die Pflege dazu passen."</strong></p>
+      <p>Ohne Druck. Einfach Realität.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Warum wurde mein Hund so kurz geschoren?</strong></p>
+      <p>Weil Verfilzungen nicht schmerzfrei ausgebürstet werden können.</p>
+      <p><strong>Kann man das Fell retten?</strong></p>
+      <p>In den meisten Fällen: nein, ohne Stress für den Hund.</p>
+      <p><strong>Wie vermeide ich das?</strong></p>
+      <p>Regelmäßig bürsten – bis zur Haut.</p>
+
+      <h3>Fazit</h3>
+      <p>Das passiert jeden Tag. Nicht weil Besitzer es schlecht meinen. Sondern weil sie Pflege unterschätzen, Fell falsch einschätzen und nur oberflächlich bürsten.</p>
+      <p>Und flauschiges Fell versteckt alles.</p>
+      <p>Ein guter Groomer macht nicht einfach das, was gewünscht wird. 👉 <strong>Sondern das, was der Hund braucht.</strong></p>
+      <p>Und wenn man das sauber erklärt… gehen Kunden nicht enttäuscht raus – sondern mit Verständnis. Und kommen wieder.</p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-verfilzter-cockapoo-bella">Verfilzter Cockapoo Bella: Ein extremer Fall von Verfilzung</a></li>
+        <li><a href="/blog/fallstudie-doppelfell-husky-luna">Doppelfell bei Husky Luna: Felltypen verstehen</a></li>
+        <li><a href="/blog/fallstudie-notfall-grooming-shihtzu-rosie">Notfall-Grooming Rosie: Kundenkommunikation unter Zeitdruck</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: alfieImage
+  },
+  {
+    slug: "fallstudie-notfall-grooming-shihtzu-rosie",
+    title: "Notfall-Grooming: Wie Shih Tzu Rosie in 70 Minuten wieder präsentabel wurde",
+    excerpt: "Shih Tzu Rosie brauchte dringend Hilfe – eine Familienfeier stand bevor und der letzte Grooming-Termin war über 10 Wochen her. So haben wir's im Hundesalon Laika gelöst.",
+    date: getPostDate(36),
+    content: `
+      <h2>Fallstudie: Notfall-Grooming (Last Minute)</h2>
+      <p><strong>Wenn Timing genauso wichtig ist wie das Ergebnis</strong></p>
+
+      <h3>📍 Überblick</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Name</strong></td><td>Rosie</td></tr>
+          <tr><td><strong>Rasse</strong></td><td>Shih Tzu</td></tr>
+          <tr><td><strong>Alter</strong></td><td>6 Jahre</td></tr>
+          <tr><td><strong>Wesen</strong></td><td>Freundlich, leicht unruhig</td></tr>
+          <tr><td><strong>Besitzerin</strong></td><td>Claire W.</td></tr>
+          <tr><td><strong>Hintergrund</strong></td><td>Kurzfristiger Termin vor Familienfeier</td></tr>
+          <tr><td><strong>Datum</strong></td><td>20. März 2026</td></tr>
+          <tr><td><strong>Termin</strong></td><td>Notfall-Grooming am selben Tag</td></tr>
+          <tr><td><strong>Dauer</strong></td><td>1 Stunde 10 Minuten</td></tr>
+          <tr><td><strong>Ort</strong></td><td>Wien – 1090</td></tr>
+        </tbody>
+      </table>
+
+      <h3>📞 Der Anruf – Warum es dringend war</h3>
+      <p>Der Tag hat um 09:10 mit einem Anruf begonnen.</p>
+      <p>Claire am Telefon: <em>„Wir haben heute Nachmittag eine Familienfeier… und Rosie braucht dringend Hilfe."</em></p>
+      <p>Du hörst sofort: 👉 <strong>Druck ist da.</strong> Nicht Panik – aber knapp davor.</p>
+      <p><strong>Situation:</strong></p>
+      <ul>
+        <li>Termin um 15:00</li>
+        <li>Hund seit über 10 Wochen nicht gepflegt</li>
+        <li>Kein anderer Termin verfügbar</li>
+      </ul>
+      <p>Und da stellst du dir eine Frage: 👉 <strong>Krieg ich das sauber hin – oder sag ich lieber nein?</strong></p>
+
+      <h3>🐾 Erster Eindruck – Kein „nur schnell drüber"</h3>
+      <p>Rosie war um 10:05 da. Und sofort klar: 👉 <strong>Das ist mehr als ein kleines Auffrischen.</strong></p>
+      <p><strong>Zustand:</strong></p>
+      <ul>
+        <li>Fell rausgewachsen und ungleichmäßig</li>
+        <li>Augen teilweise verdeckt</li>
+        <li>Hygienebereich unsauber</li>
+        <li>Leichte Verfilzungen hinter den Ohren</li>
+      </ul>
+      <p>Nicht extrem. Aber: 👉 <strong>Präsentation war das Hauptproblem.</strong> Im Hundesalon Laika in Wien 1090 kennen wir solche Fälle – wenn auch meist gravierender, wie <a href="/blog/fallstudie-vernachlaessigter-hund-bruno">den Komplett-Reset bei Mischling Bruno</a>.</p>
+
+      <h3>⚠️ Prioritäten setzen</h3>
+      <p>Bei Notfall-Terminen geht's nicht um Perfektion. Sondern um: 👉 <strong>Wirkung vs. Zeit.</strong></p>
+      <table>
+        <thead><tr><th>Bereich</th><th>Priorität</th></tr></thead>
+        <tbody>
+          <tr><td>Gesicht</td><td>Hoch</td></tr>
+          <tr><td>Hygiene</td><td>Hoch</td></tr>
+          <tr><td>Gesamte Form</td><td>Mittel</td></tr>
+          <tr><td>Feinarbeit</td><td>Niedrig</td></tr>
+        </tbody>
+      </table>
+      <p>Du arbeitest dort, wo's sofort sichtbar ist.</p>
+
+      <h3>🧠 Strategie – Schnell, aber kontrolliert</h3>
+      <p>Nicht hektisch. Aber auch kein Leerlauf.</p>
+
+      <h4>1. Schnelle Vorbereitung</h4>
+      <ul>
+        <li>Fell kurz eingeschätzt</li>
+        <li>Leicht durchgebürstet, wo möglich</li>
+        <li>Keine aufwendige Entfilzung</li>
+      </ul>
+
+      <h4>2. Gesicht zuerst (immer)</h4>
+      <p>Warum? 👉 <strong>Das sieht jeder sofort.</strong></p>
+      <ul>
+        <li>Augen freigeschnitten</li>
+        <li>Schnauze in Form gebracht</li>
+        <li>Ausdruck wieder klar</li>
+      </ul>
+      <p>Und schon: 👉 <strong>Riesiger Unterschied.</strong></p>
+
+      <h4>3. Hygiene-Bereich</h4>
+      <ul>
+        <li>Hinterteil sauber gemacht</li>
+        <li>Bauchbereich gekürzt</li>
+      </ul>
+      <p>Das bringt: 👉 Mehr Komfort, weniger Geruch, Sauberkeit.</p>
+
+      <h4>4. Körper scheren</h4>
+      <ul>
+        <li>Gleichmäßiger Schnitt</li>
+        <li>Keine unnötigen Durchgänge</li>
+      </ul>
+      <p>Ziel: 👉 <strong>Sauber, ordentlich, präsentabel.</strong></p>
+
+      <h4>5. Schnelles Bad & Trocknen</h4>
+      <p>Kein Wellnessprogramm. 👉 <strong>Funktional.</strong></p>
+      <ul>
+        <li>Kürzeres Bad, Fokus auf Sauberkeit</li>
+        <li>Trocknen: effizient und kontrolliert</li>
+      </ul>
+
+      <h3>🧰 Werkzeuge & Setup</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Tool</th><th>Warum</th></tr></thead>
+        <tbody>
+          <tr><td>Maschine</td><td>Wahl KM10</td><td>Schnell & zuverlässig</td></tr>
+          <tr><td>Gesicht</td><td>Kleine Trimmer</td><td>Präzise</td></tr>
+          <tr><td>Bad</td><td>Mildes Shampoo</td><td>Schnell & schonend</td></tr>
+          <tr><td>Trocknen</td><td>Hochleistungsföhn</td><td>Effizient</td></tr>
+          <tr><td>Finish</td><td>Leichter Spray</td><td>Frischer Look</td></tr>
+        </tbody>
+      </table>
+
+      <h3>⏱️ Zeitaufteilung</h3>
+      <table>
+        <thead><tr><th>Bereich</th><th>Dauer</th></tr></thead>
+        <tbody>
+          <tr><td>Einschätzung & Vorbereitung</td><td>10 Min</td></tr>
+          <tr><td>Schneiden</td><td>30 Min</td></tr>
+          <tr><td>Baden & Trocknen</td><td>20 Min</td></tr>
+          <tr><td>Finish</td><td>10 Min</td></tr>
+        </tbody>
+      </table>
+      <p>👉 <strong>Jede Minute hatte einen Zweck.</strong></p>
+
+      <h3>✨ Ergebnis</h3>
+      <p>Hier zeigt sich, wie wichtig Prioritäten sind.</p>
+      <p><strong>Vorher:</strong></p>
+      <ul>
+        <li>Ungepflegt</li>
+        <li>Überwachsen</li>
+        <li>Kein klarer Ausdruck</li>
+      </ul>
+      <p><strong>Nachher:</strong></p>
+      <ul>
+        <li>Freies Gesicht</li>
+        <li>Gleichmäßiges Fell</li>
+        <li>Sauberer Gesamteindruck</li>
+      </ul>
+      <p>Claire hat gesagt: <em>„Sie schaut aus wie ein ganz anderer Hund."</em></p>
+      <p>Und genau das ist das Ziel. Gute Kundenkommunikation macht den Unterschied – wie wir auch <a href="/blog/fallstudie-erwartung-vs-realitaet-alfie">beim Erwartungsgespräch mit Alfies Besitzerin</a> zeigen.</p>
+
+      <h3>🐶 Verhalten während des Grooms</h3>
+      <p>Rosie war:</p>
+      <ul>
+        <li>Leicht unruhig</li>
+        <li>Aber gut händelbar</li>
+      </ul>
+      <p>Ganz wichtig: 👉 <strong>Kein Stressanstieg.</strong> Auch unter Zeitdruck bleibt das Handling ruhig.</p>
+
+      <h3>🧠 Beratung für Claire</h3>
+      <p>Ehrlich – aber entspannt.</p>
+      <p><strong>Das hab ich ihr gesagt:</strong></p>
+      <ul>
+        <li>Das war ein Reset – kein perfekter Schnitt</li>
+        <li>Beim nächsten Mal besser früher buchen</li>
+      </ul>
+      <p><strong>Pflegeplan:</strong></p>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Rhythmus</th></tr></thead>
+        <tbody>
+          <tr><td>Grooming</td><td>Alle 6–8 Wochen</td></tr>
+          <tr><td>Event-Vorbereitung</td><td>1–2 Wochen vorher</td></tr>
+        </tbody>
+      </table>
+      <p>Und der wichtigste Satz: <strong>„Wir kriegen das immer hin – aber mit Zeit wird's noch besser."</strong></p>
+      <p>Das baut Vertrauen auf.</p>
+
+      <h3>❓ Häufige Fragen</h3>
+      <p><strong>Geht Grooming am selben Tag überhaupt?</strong></p>
+      <p>Ja – wenn richtig priorisiert wird.</p>
+      <p><strong>Ist das Ergebnis gleich wie bei einem normalen Termin?</strong></p>
+      <p>Nein – aber sauber und präsentabel.</p>
+      <p><strong>Sollte man für Events extra planen?</strong></p>
+      <p>Unbedingt.</p>
+
+      <h3>Fazit</h3>
+      <p>Notfall-Groomings passieren. Das ist normal. Der Unterschied ist: 👉 <strong>Wie man damit umgeht.</strong></p>
+      <p>Mit Zeit kann jeder gut arbeiten. Die echte Fähigkeit ist:</p>
+      <ul>
+        <li>👉 Unter Druck ruhig bleiben</li>
+        <li>👉 Richtig priorisieren</li>
+        <li>👉 Und ein starkes Ergebnis liefern</li>
+      </ul>
+      <p><strong>Ohne den Hund dabei zu stressen.</strong></p>
+
+      <h3>📍 Ähnliche Fälle aus dem Hundesalon Laika</h3>
+      <ul>
+        <li><a href="/blog/fallstudie-erwartung-vs-realitaet-alfie">Erwartung vs. Realität: Kundenkommunikation bei Cavapoo Alfie</a></li>
+        <li><a href="/blog/fallstudie-vernachlaessigter-hund-bruno">Vernachlässigter Hund Bruno: Komplett-Reset in einer Sitzung</a></li>
+        <li><a href="/blog/fallstudie-senior-hund-charlie">Senior-Hund Charlie: Angepasstes Grooming mit Zeitgefühl</a></li>
+      </ul>
+
+      <h3>👉 Termin beim Hundefriseur Wien sichern</h3>
+      <p>Wenn du merkst, dass dein Hund ähnliche Probleme hat – melde dich rechtzeitig.</p>
+      <p>Wir nehmen uns Zeit und arbeiten ruhig, stressfrei und individuell.</p>
+      <p><a href="/booking"><strong>➡️ Jetzt Termin anfragen</strong></a></p>
+
+      <p><em>Hundesalon Laika – Ihr Hundefriseur in Wien 1090 (Alsergrund)</em></p>
+    `,
+    image: rosieImage
   }
 ];
