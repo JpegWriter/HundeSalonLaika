@@ -324,58 +324,77 @@ export default function Home() {
               {
                 title: "Stark verfilzter Cockapoo",
                 summary: "Bella kam mit extremer Ganzkörper-Verfilzung – ein Notfall-Pflegetermin brachte ihr sofortige Erleichterung.",
-                slug: "fallstudie-verfilzter-cockapoo-bella"
+                slug: "fallstudie-verfilzter-cockapoo-bella",
+                date: "2026-04-09"
               },
               {
                 title: "Angsthund beim Grooming",
                 summary: "Zwergschnauzer Max schnappte aus Angst – ein anderer Salon hatte ihn abgelehnt. Bei uns wurde es ein Erfolg.",
-                slug: "fallstudie-angsthund-schnauzer-max"
+                slug: "fallstudie-angsthund-schnauzer-max",
+                date: "2026-04-09"
               },
               {
                 title: "Hund hasst Wasser",
                 summary: "Jack Russell Milo flippt beim Baden aus. Schritt für Schritt haben wir die Erfahrung verändert.",
-                slug: "fallstudie-hund-hasst-wasser-milo"
+                slug: "fallstudie-hund-hasst-wasser-milo",
+                date: "2026-05-28"
               },
               {
                 title: "Erste Welpenpflege",
                 summary: "Cockapoo-Welpe Teddy hatte mit 13 Wochen seinen allerersten Termin – so legen wir den Grundstein.",
-                slug: "fallstudie-erste-welpenpflege-teddy"
+                slug: "fallstudie-erste-welpenpflege-teddy",
+                date: "2026-04-16"
               },
               {
                 title: "Krallenschneiden als Albtraum",
                 summary: "Dackel Coco ließ nach einer schlechten Erfahrung niemanden mehr ran. Mit Geduld und Technik hat es geklappt.",
-                slug: "fallstudie-krallenschneiden-dackel-coco"
+                slug: "fallstudie-krallenschneiden-dackel-coco",
+                date: "2026-06-04"
               },
               {
                 title: "Senior-Hund Charlie",
                 summary: "Mit 13 Jahren, Arthrose und wenig Ausdauer – angepasste Pflege mit Pausen und viel Geduld.",
-                slug: "fallstudie-senior-hund-charlie"
+                slug: "fallstudie-senior-hund-charlie",
+                date: "2026-04-23"
               },
               {
                 title: "Vernachlässigter Mischling Bruno",
                 summary: "Massiver Filz, Hautprobleme und ein Hund, der Menschen nicht mehr vertraute. Schritt für Schritt befreit.",
-                slug: "fallstudie-vernachlaessigter-hund-bruno"
+                slug: "fallstudie-vernachlaessigter-hund-bruno",
+                date: "2026-05-14"
               },
               {
                 title: "Notfall-Grooming Shih Tzu Rosie",
                 summary: "Rosie kam als Notfall – stark verfilzt und mit Hautirritationen. Eine einfühlsame Rettung.",
-                slug: "fallstudie-notfall-grooming-shihtzu-rosie"
+                slug: "fallstudie-notfall-grooming-shihtzu-rosie",
+                date: "2026-06-18"
               }
-            ].map((study, idx) => (
-              <Link key={idx} href={`/blog/${study.slug}`}>
-                <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-all hover:shadow-lg group cursor-pointer h-full">
-                  <h3 className="font-serif text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+            ].map((study, idx) => {
+              const isPublished = new Date(study.date) <= new Date();
+              const card = (
+                <div className={`p-6 rounded-2xl border transition-all h-full ${isPublished ? 'border-border hover:border-primary/30 hover:shadow-lg group cursor-pointer' : 'border-border/50 opacity-75'}`}>
+                  {!isPublished && (
+                    <span className="inline-block px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium mb-3">Kommt bald</span>
+                  )}
+                  <h3 className={`font-serif text-lg font-bold mb-2 ${isPublished ? 'group-hover:text-primary transition-colors' : 'text-muted-foreground'}`}>
                     {study.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">
                     {study.summary}
                   </p>
-                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Fallstudie lesen <ArrowRight size={14} />
-                  </span>
+                  {isPublished && (
+                    <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Fallstudie lesen <ArrowRight size={14} />
+                    </span>
+                  )}
                 </div>
-              </Link>
-            ))}
+              );
+              return isPublished ? (
+                <Link key={idx} href={`/blog/${study.slug}`}>{card}</Link>
+              ) : (
+                <div key={idx}>{card}</div>
+              );
+            })}
           </div>
 
           <div className="text-center mt-10">

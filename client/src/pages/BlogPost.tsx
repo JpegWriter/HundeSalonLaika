@@ -206,6 +206,10 @@ export default function BlogPost() {
   }
 
   const publishedDate = post.date ? new Date(post.date) : new Date();
+  const now = new Date();
+  if (publishedDate > now) {
+    return <NotFound />;
+  }
   const articleUrl = `https://www.hundesalonlaika-wien.at/blog/${post.slug}`;
   const seoMeta = seoMetaBySlug[post.slug];
 
@@ -274,7 +278,7 @@ export default function BlogPost() {
   };
 
   const relatedPosts = blogPosts
-    .filter((p) => p.slug !== post.slug)
+    .filter((p) => p.slug !== post.slug && p.date && new Date(p.date) <= new Date())
     .slice(0, 3);
 
   return (
