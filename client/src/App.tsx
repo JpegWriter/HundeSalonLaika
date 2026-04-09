@@ -17,6 +17,9 @@ import BlogPost from "@/pages/BlogPost";
 import Impressum from "@/pages/Impressum";
 import Privacy from "@/pages/Privacy";
 import Dev from "@/pages/Dev";
+import HundefriseurWien from "@/pages/HundefriseurWien";
+import VerfilzterHund from "@/pages/VerfilzterHund";
+import HundAngstGrooming from "@/pages/HundAngstGrooming";
 
 function Router() {
   return (
@@ -30,6 +33,9 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/hundefriseur-wien" component={HundefriseurWien} />
+      <Route path="/verfilzter-hund" component={VerfilzterHund} />
+      <Route path="/hund-angst-grooming" component={HundAngstGrooming} />
       <Route path="/impressum" component={Impressum} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/dev" component={Dev} />
