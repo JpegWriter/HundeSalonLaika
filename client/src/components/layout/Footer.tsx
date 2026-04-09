@@ -33,6 +33,9 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">Leistungen & Preise</Link></li>
               <li><Link href="/booking" className="text-muted-foreground hover:text-primary transition-colors">Online Terminanfrage</Link></li>
+              <li><Link href="/hundefriseur-wien" className="text-muted-foreground hover:text-primary transition-colors">Hundefriseur Wien</Link></li>
+              <li><Link href="/verfilzter-hund" className="text-muted-foreground hover:text-primary transition-colors">Verfilzter Hund</Link></li>
+              <li><Link href="/hund-angst-grooming" className="text-muted-foreground hover:text-primary transition-colors">Hund Angst Grooming</Link></li>
               <li className="text-muted-foreground">(U4 Roßauer Lände oder D-Waggon / Bus 40a Bauernfeldplatz)</li>
               <li className="text-muted-foreground">{siteData.phone}</li>
               {siteData.phoneSecondary && (

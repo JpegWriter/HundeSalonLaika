@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Leistungen", href: "/services" },
+  { name: "Hundefriseur Wien", href: "/hundefriseur-wien" },
   { name: "Über Uns", href: "/about" },
   { name: "Blog", href: "/blog" },
   { name: "Kontakt", href: "/contact" },
