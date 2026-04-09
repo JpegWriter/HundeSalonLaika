@@ -1592,7 +1592,7 @@ export const blogPosts = [
     slug: "fallstudie-verfilzter-cockapoo-bella",
     title: "Stark verfilzter Hund: Bellas Verwandlung – Vom Filzpanzer zur sofortigen Erleichterung",
     excerpt: "Cockapoo Bella kam mit extremer Ganzkörper-Verfilzung. Ein Notfall-Pflegetermin brachte ihr sofortige Erleichterung – einfühlsam und schmerzfrei.",
-    date: getPostDate(25),
+    date: "2026-04-09T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Stark verfilzter Hund – Bellas Verwandlung</h2>
       <p><strong>Vom Filzpanzer zur sofortigen Erleichterung</strong></p>
@@ -1783,7 +1783,7 @@ export const blogPosts = [
     slug: "fallstudie-angsthund-schnauzer-max",
     title: "Aggressiver Hund beim Grooming: Max' Weg von Panik zu ruhiger Pflege",
     excerpt: "Zwergschnauzer Max schnappte aus Angst – ein anderer Salon hatte ihn abgelehnt. So wurde sein Termin im Hundesalon Laika trotzdem ein Erfolg.",
-    date: getPostDate(26),
+    date: "2026-04-09T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Aggressiver / ängstlicher Hund beim Grooming</h2>
       <p><strong>Von Schnappen & Panik zu ruhiger, kontrollierter Pflege</strong></p>
@@ -1988,7 +1988,7 @@ export const blogPosts = [
     slug: "fallstudie-erste-welpenpflege-teddy",
     title: "Erste Welpenpflege: Teddys Einführung in stressfreies Grooming",
     excerpt: "Cockapoo-Welpe Teddy hatte seinen allerersten Pflegetermin mit 13 Wochen. So legen wir im Hundesalon Laika den Grundstein für ein stressfreies Hundeleben.",
-    date: getPostDate(27),
+    date: "2026-04-16T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Erste Welpenpflege</h2>
       <p><strong>Den Grundstein für ein Leben voller stressfreier Pflege legen</strong></p>
@@ -2191,7 +2191,7 @@ export const blogPosts = [
     slug: "fallstudie-senior-hund-charlie",
     title: "Senior-Hund beim Hundefriseur: Charlies schonende Pflege mit 13 Jahren",
     excerpt: "Cavalier King Charles Spaniel Charlie ist 13 und hat Arthrose. So sieht ein angepasster Pflegetermin im Hundesalon Laika aus – Komfort vor Optik.",
-    date: getPostDate(28),
+    date: "2026-04-23T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Senior-Hund beim Hundefriseur</h2>
       <p><strong>Komfort vor Optik – Wie man einen alten Hund schonend pflegt</strong></p>
@@ -2385,7 +2385,7 @@ export const blogPosts = [
     slug: "fallstudie-hautprobleme-franzoesische-bulldogge-rocky",
     title: "Hund mit Hautproblemen: Rockys Weg von gereizter Haut zu spürbarer Erleichterung",
     excerpt: "Französische Bulldogge Rocky hatte entzündete Hautfalten und Hefepilz-Verdacht. So sah sein hautorientierter Pflegetermin im Hundesalon Laika aus.",
-    date: getPostDate(29),
+    date: "2026-04-30T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Hund mit Hautproblemen</h2>
       <p><strong>Von gereizter, entzündeter Haut zu spürbarer Erleichterung</strong></p>
@@ -2583,7 +2583,7 @@ export const blogPosts = [
     slug: "fallstudie-doppelfell-husky-luna",
     title: "Doppelfell-Rasse im Fellwechsel: Lunas komplettes De-Shedding",
     excerpt: "Siberian Husky Luna war mitten im Fellwechsel – Unterwolle überall. So funktioniert ein professionelles De-Shedding im Hundesalon Laika.",
-    date: getPostDate(30),
+    date: "2026-05-07T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Doppelfell-Rasse im Fellwechsel</h2>
       <p><strong>Vom Fellchaos zur kontrollierten, gesunden Fellpflege</strong></p>
@@ -2778,7 +2778,7 @@ export const blogPosts = [
     slug: "fallstudie-vernachlaessigter-hund-bruno",
     title: "Stark verschmutzter Hund: Brunos Komplett-Reset nach der Adoption",
     excerpt: "Tierschutz-Mischling Bruno kam frisch adoptiert und völlig verdreckt. So sah sein Reha-Grooming im Hundesalon Laika aus – Schritt für Schritt.",
-    date: getPostDate(31),
+    date: "2026-05-14T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Stark verschmutzter / vernachlässigter Hund</h2>
       <p><strong>Vom komplett verdreckten Fell… zu sauber, entspannt und wieder „Hund sein"</strong></p>
@@ -2998,7 +2998,7 @@ export const blogPosts = [
     slug: "fallstudie-pudel-praezisionsschnitt-oliver",
     title: "Rassespezifisches Grooming: Olivers Pudel-Präzisionsschnitt",
     excerpt: "Großpudel Oliver bekommt seinen modernen Teddy-Schnitt – saubere Linien, perfekte Balance. So entsteht ein Präzisionsschnitt im Hundesalon Laika.",
-    date: getPostDate(32),
+    date: "2026-05-21T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Rassespezifisches Grooming (Pudel Präzisionsschnitt)</h2>
       <p><strong>Saubere Linien, perfekte Balance – Grooming auf höchstem Niveau</strong></p>
@@ -3205,7 +3205,7 @@ export const blogPosts = [
     slug: "fallstudie-hund-hasst-wasser-milo",
     title: "Hund hasst Wasser: Milos Weg von Panik zu ruhigem Baden",
     excerpt: "Jack Russell Milo flippt beim Baden aus – zuhause kaum möglich. So haben wir im Hundesalon Laika die Erfahrung Schritt für Schritt verändert.",
-    date: getPostDate(33),
+    date: "2026-05-28T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Hund, der Wasser hasst</h2>
       <p><strong>Von Panik in der Badewanne zu ruhigem, kontrolliertem Waschen</strong></p>
@@ -3408,7 +3408,7 @@ export const blogPosts = [
     slug: "fallstudie-krallenschneiden-dackel-coco",
     title: "Krallenschneiden als Albtraum: Dackeldame Cocos Weg zur ruhigen Krallenpflege",
     excerpt: "Dackel Coco hatte eine schlechte Erfahrung beim Krallenschneiden und ließ niemanden mehr ran. So haben wir es im Hundesalon Laika gelöst.",
-    date: getPostDate(34),
+    date: "2026-06-04T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Krallenschneiden als Albtraum</h2>
       <p><strong>Von Ziehen, Panik und Widerstand… zu ruhiger, kontrollierter Krallenpflege</strong></p>
@@ -3599,7 +3599,7 @@ export const blogPosts = [
     slug: "fallstudie-erwartung-vs-realitaet-alfie",
     title: "Erwartung vs. Realität beim Grooming: Warum Alfie kurz geschoren werden musste",
     excerpt: "Cavapoo Alfie sollte nur „leicht nachgeschnitten” werden – doch unter der flauschigen Oberfläche steckte Verfilzung. So haben wir's im Hundesalon Laika gelöst.",
-    date: getPostDate(35),
+    date: "2026-06-11T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Erwartung vs. Realität beim Grooming</h2>
       <p><strong>Warum „nur ein bisschen schneiden" nicht möglich war – und wie wir's richtig gelöst haben</strong></p>
@@ -3776,7 +3776,7 @@ export const blogPosts = [
     slug: "fallstudie-notfall-grooming-shihtzu-rosie",
     title: "Notfall-Grooming: Wie Shih Tzu Rosie in 70 Minuten wieder präsentabel wurde",
     excerpt: "Shih Tzu Rosie brauchte dringend Hilfe – eine Familienfeier stand bevor und der letzte Grooming-Termin war über 10 Wochen her. So haben wir's im Hundesalon Laika gelöst.",
-    date: getPostDate(36),
+    date: "2026-06-18T08:00:00.000Z",
     content: `
       <h2>Fallstudie: Notfall-Grooming (Last Minute)</h2>
       <p><strong>Wenn Timing genauso wichtig ist wie das Ergebnis</strong></p>
