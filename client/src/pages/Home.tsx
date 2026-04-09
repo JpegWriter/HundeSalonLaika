@@ -33,6 +33,10 @@ export default function Home() {
     logo: "https://www.hundesalonlaika-wien.at/path-to-logo.png",
     telephone: siteData.phone,
     priceRange: "€€",
+    areaServed: {
+      "@type": "City",
+      name: "Wien",
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "Grünentorgasse 8",
@@ -47,6 +51,37 @@ export default function Home() {
     },
     sameAs: [
       "https://maps.app.goo.gl/c6GHPHxbzYv175zU6",
+    ],
+  };
+
+  const faqJson = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Wie oft sollte mein Hund zum Hundefriseur?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Die meisten Hunde profitieren von einem Termin alle 6–8 Wochen, abhängig vom Felltyp.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Werden auch Katzen gepflegt?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Ja, auch Katzen werden bei uns ruhig und stressfrei gepflegt.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Was wenn mein Hund Angst hat?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Wir arbeiten speziell mit ängstlichen Hunden und nehmen uns die nötige Zeit ohne Druck.",
+        },
+      },
     ],
   };
 
@@ -76,6 +111,7 @@ export default function Home() {
         jsonLd={[
           { id: "ld-business", data: localBusinessJson },
           { id: "ld-website", data: websiteJson },
+          { id: "ld-faq", data: faqJson },
         ]}
       />
 
@@ -232,6 +268,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Unsere Schwerpunkte — Pillar Visibility */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="font-serif text-3xl font-bold">Unsere Schwerpunkte</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Wir konzentrieren uns auf die Bereiche, die im Alltag wirklich entscheidend sind – und bei denen Erfahrung den größten Unterschied macht.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+              <Link href="/verfilzter-hund">
+                <div className="p-5 rounded-xl border border-border hover:border-primary/30 transition-all hover:shadow-md group cursor-pointer">
+                  <h3 className="font-serif font-bold mb-1 group-hover:text-primary transition-colors">Verfilztes Fell richtig behandeln</h3>
+                  <p className="text-muted-foreground text-sm">Wann ausbürsten hilft – und wann geschoren werden muss.</p>
+                </div>
+              </Link>
+              <Link href="/hund-angst-grooming">
+                <div className="p-5 rounded-xl border border-border hover:border-primary/30 transition-all hover:shadow-md group cursor-pointer">
+                  <h3 className="font-serif font-bold mb-1 group-hover:text-primary transition-colors">Angst beim Grooming verstehen</h3>
+                  <p className="text-muted-foreground text-sm">Wie stressfreie Fellpflege für Angsthunde funktioniert.</p>
+                </div>
+              </Link>
+              <Link href="/hundefriseur-wien">
+                <div className="p-5 rounded-xl border border-border hover:border-primary/30 transition-all hover:shadow-md group cursor-pointer">
+                  <h3 className="font-serif font-bold mb-1 group-hover:text-primary transition-colors">Ruhige Fellpflege in Wien</h3>
+                  <p className="text-muted-foreground text-sm">Alles über unseren Salon, unsere Arbeitsweise und was uns unterscheidet.</p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Case Studies */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
@@ -277,6 +345,21 @@ export default function Home() {
                 title: "Krallenschneiden als Albtraum",
                 summary: "Dackel Coco ließ nach einer schlechten Erfahrung niemanden mehr ran. Mit Geduld und Technik hat es geklappt.",
                 slug: "fallstudie-krallenschneiden-dackel-coco"
+              },
+              {
+                title: "Senior-Hund Charlie",
+                summary: "Mit 13 Jahren, Arthrose und wenig Ausdauer – angepasste Pflege mit Pausen und viel Geduld.",
+                slug: "fallstudie-senior-hund-charlie"
+              },
+              {
+                title: "Vernachlässigter Mischling Bruno",
+                summary: "Massiver Filz, Hautprobleme und ein Hund, der Menschen nicht mehr vertraute. Schritt für Schritt befreit.",
+                slug: "fallstudie-vernachlaessigter-hund-bruno"
+              },
+              {
+                title: "Notfall-Grooming Shih Tzu Rosie",
+                summary: "Rosie kam als Notfall – stark verfilzt und mit Hautirritationen. Eine einfühlsame Rettung.",
+                slug: "fallstudie-notfall-grooming-shihtzu-rosie"
               }
             ].map((study, idx) => (
               <Link key={idx} href={`/blog/${study.slug}`}>
