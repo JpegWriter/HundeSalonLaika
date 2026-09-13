@@ -116,7 +116,7 @@ export function BookingWizard() {
       `Service: ${serviceTitle}\n` +
       `Größe: ${selectedSize}\n` +
       `Wunschtermin: ${dateStr} um ${selectedTime} Uhr\n` +
-      `Preis: €${price}\n` +
+      `Preis: ab €${price}\n` +
       `${paymentText}\n\n` +
       (notes ? `Hinweise des Kunden:\n${notes}\n` : "")
     );

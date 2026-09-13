@@ -98,7 +98,7 @@ export async function registerRoutes(
           from: process.env.GMAIL_USER,
           to: booking.email, // Send to customer
           subject: "Buchungsbestätigung - Hundesalon Laika",
-          text: `Hallo ${booking.customerName},\n\nvielen Dank für Ihre Buchung!\n\nDetails:\nService: ${booking.serviceName}\nDatum: ${booking.date} um ${booking.time}\nPreis: ${booking.price}€\n\nWir freuen uns auf Sie und ${booking.dogName}!\n\nMit freundlichen Grüßen,\nIhr Hundesalon Laika Team`,
+          text: `Hallo ${booking.customerName},\n\nvielen Dank für Ihre Buchung!\n\nDetails:\nService: ${booking.serviceName}\nDatum: ${booking.date} um ${booking.time}\nPreis: ab €${booking.price}\n\nWir freuen uns auf Sie und ${booking.dogName}!\n\nMit freundlichen Grüßen,\nIhr Hundesalon Laika Team`,
         };
         
         // Also send to owner
@@ -106,7 +106,7 @@ export async function registerRoutes(
           from: process.env.GMAIL_USER,
           to: process.env.GMAIL_USER, // Send copy to owner
           subject: `Neue Buchung: ${booking.customerName}`,
-          text: `Neue Buchung erhalten!\n\nKunde: ${booking.customerName}\nEmail: ${booking.email}\nTelefon: ${booking.phone}\nHund: ${booking.dogName} (${booking.breed}, ${booking.size})\nService: ${booking.serviceName}\nDatum: ${booking.date} um ${booking.time}\nPreis: ${booking.price}€\nNotizen: ${booking.notes || "Keine"}`,
+          text: `Neue Buchung erhalten!\n\nKunde: ${booking.customerName}\nEmail: ${booking.email}\nTelefon: ${booking.phone}\nHund: ${booking.dogName} (${booking.breed}, ${booking.size})\nService: ${booking.serviceName}\nDatum: ${booking.date} um ${booking.time}\nPreis: ab €${booking.price}\nNotizen: ${booking.notes || "Keine"}`,
         };
 
         try {
