@@ -43,7 +43,7 @@ export default async function handler(req, res) {
 
     if (req.method === "GET") {
       const result = await p.query(`
-        SELECT id, date, sales::text AS sales, costs::text AS costs, notes, created_at AS "createdAt", updated_at AS "updatedAt"
+        SELECT id, to_char(date, 'YYYY-MM-DD') AS date, sales::text AS sales, costs::text AS costs, notes, created_at AS "createdAt", updated_at AS "updatedAt"
         FROM daily_finance
         ORDER BY date DESC
       `);
@@ -64,7 +64,7 @@ export default async function handler(req, res) {
                        costs = EXCLUDED.costs,
                        notes = EXCLUDED.notes,
                        updated_at = NOW()
-         RETURNING id, date, sales::text AS sales, costs::text AS costs, notes, created_at AS "createdAt", updated_at AS "updatedAt"`,
+         RETURNING id, to_char(date, 'YYYY-MM-DD') AS date, sales::text AS sales, costs::text AS costs, notes, created_at AS "createdAt", updated_at AS "updatedAt"`,
         [date, Number(sales || 0).toFixed(2), Number(costs || 0).toFixed(2), notes || null]
       );
 

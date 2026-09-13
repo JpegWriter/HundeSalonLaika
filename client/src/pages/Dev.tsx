@@ -2,6 +2,14 @@ import { useEffect, useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
+import {
+  buildReportRows,
+  downloadFinanceCsv,
+  formatDateDe,
+  formatEuro,
+  openFinanceReportPrintView,
+  summarizeRows,
+} from "@/lib/financeReport";
 
 function MessageCell({ message }: { message: string }) {
   const [expanded, setExpanded] = useState(false);
@@ -41,6 +49,59 @@ interface FinanceEntry {
   updatedAt?: string;
 }
 
+const toIsoDate = (date: Date) => {
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+};
+
+function currentMonthRange() {
+  const now = new Date();
+  return {
+    from: toIsoDate(new Date(now.getFullYear(), now.getMonth(), 1)),
+    to: toIsoDate(now),
+  };
+}
+
+/** Quick presets the bookkeeper usually asks for. */
+const rangePresets: { label: string; build: () => { from: string; to: string } }[] = [
+  { label: "Dieser Monat", build: currentMonthRange },
+  {
+    label: "Letzter Monat",
+    build: () => {
+      const now = new Date();
+      return {
+        from: toIsoDate(new Date(now.getFullYear(), now.getMonth() - 1, 1)),
+        to: toIsoDate(new Date(now.getFullYear(), now.getMonth(), 0)),
+      };
+    },
+  },
+  {
+    label: "Dieses Quartal",
+    build: () => {
+      const now = new Date();
+      const quarterStartMonth = Math.floor(now.getMonth() / 3) * 3;
+      return {
+        from: toIsoDate(new Date(now.getFullYear(), quarterStartMonth, 1)),
+        to: toIsoDate(now),
+      };
+    },
+  },
+  {
+    label: "Dieses Jahr",
+    build: () => {
+      const now = new Date();
+      return { from: toIsoDate(new Date(now.getFullYear(), 0, 1)), to: toIsoDate(now) };
+    },
+  },
+  {
+    label: "Letztes Jahr",
+    build: () => {
+      const year = new Date().getFullYear() - 1;
+      return { from: `${year}-01-01`, to: `${year}-12-31` };
+    },
+  },
+];
+
 export default function DevPage() {
   const [submissions, setSubmissions] = useState<any[]>([]);
   const [stats, setStats] = useState<Stats | null>(null);
@@ -53,6 +114,8 @@ export default function DevPage() {
   });
   const [financeSaving, setFinanceSaving] = useState(false);
   const [financeError, setFinanceError] = useState<string | null>(null);
+  const [reportRange, setReportRange] = useState(() => currentMonthRange());
+  const [reportError, setReportError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [authed, setAuthed] = useState(false);
@@ -110,6 +173,30 @@ export default function DevPage() {
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
   }, []);
+
+  const reportRows = buildReportRows(financeEntries, reportRange.from, reportRange.to);
+  const reportTotals = summarizeRows(reportRows);
+  const rangeIsValid = Boolean(reportRange.from && reportRange.to && reportRange.from <= reportRange.to);
+
+  const handleDownloadCsv = () => {
+    if (!rangeIsValid) {
+      setReportError("Bitte einen gültigen Zeitraum wählen (Von-Datum vor Bis-Datum).");
+      return;
+    }
+    setReportError(null);
+    downloadFinanceCsv(reportRows, reportRange.from, reportRange.to);
+  };
+
+  const handleOpenPdf = () => {
+    if (!rangeIsValid) {
+      setReportError("Bitte einen gültigen Zeitraum wählen (Von-Datum vor Bis-Datum).");
+      return;
+    }
+    const opened = openFinanceReportPrintView(reportRows, reportRange.from, reportRange.to);
+    setReportError(
+      opened ? null : "Popup wurde blockiert. Bitte Pop-ups für diese Seite erlauben und erneut versuchen.",
+    );
+  };
 
   const handleFinanceSave = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -343,6 +430,99 @@ export default function DevPage() {
               <StatCard label="Netto" value={Number(financeSummary.net.toFixed(2))} />
             </div>
 
+            <div className="bg-white rounded-xl border p-4 space-y-4">
+              <div>
+                <h3 className="font-bold text-sm">Bericht für die Buchhaltung</h3>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Zeitraum wählen und als PDF (Druckansicht mit Firmenkopf) oder als CSV für die
+                  Buchhaltungssoftware herunterladen.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {rangePresets.map((preset) => {
+                  const range = preset.build();
+                  const active = range.from === reportRange.from && range.to === reportRange.to;
+                  return (
+                    <Button
+                      key={preset.label}
+                      type="button"
+                      size="sm"
+                      variant={active ? "default" : "outline"}
+                      onClick={() => {
+                        setReportError(null);
+                        setReportRange(range);
+                      }}
+                    >
+                      {preset.label}
+                    </Button>
+                  );
+                })}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+                <label className="space-y-1 text-xs text-muted-foreground">
+                  <span>Von</span>
+                  <input
+                    type="date"
+                    value={reportRange.from}
+                    onChange={(event) => {
+                      setReportError(null);
+                      setReportRange((current) => ({ ...current, from: event.target.value }));
+                    }}
+                    className="w-full rounded-md border px-3 py-2 text-sm"
+                  />
+                </label>
+                <label className="space-y-1 text-xs text-muted-foreground">
+                  <span>Bis</span>
+                  <input
+                    type="date"
+                    value={reportRange.to}
+                    onChange={(event) => {
+                      setReportError(null);
+                      setReportRange((current) => ({ ...current, to: event.target.value }));
+                    }}
+                    className="w-full rounded-md border px-3 py-2 text-sm"
+                  />
+                </label>
+                <div className="flex items-end">
+                  <Button type="button" className="w-full" onClick={handleOpenPdf} disabled={!rangeIsValid}>
+                    PDF herunterladen
+                  </Button>
+                </div>
+                <div className="flex items-end">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="w-full"
+                    onClick={handleDownloadCsv}
+                    disabled={!rangeIsValid}
+                  >
+                    CSV herunterladen
+                  </Button>
+                </div>
+              </div>
+
+              <div className="rounded-lg bg-secondary/30 px-3 py-2 text-xs">
+                {rangeIsValid ? (
+                  <>
+                    <span className="font-semibold">
+                      {formatDateDe(reportRange.from)} – {formatDateDe(reportRange.to)}
+                    </span>
+                    <span className="text-muted-foreground">
+                      {" "}· {reportTotals.days} {reportTotals.days === 1 ? "Tag" : "Tage"} erfasst · Umsatz{" "}
+                      {formatEuro(reportTotals.sales)} · Kosten {formatEuro(reportTotals.costs)} · Netto{" "}
+                      {formatEuro(reportTotals.net)}
+                    </span>
+                  </>
+                ) : (
+                  <span className="text-muted-foreground">Bitte gültigen Zeitraum wählen.</span>
+                )}
+              </div>
+
+              {reportError && <div className="text-xs text-destructive">{reportError}</div>}
+            </div>
+
             <div className="bg-white rounded-xl border p-4">
               <h3 className="font-bold text-sm mb-3">Letzte Tageswerte</h3>
               <div className="overflow-x-auto">
@@ -369,7 +549,7 @@ export default function DevPage() {
                       const costs = Number(entry.costs ?? 0);
                       return (
                         <tr key={`${entry.date}-${entry.id || "manual"}`}>
-                          <td className="border p-2">{new Date(`${entry.date}T00:00:00`).toLocaleDateString("de-AT")}</td>
+                          <td className="border p-2">{formatDateDe(entry.date)}</td>
                           <td className="border p-2 text-right">{sales.toFixed(2)} €</td>
                           <td className="border p-2 text-right">{costs.toFixed(2)} €</td>
                           <td className="border p-2 text-right">{(sales - costs).toFixed(2)} €</td>

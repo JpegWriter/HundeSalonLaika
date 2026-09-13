@@ -164,7 +164,7 @@ export class MemStorage implements IStorage {
                          costs = EXCLUDED.costs,
                          notes = EXCLUDED.notes,
                          updated_at = NOW()
-           RETURNING id, date, sales::text AS sales, costs::text AS costs, notes, created_at AS "createdAt", updated_at AS "updatedAt"`,
+           RETURNING id, to_char(date, 'YYYY-MM-DD') AS date, sales::text AS sales, costs::text AS costs, notes, created_at AS "createdAt", updated_at AS "updatedAt"`,
           [cleanedEntry.date, cleanedEntry.sales, cleanedEntry.costs, cleanedEntry.notes]
         );
 
@@ -196,7 +196,7 @@ export class MemStorage implements IStorage {
     if (pool) {
       try {
         const result = await pool.query(
-          `SELECT id, date, sales::text AS sales, costs::text AS costs, notes, created_at AS "createdAt", updated_at AS "updatedAt"
+          `SELECT id, to_char(date, 'YYYY-MM-DD') AS date, sales::text AS sales, costs::text AS costs, notes, created_at AS "createdAt", updated_at AS "updatedAt"
            FROM daily_finance
            ORDER BY date DESC`
         );
