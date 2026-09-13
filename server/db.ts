@@ -43,3 +43,28 @@ export async function initSubmissionsTable(): Promise<void> {
     console.error("[db] Failed to create contact_submissions table:", err);
   }
 }
+
+export async function initDailyFinanceTable(): Promise<void> {
+  const p = getPool();
+  if (!p) {
+    console.log("[db] No DATABASE_URL – daily finance entries will only be stored in memory.");
+    return;
+  }
+
+  try {
+    await p.query(`
+      CREATE TABLE IF NOT EXISTS daily_finance (
+        id SERIAL PRIMARY KEY,
+        date DATE NOT NULL UNIQUE,
+        sales NUMERIC(12,2) NOT NULL DEFAULT 0,
+        costs NUMERIC(12,2) NOT NULL DEFAULT 0,
+        notes TEXT,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      )
+    `);
+    console.log("[db] daily_finance table ready.");
+  } catch (err) {
+    console.error("[db] Failed to create daily_finance table:", err);
+  }
+}

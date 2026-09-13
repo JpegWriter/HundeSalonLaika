@@ -15,6 +15,16 @@ export interface Submission {
   createdAt: string;
 }
 
+export interface DailyFinanceEntry {
+  id: string;
+  date: string;
+  sales: string;
+  costs: string;
+  notes: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
@@ -27,6 +37,10 @@ export interface IStorage {
   // Submission tracking
   addSubmission(data: Omit<Submission, "id" | "createdAt">): Promise<Submission>;
   getSubmissions(): Promise<Submission[]>;
+
+  // Daily finance tracking
+  upsertDailyFinanceEntry(data: { date: string; sales: string | number; costs: string | number; notes?: string | null }): Promise<DailyFinanceEntry>;
+  getDailyFinanceEntries(): Promise<DailyFinanceEntry[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -34,12 +48,14 @@ export class MemStorage implements IStorage {
   private bookings: Map<string, Booking>;
   private submissions: Submission[];
   private submissionId: number;
+  private dailyFinance: Map<string, DailyFinanceEntry>;
 
   constructor() {
     this.users = new Map();
     this.bookings = new Map();
     this.submissions = [];
     this.submissionId = 1;
+    this.dailyFinance = new Map();
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -116,6 +132,81 @@ export class MemStorage implements IStorage {
       }
     }
     return [...this.submissions].reverse();
+  }
+
+  async upsertDailyFinanceEntry(data: { date: string; sales: string | number; costs: string | number; notes?: string | null }): Promise<DailyFinanceEntry> {
+    const now = new Date().toISOString();
+    const cleanedEntry = {
+      date: data.date,
+      sales: Number(data.sales ?? 0).toFixed(2),
+      costs: Number(data.costs ?? 0).toFixed(2),
+      notes: data.notes ?? null,
+    };
+
+    const record: DailyFinanceEntry = {
+      id: randomUUID(),
+      date: cleanedEntry.date,
+      sales: cleanedEntry.sales,
+      costs: cleanedEntry.costs,
+      notes: cleanedEntry.notes,
+      createdAt: now,
+      updatedAt: now,
+    };
+
+    const pool = getPool();
+    if (pool) {
+      try {
+        const result = await pool.query(
+          `INSERT INTO daily_finance (date, sales, costs, notes, updated_at)
+           VALUES ($1, $2, $3, $4, NOW())
+           ON CONFLICT (date)
+           DO UPDATE SET sales = EXCLUDED.sales,
+                         costs = EXCLUDED.costs,
+                         notes = EXCLUDED.notes,
+                         updated_at = NOW()
+           RETURNING id, date, sales::text AS sales, costs::text AS costs, notes, created_at AS "createdAt", updated_at AS "updatedAt"`,
+          [cleanedEntry.date, cleanedEntry.sales, cleanedEntry.costs, cleanedEntry.notes]
+        );
+
+        if (result.rows[0]) {
+          const row = result.rows[0];
+          const persisted: DailyFinanceEntry = {
+            id: row.id,
+            date: row.date,
+            sales: row.sales,
+            costs: row.costs,
+            notes: row.notes,
+            createdAt: row.createdAt,
+            updatedAt: row.updatedAt,
+          };
+          this.dailyFinance.set(persisted.date, persisted);
+          return persisted;
+        }
+      } catch (err) {
+        console.error("[storage] daily_finance DB upsert failed, keeping in memory:", err);
+      }
+    }
+
+    this.dailyFinance.set(record.date, record);
+    return record;
+  }
+
+  async getDailyFinanceEntries(): Promise<DailyFinanceEntry[]> {
+    const pool = getPool();
+    if (pool) {
+      try {
+        const result = await pool.query(
+          `SELECT id, date, sales::text AS sales, costs::text AS costs, notes, created_at AS "createdAt", updated_at AS "updatedAt"
+           FROM daily_finance
+           ORDER BY date DESC`
+        );
+        return result.rows;
+      } catch (err) {
+        console.error("[storage] daily_finance DB read failed, using in-memory:", err);
+      }
+    }
+
+    return Array.from(this.dailyFinance.values()).sort((a, b) => b.date.localeCompare(a.date));
   }
 }
 

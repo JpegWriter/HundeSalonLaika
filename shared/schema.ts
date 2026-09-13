@@ -3,6 +3,26 @@ import { pgTable, text, varchar } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
+export const dailyFinanceEntries = pgTable("daily_finance", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  date: text("date").notNull().unique(),
+  sales: text("sales").notNull().default("0"),
+  costs: text("costs").notNull().default("0"),
+  notes: text("notes"),
+  createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  updatedAt: text("updated_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+});
+
+export const insertDailyFinanceEntrySchema = createInsertSchema(dailyFinanceEntries).pick({
+  date: true,
+  sales: true,
+  costs: true,
+  notes: true,
+});
+
+export type InsertDailyFinanceEntry = z.infer<typeof insertDailyFinanceEntrySchema>;
+export type DailyFinanceEntry = typeof dailyFinanceEntries.$inferSelect;
+
 export const users = pgTable("users", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   username: text("username").notNull().unique(),

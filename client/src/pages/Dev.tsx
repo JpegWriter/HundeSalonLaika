@@ -31,13 +31,45 @@ interface Stats {
   submissionsByType: { type: string; count: string }[];
 }
 
+interface FinanceEntry {
+  id?: string;
+  date: string;
+  sales: string | number;
+  costs: string | number;
+  notes?: string | null;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 export default function DevPage() {
   const [submissions, setSubmissions] = useState<any[]>([]);
   const [stats, setStats] = useState<Stats | null>(null);
+  const [financeEntries, setFinanceEntries] = useState<FinanceEntry[]>([]);
+  const [financeForm, setFinanceForm] = useState({
+    date: new Date().toISOString().slice(0, 10),
+    sales: "",
+    costs: "",
+    notes: "",
+  });
+  const [financeSaving, setFinanceSaving] = useState(false);
+  const [financeError, setFinanceError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [authed, setAuthed] = useState(false);
-  const [tab, setTab] = useState<"stats" | "submissions">("stats");
+  const [tab, setTab] = useState<"stats" | "submissions" | "finance">("stats");
+
+  const financeSummary = financeEntries.reduce(
+    (acc, entry) => {
+      const sales = Number(entry.sales ?? 0);
+      const costs = Number(entry.costs ?? 0);
+      return {
+        sales: acc.sales + sales,
+        costs: acc.costs + costs,
+        net: acc.net + (sales - costs),
+      };
+    },
+    { sales: 0, costs: 0, net: 0 },
+  );
 
   useEffect(() => {
     if (!window.location.search.includes("dev")) {
@@ -64,14 +96,54 @@ export default function DevPage() {
         if (r.ok) return data;
         throw new Error(data.error || data.message || "Fehler");
       }),
+      fetch("/api/dev/finance").then(async (r) => {
+        const data = await r.json();
+        if (r.ok && Array.isArray(data)) return data;
+        throw new Error(data.error || data.message || "Fehler beim Laden der Finanzen");
+      }),
     ])
-      .then(([subs, st]) => {
+      .then(([subs, st, finance]) => {
         setSubmissions(subs);
         setStats(st);
+        setFinanceEntries(finance);
       })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
   }, []);
+
+  const handleFinanceSave = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setFinanceError(null);
+    setFinanceSaving(true);
+
+    try {
+      const response = await fetch("/api/dev/finance", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          date: financeForm.date,
+          sales: Number(financeForm.sales || 0),
+          costs: Number(financeForm.costs || 0),
+          notes: financeForm.notes,
+        }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(data.message || data.error || "Speichern fehlgeschlagen");
+      }
+
+      setFinanceEntries((prev) => {
+        const next = prev.filter((entry) => entry.date !== data.date);
+        return [data, ...next].sort((a, b) => b.date.localeCompare(a.date));
+      });
+      setFinanceForm((current) => ({ ...current, sales: "", costs: "", notes: "" }));
+    } catch (error) {
+      setFinanceError(error instanceof Error ? error.message : "Speichern fehlgeschlagen");
+    } finally {
+      setFinanceSaving(false);
+    }
+  };
 
   if (loading) return <Layout><div className="p-8">Lade...</div></Layout>;
   if (error) return <Layout><div className="p-8 text-destructive">{error}</div></Layout>;
@@ -83,8 +155,7 @@ export default function DevPage() {
       <div className="max-w-5xl mx-auto p-6 md:p-8">
         <h1 className="text-2xl font-bold mb-6">📊 Dev Dashboard</h1>
 
-        {/* Tabs */}
-        <div className="flex gap-2 mb-6">
+        <div className="flex flex-wrap gap-2 mb-6">
           <Button
             variant={tab === "stats" ? "default" : "outline"}
             onClick={() => setTab("stats")}
@@ -99,11 +170,17 @@ export default function DevPage() {
           >
             Anfragen ({submissions.length})
           </Button>
+          <Button
+            variant={tab === "finance" ? "default" : "outline"}
+            onClick={() => setTab("finance")}
+            size="sm"
+          >
+            Buchhaltung
+          </Button>
         </div>
 
         {tab === "stats" && stats && (
           <div className="space-y-6">
-            {/* Stat Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <StatCard label="Besuche gesamt" value={stats.totalViews} />
               <StatCard label="Heute" value={stats.todayViews} />
@@ -111,7 +188,6 @@ export default function DevPage() {
               <StatCard label="Anfragen gesamt" value={stats.totalSubmissions} />
             </div>
 
-            {/* Submissions by type */}
             {stats.submissionsByType.length > 0 && (
               <div className="bg-white rounded-xl border p-4">
                 <h3 className="font-bold text-sm mb-3">Anfragen nach Typ</h3>
@@ -126,7 +202,6 @@ export default function DevPage() {
               </div>
             )}
 
-            {/* Views by day */}
             {stats.viewsByDay.length > 0 && (
               <div className="bg-white rounded-xl border p-4">
                 <h3 className="font-bold text-sm mb-3">Besuche pro Tag (letzte 14 Tage)</h3>
@@ -153,7 +228,6 @@ export default function DevPage() {
               </div>
             )}
 
-            {/* Top pages */}
             {stats.topPages.length > 0 && (
               <div className="bg-white rounded-xl border p-4">
                 <h3 className="font-bold text-sm mb-3">Top-Seiten (letzte 30 Tage)</h3>
@@ -201,6 +275,111 @@ export default function DevPage() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+        )}
+
+        {tab === "finance" && (
+          <div className="space-y-6">
+            <form onSubmit={handleFinanceSave} className="bg-white rounded-xl border p-4 space-y-4">
+              <h3 className="font-bold text-sm">Tageserfassung</h3>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+                <label className="space-y-1 text-xs text-muted-foreground">
+                  <span>Datum</span>
+                  <input
+                    type="date"
+                    value={financeForm.date}
+                    onChange={(event) => setFinanceForm((current) => ({ ...current, date: event.target.value }))}
+                    className="w-full rounded-md border px-3 py-2 text-sm"
+                    required
+                  />
+                </label>
+                <label className="space-y-1 text-xs text-muted-foreground">
+                  <span>Verkauf (€)</span>
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value={financeForm.sales}
+                    onChange={(event) => setFinanceForm((current) => ({ ...current, sales: event.target.value }))}
+                    className="w-full rounded-md border px-3 py-2 text-sm"
+                    placeholder="0.00"
+                  />
+                </label>
+                <label className="space-y-1 text-xs text-muted-foreground">
+                  <span>Kosten (€)</span>
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value={financeForm.costs}
+                    onChange={(event) => setFinanceForm((current) => ({ ...current, costs: event.target.value }))}
+                    className="w-full rounded-md border px-3 py-2 text-sm"
+                    placeholder="0.00"
+                  />
+                </label>
+                <div className="flex items-end">
+                  <Button type="submit" disabled={financeSaving} className="w-full">
+                    {financeSaving ? "Speichern..." : "Speichern"}
+                  </Button>
+                </div>
+              </div>
+              <label className="block space-y-1 text-xs text-muted-foreground">
+                <span>Notiz</span>
+                <textarea
+                  value={financeForm.notes}
+                  onChange={(event) => setFinanceForm((current) => ({ ...current, notes: event.target.value }))}
+                  rows={3}
+                  className="w-full rounded-md border px-3 py-2 text-sm"
+                  placeholder="z. B. Material, Steuern, Ausgaben, ..."
+                />
+              </label>
+              {financeError && <div className="text-xs text-destructive">{financeError}</div>}
+            </form>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <StatCard label="Verkauf gesamt" value={Number(financeSummary.sales.toFixed(2))} />
+              <StatCard label="Kosten gesamt" value={Number(financeSummary.costs.toFixed(2))} />
+              <StatCard label="Netto" value={Number(financeSummary.net.toFixed(2))} />
+            </div>
+
+            <div className="bg-white rounded-xl border p-4">
+              <h3 className="font-bold text-sm mb-3">Letzte Tageswerte</h3>
+              <div className="overflow-x-auto">
+                <table className="min-w-full text-xs">
+                  <thead>
+                    <tr className="bg-secondary">
+                      <th className="p-2 border text-left">Datum</th>
+                      <th className="p-2 border text-right">Verkauf</th>
+                      <th className="p-2 border text-right">Kosten</th>
+                      <th className="p-2 border text-right">Netto</th>
+                      <th className="p-2 border text-left">Notiz</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {financeEntries.length === 0 && (
+                      <tr>
+                        <td colSpan={5} className="border p-3 text-muted-foreground text-center">
+                          Noch keine Tageswerte erfasst.
+                        </td>
+                      </tr>
+                    )}
+                    {financeEntries.map((entry) => {
+                      const sales = Number(entry.sales ?? 0);
+                      const costs = Number(entry.costs ?? 0);
+                      return (
+                        <tr key={`${entry.date}-${entry.id || "manual"}`}>
+                          <td className="border p-2">{new Date(`${entry.date}T00:00:00`).toLocaleDateString("de-AT")}</td>
+                          <td className="border p-2 text-right">{sales.toFixed(2)} €</td>
+                          <td className="border p-2 text-right">{costs.toFixed(2)} €</td>
+                          <td className="border p-2 text-right">{(sales - costs).toFixed(2)} €</td>
+                          <td className="border p-2">{entry.notes || "—"}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         )}

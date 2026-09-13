@@ -5,14 +5,16 @@ import { insertBookingSchema } from "@shared/schema";
 import nodemailer from "nodemailer";
 import { checkAvailability, createCalendarEvent } from "./googleCalendar";
 import { z } from "zod";
-import { initSubmissionsTable } from "./db";
+import { initDailyFinanceTable, initSubmissionsTable } from "./db";
+import { dailyFinanceEntrySchema } from "./finance";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // Initialize the submissions table in the background
+  // Initialize the persistence tables in the background
   initSubmissionsTable().catch(console.error);
+  initDailyFinanceTable().catch(console.error);
 
   const contactSchema = z.object({
     firstName: z.string().min(1),
@@ -214,6 +216,74 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/dev/stats", async (_req, res) => {
+    const pool = (await import("./db")).getPool();
+    if (!pool) {
+      return res.status(200).json({
+        totalViews: 0,
+        todayViews: 0,
+        last7DaysViews: 0,
+        topPages: [],
+        viewsByDay: [],
+        totalSubmissions: 0,
+        submissionsByType: [],
+      });
+    }
+
+    try {
+      await pool.query(`
+        CREATE TABLE IF NOT EXISTS page_views (
+          id SERIAL PRIMARY KEY,
+          path TEXT NOT NULL,
+          referrer TEXT,
+          user_agent TEXT,
+          created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+        )
+      `);
+
+      const [totalRes, todayRes, last7Res, topPagesRes, viewsByDayRes, totalSubRes, subByTypeRes] = await Promise.all([
+        pool.query(`SELECT COUNT(*) AS count FROM page_views`),
+        pool.query(`SELECT COUNT(*) AS count FROM page_views WHERE created_at >= CURRENT_DATE`),
+        pool.query(`SELECT COUNT(*) AS count FROM page_views WHERE created_at >= NOW() - INTERVAL '7 days'`),
+        pool.query(`
+          SELECT path, COUNT(*) AS views
+          FROM page_views
+          WHERE created_at >= NOW() - INTERVAL '30 days'
+          GROUP BY path
+          ORDER BY views DESC
+          LIMIT 10
+        `),
+        pool.query(`
+          SELECT DATE(created_at) AS date, COUNT(*) AS views
+          FROM page_views
+          WHERE created_at >= NOW() - INTERVAL '14 days'
+          GROUP BY DATE(created_at)
+          ORDER BY date DESC
+        `),
+        pool.query(`SELECT COUNT(*) AS count FROM contact_submissions`).catch(() => ({ rows: [{ count: 0 }] })),
+        pool.query(`
+          SELECT type, COUNT(*) AS count
+          FROM contact_submissions
+          GROUP BY type
+          ORDER BY count DESC
+        `).catch(() => ({ rows: [] })),
+      ]);
+
+      return res.status(200).json({
+        totalViews: parseInt(totalRes.rows[0].count, 10) || 0,
+        todayViews: parseInt(todayRes.rows[0].count, 10) || 0,
+        last7DaysViews: parseInt(last7Res.rows[0].count, 10) || 0,
+        topPages: topPagesRes.rows,
+        viewsByDay: viewsByDayRes.rows,
+        totalSubmissions: parseInt(totalSubRes.rows[0].count, 10) || 0,
+        submissionsByType: subByTypeRes.rows,
+      });
+    } catch (error) {
+      console.error("Dev stats error:", error);
+      return res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+
   // Dev page – retrieve all submissions
   app.get("/api/dev/submissions", async (_req, res) => {
     try {
@@ -221,6 +291,35 @@ export async function registerRoutes(
       res.json(submissions);
     } catch (error) {
       console.error("Dev submissions error:", error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+
+  app.get("/api/dev/finance", async (_req, res) => {
+    try {
+      const entries = await storage.getDailyFinanceEntries();
+      res.json(entries);
+    } catch (error) {
+      console.error("Dev finance read error:", error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+
+  app.post("/api/dev/finance", async (req, res) => {
+    try {
+      const parsed = dailyFinanceEntrySchema.parse(req.body);
+      const entry = await storage.upsertDailyFinanceEntry({
+        date: parsed.date,
+        sales: parsed.sales,
+        costs: parsed.costs,
+        notes: parsed.notes || null,
+      });
+      res.status(201).json(entry);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: "Ungültige Eingabe", issues: error.issues });
+      }
+      console.error("Dev finance write error:", error);
       res.status(500).json({ message: "Internal Server Error" });
     }
   });
